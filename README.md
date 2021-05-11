@@ -4,20 +4,20 @@ The scripts in this repository standardize and automate the creation of individu
 They also simplify the synchronization between repo remotes, either in github/gitlab/etc, a network drive or a USB drive.
 
 
-## Gestão de AEs
+## Creation and management of a SAR repo
 
-Essenciais:
+Essential scripts:
 
-- `AE-new.sh` - Cria uma nova AE (argumento) em um subdiretório do diretório atual
-- `AE-remote-set.sh` - Define um remoto para a AE (diretório atual)
+- `AE-new.sh` - Creates a new SAR dir (argument) in a sub-dir of the current dir
+- `AE-remote-set.sh` - defines a remote for a SAR repo (in current dir)
 
-Acessórios:
+Accessory scripts:
 
-- `AE-basedirs.sh` - Cria os arquivos mínimos da AE
-- `AE-basefiles.sh` - Cria os diretóriso mínimos da AE
-- `AE-init.sh` - Inicia o repositório da AE
-- `AE-rename.sh` - Renomeia uma AE
-- `AE-remote-rename.sh` - Renomeia os remotos, e atualiza suas referências
+- `AE-basedirs.sh` - Creates the standardized dir structure for the SAR repo
+- `AE-basefiles.sh` - Creates the stardized file structure for the SAR repo
+- `AE-init.sh` - Initiates the SAR repo
+- `AE-rename.sh` - Renames a SAR repo
+- `AE-remote-rename.sh` - Rename a git remote, and update its reference
 
 ## Manutenção de AEs
 
