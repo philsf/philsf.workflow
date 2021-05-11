@@ -13,20 +13,23 @@ Essential scripts:
 
 Accessory scripts:
 
+- `AE-rename.sh` - Renames a SAR repo
+- `AE-remote-set.sh` - Creates and configures a SAR remote in a local/network dir
+
+Used internally:
+
+- `AE-init.sh` - Initiates the SAR repo
 - `AE-basedirs.sh` - Creates the standardized dir structure for the SAR repo
 - `AE-basefiles.sh` - Creates the stardized file structure for the SAR repo
-- `AE-init.sh` - Initiates the SAR repo
-- `AE-rename.sh` - Renames a SAR repo
-- `AE-remote-rename.sh` - Rename a git remote, and update its reference (also renames remote dir)
-- `AE-remote-set.sh` - Creates and configures a SAR remote in a local/network dir
-- `AE-remote-all-set.sh` - Batch creation and configuration of several SAR remotes
 
 ## Maintenance of a SAR repo
 
 Essencial scripts:
 
+- `sync-repo.sh` - Syncs all remotes in the **current** dir (no arguments)
 - `sync-all-repos.sh` - Syncs all remotes in all dirs (dirs as arguments)
 
 Accessory scripts:
 
-- `sync-repo.sh` - syncs all remotes in the **current** dir (no arguments)
+- `AE-remote-rename.sh` - Rename a git remote, and update its reference (also renames remote dir)
+- `AE-remote-all-set.sh` - Batch creation and configuration of several SAR remotes
