@@ -1,4 +1,4 @@
-# Scripts para gestão de AEs do LATEV
+# Scripts to automate Statistical Analysis Reports
 
 Os scripts deste repositório padronizam e automatizam a criação de repositórios para AEs, bem como a sincronização entre o repositório local, e o remoto no drive `S:`.
 
