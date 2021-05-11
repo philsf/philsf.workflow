@@ -1,7 +1,7 @@
 # Scripts to automate Statistical Analysis Reports (SAR)
 
 The scripts in this repository standardize and automate the creation of individual git repositories for the creation of a Statistical Analysis Report (SAR).
-They also simplify the synchronization between repo remotes, either in github/gitlab/etc, a network drive or a USB drive.
+They also simplify the synchronization between repo remotes, regardless of location (github/gitlab/etc, USB or network drive).
 
 
 ## Creation and management of a SAR repo
