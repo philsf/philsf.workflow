@@ -19,15 +19,15 @@ Accessory scripts:
 - `AE-rename.sh` - Renames a SAR repo
 - `AE-remote-rename.sh` - Rename a git remote, and update its reference
 
-## Manutenção de AEs
+## Maintenance of a SAR repo
 
-Essenciais:
+Essencial scripts:
 
-- `sync-all-repos.sh` - Sincroniza os diretórios passados como argumentos
+- `sync-all-repos.sh` - Syncs all remotes in all dirs (dirs as arguments)
 
-Acessórios:
+Accessory scripts:
 
-- `sync-repo.sh` - sincroniza o diretório **atual** com todos os remotos
+- `sync-repo.sh` - syncs all remotes in the **current** dir (no arguments)
 
 ## Setup inicial de AEs
 
