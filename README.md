@@ -1,6 +1,8 @@
-# Scripts to automate Statistical Analysis Reports
+# Scripts to automate Statistical Analysis Reports (SAR)
 
-Os scripts deste repositório padronizam e automatizam a criação de repositórios para AEs, bem como a sincronização entre o repositório local, e o remoto no drive `S:`.
+The scripts in this repository standardize and automate the creation of individual git repositories for the creation of a Statistical Analysis Report (SAR).
+They also simplify the synchronization between repo remotes, either in github/gitlab/etc, a network drive or a USB drive.
+
 
 ## Gestão de AEs
 
