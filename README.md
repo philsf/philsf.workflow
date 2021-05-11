@@ -17,7 +17,7 @@ Accessory scripts:
 - `AE-basefiles.sh` - Creates the stardized file structure for the SAR repo
 - `AE-init.sh` - Initiates the SAR repo
 - `AE-rename.sh` - Renames a SAR repo
-- `AE-remote-rename.sh` - Rename a git remote, and update its reference
+- `AE-remote-rename.sh` - Rename a git remote, and update its reference (also renames remote dir)
 - `AE-remote-set.sh` - Creates and configures a SAR remote in a local/network dir
 - `AE-remote-all-set.sh` - Batch creation and configuration of several SAR remotes
 
