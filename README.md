@@ -18,6 +18,7 @@ Accessory scripts:
 - `AE-init.sh` - Initiates the SAR repo
 - `AE-rename.sh` - Renames a SAR repo
 - `AE-remote-rename.sh` - Rename a git remote, and update its reference
+- `AE-remote-all-set.sh` - Batch creation and configuration of several SAR remotes
 
 ## Maintenance of a SAR repo
 
@@ -28,9 +29,3 @@ Essencial scripts:
 Accessory scripts:
 
 - `sync-repo.sh` - syncs all remotes in the **current** dir (no arguments)
-
-## Setup inicial de AEs
-
-- `BM-setup.sh` - Cria a raiz de diretórios, e clona todas as AEs de um remoto
-- `AE-remote-all-set.sh` - Configura um remoto para todas as AEs do dir atual
-
