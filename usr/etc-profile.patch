@@ -1,0 +1,3 @@
+# FIX: $HOME em Bio-Manguinhos (2018-07-03 Felipe)
+export HOME=/c/Users/$USERNAME
+export PATH=$HOME/bin:$PATH
