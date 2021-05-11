@@ -1,34 +1,32 @@
-# Scripts para gestão de AEs do LATEV
+# Scripts to automate Statistical Analysis Reports (SAR)
 
-Os scripts deste repositório padronizam e automatizam a criação de repositórios para AEs, bem como a sincronização entre o repositório local, e o remoto no drive `S:`.
+The scripts in this repository standardize and automate the creation of individual git repositories for the creation of a Statistical Analysis Report (SAR).
+They also simplify the synchronization between repo remotes, either in github/gitlab/etc, a network drive or a USB drive.
 
-## Gestão de AEs
 
-Essenciais:
+## Creation and management of a SAR repo
 
-- `AE-new.sh` - Cria uma nova AE (argumento) em um subdiretório do diretório atual
-- `AE-remote-set.sh` - Define um remoto para a AE (diretório atual)
+Essential scripts:
 
-Acessórios:
+- `AE-new.sh` - Creates a new SAR dir (argument) in a sub-dir of the current dir
+- `AE-remote-set.sh` - defines a remote for a SAR repo (in current dir)
 
-- `AE-basedirs.sh` - Cria os arquivos mínimos da AE
-- `AE-basefiles.sh` - Cria os diretóriso mínimos da AE
-- `AE-init.sh` - Inicia o repositório da AE
-- `AE-rename.sh` - Renomeia uma AE
-- `AE-remote-rename.sh` - Renomeia os remotos, e atualiza suas referências
+Accessory scripts:
 
-## Manutenção de AEs
+- `AE-basedirs.sh` - Creates the standardized dir structure for the SAR repo
+- `AE-basefiles.sh` - Creates the stardized file structure for the SAR repo
+- `AE-init.sh` - Initiates the SAR repo
+- `AE-rename.sh` - Renames a SAR repo
+- `AE-remote-rename.sh` - Rename a git remote, and update its reference (also renames remote dir)
+- `AE-remote-set.sh` - Creates and configures a SAR remote in a local/network dir
+- `AE-remote-all-set.sh` - Batch creation and configuration of several SAR remotes
 
-Essenciais:
+## Maintenance of a SAR repo
 
-- `sync-all-repos.sh` - Sincroniza os diretórios passados como argumentos
+Essencial scripts:
 
-Acessórios:
+- `sync-all-repos.sh` - Syncs all remotes in all dirs (dirs as arguments)
 
-- `sync-repo.sh` - sincroniza o diretório **atual** com todos os remotos
+Accessory scripts:
 
-## Setup inicial de AEs
-
-- `BM-setup.sh` - Cria a raiz de diretórios, e clona todas as AEs de um remoto
-- `AE-remote-all-set.sh` - Configura um remoto para todas as AEs do dir atual
-
+- `sync-repo.sh` - syncs all remotes in the **current** dir (no arguments)
