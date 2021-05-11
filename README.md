@@ -18,9 +18,9 @@ Accessory scripts:
 
 Used internally:
 
-- `AE-init.sh` - Initiates the SAR repo
-- `AE-basedirs.sh` - Creates the standardized dir structure for the SAR repo
-- `AE-basefiles.sh` - Creates the stardized file structure for the SAR repo
+- `AE-init.sh`       - Initiates the SAR repo
+- `AE-basedirs.sh`  - Creates the standardized  dir structure for the SAR repo
+- `AE-basefiles.sh` - Creates the stardardized file structure for the SAR repo
 
 ## Maintenance of a SAR repo
 
