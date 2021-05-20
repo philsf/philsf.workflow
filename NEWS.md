@@ -6,4 +6,5 @@
 * default SAR repo README (pt) #3
 * default SAR repo README (en) #4
 * Multiple template styles allowed #23
+* Document template headers updated #21
 
