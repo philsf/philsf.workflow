@@ -19,7 +19,7 @@ output:
     fig_width: 6
     reference_docx: misc/style_SAR_pt.docx
     toc: yes
-subtitle: 'RELATÓRIO: analise_dados_XX_aaaa'
+subtitle: 'RELATÓRIO: analise_dados_XX_aaaa-v01'
 toc-title: "Sumário"
 ---
 
@@ -47,28 +47,28 @@ kable(history)
 
 ---
 
-# Assinaturas
+<!-- # Assinaturas -->
 
-```{r, echo=FALSE}
-sig.field <- "__________________________"
-date.field <- "_____________"
-Stat <- c("Elaborador", "Nome", "Função", sig.field, date.field)
-Reviewer <- c("Revisado por", "", "", sig.field, date.field)
-Approver <- c("Verificado por", "", "", sig.field, date.field)
-Final.Approver <- c("Aprovação final", "", "", sig.field, date.field)
+<!-- ```{r, echo=FALSE} -->
+<!-- sig.field <- "__________________________" -->
+<!-- date.field <- "_____________" -->
+<!-- Stat <- c("Elaborador", "Nome", "Função", sig.field, date.field) -->
+<!-- Reviewer <- c("Revisado por", "", "", sig.field, date.field) -->
+<!-- Approver <- c("Verificado por", "", "", sig.field, date.field) -->
+<!-- Final.Approver <- c("Aprovação final", "", "", sig.field, date.field) -->
 
-sigs <- rbind(
-  Stat
-  , Reviewer
-  , Approver
-  , Final.Approver
-  )
-rownames(sigs) <- NULL
-colnames(sigs) <- c("Papel", "Nome", "Função", "Assinatura", "Data")
+<!-- sigs <- rbind( -->
+<!--   Stat -->
+<!--   , Reviewer -->
+<!--   , Approver -->
+<!--   , Final.Approver -->
+<!--   ) -->
+<!-- rownames(sigs) <- NULL -->
+<!-- colnames(sigs) <- c("Papel", "Nome", "Função", "Assinatura", "Data") -->
 
-# pander(sigs, split.cells = c(9, 14, 14, 16, 8), split.table = Inf)
-kable(sigs)
-```
+<!-- # pander(sigs, split.cells = c(9, 14, 14, 16, 8), split.table = Inf) -->
+<!-- kable(sigs) -->
+<!-- ``` -->
 
 # Lista de abreviaturas
 
