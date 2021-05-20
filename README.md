@@ -33,3 +33,10 @@ Accessory scripts:
 
 - `AE-remote-rename.sh` - Rename a git remote, and update its reference (also renames remote dir)
 - `AE-remote-all-set.sh` - Batch creation and configuration of several SAR remotes
+
+## Report template
+
+An R Markdown template is provided suitable for reports of data analyses.
+
+It includes a reference docx with pre-formatted styles for easy creation of professional reports, in brazilian portuguese by default.
+This reference styles docx includes a template `URL` pointing to a `philsf-biostat` organization repository.
