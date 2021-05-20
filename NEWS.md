@@ -1,4 +1,4 @@
-# philsf-workflow 0.9.0
+# philsf.workflow 0.9.0
 
 * Imported bash scripts from gitlab #1
 * Imported SAR and SAP templates from philsfmisc #2
