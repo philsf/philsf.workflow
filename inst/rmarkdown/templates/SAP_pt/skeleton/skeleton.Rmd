@@ -1,5 +1,5 @@
 ---
-title: "Análise Estatística de ..."
+title: "Plano de Análise Estatística de ..."
 author: '**De:** Felipe Figueiredo **Para:** ___'
 date: '**Data: ** dd/mm/aaaa'
 output:
@@ -17,9 +17,9 @@ output:
     fig_caption: yes
     fig_height: 6
     fig_width: 6
-    reference_docx: misc/style.docx
+    reference_docx: misc/style_SAP_pt.docx
     toc: yes
-subtitle: 'RELATÓRIO: analise_dados_XX_aaaa'
+subtitle: 'SAP: analise_dados_XX_aaaa'
 toc-title: "Sumário"
 ---
 
@@ -74,20 +74,43 @@ kable(sigs)
 
 # Introdução
 
+## Contexto
+
 ## Objetivos
 
-## Recepção e tratamento dos dados
+## Hipóteses
 
-# Metodologia
+# Limpeza dos dados
 
-Esta análise foi realizada utilizando-se o software `R` versão `r getRversion()`.
+# Variáveis do estudo
 
-# Resultados
+## Desfechos primário e secundários
 
-<!-- # Exceções e Desvios do teste -->
+## Covariáveis
 
-# Conclusões
+# Métodos estatísticos
 
+## Análises estatísticas
+
+### Análise descritiva
+
+### Análise inferencial
+
+### Modelagem estatística
+
+## Significância e Intervalos de Confiança
+
+## Tamanho da amostra e Poder
+
+## Softwares utilizados
+
+Esta análise será realizada utilizando-se o software `R` versão `r getRversion()`.
+
+<!-- # Resultados -->
+
+# Exceções e Observações
+
+<!-- # Conclusões -->
 
 # Referências
 
