@@ -1,7 +1,7 @@
 ---
-title: "Plano de Análise Estatística de ..."
-author: '**De:** Felipe Figueiredo **Para:** ___'
-date: '**Data: ** dd/mm/aaaa'
+title: "Statistical Analysis Plan for title"
+author: '**From:** Felipe Figueiredo **To:** ___'
+date: '**Date: ** yyyy-mm-dd'
 output:
   html_document:
     fig_caption: yes
@@ -17,10 +17,10 @@ output:
     fig_caption: yes
     fig_height: 6
     fig_width: 6
-    reference_docx: misc/style_SAP_pt.docx
+    reference_docx: misc/style_SAP_en.docx
     toc: yes
-subtitle: 'SAP: SAP_analise_dados_XX_aaaa-v01'
-toc-title: "Sumário"
+subtitle: 'SAP: SAP_analise_dados_xx_yyyy-v01'
+# toc-title: "Sumário"
 ---
 
 ```{r setup, include=FALSE}
@@ -36,13 +36,13 @@ panderOptions('table.split.table', Inf)
 
 ---
 
-**Histórico do documento**
+**Document version**
 
 ```{r, echo = FALSE}
 Version <- c("01")
-Changes <- c("Versão inicial")
+Changes <- c("Initial version")
 history <- cbind(Version, Changes)
-colnames(history) <- c("Versão", "Alterações")
+colnames(history) <- c("Version", "Alterations")
 # pander(history, split.cells = 70)
 kable(history)
 ```
@@ -72,49 +72,49 @@ kable(history)
 <!-- kable(sigs) -->
 <!-- ``` -->
 
-# Lista de abreviaturas
+# Abbreviations
 
-# Introdução
+# Introduction
 
-## Contexto
+## Context
 
-## Objetivos
+## Objectives
 
-## Hipóteses
+## Hypotheses
 
-# Limpeza dos dados
+# Data cleaning
 
-# Variáveis do estudo
+# Study variables
 
-## Desfechos primário e secundários
+The analytic dataset will be included in the private version of the report, and will be omitted from the public version of the report.
 
-## Covariáveis
+## Primary and secondary outcomes
 
-# Métodos estatísticos
+## Covariates
 
-## Análises estatísticas
+# Statistical methods
 
-### Análise descritiva
+## Statistical analyses
 
-### Análise inferencial
+### Descriptive analyses
 
-### Modelagem estatística
+### Inferential analyses
 
-## Significância e Intervalos de Confiança
+### Statistical modeling
 
-## Tamanho da amostra e Poder
+## Significance and Confidence Intervals
 
-## Softwares utilizados
+All analyses will be performed using the significance level of 5%.
+All significance hypothesis tests and confidence intervals computed will be two-tailed.
 
-Esta análise será realizada utilizando-se o software `R` versão `r getRversion()`.
+## Study size and Power
 
-<!-- # Resultados -->
+### Statistical packages
 
-# Exceções e Observações
+This analysis will be performed using statistical software `R` version `r getRversion()`.
 
-<!-- # Conclusões -->
+# Exceptions and Observations
 
-# Referências
+# References
 
-# Apêndice
-
+# Appendix
