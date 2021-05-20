@@ -1,7 +1,7 @@
 ---
-title: "Análise Estatística de ..."
-author: '**De:** Felipe Figueiredo **Para:** ___'
-date: '**Data: ** dd/mm/aaaa'
+title: "title"
+author: '**From:** Felipe Figueiredo **To:** ___'
+date: '**Date: ** yyyy-mm-dd'
 output:
   html_document:
     fig_caption: yes
@@ -17,10 +17,10 @@ output:
     fig_caption: yes
     fig_height: 6
     fig_width: 6
-    reference_docx: misc/style_SAR_pt.docx
+    reference_docx: misc/style_SAR_en.docx
     toc: yes
-subtitle: 'RELATÓRIO: analise_dados_XX_aaaa-v01'
-toc-title: "Sumário"
+subtitle: 'REPORT: analise_dados_xx_yyyy-v01'
+# toc-title: "Sumário"
 ---
 
 ```{r setup, include=FALSE}
@@ -36,62 +36,65 @@ panderOptions('table.split.table', Inf)
 
 ---
 
-**Histórico do documento**
+**Document version**
 
 ```{r, echo = FALSE}
 Version <- c("01")
-Changes <- c("Versão inicial")
+Changes <- c("Initial version")
 history <- cbind(Version, Changes)
-colnames(history) <- c("Versão", "Alterações")
+colnames(history) <- c("Version", "Alterations")
 # pander(history, split.cells = 70)
 kable(history)
 ```
 
 ---
 
-<!-- # Assinaturas -->
+# Abbreviations
 
-<!-- ```{r, echo=FALSE} -->
-<!-- sig.field <- "__________________________" -->
-<!-- date.field <- "_____________" -->
-<!-- Stat <- c("Elaborador", "Nome", "Função", sig.field, date.field) -->
-<!-- Reviewer <- c("Revisado por", "", "", sig.field, date.field) -->
-<!-- Approver <- c("Verificado por", "", "", sig.field, date.field) -->
-<!-- Final.Approver <- c("Aprovação final", "", "", sig.field, date.field) -->
+# Introduction
 
-<!-- sigs <- rbind( -->
-<!--   Stat -->
-<!--   , Reviewer -->
-<!--   , Approver -->
-<!--   , Final.Approver -->
-<!--   ) -->
-<!-- rownames(sigs) <- NULL -->
-<!-- colnames(sigs) <- c("Papel", "Nome", "Função", "Assinatura", "Data") -->
+## Objectives
 
-<!-- # pander(sigs, split.cells = c(9, 14, 14, 16, 8), split.table = Inf) -->
-<!-- kable(sigs) -->
-<!-- ``` -->
+## Data reception and cleaning
 
-# Lista de abreviaturas
+# Methods
 
-# Introdução
+```{r results, include=FALSE}
+# source("scripts/results.R", encoding = 'UTF-8')
+```
 
-## Objetivos
+## Variables
 
-## Recepção e tratamento dos dados
+### Primary and secondary outcomes
 
-# Metodologia
+### Covariates
 
-Esta análise foi realizada utilizando-se o software `R` versão `r getRversion()`.
+## Statistical analyses
 
-# Resultados
+### Statistical packages
 
-<!-- # Exceções e Desvios do teste -->
+This analysis was performed using statistical software `R` version `r getRversion()`.
 
-# Conclusões
+# Results
 
+## Study population and follow up
 
-# Referências
+## Inferential analysis
 
-# Apêndice
+# Exceptions and Observations
 
+# Conclusions
+
+# References
+
+# Appendix
+
+## Exploratory data analysis
+
+## Analytical data-set
+
+Due to confidentiality the data-set used in this analysis cannot be shared online in the public version of this report.
+
+```{r data}
+# pander(analytic)
+```
