@@ -3,8 +3,9 @@
 The scripts in this repository standardize and automate the creation of individual git repositories for the creation of a Statistical Analysis Report (SAR).
 They also simplify the synchronization between repo remotes, regardless of location (github/gitlab/etc, USB or network drive).
 
+## Management of a SAR repo
 
-## Creation and management of a SAR repo
+### Creation of a SAR repo
 
 Essential scripts:
 
@@ -22,7 +23,7 @@ Used internally:
 - `AE-basedirs.sh`  - Creates the standardized  dir structure for the SAR repo
 - `AE-basefiles.sh` - Creates the stardardized file structure for the SAR repo
 
-## Maintenance of a SAR repo
+### Maintenance of a SAR repo
 
 Essencial scripts:
 
@@ -34,9 +35,9 @@ Accessory scripts:
 - `AE-remote-rename.sh` - Rename a git remote, and update its reference (also renames remote dir)
 - `AE-remote-all-set.sh` - Batch creation and configuration of several SAR remotes
 
-## Report template
+## Document templates
 
-An R Markdown template is provided suitable for reports of data analyses.
+A few R Markdown templates are provided suitable for SAR, SAP and general study protocols.
 
-It includes a reference docx with pre-formatted styles for easy creation of professional reports, in brazilian portuguese by default.
+It includes a reference docx with pre-formatted styles for easy creation of professional reports or SAPs, in brazilian portuguese by default.
 This reference styles docx includes a template `URL` pointing to a `philsf-biostat` organization repository.
