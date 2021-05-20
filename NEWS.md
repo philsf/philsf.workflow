@@ -1,3 +1,5 @@
-# philsf-workflow 0.0.0.9000
+# philsf-workflow 0.9.0
 
-* Added a `NEWS.md` file to track changes to the package.
+* Imported bash scripts from gitlab #1
+* Imported SAR and SAP templates from philsfmisc #2
+
