@@ -1,0 +1,118 @@
+---
+title: "Plano de Análise Estatística de ..."
+author: '**De:** Felipe Figueiredo **Para:** ___'
+date: '**Data: ** dd/mm/aaaa'
+output:
+  html_document:
+    fig_caption: yes
+    fig_height: 6
+    fig_width: 6
+    keep_md: yes
+    number_sections: yes
+    toc: yes
+  pdf_document:
+    number_sections: yes
+    toc: yes
+  word_document:
+    fig_caption: yes
+    fig_height: 6
+    fig_width: 6
+    reference_docx: misc/style.docx
+    toc: yes
+subtitle: 'SAP: analise_dados_XX_aaaa'
+toc-title: "Sumário"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_knit$set(root.dir = normalizePath(".."))
+options(scipen = 999)
+library(pander)
+library(knitr)
+library(philsfmisc)
+```
+
+---
+
+**Histórico do documento**
+
+```{r, echo = FALSE}
+Version <- c("01")
+Changes <- c("Versão inicial")
+history <- cbind(Version, Changes)
+colnames(history) <- c("Versão", "Alterações")
+# pander(history, split.cells = 70)
+kable(history)
+```
+
+---
+
+# Assinaturas
+
+```{r, echo=FALSE}
+sig.field <- "__________________________"
+date.field <- "_____________"
+Stat <- c("Elaborador", "Nome", "Função", sig.field, date.field)
+Reviewer <- c("Revisado por", "", "", sig.field, date.field)
+Approver <- c("Verificado por", "", "", sig.field, date.field)
+Final.Approver <- c("Aprovação final", "", "", sig.field, date.field)
+
+sigs <- rbind(
+  Stat
+  , Reviewer
+  , Approver
+  , Final.Approver
+  )
+rownames(sigs) <- NULL
+colnames(sigs) <- c("Papel", "Nome", "Função", "Assinatura", "Data")
+
+# pander(sigs, split.cells = c(9, 14, 14, 16, 8), split.table = Inf)
+kable(sigs)
+```
+
+# Lista de abreviaturas
+
+# Introdução
+
+## Contexto
+
+## Objetivos
+
+## Hipóteses
+
+# Limpeza dos dados
+
+# Variáveis do estudo
+
+## Desfechos primário e secundários
+
+## Covariáveis
+
+# Métodos estatísticos
+
+## Análises estatísticas
+
+### Análise descritiva
+
+### Análise inferencial
+
+### Modelagem estatística
+
+## Significância e Intervalos de Confiança
+
+## Tamanho da amostra e Poder
+
+## Softwares utilizados
+
+Esta análise será realizada utilizando-se o software `R` versão `r getRversion()`.
+
+<!-- # Resultados -->
+
+# Exceções e Observações
+
+<!-- # Conclusões -->
+
+# Referências
+
+# Apêndice
+
