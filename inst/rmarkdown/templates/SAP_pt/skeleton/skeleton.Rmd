@@ -19,7 +19,7 @@ output:
     fig_width: 6
     reference_docx: misc/style_SAP_pt.docx
     toc: yes
-subtitle: 'SAP: analise_dados_XX_aaaa'
+subtitle: 'SAP: SAP_analise_dados_XX_aaaa-v01'
 toc-title: "Sumário"
 ---
 

@@ -19,7 +19,7 @@ output:
     fig_width: 6
     reference_docx: misc/style_SAR_pt.docx
     toc: yes
-subtitle: 'RELATÓRIO: analise_dados_XX_aaaa'
+subtitle: 'RELATÓRIO: analise_dados_XX_aaaa-v01'
 toc-title: "Sumário"
 ---
 
