@@ -2,4 +2,5 @@
 
 * Imported bash scripts from gitlab #1
 * Imported SAR and SAP templates from philsfmisc #2
+* Project converted to an R package #26
 
