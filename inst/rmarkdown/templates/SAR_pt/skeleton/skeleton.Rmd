@@ -82,16 +82,42 @@ kable(history)
 
 # Metodologia
 
+```{r results, include=FALSE}
+# source("scripts/results.R", encoding = 'UTF-8')
+```
+
+## Variáveis
+
+### Desfechos primário e secundário
+
+### Covariáveis
+
+## Análises Estatísticas
+
+### Softwares utilizados
+
 Esta análise foi realizada utilizando-se o software `R` versão `r getRversion()`.
 
 # Resultados
 
-<!-- # Exceções e Desvios do teste -->
+## Análise descritiva
+
+## Análise inferencial
+
+# Exceções e Observações
 
 # Conclusões
-
 
 # Referências
 
 # Apêndice
 
+## Exploratory data analysis
+
+## Analytical data-set
+
+Os dados utilizados neste relatório não podem ser publicados online por questões de sigilo.
+
+```{r data}
+# pander(analytic)
+```
