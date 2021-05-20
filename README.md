@@ -39,5 +39,10 @@ Accessory scripts:
 
 A few R Markdown templates are provided suitable for SAR, SAP and general study protocols.
 
-It includes a reference docx with pre-formatted styles for easy creation of professional reports or SAPs, in brazilian portuguese by default.
-This reference styles docx includes a template `URL` pointing to a `philsf-biostat` organization repository.
+- SAR_pt -- Statistical Analysis Report (pt)
+- SAR_en -- Statistical Analysis Report (en)
+- SAP_pt -- Statistical Analysis Plan (pt)
+- SAP_en -- Statistical Analysis Plan (en)
+
+It includes a reference docx with pre-formatted styles for easy creation of professional reports or SAPs, in brazilian portuguese (pt) and english (en).
+These reference styles docx includes a template `URL` pointing to a `philsf-biostat` organization repository.
