@@ -1,6 +1,7 @@
 # philsf.workflow 0.9.1
 
 * Fixed path variables #38
+* Translate scripts #7
 
 # philsf.workflow 0.9.0
 
