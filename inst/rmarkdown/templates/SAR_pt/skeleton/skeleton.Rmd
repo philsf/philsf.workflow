@@ -112,9 +112,9 @@ Esta análise foi realizada utilizando-se o software `R` versão `r getRversion(
 
 # Apêndice
 
-## Exploratory data analysis
+## Análise exploratória de dados
 
-## Analytical data-set
+## Dados utilizados
 
 Os dados utilizados neste relatório não podem ser publicados online por questões de sigilo.
 
