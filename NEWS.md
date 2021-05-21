@@ -1,3 +1,7 @@
+# philsf.workflow 0.9.1
+
+* Fixed path variables #38
+
 # philsf.workflow 0.9.0
 
 * Imported bash scripts from gitlab #1

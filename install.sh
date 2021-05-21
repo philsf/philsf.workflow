@@ -38,8 +38,8 @@ README-R.md
 
 echo "Installing files into $SCRIPTDIR/"
 echo "Installing files into $CFGDIR/"
-mkdir -p $SCRIPTDIR $CFGDIR
+mkdir -p "$SCRIPTDIR" "$CFGDIR"
 
-for f in $SCRIPTS; do /bin/cp bin/$f $SCRIPTDIR; done
-for f in $CFG; do /bin/cp usr/AE/$f $CFGDIR; done
-for f in $RSCRIPTS; do /bin/cp usr/AE/$f $CFGDIR; done
+for f in $SCRIPTS; do /bin/cp bin/$f "$SCRIPTDIR"; done
+for f in $CFG; do /bin/cp usr/AE/$f "$CFGDIR"; done
+for f in $RSCRIPTS; do /bin/cp usr/AE/$f "$CFGDIR"; done
