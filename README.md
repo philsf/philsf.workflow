@@ -27,13 +27,13 @@ Used internally:
 
 Essencial scripts:
 
-- `sync-repo.sh` - Syncs all remotes in the **current** dir (no arguments)
-- `sync-all-repos.sh` - Syncs all remotes in all dirs (dirs as arguments)
+- `SAR-sync.sh` - Syncs all remotes in the **current** dir (no arguments)
+- `SAR-sync-all.sh` - Syncs all remotes in all dirs (dirs as arguments)
 
 Accessory scripts:
 
 - `SAR-remote-rename.sh` - Rename a git remote, and update its reference (also renames remote dir)
-- `SAR-remote-all-set.sh` - Batch creation and configuration of several SAR remotes
+- `SAR-remote-set-all.sh` - Batch creation and configuration of several SAR remotes
 
 ## Document templates
 
