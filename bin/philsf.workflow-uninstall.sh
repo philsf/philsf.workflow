@@ -18,9 +18,8 @@ SAR-remote-set-all.sh
 SAR-rename.sh
 SAR-sync.sh
 SAR-sync-all.sh
-BM-setup.sh
-BM-uninstall.sh
 philsf.workflow-uninstall.sh
+BM-setup.sh
 "
 CFG="
 gitignore
