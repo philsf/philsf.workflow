@@ -9,7 +9,16 @@ then
     exit
 fi
 
-for SAR in SAR-*
+# accept optional SAR_LIST as argument
+shift 2
+SAR_LIST=$@
+
+if [[ "$@" == "" ]]
+then
+    SAR_LIST=*SAR*
+fi
+
+for SAR in $SAR_LIST
 do
     cd "$SAR"
     SAR-remote-set.sh "$REMOTENAME" "$REMOTES_DIR"
