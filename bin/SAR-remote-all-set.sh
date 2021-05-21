@@ -3,9 +3,9 @@
 REMOTENAME=$1
 REMOTES_DIR=$2
 
-if [[ "$1" == "" ]]
+if [[ "$2" == "" ]]
 then
-    echo "Usage: SAR-remote-all-set.sh REMOTE REMOTES_DIR"
+    echo "Usage: SAR-remote-all-set.sh REMOTE REMOTES_DIR [SAR_LIST]"
     exit
 fi
 
