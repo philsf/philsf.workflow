@@ -1,23 +1,23 @@
 #!/bin/bash
 
 REMOTENAME=$1
-ANALISESDIR=$2
+REMOTES_DIR=$2
 
-echo "Criando raiz padrão"
+echo "Creating standard root"
 mkdir -p Analises Documentos Comunicacao Relatorios
 
 if [[ "$1" == "" ]]
 then
-    echo "Uso: BM-setup.sh remoto remotos_dir"
+    echo "Usage: BM-setup.sh REMOTE REMOTES_DIR"
     exit
 fi
 
 cd Analises
 
-for AE in "$ANALISESDIR"/AE-*
+for SAR in "$REMOTES_DIR"/SAR-*
 do
     echo -n "$REMOTENAME: "
-    git clone --origin=$REMOTENAME "$AE" > /dev/null
+    git clone --origin=$REMOTENAME "$SAR" > /dev/null
 done
 
 cd - > /dev/null

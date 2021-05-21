@@ -6,16 +6,16 @@ then
 fi
 
 SCRIPTDIR=$HOME/bin
-CFGDIR=$HOME/usr/AE
+CFGDIR=$HOME/usr/SAR
 SCRIPTS="
-AE-basedirs.sh
-AE-basefiles.sh
-AE-init.sh
-AE-new.sh
-AE-remote-all-set.sh
-AE-remote-rename.sh
-AE-remote-set.sh
-AE-rename.sh
+SAR-basedirs.sh
+SAR-basefiles.sh
+SAR-init.sh
+SAR-new.sh
+SAR-remote-all-set.sh
+SAR-remote-rename.sh
+SAR-remote-set.sh
+SAR-rename.sh
 BM-setup.sh
 BM-uninstall.sh
 sync-all-repos.sh
