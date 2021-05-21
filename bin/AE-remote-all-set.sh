@@ -11,7 +11,7 @@ fi
 
 for AE in AE-*
 do
-    cd $AE
+    cd "$AE"
     AE-remote-set.sh "$REMOTENAME" "$ANALISESDIR"
     cd - > /dev/null
 done
