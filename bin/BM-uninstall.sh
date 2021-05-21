@@ -6,7 +6,7 @@ then
 fi
 
 SCRIPTDIR=$HOME/bin
-CFGDIR=$HOME/usr/AE
+CFGDIR=$HOME/usr/SAR
 SCRIPTS="
 AE-basedirs.sh
 AE-basefiles.sh

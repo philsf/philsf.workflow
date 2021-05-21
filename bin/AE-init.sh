@@ -1,9 +1,9 @@
 #!/bin/bash
 
-AE=${PWD##*/} # local dir
+SAR=${PWD##*/} # local dir
 
-echo "Initializing repository for $AE"
+echo "Initializing repository for $SAR"
 git init >/dev/null
-git add .gitignore README.md "$AE.Rproj"
+git add .gitignore README.md "$SAR.Rproj"
 git commit -m "Initial commit" >/dev/null
 

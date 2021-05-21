@@ -1,14 +1,14 @@
 #!/bin/bash
 
-AE=$1
+SAR=$1
 
 if [[ "$1" == "" ]]
 then
-    AE=${PWD##*/} # local dir
+    SAR=${PWD##*/} # local dir
 fi
 
-mkdir -p "$AE"
-cd "$AE"
+mkdir -p "$SAR"
+cd "$SAR"
 AE-basedirs.sh
 AE-basefiles.sh
 AE-init.sh

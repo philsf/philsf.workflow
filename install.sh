@@ -6,7 +6,7 @@ then
 fi
 
 SCRIPTDIR=$HOME/bin
-CFGDIR=$HOME/usr/AE
+CFGDIR=$HOME/usr/SAR
 SCRIPTS="
 AE-basedirs.sh
 AE-basefiles.sh
@@ -41,5 +41,5 @@ echo "Installing files into $CFGDIR/"
 mkdir -p "$SCRIPTDIR" "$CFGDIR"
 
 for f in $SCRIPTS; do /bin/cp bin/$f "$SCRIPTDIR"; done
-for f in $CFG; do /bin/cp usr/AE/$f "$CFGDIR"; done
-for f in $RSCRIPTS; do /bin/cp usr/AE/$f "$CFGDIR"; done
+for f in $CFG; do /bin/cp usr/SAR/$f "$CFGDIR"; done
+for f in $RSCRIPTS; do /bin/cp usr/SAR/$f "$CFGDIR"; done

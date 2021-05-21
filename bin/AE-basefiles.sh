@@ -1,6 +1,6 @@
 #!/bin/bash
 
-AE=${PWD##*/} # local dir
+SAR=${PWD##*/} # local dir
 
 RSCRIPTS="
 input.R
@@ -12,8 +12,8 @@ results.R
 plots-save.R
 README-R.md
 "
-cp ~/usr/AE/gitignore .gitignore
-cp ~/usr/AE/new-rproj $AE.Rproj
-for r in $RSCRIPTS; do cp ~/usr/AE/$r scripts/; done
+cp ~/usr/SAR/gitignore .gitignore
+cp ~/usr/SAR/new-rproj $SAR.Rproj
+for r in $RSCRIPTS; do cp ~/usr/SAR/$r scripts/; done
 mv scripts/README-R.md scripts/README.md
-echo "# $AE" > README.md
+echo "# $SAR" > README.md

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 REMOTENAME=$1
-ANALISESDIR=$2
+SARDIR=$2
 
 echo "Criando raiz padrão"
 mkdir -p Analises Documentos Comunicacao Relatorios
@@ -14,10 +14,10 @@ fi
 
 cd Analises
 
-for AE in "$ANALISESDIR"/AE-*
+for SAR in "$SARDIR"/AE-*
 do
     echo -n "$REMOTENAME: "
-    git clone --origin=$REMOTENAME "$AE" > /dev/null
+    git clone --origin=$REMOTENAME "$SAR" > /dev/null
 done
 
 cd - > /dev/null

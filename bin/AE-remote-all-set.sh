@@ -1,7 +1,7 @@
 #!/bin/bash
 
 REMOTENAME=$1
-ANALISESDIR=$2
+SARDIR=$2
 
 if [[ "$1" == "" ]]
 then
@@ -9,9 +9,9 @@ then
     exit
 fi
 
-for AE in AE-*
+for SAR in SAR-*
 do
-    cd "$AE"
-    AE-remote-set.sh "$REMOTENAME" "$ANALISESDIR"
+    cd "$SAR"
+    AE-remote-set.sh "$REMOTENAME" "$SARDIR"
     cd - > /dev/null
 done
