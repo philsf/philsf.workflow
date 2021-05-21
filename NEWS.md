@@ -2,6 +2,7 @@
 
 * Fixed path variables #38
 * Translate scripts #7
+* New optional list of SAR dirs to remote-all-set #41
 
 # philsf.workflow 0.9.0
 
