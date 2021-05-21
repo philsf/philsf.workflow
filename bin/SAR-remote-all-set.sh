@@ -1,16 +1,16 @@
 #!/bin/bash
 
-REMOTENAME=$1
-REMOTES_DIR=$2
-
 if [[ "$2" == "" ]]
 then
     echo "Usage: SAR-remote-all-set.sh REMOTE REMOTES_DIR [SAR_LIST]"
     exit
 fi
 
-# accept optional SAR_LIST as argument
+REMOTENAME=$1
+REMOTES_DIR=$2
 shift 2
+
+# accept optional SAR_LIST as argument
 SAR_LIST=$@
 
 if [[ "$@" == "" ]]
