@@ -14,7 +14,7 @@ fi
 
 cd Analises
 
-for SAR in "$SARDIR"/AE-*
+for SAR in "$SARDIR"/SAR-*
 do
     echo -n "$REMOTENAME: "
     git clone --origin=$REMOTENAME "$SAR" > /dev/null

@@ -9,6 +9,6 @@ fi
 
 mkdir -p "$SAR"
 cd "$SAR"
-AE-basedirs.sh
-AE-basefiles.sh
-AE-init.sh
+SAR-basedirs.sh
+SAR-basefiles.sh
+SAR-init.sh

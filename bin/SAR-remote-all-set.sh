@@ -5,13 +5,13 @@ SARDIR=$2
 
 if [[ "$1" == "" ]]
 then
-    echo "Uso: AE-remote-all-set.sh remoto remotos_dir"
+    echo "Uso: SAR-remote-all-set.sh remoto remotos_dir"
     exit
 fi
 
 for SAR in SAR-*
 do
     cd "$SAR"
-    AE-remote-set.sh "$REMOTENAME" "$SARDIR"
+    SAR-remote-set.sh "$REMOTENAME" "$SARDIR"
     cd - > /dev/null
 done

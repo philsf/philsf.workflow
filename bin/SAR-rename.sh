@@ -2,7 +2,7 @@
 
 if [[ "$1" == "" ]]
 then
-    echo "Uso: AE-rename.sh SAR_NEW"
+    echo "Uso: SAR-rename.sh SAR_NEW"
     exit
 fi
 
@@ -19,6 +19,6 @@ echo "# $NEW_SAR" > README.md && echo "README atualizado" || echo "Erro ao atual
 echo "Remotos disponíveis para atualização:"
 for REMOTE in $(git remote)
 do
-    # AE-remote-rename.sh $NEW_SAR $REMOTE
+    # SAR-remote-rename.sh $NEW_SAR $REMOTE
     echo "$REMOTE: " $(git remote get-url $REMOTE)
 done
