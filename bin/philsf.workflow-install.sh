@@ -12,13 +12,13 @@ SAR-basedirs.sh
 SAR-basefiles.sh
 SAR-init.sh
 SAR-new.sh
-SAR-remote-all-set.sh
 SAR-remote-rename.sh
 SAR-remote-set.sh
+SAR-remote-set-all.sh
 SAR-rename.sh
+SAR-sync.sh
+SAR-sync-all.sh
 philsf.workflow-uninstall.sh
-sync-all-repos.sh
-sync-repo.sh
 "
 CFG="
 gitignore
