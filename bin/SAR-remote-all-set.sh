@@ -1,7 +1,7 @@
 #!/bin/bash
 
 REMOTENAME=$1
-SARDIR=$2
+REMOTES_DIR=$2
 
 if [[ "$1" == "" ]]
 then
@@ -12,6 +12,6 @@ fi
 for SAR in SAR-*
 do
     cd "$SAR"
-    SAR-remote-set.sh "$REMOTENAME" "$SARDIR"
+    SAR-remote-set.sh "$REMOTENAME" "$REMOTES_DIR"
     cd - > /dev/null
 done

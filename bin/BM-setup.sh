@@ -1,7 +1,7 @@
 #!/bin/bash
 
 REMOTENAME=$1
-SARDIR=$2
+REMOTES_DIR=$2
 
 echo "Creating standard root"
 mkdir -p Analises Documentos Comunicacao Relatorios
@@ -14,7 +14,7 @@ fi
 
 cd Analises
 
-for SAR in "$SARDIR"/SAR-*
+for SAR in "$REMOTES_DIR"/SAR-*
 do
     echo -n "$REMOTENAME: "
     git clone --origin=$REMOTENAME "$SAR" > /dev/null
