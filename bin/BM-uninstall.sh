@@ -37,9 +37,9 @@ README-R.md
 "
 
 echo "Removing files from $SCRIPTDIR"
-for f in $SCRIPTS; do rm -f $SCRIPTDIR/$f; done
-rmdir -p --ignore-fail-on-non-empty $SCRIPTDIR
+for f in $SCRIPTS; do rm -f "$SCRIPTDIR/$f"; done
+rmdir -p --ignore-fail-on-non-empty "$SCRIPTDIR"
 echo "Removing files from $CFGDIR"
-for f in $CFG; do rm -f $CFGDIR/$f; done
-for f in $RSCRIPTS; do rm -f $CFGDIR/$f; done
-rmdir -p --ignore-fail-on-non-empty $CFGDIR
+for f in $CFG; do rm -f "$CFGDIR/$f"; done
+for f in $RSCRIPTS; do rm -f "$CFGDIR/$f"; done
+rmdir -p --ignore-fail-on-non-empty "$CFGDIR"
