@@ -3,12 +3,12 @@
 REMOTENAME=$1
 SARDIR=$2
 
-echo "Criando raiz padrão"
+echo "Creating standard root"
 mkdir -p Analises Documentos Comunicacao Relatorios
 
 if [[ "$1" == "" ]]
 then
-    echo "Uso: BM-setup.sh remoto remotos_dir"
+    echo "Usage: BM-setup.sh REMOTE REMOTES_DIR"
     exit
 fi
 

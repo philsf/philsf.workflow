@@ -5,7 +5,7 @@ SARDIR=$2
 
 if [[ "$1" == "" ]]
 then
-    echo "Uso: SAR-remote-all-set.sh remoto remotos_dir"
+    echo "Usage: SAR-remote-all-set.sh REMOTE REMOTES_DIR"
     exit
 fi
 
