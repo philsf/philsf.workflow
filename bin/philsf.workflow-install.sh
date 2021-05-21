@@ -16,7 +16,7 @@ SAR-remote-all-set.sh
 SAR-remote-rename.sh
 SAR-remote-set.sh
 SAR-rename.sh
-BM-uninstall.sh
+philsf.workflow-uninstall.sh
 sync-all-repos.sh
 sync-repo.sh
 "
