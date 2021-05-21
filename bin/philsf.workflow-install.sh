@@ -16,7 +16,6 @@ SAR-remote-all-set.sh
 SAR-remote-rename.sh
 SAR-remote-set.sh
 SAR-rename.sh
-BM-setup.sh
 BM-uninstall.sh
 sync-all-repos.sh
 sync-repo.sh
