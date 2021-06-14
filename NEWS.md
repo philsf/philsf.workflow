@@ -1,5 +1,7 @@
 # philsf.workflow 0.9.2
 
+* SAR repo README improved #46
+
 # philsf.workflow 0.9.1
 
 * Fixed path variables #38
