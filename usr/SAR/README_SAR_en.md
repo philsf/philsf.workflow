@@ -1,9 +1,9 @@
-Instructions
+<!-- Instructions -->
 
-- substitute xxx by the analysis code
-- v01: substitute milestone in mmm01/mmm02
-- v02: substitute project in ppp01/ppp02
-- Remove this block
+<!-- - substitute xxx by the analysis code -->
+<!-- - v01: substitute milestone in mmm01/mmm02 -->
+<!-- - v02: substitute project in ppp01/ppp02 -->
+<!-- - Remove this block -->
 
 # Statistical Analysis project (place, yyyy)
 
