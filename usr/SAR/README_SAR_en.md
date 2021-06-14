@@ -16,6 +16,10 @@ title
 1. Statistical models
 1. Power analysis
 
+## Documents
+
+### Statistical Analysis Plan
+
 **SAP** - Statistical Analysis Plan
 
 - [Online visualization][sapviz-v01]
@@ -25,9 +29,7 @@ title
 [sapviz-v01]: report/SAP_xxx-v01.md
 [sappdf-v01]: report/SAP_xxx-v01.pdf?raw=true
 
----
-
-## Analysis report
+### Statistical Analysis Report
 
 <!-- **Version 02** - [Ongoing][v02-project]. -->
 <!-- <\!-- **Version 02** - [Concluded][v02-project]. -\-> -->

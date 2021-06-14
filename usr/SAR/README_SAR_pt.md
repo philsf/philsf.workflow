@@ -16,7 +16,11 @@ título
 1. Modelagem estatística
 1. Análise de poder
 
-**SAP** -- Plano de Análises Estatísticas
+## Documentos
+
+## Plano de Análise Estatística
+
+**SAP** -- Plano de Análise Estatística
 
 - [Visualização online][sapviz-v01]
 - Download
@@ -25,9 +29,7 @@ título
 [sapviz-v01]: report/SAP_xxx-v01.md
 [sappdf-v01]: report/SAP_xxx-v01.pdf?raw=true
 
----
-
-## Relatório da análise de dados
+## Relatório de Análise Estatística
 
 <!-- **Versão 02** -- [Em elaboração][v02-project]. -->
 <!-- <\!-- **Versão 02** -- [Concluída][v02-project]. -\-> -->
