@@ -55,11 +55,3 @@ title
 [docx-v02]: report/xxx-v02.docx?raw=true
 [pdf-v02]: report/xxx-v02.pdf?raw=true
 [v02-project]: https://github.com/philsf-biostat/xxx/projects/ppp02
-
-<!-- ## Releases -->
-
-<!-- In the link below you can check all contents released, both finished and preliminary products. -->
-
-<!-- [View all released versions][releases]. -->
-
-<!-- [releases]: https://github.com/philsf-biostat/xxx/releases/ -->

@@ -29,8 +29,6 @@ título
 
 ## Relatório da análise de dados
 
-[Ver as etapas desta análise][releases].
-
 <!-- **Versão 02** -- [Em elaboração][v02-project]. -->
 <!-- <\!-- **Versão 02** -- [Concluída][v02-project]. -\-> -->
 
