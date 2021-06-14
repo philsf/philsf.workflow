@@ -31,10 +31,8 @@ título
 
 [Ver as etapas desta análise][releases].
 
-<!-- **Versão 02** -- [Em elaboração][milestone-v02]. -->
-<!-- <\!-- **Versão 02** -- [Concluída][milestone-v02]. -\-> -->
-
-<!-- [Planejamento][v02-project]. -->
+<!-- **Versão 02** -- [Em elaboração][v02-project]. -->
+<!-- <\!-- **Versão 02** -- [Concluída][v02-project]. -\-> -->
 
 <!-- - [Visualização online][reportviz-v02] -->
 <!-- - Download -->
@@ -42,10 +40,8 @@ título
 
 <!-- --- -->
 
-**Versão 01** -- [Em elaboração][milestone-v01].
-<!-- **Versão 01** -- [Concluída][milestone-v01]. -->
-
-[Planejamento][v01-project].
+**Versão 01** -- [Em elaboração][v01-project].
+<!-- **Versão 01** -- [Concluída][v01-project]. -->
 
 - [Visualização online][reportviz-v01]
 - Download

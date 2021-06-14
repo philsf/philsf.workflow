@@ -28,25 +28,21 @@ title
 
 ## Analysis report
 
-<!-- **Version 02** - [Ongoing][milestone-v02]. -->
-<!-- <\!-- **Version 02** - [Concluded][milestone-v02]. -\-> -->
+<!-- **Version 02** - [Ongoing][v02-project]. -->
+<!-- <\!-- **Version 02** - [Concluded][v02-project]. -\-> -->
 
 <!-- - [Online visualization][reportviz-v02] -->
 <!-- - Download -->
 <!-- <\!-- - [Download][pdf-v02] -\-> -->
 
-<!-- [Activities planned for report version 02][v02-project]. -->
-
 <!-- --- -->
 
-**Version 01** - [Ongoing][milestone-v01].
-<!-- **Version 01** - [Concluded][milestone-v01]. -->
+**Version 01** - [Ongoing][v01-project].
+<!-- **Version 01** - [Concluded][v01-project]. -->
 
 - [Online visualization][reportviz-v01]
 - Download
 <!-- - [Download][pdf-v01] -->
-
-[Activities planned for report version 01][v01-project].
 
 [milestone-v01]: https://github.com/philsf-biostat/xxx/milestone/mmm01
 [reportviz-v01]: report/xxx-v01.md
