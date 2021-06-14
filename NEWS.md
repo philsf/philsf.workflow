@@ -1,3 +1,5 @@
+# philsf.workflow 0.9.2
+
 # philsf.workflow 0.9.1
 
 * Fixed path variables #38
