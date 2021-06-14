@@ -1,6 +1,6 @@
 <!-- Instruções -->
+
 <!-- - substituir xxx pelo código do relatório -->
-<!-- - substituir aaa, bbb, ccc pelos projetos de análises realizadas -->
 <!-- - v01: substituir mmm01/mmm02 pela milestone -->
 <!-- - v02: substituir ppp01/ppp02 pelo projeto -->
 <!-- - Remover esse bloco -->
@@ -13,33 +13,35 @@ título
 
 1. Análise descritiva
 1. Análise inferencial
-1. Modelagem
+1. Modelagem estatística
 1. Análise de poder
 
-**SAP** -- Plano de Análises Estatísticas
+## Documentos
 
-- [Visualização][sapviz-v01]
+## Plano de Análise Estatística
+
+**SAP** - Plano de Análise Estatística
+
+- [Visualização online][sapviz-v01]
 - Download
 <!-- - [Download][sappdf-v01] -->
 
 [sapviz-v01]: report/SAP_xxx-v01.md
 [sappdf-v01]: report/SAP_xxx-v01.pdf?raw=true
 
-## Relatório da análise de dados
+## Relatório de Análise Estatística
 
-[Ver as etapas desta análise][releases].
-
-<!-- **Versão 02** -- [Em elaboração][milestone-v02]. -->
-
-<!-- [Planejamento][v02-project]. -->
+<!-- **Versão 02** - [Em elaboração][v02-project]. -->
+<!-- <\!-- **Versão 02** -- [Concluída][v02-project]. -\-> -->
 
 <!-- - [Visualização online][reportviz-v02] -->
 <!-- - Download -->
 <!-- - [Download][pdf-v02] -->
 
-**Versão 01** -- [Em elaboração][milestone-v01].
+<!-- --- -->
 
-[Planejamento][v01-project].
+**Versão 01** - [Em elaboração][v01-project].
+<!-- **Versão 01** -- [Concluída][v01-project]. -->
 
 - [Visualização online][reportviz-v01]
 - Download
