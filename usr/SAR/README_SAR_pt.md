@@ -20,7 +20,7 @@ título
 
 ## Plano de Análise Estatística
 
-**SAP** -- Plano de Análise Estatística
+**SAP** - Plano de Análise Estatística
 
 - [Visualização online][sapviz-v01]
 - Download
@@ -31,7 +31,7 @@ título
 
 ## Relatório de Análise Estatística
 
-<!-- **Versão 02** -- [Em elaboração][v02-project]. -->
+<!-- **Versão 02** - [Em elaboração][v02-project]. -->
 <!-- <\!-- **Versão 02** -- [Concluída][v02-project]. -\-> -->
 
 <!-- - [Visualização online][reportviz-v02] -->
@@ -40,7 +40,7 @@ título
 
 <!-- --- -->
 
-**Versão 01** -- [Em elaboração][v01-project].
+**Versão 01** - [Em elaboração][v01-project].
 <!-- **Versão 01** -- [Concluída][v01-project]. -->
 
 - [Visualização online][reportviz-v01]
