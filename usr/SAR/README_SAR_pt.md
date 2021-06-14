@@ -25,11 +25,14 @@ título
 [sapviz-v01]: report/SAP_xxx-v01.md
 [sappdf-v01]: report/SAP_xxx-v01.pdf?raw=true
 
+---
+
 ## Relatório da análise de dados
 
 [Ver as etapas desta análise][releases].
 
 <!-- **Versão 02** -- [Em elaboração][milestone-v02]. -->
+<!-- <\!-- **Versão 02** -- [Concluída][milestone-v02]. -\-> -->
 
 <!-- [Planejamento][v02-project]. -->
 
@@ -37,7 +40,10 @@ título
 <!-- - Download -->
 <!-- - [Download][pdf-v02] -->
 
+<!-- --- -->
+
 **Versão 01** -- [Em elaboração][milestone-v01].
+<!-- **Versão 01** -- [Concluída][milestone-v01]. -->
 
 [Planejamento][v01-project].
 

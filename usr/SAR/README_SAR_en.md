@@ -24,16 +24,20 @@ title
 [sapviz-v01]: report/SAP_xxx-v01.md
 [sappdf-v01]: report/SAP_xxx-v01.pdf?raw=true
 
+---
+
 ## Analysis report
 
 <!-- **Version 02** - [Ongoing][milestone-v02]. -->
-<!-- **Version 02** - [Concluded][milestone-v02]. -->
-
-<!-- [Planning][v02-project]. -->
+<!-- <\!-- **Version 02** - [Concluded][milestone-v02]. -\-> -->
 
 <!-- - [Online visualization][reportviz-v02] -->
 <!-- - Download -->
 <!-- <\!-- - [Download][pdf-v02] -\-> -->
+
+<!-- [Activities planned for report version 02][v02-project]. -->
+
+<!-- --- -->
 
 **Version 01** - [Ongoing][milestone-v01].
 <!-- **Version 01** - [Concluded][milestone-v01]. -->
