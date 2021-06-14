@@ -14,6 +14,7 @@ title
 1. Descriptive analysis
 1. Inferential analysis
 1. Statistical models
+1. Power analysis
 
 **SAP** - Statistical Analysis Plan
 

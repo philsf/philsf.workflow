@@ -1,6 +1,6 @@
 <!-- Instruções -->
+
 <!-- - substituir xxx pelo código do relatório -->
-<!-- - substituir aaa, bbb, ccc pelos projetos de análises realizadas -->
 <!-- - v01: substituir mmm01/mmm02 pela milestone -->
 <!-- - v02: substituir ppp01/ppp02 pelo projeto -->
 <!-- - Remover esse bloco -->
@@ -13,12 +13,12 @@ título
 
 1. Análise descritiva
 1. Análise inferencial
-1. Modelagem
+1. Modelagem estatística
 1. Análise de poder
 
 **SAP** -- Plano de Análises Estatísticas
 
-- [Visualização][sapviz-v01]
+- [Visualização online][sapviz-v01]
 - Download
 <!-- - [Download][sappdf-v01] -->
 
