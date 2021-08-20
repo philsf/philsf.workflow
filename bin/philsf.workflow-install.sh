@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ `uname -s` != "Linux" ];
+if [[ `uname -s` =~ MINGW ]];
 then
     HOME="$USERPROFILE"
 fi
