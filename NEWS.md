@@ -1,6 +1,7 @@
 # philsf.workflow 0.9.3
 
 * Package now passes R checks #49
+* Pre-include dataset/ in gitignore #35
 
 # philsf.workflow 0.9.2
 
