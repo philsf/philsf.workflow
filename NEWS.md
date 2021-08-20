@@ -1,3 +1,5 @@
+# philsf.workflow (development version)
+
 # philsf.workflow 0.9.3
 
 * Package now passes R checks #49
