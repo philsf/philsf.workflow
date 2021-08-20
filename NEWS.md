@@ -1,3 +1,7 @@
+# philsf.workflow 0.9.3
+
+* Package now passes R checks #49
+
 # philsf.workflow 0.9.2
 
 * SAR repo README improved #46
