@@ -2,6 +2,7 @@
 
 * Package now passes R checks #49
 * Pre-include dataset/ in gitignore #35
+* install now checks for Windows OS (git/MINGW32/MINGW64) #45
 
 # philsf.workflow 0.9.2
 
