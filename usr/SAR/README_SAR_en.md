@@ -5,9 +5,9 @@
 <!-- - v02: substitute project in ppp01/ppp02 -->
 <!-- - Remove this block -->
 
-# Statistical Analysis project (place, yyyy)
+# title
 
-title
+Statistical Analysis project (place, yyyy)
 
 ## Analyses performed
 
