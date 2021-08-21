@@ -1,5 +1,7 @@
 # philsf.workflow (development version)
 
+* Apply default repo README #14
+
 # philsf.workflow 0.9.3
 
 * Package now passes R checks #49
