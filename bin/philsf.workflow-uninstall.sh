@@ -34,6 +34,8 @@ plots.R
 results.R
 plots-save.R
 README-R.md
+README_SAR_en.md
+README_SAR_pt.md
 "
 
 echo "Removing files from $SCRIPTDIR"
