@@ -5,9 +5,9 @@
 <!-- - v02: substituir ppp01/ppp02 pelo projeto -->
 <!-- - Remover esse bloco -->
 
-# Análise de Dados projeto xxx (Local, aaaa)
+# título
 
-título
+Análise Estatística projeto xxx (Local, aaaa)
 
 ## Análises realizadas
 
