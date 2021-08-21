@@ -33,8 +33,8 @@ plots.R
 results.R
 plots-save.R
 README-R.md
-README_SAR_en.md
-README_SAR_pt.md
+README-SAR_en.md
+README-SAR_pt.md
 "
 
 echo "Installing files into $SCRIPTDIR/"
