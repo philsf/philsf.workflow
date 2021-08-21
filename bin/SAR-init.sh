@@ -12,4 +12,4 @@ echo "# dataset is private and cannot be publicly versioned
 dataset/" >> .gitignore
 
 echo "README (en) applied over default (opt-out?)"
-cp ~/usr/SAR/README_SAR_en.md README.md
+cp ~/usr/SAR/README-SAR_en.md README.md
