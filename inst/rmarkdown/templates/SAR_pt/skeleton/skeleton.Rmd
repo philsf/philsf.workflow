@@ -117,6 +117,11 @@ Esta análise foi realizada utilizando-se o software `R` versão `r getRversion(
 
 ## Análise exploratória de dados
 
+```{r A1, fig.cap="**Figura A1** Distribuição da idade na população do estudo."}
+# ![Age](../figures/distr_age.png)
+# knitr::include_graphics(here::here("figures", "distr_age.png"))
+```
+
 ## Dados utilizados
 
 Os dados utilizados neste relatório não podem ser publicados online por questões de sigilo.
