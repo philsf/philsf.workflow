@@ -122,6 +122,12 @@ Esta análise foi realizada utilizando-se o software `R` versão `r getRversion(
 # knitr::include_graphics(here::here("figures", "distr_age.png"))
 ```
 
+## Disponibilidade
+
+Este documento pode ser obtido no seguinte endereço:
+
+`https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/`
+
 ## Dados utilizados
 
 Os dados utilizados neste relatório não podem ser publicados online por questões de sigilo.
