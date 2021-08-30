@@ -1,19 +1,46 @@
 # setup -------------------------------------------------------------------
+# library(data.table)
+library(tidyverse)
 library(readxl)
-library(data.table)
-# library(tidyverse)
-
+# library(lubridate)
+library(labelled)
 
 # data loading ------------------------------------------------------------
-# raw.data <- fread("dataset/file.csv")
-# raw.data <- readxl::read_excel("dataset/file.xls")
 
-# raw.data <- data.table(raw.data)
+# data.raw <- read_excel("dataset/file.xlsx") %>%
+#   janitor::clean_names()
+
 
 # data cleaning -----------------------------------------------------------
 
-
+# data.raw <- data.raw %>%
+#   filter() %>%
+#   select()
 
 # data wrangling ----------------------------------------------------------
 
+# data.raw <- data.raw %>%
+#   mutate(
+#
+#   )
 
+# labels ------------------------------------------------------------------
+
+# data.raw <- data.raw %>%
+#   set_variable_labels(
+#
+#   )
+
+# analytical dataset ------------------------------------------------------
+
+# analytical <- data.raw %>%
+#   # select analytic variables
+#   select(
+#
+#   )
+#
+# # mockup of analytical dataset for SAP and public SAR
+# analytical_mockup <- tibble( id = c( "1", "2", "3", "...", as.character(nrow(analytical)) ) ) %>%
+#   left_join(analytical %>% head(0), by = "id") %>%
+#   mutate_all(as.character) %>%
+#   replace(is.na(.), "")
