@@ -7,7 +7,7 @@
 # tables ------------------------------------------------------------------
 
 ## template p-value table
-# tab_inf_1 <- analytical %>%
+# tab_inf <- analytical %>%
 #   tbl_summary() %>%
 #   # include study N
 #   add_overall() %>%
@@ -24,7 +24,7 @@
 #   bold_p()
 
 # Template Cohen's D table (obs: only computes p if all variables are continuous)
-# tab_inf_1 <- analytical %>%
+# tab_inf <- analytical %>%
 #   tbl_summary() %>%
 #   add_difference(test = all_continuous() ~ "cohens_d") %>%
 #   modify_header(estimate ~ '**d**') %>%

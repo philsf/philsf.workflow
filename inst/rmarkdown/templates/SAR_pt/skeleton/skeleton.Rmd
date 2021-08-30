@@ -104,6 +104,12 @@ Esta análise foi realizada utilizando-se o software `R` versão `r getRversion(
 
 ## Análise inferencial
 
+```{r tab_inf}
+tab_inf %>%
+  as_kable(align = "lccc") %>%
+  pander(caption = "**Tabela 1** caption")
+```
+
 # Exceções e Observações
 
 # Conclusões

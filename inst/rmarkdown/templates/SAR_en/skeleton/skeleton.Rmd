@@ -104,6 +104,12 @@ This analysis was performed using statistical software `R` version `r getRversio
 
 ## Inferential analysis
 
+```{r tab_inf}
+tab_inf %>%
+  as_kable(align = "lccc") %>%
+  pander(caption = "**Table 1** caption")
+```
+
 # Exceptions and Observations
 
 # Conclusions
