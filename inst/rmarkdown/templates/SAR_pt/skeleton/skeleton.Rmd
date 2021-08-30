@@ -1,5 +1,6 @@
 ---
 title: "Análise Estatística de ..."
+subtitle: 'DOCUMENTO: analise_dados_XX_aaaa-v01'
 author: '**De:** Felipe Figueiredo **Para:** ___'
 date: '**Data: ** dd/mm/aaaa'
 output:
@@ -19,7 +20,6 @@ output:
     fig_width: 6
     reference_docx: misc/style_SAR_pt.docx
     toc: yes
-subtitle: 'RELATÓRIO: analise_dados_XX_aaaa-v01'
 toc-title: "Sumário"
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: "title"
+subtitle: 'DOCUMENT: analise_dados_xx_yyyy-v01'
 author: '**From:** Felipe Figueiredo **To:** ___'
 date: '**Date: ** yyyy-mm-dd'
 output:
@@ -19,7 +20,6 @@ output:
     fig_width: 6
     reference_docx: misc/style_SAR_en.docx
     toc: yes
-subtitle: 'REPORT: analise_dados_xx_yyyy-v01'
 # toc-title: "Sumário"
 ---
 
