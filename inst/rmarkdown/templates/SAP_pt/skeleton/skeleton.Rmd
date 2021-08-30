@@ -1,8 +1,8 @@
 ---
-title: "Plano de Análise Estatística de ..."
+title: "Plano Analítico para title"
 subtitle: 'DOCUMENTO: SAR-yyyy-NNN-XX-v01'
 author: '**De:** Felipe Figueiredo **Para:** ___'
-date: '**Data:** dd/mm/aaaa'
+date: '**Data:** yyyy-mm-dd'
 output:
   html_document:
     fig_caption: yes
