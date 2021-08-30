@@ -133,5 +133,10 @@ Este documento pode ser obtido no seguinte endereço:
 Os dados utilizados neste relatório não podem ser publicados online por questões de sigilo.
 
 ```{r data}
-# pander(analytic)
+# print analytical of analytical_mockup whether it is the private or public version of the SAR
+
+# analytical %>%
+#   pander(caption = "**Table A1** Tabela de dados analíticos")
+analytical_mockup %>%
+  pander(caption = "**Table A1** Estrutura da tabela de dados analíticos")
 ```
