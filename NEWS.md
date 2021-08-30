@@ -1,6 +1,7 @@
 # philsf.workflow (development version)
 
 * Apply default repo README #14
+* New document code #10
 
 # philsf.workflow 0.9.3
 
