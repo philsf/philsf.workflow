@@ -2,7 +2,7 @@
 title: "Análise Estatística de ..."
 subtitle: 'DOCUMENTO: analise_dados_XX_aaaa-v01'
 author: '**De:** Felipe Figueiredo **Para:** ___'
-date: '**Data: ** dd/mm/aaaa'
+date: '**Data:** dd/mm/aaaa'
 output:
   html_document:
     fig_caption: yes
