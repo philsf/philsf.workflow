@@ -117,4 +117,7 @@ This analysis will be performed using statistical software `R` version `r getRve
 
 # References
 
+- **SAR-yyyy-NNN-XX-v01** -- title
+<!-- - Cohen, J. (1988). Statistical power analysis for the behavioral sciences (2nd Ed.). New York: Routledge. -->
+
 # Appendix
