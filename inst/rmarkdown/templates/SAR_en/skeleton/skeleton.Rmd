@@ -102,7 +102,19 @@ This analysis was performed using statistical software `R` version `r getRversio
 
 ## Study population and follow up
 
+```{r tab_desc}
+tab_desc %>%
+  as_kable(align = "lccc") %>%
+  pander(caption = "**Table 1** caption")
+```
+
 ## Inferential analysis
+
+```{r tab_inf}
+tab_inf %>%
+  as_kable(align = "lccc") %>%
+  pander(caption = "**Table 2** caption")
+```
 
 # Exceptions and Observations
 
@@ -117,10 +129,26 @@ This analysis was performed using statistical software `R` version `r getRversio
 
 ## Exploratory data analysis
 
-## Analytical data-set
+```{r A1, fig.cap="**Figure A1** Distribution of age in the study population."}
+# ![Age](../figures/distr_age.png)
+# knitr::include_graphics(here::here("figures", "distr_age.png"))
+```
+
+## Availability
+
+This document can be downloaded in the following address:
+
+`https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/`
+
+## Analytical dataset
 
 Due to confidentiality the data-set used in this analysis cannot be shared online in the public version of this report.
 
 ```{r data}
-# pander(analytic)
+# print analytical of analytical_mockup whether it is the private or public version of the SAR
+
+# analytical %>%
+#   pander(caption = "**Table A1** Analytical dataset")
+analytical_mockup %>%
+  pander(caption = "**Table A1** Analytical dataset structure")
 ```
