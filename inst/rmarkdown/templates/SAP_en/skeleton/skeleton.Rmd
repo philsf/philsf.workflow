@@ -84,9 +84,27 @@ kable(history)
 
 # Data cleaning
 
-# Study variables
+```{r cleaning, include=FALSE}
+source("scripts/input.R", encoding = 'UTF-8')
+```
 
-The analytic dataset will be included in the private version of the report, and will be omitted from the public version of the report.
+## Raw data
+
+## Analytical dataset
+
+All variables in the analytical set were labeled according to the raw data provided and values were labeled according to the data dictionary for the preparation of production-quality results tables and figures.
+
+After the cleaning process `r ncol(analytical)` variables were included in the analysis with `r nrow(analytical)` observations.
+Table 1 shows the structure of the analytical dataset.
+
+```{r}
+analytical_mockup %>%
+  pander(caption = "**Table 1** Analytical dataset structure after variable selection and cleaning.")
+```
+
+The analytical dataset will be included in the private version of the report, and will be omitted from the public version of the report.
+
+# Study variables
 
 ## Primary and secondary outcomes
 

@@ -82,7 +82,28 @@ kable(history)
 
 ## Hipóteses
 
-# Limpeza dos dados
+# Data cleaning
+
+```{r cleaning, include=FALSE}
+source("scripts/input.R", encoding = 'UTF-8')
+```
+
+## Dados brutos
+
+## Tabela de dados analíticos
+
+Todas as variáveis da tabela de dados analíticos foram identificadas de acordo com as descrições das variáveis, e os valores foram identificados de acordo com o dicionário de dados providenciado.
+Estas identificações possibilitarão a criação de tabelas de resultados com qualidade de produção final.
+
+Depois dos procedimentos de limpeza e seleção `r ncol(analytical)` variáveis foram incluídas na análise com `r nrow(analytical)` observações.
+A Tabela 1 mostra a estrutura dos dados analíticos.
+
+```{r}
+analytical_mockup %>%
+  pander(caption = "**Tabela 1** Estrutura da tabela de dados analíticos após seleção e limpeza das variáveis.")
+```
+
+A tabela de dados analíticos serão disponibilizados na versão privada do relatório, e serão omitidas da versão pública do relatório.
 
 # Variáveis do estudo
 
