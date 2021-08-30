@@ -1,6 +1,8 @@
 # setup -------------------------------------------------------------------
 # library(gt)
 # library(gtsummary)
+# library(broom)
+# library(broom.mixed)
 
 # raw estimate ------------------------------------------------------------
 

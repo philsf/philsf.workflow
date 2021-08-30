@@ -3,6 +3,7 @@
 * Apply default repo README #14
 * New document code #10
 * New document template styles (now work in LibreOffice) #22
+* Update scripts with new best practices #55
 
 # philsf.workflow 0.9.3
 
