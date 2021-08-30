@@ -2,7 +2,32 @@
 # library(tableone)
 # library(gt)
 # library(gtsummary)
+# library(infer)
 
 # tables ------------------------------------------------------------------
 
+## template p-value table
+# tab_inf_1 <- analytical %>%
+#   tbl_summary() %>%
+#   # include study N
+#   add_overall() %>%
+#   # pretty format categorical variables
+#   bold_labels() %>%
+#   # bring home the bacon!
+#   add_p(
+#     # use Fisher test (defaults to chi-square)
+#     test = all_categorical() ~ "fisher.test",
+#     # use 3 digits in pvalue
+#     pvalue_fun = function(x) style_pvalue(x, digits = 3)
+#   ) %>%
+#   # bold significant p values
+#   bold_p()
+
+# Template Cohen's D table (obs: only computes p if all variables are continuous)
+# tab_inf_1 <- analytical %>%
+#   tbl_summary() %>%
+#   add_difference(test = all_continuous() ~ "cohens_d") %>%
+#   modify_header(estimate ~ '**d**') %>%
+#   bold_p() %>%
+#   bold_labels()
 
