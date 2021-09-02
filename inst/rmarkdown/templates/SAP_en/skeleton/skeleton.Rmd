@@ -59,7 +59,7 @@ kable(history)
 
 ## Hypotheses
 
-# Data cleaning
+# Data
 
 ```{r cleaning, include=FALSE}
 source("scripts/input.R", encoding = 'UTF-8')
