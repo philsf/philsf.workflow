@@ -1,6 +1,7 @@
 # philsf.workflow (development version)
 
 * Fix typo in SAP_pt #64
+* Update README-SAR templates #63
 
 # philsf.workflow 0.10.0
 

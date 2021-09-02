@@ -7,56 +7,58 @@
 
 # título
 
+Objetivo
+
 Análise Estatística projeto xxx (Local, aaaa)
 
 ## Análises realizadas
 
 1. Análise descritiva
 1. Análise inferencial
-1. Modelagem estatística
 1. Análise de poder
+1. Modelagem estatística
 
 ## Documentos
 
-## Plano de Análise Estatística
+### Plano Analítico (SAP)
 
-**SAP** - Plano de Análise Estatística
+<!-- - [Visualização online][sapviz-v02] -->
+<!-- - [Download][sappdf-v02] -->
 
 - [Visualização online][sapviz-v01]
-- Download
-<!-- - [Download][sappdf-v01] -->
+- [Download][sappdf-v01]
 
-[sapviz-v01]: report/SAP_xxx-v01.md
-[sappdf-v01]: report/SAP_xxx-v01.pdf?raw=true
-
-## Relatório de Análise Estatística
-
-<!-- **Versão 02** - [Em elaboração][v02-project]. -->
-<!-- <\!-- **Versão 02** -- [Concluída][v02-project]. -\-> -->
+### Relatório de Análise Estatística (SAR)
 
 <!-- - [Visualização online][reportviz-v02] -->
-<!-- - Download -->
 <!-- - [Download][pdf-v02] -->
+
+- [Visualização online][reportviz-v01]
+- [Download][pdf-v01]
+
+## Portfólio
+
+Esta análise está incluída no portfólio do consultor.
+Outras análises também podem ser vistas em:
+
+https://philsf-biostat.github.io/
 
 <!-- --- -->
 
-**Versão 01** - [Em elaboração][v01-project].
-<!-- **Versão 01** -- [Concluída][v01-project]. -->
+[sapviz-v01]: report/SAP_xxx-v01.md
+[sappdf-v01]: report/SAP_xxx-v01.pdf?raw=true
+[sapviz-v02]: report/SAP_xxx-v02.md
+[sappdf-v02]: report/SAP_xxx-v02.pdf?raw=true
 
-- [Visualização online][reportviz-v01]
-- Download
-<!-- - [Download][pdf-v01] -->
-
+[docx-v01]: report/xxx-v01.docx?raw=true
+[pdf-v01]: report/xxx-v01.pdf?raw=true
+[docx-v02]: report/xxx-v02.docx?raw=true
+[pdf-v02]: report/xxx-v02.pdf?raw=true
 
 [releases]: https://github.com/philsf-biostat/xxx/releases/
 [milestone-v01]: https://github.com/philsf-biostat/xxx/milestone/mmm01
 [reportviz-v01]: report/xxx-v01.md
-[docx-v01]: report/xxx-v01.docx?raw=true
-[pdf-v01]: report/xxx-v01.pdf?raw=true
 [v01-project]: https://github.com/philsf-biostat/xxx/projects/ppp01
-
 [milestone-v02]: https://github.com/philsf-biostat/xxx/milestone/mmm02
 [reportviz-v02]: report/xxx-v02.md
-[docx-v02]: report/xxx-v02.docx?raw=true
-[pdf-v02]: report/xxx-v02.pdf?raw=true
 [v02-project]: https://github.com/philsf-biostat/xxx/projects/ppp02
