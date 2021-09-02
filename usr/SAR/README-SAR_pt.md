@@ -9,7 +9,7 @@
 
 Objetivo
 
-Análise Estatística projeto xxx (Local, aaaa)
+Análise Estatística para PESSOA (LOCAL, aaaa)
 
 ## Análises realizadas
 

@@ -9,7 +9,7 @@
 
 Objective
 
-Statistical Analysis project (place, yyyy)
+Statistical Analysis for PERSON (PLACE, yyyy)
 
 ## Analyses performed
 
