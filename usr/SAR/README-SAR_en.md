@@ -1,6 +1,6 @@
 <!-- Instructions -->
 
-<!-- - substitute xxx by the analysis code -->
+<!-- - substitute yyyy-NNN-XX -->
 <!-- - v01: substitute milestone in mmm01/mmm02 -->
 <!-- - v02: substitute project in ppp01/ppp02 -->
 <!-- - Remove this block -->
@@ -9,7 +9,7 @@
 
 Objective
 
-Statistical Analysis project (place, yyyy)
+Statistical Analysis for PERSON (PLACE, yyyy)
 
 ## Analyses performed
 
@@ -45,20 +45,20 @@ https://philsf-biostat.github.io/
 
 <!-- --- -->
 
-[sapviz-v01]: report/SAP_xxx-v01.md
-[sappdf-v01]: report/SAP_xxx-v01.pdf?raw=true
-[sapviz-v02]: report/SAP_xxx-v02.md
-[sappdf-v02]: report/SAP_xxx-v02.pdf?raw=true
+[sapviz-v01]: report/SAP-yyyy-NNN-XX-v01.md
+[sappdf-v01]: report/SAP-yyyy-NNN-XX-v01.pdf?raw=true
+[sapviz-v02]: report/SAP-yyyy-NNN-XX-v02.md
+[sappdf-v02]: report/SAP-yyyy-NNN-XX-v02.pdf?raw=true
 
-[docx-v01]: report/xxx-v01.docx?raw=true
-[pdf-v01]: report/xxx-v01.pdf?raw=true
-[docx-v02]: report/xxx-v02.docx?raw=true
-[pdf-v02]: report/xxx-v02.pdf?raw=true
+[reportviz-v01]: report/SAR-yyyy-NNN-XX-v01.md
+[reportviz-v02]: report/SAR-yyyy-NNN-XX-v02.md
+[pdf-v01]: report/SAR-yyyy-NNN-XX-v01.pdf?raw=true
+[pdf-v02]: report/SAR-yyyy-NNN-XX-v02.pdf?raw=true
+[docx-v01]: report/SAR-yyyy-NNN-XX-v01.docx?raw=true
+[docx-v02]: report/SAR-yyyy-NNN-XX-v02.docx?raw=true
 
-[releases]: https://github.com/philsf-biostat/xxx/releases/
-[milestone-v01]: https://github.com/philsf-biostat/xxx/milestone/mmm01
-[reportviz-v01]: report/xxx-v01.md
-[v01-project]: https://github.com/philsf-biostat/xxx/projects/ppp01
-[milestone-v02]: https://github.com/philsf-biostat/xxx/milestone/mmm02
-[reportviz-v02]: report/xxx-v02.md
-[v02-project]: https://github.com/philsf-biostat/xxx/projects/ppp02
+[releases]: https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/releases/
+[milestone-v01]: https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/milestone/mmm01
+[v01-project]: https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/projects/ppp01
+[milestone-v02]: https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/milestone/mmm02
+[v02-project]: https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/projects/ppp02
