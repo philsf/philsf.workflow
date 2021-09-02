@@ -1,6 +1,6 @@
 ---
 title: "Plano Analítico para title"
-subtitle: 'DOCUMENTO: SAR-yyyy-NNN-XX-v01'
+subtitle: 'DOCUMENTO: SAP-yyyy-NNN-XX-v01'
 author: '**De:** Felipe Figueiredo **Para:** ___'
 date: '**Data:** yyyy-mm-dd'
 output:
@@ -49,29 +49,6 @@ kable(history)
 
 ---
 
-<!-- # Assinaturas -->
-
-<!-- ```{r, echo=FALSE} -->
-<!-- sig.field <- "__________________________" -->
-<!-- date.field <- "_____________" -->
-<!-- Stat <- c("Elaborador", "Nome", "Função", sig.field, date.field) -->
-<!-- Reviewer <- c("Revisado por", "", "", sig.field, date.field) -->
-<!-- Approver <- c("Verificado por", "", "", sig.field, date.field) -->
-<!-- Final.Approver <- c("Aprovação final", "", "", sig.field, date.field) -->
-
-<!-- sigs <- rbind( -->
-<!--   Stat -->
-<!--   , Reviewer -->
-<!--   , Approver -->
-<!--   , Final.Approver -->
-<!--   ) -->
-<!-- rownames(sigs) <- NULL -->
-<!-- colnames(sigs) <- c("Papel", "Nome", "Função", "Assinatura", "Data") -->
-
-<!-- # pander(sigs, split.cells = c(9, 14, 14, 16, 8), split.table = Inf) -->
-<!-- kable(sigs) -->
-<!-- ``` -->
-
 # Lista de abreviaturas
 
 # Introdução
@@ -82,7 +59,7 @@ kable(history)
 
 ## Hipóteses
 
-# Data cleaning
+# Dados
 
 ```{r cleaning, include=FALSE}
 source("scripts/input.R", encoding = 'UTF-8')
