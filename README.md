@@ -41,8 +41,8 @@ A few R Markdown templates are provided suitable for SAR, SAP and general study 
 
 - **SAR_pt** - Statistical Analysis Report (pt)
 - **SAR_en** - Statistical Analysis Report (en)
-- **SAP_pt** - Statistical Analysis Plan (pt)
-- **SAP_en** - Statistical Analysis Plan (en)
+- **SAP_pt** - Analytical Plan (pt)
+- **SAP_en** - Analytical Plan (en)
 
 It includes a reference docx with pre-formatted styles for easy creation of professional reports or SAPs, in brazilian portuguese (pt) and english (en).
 These reference styles docx includes a template `URL` pointing to a `philsf-biostat` organization repository.
