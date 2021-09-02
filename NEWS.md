@@ -1,4 +1,6 @@
-# philsf.workflow (development version)
+# philsf.workflow 0.10.2
+
+* fix README-SAR templates #68
 
 # philsf.workflow 0.10.1
 
