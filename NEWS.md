@@ -1,5 +1,7 @@
 # philsf.workflow (development version)
 
+* Fix typo in SAP_pt #64
+
 # philsf.workflow 0.10.0
 
 * Apply default repo README #14
