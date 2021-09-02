@@ -1,6 +1,6 @@
 ---
 title: "Plano Analítico para title"
-subtitle: 'DOCUMENTO: SAR-yyyy-NNN-XX-v01'
+subtitle: 'DOCUMENTO: SAP-yyyy-NNN-XX-v01'
 author: '**De:** Felipe Figueiredo **Para:** ___'
 date: '**Data:** yyyy-mm-dd'
 output:
