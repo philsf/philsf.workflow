@@ -1,6 +1,6 @@
 Package: philsf.workflow
 Title: philsf's data analysis "mis en place"
-Version: 0.10.0.9002
+Version: 0.10.1
 Authors@R: 
     person(given = "Felipe",
            family = "Figueiredo",
@@ -14,3 +14,7 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+RemoteUsername: philsf
+RemoteRepo: philsf.workflow
+URL: https://github.com/philsf/philsf.workflow
+BugReports: https://github.com/philsf/philsf.workflow/issues
