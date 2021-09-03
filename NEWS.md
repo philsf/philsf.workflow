@@ -1,5 +1,7 @@
 # philsf.workflow (development version)
 
+* Ensure clean start for all scripts #70
+
 # philsf.workflow 0.10.2
 
 * fix README-SAR templates #68
