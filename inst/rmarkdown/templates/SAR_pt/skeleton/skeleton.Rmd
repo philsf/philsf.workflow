@@ -115,7 +115,7 @@ tab_inf %>%
 
 Este documento pode ser obtido no seguinte endereço:
 
-`https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/`
+https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/
 
 ## Dados utilizados
 

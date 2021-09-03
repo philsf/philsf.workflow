@@ -121,5 +121,5 @@ This analysis will be performed using statistical software `R` version `r getRve
 
 Both this analytical plan and the corresponding analysis report (**SAR-yyyy-NNN-XX-v01**) can be downloaded in the following address:
 
-`https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/`
+https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/
 
