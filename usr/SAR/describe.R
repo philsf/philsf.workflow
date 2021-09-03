@@ -6,11 +6,11 @@
 # library(gmodels) # CrossTable
 library(gtsummary)
 library(gt)
-library(effectsize)
+# library(effectsize)
 
 # setup gtsummary theme
-# theme_gtsummary_mean_sd() # mean/sd
-# theme_gtsummary_language(language = "pt") # traduzir
+theme_gtsummary_mean_sd() # mean/sd
+theme_gtsummary_language(language = "pt") # traduzir
 
 # exploratory -------------------------------------------------------------
 
@@ -25,13 +25,13 @@ library(effectsize)
 # tables ------------------------------------------------------------------
 
 tab_desc <- analytical %>%
+  # select
+  select(-id, ) %>%
   tbl_summary(
     # by = group
   ) %>%
   # modify_caption(caption = "**Tabela 1** Características demográficas") %>%
   # modify_header(label ~ "**Características dos pacientes**") %>%
   bold_labels() %>%
-  add_overall() %>%
-  # add_p() %>%
   modify_table_styling(columns = "label", align = "c")
 
