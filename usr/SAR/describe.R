@@ -6,7 +6,7 @@
 # library(gmodels) # CrossTable
 library(gtsummary)
 library(gt)
-library(effectsize)
+# library(effectsize)
 
 # setup gtsummary theme
 # theme_gtsummary_mean_sd() # mean/sd
