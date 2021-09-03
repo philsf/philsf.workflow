@@ -25,13 +25,13 @@ library(effectsize)
 # tables ------------------------------------------------------------------
 
 tab_desc <- analytical %>%
+  # select
+  select(-id, ) %>%
   tbl_summary(
     # by = group
   ) %>%
   # modify_caption(caption = "**Tabela 1** Características demográficas") %>%
   # modify_header(label ~ "**Características dos pacientes**") %>%
   bold_labels() %>%
-  add_overall() %>%
-  # add_p() %>%
   modify_table_styling(columns = "label", align = "c")
 
