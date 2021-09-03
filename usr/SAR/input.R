@@ -7,6 +7,7 @@ library(labelled)
 
 # data loading ------------------------------------------------------------
 
+data.raw <- tibble(id=gl(2, 10), group = gl(2, 10), outcome = rnorm(20))
 # data.raw <- read_excel("dataset/file.xlsx") %>%
 #   janitor::clean_names()
 
@@ -33,14 +34,16 @@ library(labelled)
 
 # analytical dataset ------------------------------------------------------
 
-# analytical <- data.raw %>%
-#   # select analytic variables
-#   select(
-#
-#   )
-#
-# # mockup of analytical dataset for SAP and public SAR
-# analytical_mockup <- tibble( id = c( "1", "2", "3", "...", as.character(nrow(analytical)) ) ) %>%
-#   left_join(analytical %>% head(0), by = "id") %>%
-#   mutate_all(as.character) %>%
-#   replace(is.na(.), "")
+analytical <- data.raw %>%
+  # select analytic variables
+  select(
+    id,
+    group,
+    outcome,
+  )
+
+# mockup of analytical dataset for SAP and public SAR
+analytical_mockup <- tibble( id = c( "1", "2", "3", "...", as.character(nrow(analytical)) ) ) %>%
+  left_join(analytical %>% head(0), by = "id") %>%
+  mutate_all(as.character) %>%
+  replace(is.na(.), "")
