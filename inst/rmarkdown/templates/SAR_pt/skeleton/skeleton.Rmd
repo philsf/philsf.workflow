@@ -38,7 +38,7 @@ panderOptions('table.split.table', Inf)
 
 **Histórico do documento**
 
-```{r, echo = FALSE}
+```{r history}
 Version <- c("01")
 Changes <- c("Versão inicial")
 history <- cbind(Version, Changes)
@@ -60,7 +60,7 @@ kable(history)
 # Metodologia
 
 ```{r results, include=FALSE}
-# source("scripts/results.R", encoding = 'UTF-8')
+source("scripts/results.R", encoding = 'UTF-8')
 ```
 
 ## Variáveis
@@ -115,7 +115,7 @@ tab_inf %>%
 
 Este documento pode ser obtido no seguinte endereço:
 
-`https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/`
+https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/
 
 ## Dados utilizados
 
