@@ -60,7 +60,7 @@ kable(history)
 # Metodologia
 
 ```{r results, include=FALSE}
-# source("scripts/results.R", encoding = 'UTF-8')
+source("scripts/results.R", encoding = 'UTF-8')
 ```
 
 ## Variáveis
