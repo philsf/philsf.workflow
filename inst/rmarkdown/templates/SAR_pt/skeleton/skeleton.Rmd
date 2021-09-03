@@ -38,7 +38,7 @@ panderOptions('table.split.table', Inf)
 
 **Histórico do documento**
 
-```{r, echo = FALSE}
+```{r history}
 Version <- c("01")
 Changes <- c("Versão inicial")
 history <- cbind(Version, Changes)

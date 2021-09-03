@@ -38,7 +38,7 @@ panderOptions('table.split.table', Inf)
 
 **Document version**
 
-```{r, echo = FALSE}
+```{r history}
 Version <- c("01")
 Changes <- c("Initial version")
 history <- cbind(Version, Changes)
@@ -74,7 +74,7 @@ All variables in the analytical set were labeled according to the raw data provi
 After the cleaning process `r ncol(analytical)` variables were included in the analysis with `r nrow(analytical)` observations.
 Table 1 shows the structure of the analytical dataset.
 
-```{r}
+```{r analytical data}
 analytical_mockup %>%
   pander(caption = "**Table 1** Analytical dataset structure after variable selection and cleaning.")
 ```

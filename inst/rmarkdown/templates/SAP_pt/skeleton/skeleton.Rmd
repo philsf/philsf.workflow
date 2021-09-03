@@ -38,7 +38,7 @@ panderOptions('table.split.table', Inf)
 
 **Histórico do documento**
 
-```{r, echo = FALSE}
+```{r history}
 Version <- c("01")
 Changes <- c("Versão inicial")
 history <- cbind(Version, Changes)
@@ -75,7 +75,7 @@ Estas identificações possibilitarão a criação de tabelas de resultados com 
 Depois dos procedimentos de limpeza e seleção `r ncol(analytical)` variáveis foram incluídas na análise com `r nrow(analytical)` observações.
 A Tabela 1 mostra a estrutura dos dados analíticos.
 
-```{r}
+```{r analytical data}
 analytical_mockup %>%
   pander(caption = "**Tabela 1** Estrutura da tabela de dados analíticos após seleção e limpeza das variáveis.")
 ```
