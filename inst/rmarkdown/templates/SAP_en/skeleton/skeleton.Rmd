@@ -31,7 +31,7 @@ library(pander)
 library(knitr)
 library(philsfmisc)
 panderOptions('table.style', 'rmarkdown')
-panderOptions('table.split.table', Inf)
+panderOptions('table.split.table', 160)
 ```
 
 ---
