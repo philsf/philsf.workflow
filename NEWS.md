@@ -1,5 +1,7 @@
 # philsf.workflow (development version)
 
+* include `scripts/` dir in the initial commit #78
+
 # philsf.workflow 0.10.3
 
 * Ensure clean start for all scripts #70
