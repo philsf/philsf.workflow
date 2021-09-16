@@ -1,6 +1,7 @@
 # philsf.workflow (development version)
 
 * include `scripts/` dir in the initial commit #78
+* Fix figure file paths #75
 
 # philsf.workflow 0.10.3
 
