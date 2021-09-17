@@ -1,10 +1,11 @@
-# philsf.workflow (development version)
+# philsf.workflow 0.10.4
 
 * include `scripts/` dir in the initial commit #78
 * Fix figure file paths #75
 * reduce pander table size to 160 (appropriate for small font) #77
 * document links now jump to google docs viewer #82
 * drop `pander` in favor of `kable` for results tables (still pander in data) #74
+* Default document content in both languages #76
 
 # philsf.workflow 0.10.3
 
