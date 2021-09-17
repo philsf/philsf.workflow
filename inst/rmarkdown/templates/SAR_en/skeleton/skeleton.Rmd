@@ -81,16 +81,20 @@ This analysis was performed using statistical software `R` version `r getRversio
 
 ```{r tab_desc}
 tab_desc %>%
-  as_kable(align = "lccc") %>%
-  pander(caption = "**Table 1** caption")
+  as_kable(
+    align = "lccc",
+    caption = "**Table 1** caption"
+  )
 ```
 
 ## Inferential analysis
 
 ```{r tab_inf}
 tab_inf %>%
-  as_kable(align = "lccc") %>%
-  pander(caption = "**Table 2** caption")
+  as_kable(
+    align = "lccc",
+    caption = "**Table 2** caption"
+  )
 ```
 
 # Exceptions and Observations

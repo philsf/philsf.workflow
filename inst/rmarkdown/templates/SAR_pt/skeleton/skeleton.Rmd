@@ -81,16 +81,20 @@ Esta análise foi realizada utilizando-se o software `R` versão `r getRversion(
 
 ```{r tab_desc}
 tab_desc %>%
-  as_kable(align = "lccc") %>%
-  pander(caption = "**Tabela 1** caption")
+    as_kable(
+    align = "lccc",
+    caption = "**Tabela 1** caption"
+  )
 ```
 
 ## Análise inferencial
 
 ```{r tab_inf}
 tab_inf %>%
-  as_kable(align = "lccc") %>%
-  pander(caption = "**Tabela 2** caption")
+    as_kable(
+    align = "lccc",
+    caption = "**Tabela 2** caption"
+  )
 ```
 
 # Exceções e Observações
