@@ -158,7 +158,7 @@ d <- pwr::pwr.t.test(n = total/2, power = .8, sig.level = .05)$d %>%
 
 N/A
 
-### Statistical packages
+## Statistical packages
 
 This analysis will be performed using statistical software `R` version `r getRversion()`.
 
