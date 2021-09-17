@@ -51,6 +51,9 @@ kable(history)
 
 # Lista de abreviaturas
 
+- DP: Desvio padrão
+- IIQ: Intervalo Interquartílico
+
 # Introdução
 
 ## Contexto
@@ -94,11 +97,35 @@ A tabela de dados analíticos serão disponibilizados na versão privada do rela
 
 ### Análise descritiva
 
+O perfil epidemiológico de cada grupo do estudo será descrito na baseline.
+As características clínicas e demográficas serão descritas como
+média (DP)
+<!-- mediana (IIQ) -->
+ou frequência e proporção (%),
+conforme apropriado.
+As distribuições serão sumarizadas em tabelas e visualizadas em gráficos exploratórios
+
 ### Análise inferencial
+
+Todas as comparações entre os grupos serão avaliadas como análises univariadas.
+Variáveis contínuas serão comparadas entre os grupos com o
+teste t de grupos independentes com a correção de Welch.
+<!-- teste t pareado com a correção de Welch. -->
+<!-- teste de Wilcoxon. -->
+Diferenças nas distribuições de variáveis categóricas serão avaliadas com o teste
+exato de Fisher.
+<!-- qui-quadrado. -->
+<!-- McNemar. -->
 
 ### Modelagem estatística
 
 ## Significância e Intervalos de Confiança
+
+Todas as análises serão realizadas ao nível de significância de 5%.
+Todos os testes de hipóteses e intervalos de confiança calculados serão
+bicaudais.
+<!-- unicaudais à esquerda. -->
+<!-- unicaudais à direita. -->
 
 ## Tamanho da amostra e Poder
 
