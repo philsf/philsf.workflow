@@ -117,6 +117,8 @@ tab_inf %>%
 
 ## Availability
 
+<!-- Both this document and the corresponding analytical plan (**SAP-yyyy-NNN-XX-v01**) can be downloaded in the following address: -->
+
 This document can be downloaded in the following address:
 
 https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/
