@@ -51,6 +51,9 @@ kable(history)
 
 # Abbreviations
 
+- IQR: interquartile range
+- SD: standard deviation
+
 # Introduction
 
 ## Context
@@ -93,7 +96,26 @@ The analytical dataset will be included in the private version of the report, an
 
 ### Descriptive analyses
 
+The epidemiological profile of each study group
+<!-- groups -->
+will be described at baseline.
+Demographic and clinical variables will be described as
+mean (SD)
+<!-- median (IQR) -->
+or as counts and proportions (%), as appropriate.
+Distributions will be summarized in tables and visualized in exploratory plots.
+
 ### Inferential analyses
+
+All comparisons between groups will be performed as univariate analyses.
+Continuous variables will be compared between groups with the
+independent t test with Welch correction.
+<!-- paired t test with Welch correction. -->
+<!-- Wilcoxon test. -->
+Differences in distribution of categorical variables will be assessed with the
+Fisher exact test.
+<!-- chi-square test. -->
+<!-- McNemar test. -->
 
 ### Statistical modeling
 
