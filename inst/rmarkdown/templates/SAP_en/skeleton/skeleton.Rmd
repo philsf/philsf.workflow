@@ -100,7 +100,10 @@ The analytical dataset will be included in the private version of the report, an
 ## Significance and Confidence Intervals
 
 All analyses will be performed using the significance level of 5%.
-All significance hypothesis tests and confidence intervals computed will be two-tailed.
+All significance hypothesis tests and confidence intervals computed will be
+two-tailed.
+<!-- left-tailed. -->
+<!-- right-tailed. -->
 
 ## Study size and Power
 
