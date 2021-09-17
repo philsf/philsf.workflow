@@ -46,16 +46,16 @@ https://philsf-biostat.github.io/
 <!-- --- -->
 
 [sapviz-v01]: report/SAP-yyyy-NNN-XX-v01.md
-[sappdf-v01]: report/SAP-yyyy-NNN-XX-v01.pdf?raw=true
 [sapviz-v02]: report/SAP-yyyy-NNN-XX-v02.md
-[sappdf-v02]: report/SAP-yyyy-NNN-XX-v02.pdf?raw=true
+[sappdf-v01]: https://docs.google.com/viewer?url=https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/report/SAP-yyyy-NNN-XX-v01.pdf?raw=true
+[sappdf-v02]: https://docs.google.com/viewer?url=https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/report/SAP-yyyy-NNN-XX-v02.pdf?raw=true
 
 [reportviz-v01]: report/SAR-yyyy-NNN-XX-v01.md
 [reportviz-v02]: report/SAR-yyyy-NNN-XX-v02.md
-[pdf-v01]: report/SAR-yyyy-NNN-XX-v01.pdf?raw=true
-[pdf-v02]: report/SAR-yyyy-NNN-XX-v02.pdf?raw=true
-[docx-v01]: report/SAR-yyyy-NNN-XX-v01.docx?raw=true
-[docx-v02]: report/SAR-yyyy-NNN-XX-v02.docx?raw=true
+[pdf-v01]: https://docs.google.com/viewer?url=https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/report/SAR-yyyy-NNN-XX-v01.pdf?raw=true
+[pdf-v02]: https://docs.google.com/viewer?url=https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/report/SAR-yyyy-NNN-XX-v02.pdf?raw=true
+[docx-v01]: https://docs.google.com/viewer?url=https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/report/SAR-yyyy-NNN-XX-v01.docx?raw=true
+[docx-v02]: https://docs.google.com/viewer?url=https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/report/SAR-yyyy-NNN-XX-v02.docx?raw=true
 
 [releases]: https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/releases/
 [milestone-v01]: https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/milestone/mmm01
