@@ -51,6 +51,10 @@ kable(history)
 
 # Lista de abreviaturas
 
+- d: tamanho de efeito D de Cohen
+- DP: Desvio padrão
+- IIQ: Intervalo Interquartílico
+
 # Introdução
 
 ## Contexto
@@ -94,13 +98,65 @@ A tabela de dados analíticos serão disponibilizados na versão privada do rela
 
 ### Análise descritiva
 
+O perfil epidemiológico de cada grupo do estudo será descrito na baseline.
+As características clínicas e demográficas serão descritas como
+média (DP)
+<!-- mediana (IIQ) -->
+ou frequência e proporção (%),
+conforme apropriado.
+As distribuições serão sumarizadas em tabelas e visualizadas em gráficos exploratórios
+
 ### Análise inferencial
+
+Todas as comparações entre os grupos serão avaliadas como análises univariadas.
+Variáveis contínuas serão comparadas entre os grupos com o
+teste t de grupos independentes com a correção de Welch.
+<!-- teste t pareado com a correção de Welch. -->
+<!-- teste de Wilcoxon. -->
+Diferenças nas distribuições de variáveis categóricas serão avaliadas com o teste
+exato de Fisher.
+<!-- qui-quadrado. -->
+<!-- McNemar. -->
 
 ### Modelagem estatística
 
 ## Significância e Intervalos de Confiança
 
+Todas as análises serão realizadas ao nível de significância de 5%.
+Todos os testes de hipóteses e intervalos de confiança calculados serão
+bicaudais.
+<!-- unicaudais à esquerda. -->
+<!-- unicaudais à direita. -->
+
 ## Tamanho da amostra e Poder
+
+```{r}
+n <- analytical %>%
+  count(group) %>%
+  pull(n)
+n1 <- n[1]
+n2 <- n[2]
+total <- sum(n)
+d <- pwr::pwr.t2n.test(n1 = n1, n2 = n2, power = .8, sig.level = .05)$d %>%
+  format.float()
+d <- pwr::pwr.t.test(n = total/2, power = .8, sig.level = .05)$d %>%
+  format.float()
+```
+
+<!-- Os grupos de estudo eram balanceados e o tamanho total da amostra foi `r total` incluindo todos os grupos. -->
+
+<!-- Os grupos do estudo não eram balanceados com -->
+<!-- `r n1` participantes no grupo1 -->
+<!-- e -->
+<!-- `r n2` participantes no grupo2 -->
+<!-- e um total amostral de `r total`. -->
+<!-- Esta análise de poder ajusta para os diferentes tamanhos dos grupos. -->
+
+<!-- Com estes tamanhos amostrais um teste t pode detectar um tamanho de efeito tão grande quanto -->
+<!-- **d = `r d`** -->
+<!-- com poder estatísticod e 80% e um nível de significância de 5% (Cohen, 1988). -->
+
+N/A
 
 ## Softwares utilizados
 

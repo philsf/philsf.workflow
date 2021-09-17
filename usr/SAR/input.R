@@ -27,10 +27,11 @@ data.raw <- tibble(id=gl(2, 10), group = gl(2, 10), outcome = rnorm(20))
 
 # labels ------------------------------------------------------------------
 
-# data.raw <- data.raw %>%
-#   set_variable_labels(
-#
-#   )
+data.raw <- data.raw %>%
+  set_variable_labels(
+    group = "Study group",
+    outcome = "Study outcome",
+  )
 
 # analytical dataset ------------------------------------------------------
 
