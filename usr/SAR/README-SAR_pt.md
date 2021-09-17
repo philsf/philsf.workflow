@@ -26,7 +26,7 @@ Análise Estatística para PESSOA (LOCAL, aaaa)
 <!-- - [Download][sappdf-v02] -->
 
 - [Visualização online][sapviz-v01]
-- [Download][sappdf-v01]
+- [PDF][sappdf-v01]
 
 ### Relatório de Análise Estatística (SAR)
 
@@ -34,7 +34,7 @@ Análise Estatística para PESSOA (LOCAL, aaaa)
 <!-- - [Download][pdf-v02] -->
 
 - [Visualização online][reportviz-v01]
-- [Download][pdf-v01]
+- [PDF][pdf-v01]
 
 ## Portfólio
 

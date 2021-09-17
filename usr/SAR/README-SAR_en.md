@@ -26,7 +26,7 @@ Statistical Analysis for PERSON (PLACE, yyyy)
 <!-- - [Download][sappdf-v02] -->
 
 - [Online visualization][sapviz-v01]
-- [Download][sappdf-v01]
+- [PDF][sappdf-v01]
 
 ### Statistical Analysis Report (SAR)
 
@@ -34,7 +34,7 @@ Statistical Analysis for PERSON (PLACE, yyyy)
 <!-- - [Download][pdf-v02] -->
 
 - [Online visualization][reportviz-v01]
-- [Download][pdf-v01]
+- [PDF][pdf-v01]
 
 ## Portfolio
 
