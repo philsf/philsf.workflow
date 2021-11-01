@@ -1,6 +1,7 @@
 # philsf.workflow (development version)
 
 * ignore strings updated #86
+* template contentes updates #87
 
 # philsf.workflow 0.10.4
 
