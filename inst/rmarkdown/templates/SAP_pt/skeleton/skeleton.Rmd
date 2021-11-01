@@ -100,13 +100,16 @@ A tabela de dados analíticos serão disponibilizados na versão privada do rela
 
 ### Análise descritiva
 
-O perfil epidemiológico de cada grupo do estudo será descrito na baseline.
-As características clínicas e demográficas serão descritas como
+O perfil epidemiológico dos participantes do estudo será descrito na baseline.
+As características demográficas
+(sexo, idade e IMC)
+e clínicas
+<!-- ( [vars] ) -->
+serão descritas como
 média (DP)
 <!-- mediana (IIQ) -->
-ou frequência e proporção (%),
-conforme apropriado.
-As distribuições serão sumarizadas em tabelas e visualizadas em gráficos exploratórios
+ou frequência e proporção (%), conforme apropriado.
+As distribuições das caracerísticas dos participantes serão resumidas em tabelas e visualizadas em gráficos exploratórios
 
 ### Análise inferencial
 

@@ -99,14 +99,16 @@ The analytical dataset will be included in the private version of the report, an
 
 ### Descriptive analyses
 
-The epidemiological profile of each study group
-<!-- groups -->
-will be described at baseline.
-Demographic and clinical variables will be described as
+The epidemiological profile of the study participants will be described.
+Demographic
+(sex, age and BMI)
+and clinical variables
+<!-- ( [vars] ) -->
+will be described as
 mean (SD)
 <!-- median (IQR) -->
 or as counts and proportions (%), as appropriate.
-Distributions will be summarized in tables and visualized in exploratory plots.
+The distributions of participants' characteristics will be summarized in tables and visualized in exploratory plots.
 
 ### Inferential analyses
 
