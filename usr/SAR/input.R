@@ -20,10 +20,10 @@ data.raw <- tibble(id=gl(2, 10), group = gl(2, 10), outcome = rnorm(20))
 
 # data wrangling ----------------------------------------------------------
 
-# data.raw <- data.raw %>%
-#   mutate(
-#
-#   )
+data.raw <- data.raw %>%
+  mutate(
+    id = factor(id), # or as.character
+  )
 
 # labels ------------------------------------------------------------------
 
