@@ -168,7 +168,7 @@ N/A
 
 This analysis will be performed using statistical software `R` version `r getRversion()`.
 
-# Exceptions and Observations
+# Observations and limitations
 
 # References
 

@@ -97,7 +97,7 @@ tab_inf %>%
   )
 ```
 
-# Exceções e Observações
+# Observações e limitações
 
 # Conclusões
 
