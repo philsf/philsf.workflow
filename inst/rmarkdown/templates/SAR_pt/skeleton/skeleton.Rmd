@@ -123,7 +123,7 @@ Tanto este documento como o plano analítico correspondente (**SAP-yyyy-NNN-XX-v
 
 <!-- Este documento pode ser obtido no seguinte endereço: -->
 
-https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/
+https://philsf-biostat.github.io/SAR-yyyy-NNN-XX/
 
 ## Dados utilizados
 

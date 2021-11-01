@@ -186,5 +186,4 @@ Esta análise será realizada utilizando-se o software `R` versão `r getRversio
 
 Tanto este plano analítico como o relatório correspondente (**SAR-yyyy-NNN-XX-v01**) podem ser obtidos no seguinte endereço:
 
-https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/
-
+https://philsf-biostat.github.io/SAR-yyyy-NNN-XX/
