@@ -2,7 +2,7 @@
 title: "Plano Analítico para [title]"
 subtitle: 'DOCUMENTO: SAP-yyyy-NNN-XX-v01'
 author: '**De:** Felipe Figueiredo **Para:** ___'
-date: '**Data:** yyyy-mm-dd'
+date: yyyy-mm-dd
 output:
   html_document:
     fig_caption: yes
@@ -35,6 +35,8 @@ panderOptions('table.split.table', 160)
 ```
 
 ---
+
+[title]
 
 **Histórico do documento**
 
@@ -184,5 +186,4 @@ Esta análise será realizada utilizando-se o software `R` versão `r getRversio
 
 Tanto este plano analítico como o relatório correspondente (**SAR-yyyy-NNN-XX-v01**) podem ser obtidos no seguinte endereço:
 
-https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/
-
+https://philsf-biostat.github.io/SAR-yyyy-NNN-XX/

@@ -2,6 +2,7 @@
 
 * ignore strings updated #86
 * template contentes updates #87
+* use repositoty github pages #89
 
 # philsf.workflow 0.10.4
 

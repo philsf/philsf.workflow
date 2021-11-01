@@ -2,7 +2,7 @@
 title: "[title]"
 subtitle: 'DOCUMENT: SAR-yyyy-NNN-XX-v01'
 author: '**From:** Felipe Figueiredo **To:** ___'
-date: '**Date:** yyyy-mm-dd'
+date: yyyy-mm-dd
 output:
   html_document:
     fig_caption: yes
@@ -35,6 +35,8 @@ panderOptions('table.split.table', 160)
 ```
 
 ---
+
+[title]
 
 **Document version**
 
@@ -121,7 +123,7 @@ Both this document and the corresponding analytical plan (**SAP-yyyy-NNN-XX-v01*
 
 <!-- This document can be downloaded in the following address: -->
 
-https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/
+https://philsf-biostat.github.io/SAR-yyyy-NNN-XX/
 
 ## Analytical dataset
 
