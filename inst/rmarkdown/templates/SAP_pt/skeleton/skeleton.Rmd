@@ -123,6 +123,8 @@ exato de Fisher.
 <!-- qui-quadrado. -->
 <!-- McNemar. -->
 
+<!-- Todas as análises inferenciais serão realizadas com base nos modelos estatísticos (descritos na próxima seção). -->
+
 ### Modelagem estatística
 
 ## Significância e Intervalos de Confiança

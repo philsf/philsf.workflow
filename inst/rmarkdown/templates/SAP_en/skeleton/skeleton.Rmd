@@ -122,6 +122,8 @@ Fisher exact test.
 <!-- chi-square test. -->
 <!-- McNemar test. -->
 
+<!-- All inferential analyses will be performed in the statistical models (described in the next section). -->
+
 ### Statistical modeling
 
 ## Significance and Confidence Intervals
