@@ -1,5 +1,5 @@
 ---
-title: "Plano Analítico para title"
+title: "Plano Analítico para [title]"
 subtitle: 'DOCUMENTO: SAP-yyyy-NNN-XX-v01'
 author: '**De:** Felipe Figueiredo **Para:** ___'
 date: '**Data:** yyyy-mm-dd'
@@ -51,13 +51,13 @@ kable(history)
 
 # Lista de abreviaturas
 
-- d: tamanho de efeito D de Cohen
+- d: Tamanho de efeito D de Cohen
 - DP: Desvio padrão
+- IC: Intervalo de confiança
 - IIQ: Intervalo Interquartílico
+- IMC: Índice de massa corpórea
 
-# Introdução
-
-## Contexto
+# Contexto
 
 ## Objetivos
 
@@ -98,13 +98,16 @@ A tabela de dados analíticos serão disponibilizados na versão privada do rela
 
 ### Análise descritiva
 
-O perfil epidemiológico de cada grupo do estudo será descrito na baseline.
-As características clínicas e demográficas serão descritas como
+O perfil epidemiológico dos participantes do estudo será descrito na baseline.
+As características demográficas
+(sexo, idade e IMC)
+e clínicas
+<!-- ( [vars] ) -->
+serão descritas como
 média (DP)
 <!-- mediana (IIQ) -->
-ou frequência e proporção (%),
-conforme apropriado.
-As distribuições serão sumarizadas em tabelas e visualizadas em gráficos exploratórios
+ou frequência e proporção (%), conforme apropriado.
+As distribuições das caracerísticas dos participantes serão resumidas em tabelas e visualizadas em gráficos exploratórios
 
 ### Análise inferencial
 
@@ -117,6 +120,8 @@ Diferenças nas distribuições de variáveis categóricas serão avaliadas com 
 exato de Fisher.
 <!-- qui-quadrado. -->
 <!-- McNemar. -->
+
+<!-- Todas as análises inferenciais serão realizadas com base nos modelos estatísticos (descritos na próxima seção). -->
 
 ### Modelagem estatística
 
@@ -164,13 +169,13 @@ Esta análise será realizada utilizando-se o software `R` versão `r getRversio
 
 <!-- # Resultados -->
 
-# Exceções e Observações
+# Observações e limitações
 
 <!-- # Conclusões -->
 
 # Referências
 
-- **SAR-yyyy-NNN-XX-v01** -- title
+- **SAR-yyyy-NNN-XX-v01** -- [title]
 <!-- - Cohen, J. (1988). Statistical power analysis for the behavioral sciences (2nd Ed.). New York: Routledge. -->
 
 # Apêndice

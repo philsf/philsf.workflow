@@ -1,5 +1,5 @@
 ---
-title: "title"
+title: "[title]"
 subtitle: 'DOCUMENT: SAR-yyyy-NNN-XX-v01'
 author: '**From:** Felipe Figueiredo **To:** ___'
 date: '**Date:** yyyy-mm-dd'
@@ -51,7 +51,7 @@ kable(history)
 
 # Abbreviations
 
-# Introduction
+# Context
 
 ## Objectives
 
@@ -97,13 +97,13 @@ tab_inf %>%
   )
 ```
 
-# Exceptions and Observations
+# Observations and Limitations
 
 # Conclusions
 
 # References
 
-- **SAP-yyyy-NNN-XX-v01** -- Analytical Plan for title
+- **SAP-yyyy-NNN-XX-v01** -- Analytical Plan for [title]
 <!-- - Cohen, J. (1988). Statistical power analysis for the behavioral sciences (2nd Ed.). New York: Routledge. -->
 
 # Appendix
@@ -117,9 +117,9 @@ tab_inf %>%
 
 ## Availability
 
-<!-- Both this document and the corresponding analytical plan (**SAP-yyyy-NNN-XX-v01**) can be downloaded in the following address: -->
+Both this document and the corresponding analytical plan (**SAP-yyyy-NNN-XX-v01**) can be downloaded in the following address:
 
-This document can be downloaded in the following address:
+<!-- This document can be downloaded in the following address: -->
 
 https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/
 

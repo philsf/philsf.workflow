@@ -1,5 +1,5 @@
 ---
-title: "Analytical Plan for title"
+title: "Analytical Plan for [title]"
 subtitle: 'DOCUMENT: SAP-yyyy-NNN-XX-v01'
 author: '**From:** Felipe Figueiredo **To:** ___'
 date: '**Date:** yyyy-mm-dd'
@@ -51,13 +51,13 @@ kable(history)
 
 # Abbreviations
 
+- BMI: body mass index
+- CI: confidence interval
 - d: Cohen's D effect size
 - IQR: interquartile range
 - SD: standard deviation
 
-# Introduction
-
-## Context
+# Context
 
 ## Objectives
 
@@ -97,14 +97,16 @@ The analytical dataset will be included in the private version of the report, an
 
 ### Descriptive analyses
 
-The epidemiological profile of each study group
-<!-- groups -->
-will be described at baseline.
-Demographic and clinical variables will be described as
+The epidemiological profile of the study participants will be described.
+Demographic
+(sex, age and BMI)
+and clinical variables
+<!-- ( [vars] ) -->
+will be described as
 mean (SD)
 <!-- median (IQR) -->
 or as counts and proportions (%), as appropriate.
-Distributions will be summarized in tables and visualized in exploratory plots.
+The distributions of participants' characteristics will be summarized in tables and visualized in exploratory plots.
 
 ### Inferential analyses
 
@@ -117,6 +119,8 @@ Differences in distribution of categorical variables will be assessed with the
 Fisher exact test.
 <!-- chi-square test. -->
 <!-- McNemar test. -->
+
+<!-- All inferential analyses will be performed in the statistical models (described in the next section). -->
 
 ### Statistical modeling
 
@@ -162,11 +166,11 @@ N/A
 
 This analysis will be performed using statistical software `R` version `r getRversion()`.
 
-# Exceptions and Observations
+# Observations and limitations
 
 # References
 
-- **SAR-yyyy-NNN-XX-v01** -- title
+- **SAR-yyyy-NNN-XX-v01** -- [title]
 <!-- - Cohen, J. (1988). Statistical power analysis for the behavioral sciences (2nd Ed.). New York: Routledge. -->
 
 # Appendix
