@@ -53,7 +53,7 @@ kable(history)
 
 # Lista de abreviaturas
 
-# Context
+# Contexto
 
 ## Objetivos
 
@@ -72,8 +72,6 @@ source("scripts/results.R", encoding = 'UTF-8')
 ### Covariáveis
 
 ## Análises Estatísticas
-
-### Softwares utilizados
 
 Esta análise foi realizada utilizando-se o software `R` versão `r getRversion()`.
 
