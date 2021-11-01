@@ -51,9 +51,11 @@ kable(history)
 
 # Lista de abreviaturas
 
-- d: tamanho de efeito D de Cohen
+- d: Tamanho de efeito D de Cohen
 - DP: Desvio padrão
+- IC: Intervalo de confiança
 - IIQ: Intervalo Interquartílico
+- IMC: Índice de massa corpórea
 
 # Introdução
 

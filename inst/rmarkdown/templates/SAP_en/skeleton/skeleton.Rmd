@@ -51,6 +51,8 @@ kable(history)
 
 # Abbreviations
 
+- BMI: body mass index
+- CI: confidence interval
 - d: Cohen's D effect size
 - IQR: interquartile range
 - SD: standard deviation
