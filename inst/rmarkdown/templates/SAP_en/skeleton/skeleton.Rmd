@@ -57,9 +57,7 @@ kable(history)
 - IQR: interquartile range
 - SD: standard deviation
 
-# Introduction
-
-## Context
+# Context
 
 ## Objectives
 

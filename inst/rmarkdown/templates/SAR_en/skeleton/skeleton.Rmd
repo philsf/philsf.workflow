@@ -51,7 +51,7 @@ kable(history)
 
 # Abbreviations
 
-# Introduction
+# Context
 
 ## Objectives
 

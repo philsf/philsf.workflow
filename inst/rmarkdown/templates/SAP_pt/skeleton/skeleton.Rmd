@@ -57,9 +57,7 @@ kable(history)
 - IIQ: Intervalo Interquartílico
 - IMC: Índice de massa corpórea
 
-# Introdução
-
-## Contexto
+# Contexto
 
 ## Objetivos
 
