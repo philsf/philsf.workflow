@@ -1,5 +1,7 @@
 # philsf.workflow (development version)
 
+* ignore strings updated #86
+
 # philsf.workflow 0.10.4
 
 * include `scripts/` dir in the initial commit #78
