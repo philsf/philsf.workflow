@@ -73,8 +73,6 @@ source("scripts/results.R", encoding = 'UTF-8')
 
 ## Statistical analyses
 
-### Statistical packages
-
 This analysis was performed using statistical software `R` version `r getRversion()`.
 
 # Results
