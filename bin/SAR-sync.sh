@@ -1,7 +1,7 @@
 #!/bin/bash
 
 X11_IGNORE="X11 forwarding request failed on channel"
-PULL_IGNORE="up-to-date|up to date|FETCH_HEAD|^From|$X11_IGNORE"
+PULL_IGNORE="up-to-date|up to date|FETCH_HEAD|^From|$X11_IGNORE|fatal: couldn't find remote ref|You asked to pull|Because this is not|you must specify"
 PUSH_IGNORE="up-to-date|up to date"
 
 if git rev-parse ; then
