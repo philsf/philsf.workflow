@@ -117,9 +117,9 @@ tab_inf %>%
 
 ## Disponibilidade
 
-<!-- Tanto este documento como o plano analítico correspondente (**SAP-yyyy-NNN-XX-v01**) podem ser obtidos no seguinte endereço: -->
+Tanto este documento como o plano analítico correspondente (**SAP-yyyy-NNN-XX-v01**) podem ser obtidos no seguinte endereço:
 
-Este documento pode ser obtido no seguinte endereço:
+<!-- Este documento pode ser obtido no seguinte endereço: -->
 
 https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/
 
