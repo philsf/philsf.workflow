@@ -19,5 +19,5 @@ gg <- ggplot(analytical, aes(outcome, fill = group)) +
   geom_density( alpha = .8) +
   # scale_color_brewer(palette = ff.pal) +
   scale_fill_brewer(palette = ff.pal) +
-  labs()
-
+  xlab(attr(analytical$outcome, "label")) +
+  ylab("")
