@@ -13,11 +13,13 @@ theme_update(
   legend.position = "top"
 )
 
+gg <- ggplot(analytical) +
+  scale_color_brewer(palette = ff.pal) +
+  scale_fill_brewer(palette = ff.pal)
+
 # plots -------------------------------------------------------------------
 
-gg <- ggplot(analytical, aes(outcome, fill = group)) +
-  geom_density( alpha = .8) +
-  # scale_color_brewer(palette = ff.pal) +
-  scale_fill_brewer(palette = ff.pal) +
+gg.outcome <- gg +
+  geom_density(aes(outcome, fill = group), alpha = .8) +
   xlab(attr(analytical$outcome, "label")) +
   ylab("")
