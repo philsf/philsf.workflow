@@ -23,3 +23,11 @@ gg.outcome <- gg +
   geom_density(aes(outcome, fill = group), alpha = .8) +
   xlab(attr(analytical$outcome, "label")) +
   ylab("")
+
+# cool facet trick from https://stackoverflow.com/questions/3695497 by JWilliman
+# gg +
+#   geom_histogram(bins = 5, aes(outcome, y = ..count../tapply(..count.., ..PANEL.., sum)[..PANEL..]), fill = ff.col) +
+#   scale_y_continuous(labels = scales::label_percent(accuracy = 1)) +
+#   xlab(attr(analytical$outcome, "label")) +
+#   ylab("") +
+#   facet_wrap(~ group, ncol = 2)
