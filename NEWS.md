@@ -4,6 +4,7 @@
 * template contentes updates #87
 * use repositoty github pages #89
 * template styles updates #88
+* template scripts updates #90
 
 # philsf.workflow 0.10.4
 
