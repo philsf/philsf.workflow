@@ -77,7 +77,7 @@ Esta análise foi realizada utilizando-se o software `R` versão `r getRversion(
 
 # Resultados
 
-## Análise descritiva
+## População do estudo e acompanhamento
 
 ```{r tab_desc}
 tab_desc %>%
