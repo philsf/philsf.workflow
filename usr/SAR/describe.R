@@ -26,7 +26,9 @@ theme_gtsummary_language(language = "pt") # traduzir
 
 tab_desc <- analytical %>%
   # select
-  select(-id, ) %>%
+  select(
+    -id,
+  ) %>%
   tbl_summary(
     # by = group
   ) %>%
