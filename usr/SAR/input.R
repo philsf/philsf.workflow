@@ -14,9 +14,10 @@ data.raw <- tibble(id=gl(2, 10), group = gl(2, 10), outcome = rnorm(20))
 
 # data cleaning -----------------------------------------------------------
 
-# data.raw <- data.raw %>%
-#   filter() %>%
-#   select()
+data.raw <- data.raw %>%
+  # select() %>%
+  mutate() %>%
+  filter()
 
 # data wrangling ----------------------------------------------------------
 
