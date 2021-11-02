@@ -1,5 +1,7 @@
 # philsf.workflow (development version)
 
+* ensure templates work on repo pages #96
+
 # philsf.workflow 0.11.0
 
 * ignore strings updated #86

@@ -2,7 +2,7 @@
 title: "[title]"
 subtitle: 'DOCUMENTO: SAR-yyyy-NNN-XX-v01'
 author: '**De:** Felipe Figueiredo **Para:** ___'
-date: yyyy-mm-dd
+# date: yyyy-mm-dd
 output:
   html_document:
     fig_caption: yes
@@ -121,7 +121,7 @@ Tanto este documento como o plano analítico correspondente (**SAP-yyyy-NNN-XX-v
 
 <!-- Este documento pode ser obtido no seguinte endereço: -->
 
-https://philsf-biostat.github.io/SAR-yyyy-NNN-XX/
+<https://philsf-biostat.github.io/SAR-yyyy-NNN-XX/>
 
 ## Dados utilizados
 
