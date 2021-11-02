@@ -1,6 +1,6 @@
 # philsf.workflow (development version)
 
-* disable date field, until it has a valid date #96
+* ensure templates work on repo pages #96
 
 # philsf.workflow 0.11.0
 
