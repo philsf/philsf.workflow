@@ -1,6 +1,7 @@
 # philsf.workflow (development version)
 
 * ensure templates work on repo pages #96
+* scripts default template adjustments #97
 
 # philsf.workflow 0.11.0
 
