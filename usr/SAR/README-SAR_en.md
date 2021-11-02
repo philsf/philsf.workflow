@@ -41,7 +41,7 @@ Statistical Analysis for PERSON (PLACE, yyyy)
 This analysis is included in the consultant's portfolio.
 Other analyses performed can also be seen at:
 
-https://philsf-biostat.github.io/
+<https://philsf-biostat.github.io/>
 
 <!-- --- -->
 

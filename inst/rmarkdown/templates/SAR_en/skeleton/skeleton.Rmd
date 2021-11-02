@@ -121,7 +121,7 @@ Both this document and the corresponding analytical plan (**SAP-yyyy-NNN-XX-v01*
 
 <!-- This document can be downloaded in the following address: -->
 
-https://philsf-biostat.github.io/SAR-yyyy-NNN-XX/
+<https://philsf-biostat.github.io/SAR-yyyy-NNN-XX/>
 
 ## Analytical dataset
 
