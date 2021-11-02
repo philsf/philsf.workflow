@@ -32,8 +32,11 @@ tab_inf <- analytical %>%
   #     # ANCOVA
   #     # adj.vars = c(sex, age, bmi),
   #   ) %>%
+  # # EN
+  # modify_footnote(update = c(estimate, ci, p.value) ~ "ANCOVA (adjusted by sex, age and BMI)") %>%
+  # # PT
   # modify_header(estimate ~ '**Diferença ajustada**') %>%
-  # modify_footnote(update = c(estimate, ci, p.value) ~ "ANCOVA (ajusted by sex, age and BMI)") %>%
+  # modify_footnote(update = c(estimate, ci, p.value) ~ "ANCOVA (ajustada por sexo, idade e IMC)") %>%
   # bold significant p values
   bold_p()
 
