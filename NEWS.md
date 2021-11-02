@@ -1,5 +1,7 @@
 # philsf.workflow (development version)
 
+* disable date field, until it has a valid date #96
+
 # philsf.workflow 0.11.0
 
 * ignore strings updated #86
