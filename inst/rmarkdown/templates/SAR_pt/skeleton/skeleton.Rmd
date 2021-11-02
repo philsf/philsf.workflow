@@ -2,7 +2,7 @@
 title: "[title]"
 subtitle: 'DOCUMENTO: SAR-yyyy-NNN-XX-v01'
 author: '**De:** Felipe Figueiredo **Para:** ___'
-date: yyyy-mm-dd
+# date: yyyy-mm-dd
 output:
   html_document:
     fig_caption: yes
