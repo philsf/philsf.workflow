@@ -36,7 +36,9 @@ panderOptions('table.split.table', 160)
 
 ---
 
-[title]
+\newpage
+
+**Analytical Plan for [title]**
 
 **Document version**
 
@@ -55,8 +57,12 @@ kable(history)
 
 - BMI: body mass index
 - CI: confidence interval
+- CV: coefficient of variation
 - d: Cohen's D effect size
+- HR: hazard ratio
 - IQR: interquartile range
+- IRR: incidence rate ratio
+- OR: odds ratio
 - SD: standard deviation
 
 # Context

@@ -36,7 +36,9 @@ panderOptions('table.split.table', 160)
 
 ---
 
-[title]
+\newpage
+
+**Plano Analítico para [title]**
 
 **Histórico do documento**
 
@@ -54,10 +56,14 @@ kable(history)
 # Lista de abreviaturas
 
 - d: Tamanho de efeito D de Cohen
+- CV: Coeficiente de Variação
 - DP: Desvio padrão
+- HR: Razão de risco (*hazard ratio*)
 - IC: Intervalo de confiança
 - IIQ: Intervalo Interquartílico
 - IMC: Índice de massa corpórea
+- IRR: Razão de taxas de incidência (*incidence rate ratio*)
+- OR: Razão de chances (*odds ratio*)
 
 # Contexto
 
@@ -169,11 +175,7 @@ N/A
 
 Esta análise será realizada utilizando-se o software `R` versão `r getRversion()`.
 
-<!-- # Resultados -->
-
 # Observações e limitações
-
-<!-- # Conclusões -->
 
 # Referências
 

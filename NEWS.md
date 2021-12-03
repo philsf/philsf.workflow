@@ -1,5 +1,7 @@
 # philsf.workflow (development version)
 
+* Templates updated #100
+
 # philsf.workflow 0.11.1
 
 * ensure templates work on repo pages #96

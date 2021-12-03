@@ -36,7 +36,9 @@ panderOptions('table.split.table', 160)
 
 ---
 
-[title]
+\newpage
+
+**[title]**
 
 **Histórico do documento**
 
