@@ -10,7 +10,7 @@ library(gt)
 
 # setup gtsummary theme
 theme_gtsummary_mean_sd() # mean/sd
-theme_gtsummary_language(language = "pt") # traduzir
+# theme_gtsummary_language(language = "pt") # traduzir
 
 # exploratory -------------------------------------------------------------
 
