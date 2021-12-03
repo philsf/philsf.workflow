@@ -11,6 +11,7 @@ SCRIPTS="
 SAR-basedirs.sh
 SAR-basefiles.sh
 SAR-init.sh
+SAR-links.sh
 SAR-new.sh
 SAR-remote-rename.sh
 SAR-remote-set.sh
