@@ -36,7 +36,7 @@ panderOptions('table.split.table', 160)
 
 ---
 
-[title]
+**Plano Analítico para [title]**
 
 **Histórico do documento**
 

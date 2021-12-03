@@ -36,7 +36,7 @@ panderOptions('table.split.table', 160)
 
 ---
 
-[title]
+**Analytical Plan for [title]**
 
 **Document version**
 
