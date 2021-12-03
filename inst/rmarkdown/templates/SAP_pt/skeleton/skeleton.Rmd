@@ -171,11 +171,7 @@ N/A
 
 Esta análise será realizada utilizando-se o software `R` versão `r getRversion()`.
 
-<!-- # Resultados -->
-
 # Observações e limitações
-
-<!-- # Conclusões -->
 
 # Referências
 
