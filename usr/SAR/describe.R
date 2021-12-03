@@ -21,7 +21,6 @@ theme_gtsummary_language(language = "pt") # traduzir
 # minimum detectable effect size
 # interpret_d(0.5)
 
-
 # tables ------------------------------------------------------------------
 
 tab_desc <- analytical %>%
@@ -36,4 +35,3 @@ tab_desc <- analytical %>%
   # modify_header(label ~ "**Características dos pacientes**") %>%
   bold_labels() %>%
   modify_table_styling(columns = "label", align = "c")
-
