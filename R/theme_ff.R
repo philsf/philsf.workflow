@@ -9,8 +9,11 @@
 #'  #EXAMPLE1
 #'  }
 #' }
+#' @seealso
+#'  \code{\link[ggplot2]{ggtheme}}
 #' @rdname theme_ff
 #' @export
+#' @importFrom ggplot2 theme_classic
 theme_ff <- function(...) {
   theme_classic(
     ...,
