@@ -36,6 +36,8 @@ panderOptions('table.split.table', 160)
 
 ---
 
+\newpage
+
 **Analytical Plan for [title]**
 
 **Document version**
