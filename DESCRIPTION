@@ -18,3 +18,4 @@ RemoteUsername: philsf
 RemoteRepo: philsf.workflow
 URL: https://github.com/philsf/philsf.workflow
 BugReports: https://github.com/philsf/philsf.workflow/issues
+RoxygenNote: 7.1.2
