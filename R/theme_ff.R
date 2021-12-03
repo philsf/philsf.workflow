@@ -15,7 +15,7 @@
 #' @export
 #' @importFrom ggplot2 theme_classic
 theme_ff <- function(...) {
-  theme_classic(
+  ggplot2::theme_classic(
     ...,
   )
 }
