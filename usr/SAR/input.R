@@ -2,6 +2,8 @@
 # library(data.table)
 library(tidyverse)
 library(readxl)
+# library(haven)
+# library(foreign)
 # library(lubridate)
 library(labelled)
 
@@ -10,7 +12,6 @@ set.seed(42)
 data.raw <- tibble(id=gl(2, 10), group = gl(2, 10), outcome = rnorm(20))
 # data.raw <- read_excel("dataset/file.xlsx") %>%
 #   janitor::clean_names()
-
 
 # data cleaning -----------------------------------------------------------
 

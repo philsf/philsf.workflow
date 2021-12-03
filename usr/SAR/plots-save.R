@@ -1,6 +1,6 @@
 # setup -------------------------------------------------------------------
-height <- 8
-width <- 8
+height <- 12
+width <- 12
 units <- "cm"
 
 # publication ready tables ------------------------------------------------
@@ -9,7 +9,7 @@ units <- "cm"
 # tab_inf %>%
 #   as_gt() %>%
 #   as_rtf() %>%
-#   writeLines(con = "report/SAR-yyyy-NNN-XX-v01-T1.rtf")
+#   writeLines(con = "report/SAR-yyyy-NNN-XX-v01-T2.rtf")
 
 # save plots --------------------------------------------------------------
 
