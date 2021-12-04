@@ -29,7 +29,6 @@ knitr::opts_knit$set(root.dir = normalizePath(".."))
 options(scipen = 999)
 library(pander)
 library(knitr)
-library(philsfmisc)
 panderOptions('table.style', 'rmarkdown')
 panderOptions('table.split.table', 160)
 ```
