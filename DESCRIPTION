@@ -1,6 +1,6 @@
 Package: philsf.workflow
 Title: philsf's data analysis "mis en place"
-Version: 0.11.1.9003
+Version: 0.11.1.9004
 Authors@R: 
     person(given = "Felipe",
            family = "Figueiredo",
@@ -17,3 +17,4 @@ RemoteUsername: philsf
 RemoteRepo: philsf.workflow
 URL: https://github.com/philsf/philsf.workflow
 BugReports: https://github.com/philsf/philsf.workflow/issues
+RoxygenNote: 7.1.2

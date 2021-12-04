@@ -3,6 +3,7 @@
 * Templates updated #100
 * Scripts updated #101
 * Substitute a string in select repo files #102
+* use theme_ff() ggplot2 theme #107
 
 # philsf.workflow 0.11.1
 

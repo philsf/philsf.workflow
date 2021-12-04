@@ -5,21 +5,17 @@
 ff.col <- "steelblue" # good for single groups scale fill/color brewer
 ff.pal <- "Paired"    # good for binary groups scale fill/color brewer
 
-# Theme setting (less is more)
-theme_set(
-  theme_classic()
-)
-theme_update(
-  legend.position = "top"
-)
+scale_color_discrete <- function(...) scale_color_brewer(palette = ff.pal, ...)
+scale_fill_discrete <- function(...) scale_fill_brewer(palette = ff.pal, ...)
 
-gg <- ggplot(analytical) +
-  scale_color_brewer(palette = ff.pal) +
-  scale_fill_brewer(palette = ff.pal)
+gg <- analytical %>%
+  ggplot() +
+  theme_ff()
 
 # plots -------------------------------------------------------------------
 
-gg.outcome <- gg +
+# gg.outcome <-
+  gg +
   geom_density(aes(outcome, fill = group), alpha = .8) +
   xlab(attr(analytical$outcome, "label")) +
   ylab("")
