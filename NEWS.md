@@ -1,4 +1,4 @@
-# philsf.workflow (development version)
+# philsf.workflow 0.11.2
 
 * Templates updated #100
 * Scripts updated #101
