@@ -188,3 +188,9 @@ Esta análise será realizada utilizando-se o software `R` versão `r getRversio
 Tanto este plano analítico como o relatório correspondente (**SAR-yyyy-NNN-XX-v01**) podem ser obtidos no seguinte endereço:
 
 <https://philsf-biostat.github.io/SAR-yyyy-NNN-XX/>
+
+<!-- O cliente solicitou que esta análise seja mantida confidencial. -->
+<!-- Tanto este plano analítico como o relatório correspondente (**SAR-yyyy-NNN-XX-v01**) portanto não foram publicados online e apenas o título e o ano da análise foram incluídas no portfólio do consultor. -->
+<!-- O portfólio pode ser visto em: -->
+
+<!-- <https://philsf-biostat.github.io/> -->
