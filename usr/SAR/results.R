@@ -1,5 +1,5 @@
 # setup -------------------------------------------------------------------
-library(dplyr)
+suppressMessages(library(dplyr))
 
 # results -----------------------------------------------------------------
 source('scripts/input.R', encoding = 'UTF-8') %>% suppressMessages()
