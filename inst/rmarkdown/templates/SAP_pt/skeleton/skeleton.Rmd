@@ -70,6 +70,8 @@ kable(history)
 
 ## Hipóteses
 
+## Desenho do estudo
+
 # Dados
 
 ```{r cleaning, include=FALSE}
@@ -96,6 +98,15 @@ A tabela de dados analíticos serão disponibilizados na versão privada do rela
 # Variáveis do estudo
 
 ## Desfechos primário e secundários
+
+**Especificação das medidas de desfecho** (Zarin, 2011):
+
+1. (Domínio)
+2. (Mensuração específica)
+3. (Métrica específica)
+4. (Método de agregação)
+
+**Primary outcome**
 
 ## Covariáveis
 
@@ -180,6 +191,7 @@ Esta análise será realizada utilizando-se o software `R` versão `r getRversio
 
 - **SAR-yyyy-NNN-XX-v01** -- [title]
 <!-- - Cohen, J. (1988). Statistical power analysis for the behavioral sciences (2nd Ed.). New York: Routledge. -->
+- Zarin DA, et al. The ClinicalTrials.gov results database — update and key issues. N Engl J Med 2011;364:852-60 (<https://doi.org/10.1056/NEJMsa1012065>).
 
 # Apêndice
 

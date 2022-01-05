@@ -70,6 +70,8 @@ kable(history)
 
 ## Hypotheses
 
+## Study design
+
 # Data
 
 ```{r cleaning, include=FALSE}
@@ -95,6 +97,15 @@ The analytical dataset will be included in the private version of the report, an
 # Study variables
 
 ## Primary and secondary outcomes
+
+**Specification of outcome measures** (Zarin, 2011):
+
+1. (Domain)
+2. (Specific measurement)
+3. (Specific metric)
+4. (Method of aggregation)
+
+**Primary outcome**
 
 ## Covariates
 
@@ -179,6 +190,7 @@ This analysis will be performed using statistical software `R` version `r getRve
 
 - **SAR-yyyy-NNN-XX-v01** -- [title]
 <!-- - Cohen, J. (1988). Statistical power analysis for the behavioral sciences (2nd Ed.). New York: Routledge. -->
+- Zarin DA, et al. The ClinicalTrials.gov results database — update and key issues. N Engl J Med 2011;364:852-60 (<https://doi.org/10.1056/NEJMsa1012065>).
 
 # Appendix
 
