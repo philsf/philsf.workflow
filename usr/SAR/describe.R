@@ -1,6 +1,5 @@
 # setup -------------------------------------------------------------------
 
-library(philsfmisc)
 # library(Hmisc) # describe
 # library(skimr) # skim
 # library(tableone)
