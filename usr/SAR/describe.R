@@ -9,6 +9,8 @@ library(gt)
 # library(effectsize)
 
 # setup gtsummary theme
+theme_gtsummary_journal("jama")
+theme_gtsummary_compact()
 theme_gtsummary_mean_sd() # mean/sd
 # theme_gtsummary_language(language = "pt") # traduzir
 
