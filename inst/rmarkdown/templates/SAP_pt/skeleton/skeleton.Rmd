@@ -99,6 +99,15 @@ A tabela de dados analíticos serão disponibilizados na versão privada do rela
 
 ## Desfechos primário e secundários
 
+**Especificação das medidas de desfecho** (Zarin, 2011):
+
+1. (Domínio)
+2. (Mensuração específica)
+3. (Métrica específica)
+4. (Método de agregação)
+
+**Primary outcome**
+
 ## Covariáveis
 
 # Métodos estatísticos
@@ -182,6 +191,7 @@ Esta análise será realizada utilizando-se o software `R` versão `r getRversio
 
 - **SAR-yyyy-NNN-XX-v01** -- [title]
 <!-- - Cohen, J. (1988). Statistical power analysis for the behavioral sciences (2nd Ed.). New York: Routledge. -->
+- Zarin DA, Tse T, Williams RJ, Califf RM, Ide NC. The ClinicalTrials.gov results database — update and key issues. N Engl J Med 2011;364:852-60.
 
 # Apêndice
 
