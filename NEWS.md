@@ -1,5 +1,7 @@
 # philsf.workflow (development version)
 
+* SAR-links now filters markdown files in report/ #108
+
 # philsf.workflow 0.11.2
 
 * Templates updated #100
