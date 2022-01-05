@@ -9,6 +9,7 @@
 * template (non) availability for private analyses #113
 * SAP structure enhancements #117
 * SAP structure source declared and cited #116
+* SAP now includes a section for handling missing data #112
 
 # philsf.workflow 0.11.2
 
