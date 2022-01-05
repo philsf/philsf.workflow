@@ -2,6 +2,7 @@
 
 * SAR-links now filters markdown files in report/ #108
 * load philsfmisc in input #110
+* Use current date as default #111
 
 # philsf.workflow 0.11.2
 
