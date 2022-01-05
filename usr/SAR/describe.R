@@ -7,6 +7,7 @@
 library(gtsummary)
 library(gt)
 # library(effectsize)
+# library(finalfit) # missing_compare
 
 # setup gtsummary theme
 theme_gtsummary_journal("jama")
