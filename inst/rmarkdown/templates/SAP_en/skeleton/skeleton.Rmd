@@ -142,6 +142,10 @@ Fisher exact test.
 
 ### Statistical modeling
 
+### Missing data
+
+No missing data imputation will be performed.
+
 ## Significance and Confidence Intervals
 
 All analyses will be performed using the significance level of 5%.

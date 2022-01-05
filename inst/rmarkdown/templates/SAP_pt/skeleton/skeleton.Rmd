@@ -143,6 +143,10 @@ exato de Fisher.
 
 ### Modelagem estatística
 
+### Dados faltantes
+
+Não serão realizadas imputações de dados faltantes.
+
 ## Significância e Intervalos de Confiança
 
 Todas as análises serão realizadas ao nível de significância de 5%.
