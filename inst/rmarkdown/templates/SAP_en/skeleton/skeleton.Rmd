@@ -70,6 +70,8 @@ kable(history)
 
 ## Hypotheses
 
+## Study design
+
 # Data
 
 ```{r cleaning, include=FALSE}
