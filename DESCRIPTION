@@ -1,6 +1,6 @@
 Package: philsf.workflow
 Title: philsf's data analysis "mis en place"
-Version: 0.11.2.9010
+Version: 0.12.0
 Authors@R: 
     person(given = "Felipe",
            family = "Figueiredo",
