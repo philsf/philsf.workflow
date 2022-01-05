@@ -4,6 +4,7 @@
 * load `philsfmisc` in `input` #110
 * Use current date as default #111
 * Silence `results` script #118
+* Var types are now identified by row in results tables #115
 
 # philsf.workflow 0.11.2
 
