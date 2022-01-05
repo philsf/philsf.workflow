@@ -124,6 +124,12 @@ Tanto este documento como o plano analítico correspondente (**SAP-yyyy-NNN-XX-v
 
 <https://philsf-biostat.github.io/SAR-yyyy-NNN-XX/>
 
+<!-- O cliente solicitou que esta análise seja mantida confidencial. -->
+<!-- Tanto este documento como o plano analítico correspondente (**SAP-yyyy-NNN-XX-v01**) portanto não foram publicados online e apenas o título e o ano da análise foram incluídas no portfólio do consultor. -->
+<!-- O portfólio pode ser visto em: -->
+
+<!-- <https://philsf-biostat.github.io/> -->
+
 ## Dados utilizados
 
 Os dados utilizados neste relatório não podem ser publicados online por questões de sigilo.

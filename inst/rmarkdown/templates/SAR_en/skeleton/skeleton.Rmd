@@ -124,6 +124,12 @@ Both this document and the corresponding analytical plan (**SAP-yyyy-NNN-XX-v01*
 
 <https://philsf-biostat.github.io/SAR-yyyy-NNN-XX/>
 
+<!-- The client has requested that this analysis be kept confidential. -->
+<!-- Both this document and the corresponding analytical plan (**SAP-yyyy-NNN-XX-v01**) are therefore not published online and only the title and year of the analysis will be included in the consultant's Portfolio. -->
+<!-- The portfolio is available at: -->
+
+<!-- <https://philsf-biostat.github.io/> -->
+
 ## Analytical dataset
 
 Due to confidentiality the data-set used in this analysis cannot be shared online in the public version of this report.
