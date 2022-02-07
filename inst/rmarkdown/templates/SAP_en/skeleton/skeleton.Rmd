@@ -145,6 +145,7 @@ Fisher exact test.
 ### Missing data
 
 No missing data imputation will be performed.
+All evaluations will be performed as complete case analyses.
 
 ## Significance and Confidence Intervals
 
