@@ -132,7 +132,7 @@ As distribuições das caracerísticas dos participantes serão resumidas em tab
 Todas as comparações entre os grupos serão avaliadas como análises univariadas.
 Variáveis contínuas serão comparadas entre os grupos com o
 teste t de grupos independentes com a correção de Welch.
-<!-- teste t pareado com a correção de Welch. -->
+<!-- teste t pareado. -->
 <!-- teste de Wilcoxon. -->
 Diferenças nas distribuições de variáveis categóricas serão avaliadas com o teste
 exato de Fisher.
