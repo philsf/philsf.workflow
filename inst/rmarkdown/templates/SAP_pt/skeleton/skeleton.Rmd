@@ -106,7 +106,7 @@ A tabela de dados analíticos serão disponibilizados na versão privada do rela
 3. (Métrica específica)
 4. (Método de agregação)
 
-**Primary outcome**
+**Desfecho primário**
 
 ## Covariáveis
 
@@ -132,7 +132,7 @@ As distribuições das caracerísticas dos participantes serão resumidas em tab
 Todas as comparações entre os grupos serão avaliadas como análises univariadas.
 Variáveis contínuas serão comparadas entre os grupos com o
 teste t de grupos independentes com a correção de Welch.
-<!-- teste t pareado com a correção de Welch. -->
+<!-- teste t pareado. -->
 <!-- teste de Wilcoxon. -->
 Diferenças nas distribuições de variáveis categóricas serão avaliadas com o teste
 exato de Fisher.
@@ -146,6 +146,7 @@ exato de Fisher.
 ### Dados faltantes
 
 Não serão realizadas imputações de dados faltantes.
+Todas as avaliações serão realizadas como análises de casos completos.
 
 ## Significância e Intervalos de Confiança
 
