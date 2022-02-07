@@ -30,6 +30,14 @@ Statistical Analysis for PERSON (PLACE, yyyy)
 - [Online visualization][reportviz-v01]
 - [PDF][pdf-v01]
 
+<!-- ## Associated analyses -->
+
+<!-- This analysis is part of a larger project and is supported by other analyses, linked below. -->
+
+<!-- **[assoc_title]** -->
+
+<!-- <[assoc_link]> -->
+
 ## Portfolio
 
 This analysis is included in the consultant's portfolio.

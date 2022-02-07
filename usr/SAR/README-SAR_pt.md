@@ -30,6 +30,14 @@ Análise Estatística para PESSOA (LOCAL, aaaa)
 - [Visualização online][reportviz-v01]
 - [PDF][pdf-v01]
 
+<!-- ## Análises associadas -->
+
+<!-- Esta análise é parte de um projeto maior e é suportada por outras análises, disponíveis abaixo. -->
+
+<!-- **[assoc_title]** -->
+
+<!-- <[assoc_link]> -->
+
 ## Portfólio
 
 Esta análise está incluída no portfólio do consultor.
