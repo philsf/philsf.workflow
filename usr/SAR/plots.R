@@ -14,8 +14,7 @@ gg <- analytical %>%
 
 # plots -------------------------------------------------------------------
 
-# gg.outcome <-
-  gg +
+gg.outcome <- gg +
   geom_density(aes(outcome, fill = group), alpha = .8) +
   xlab(attr(analytical$outcome, "label")) +
   ylab("")
