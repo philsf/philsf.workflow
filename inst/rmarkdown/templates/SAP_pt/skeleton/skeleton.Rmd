@@ -106,7 +106,7 @@ A tabela de dados analíticos serão disponibilizados na versão privada do rela
 3. (Métrica específica)
 4. (Método de agregação)
 
-**Primary outcome**
+**Desfecho primário**
 
 ## Covariáveis
 
