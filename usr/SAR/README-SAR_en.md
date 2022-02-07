@@ -1,4 +1,4 @@
-# title
+# [title]
 
 Objective
 
@@ -16,7 +16,7 @@ Statistical Analysis for PERSON (PLACE, yyyy)
 ### Analytical Plan (SAP)
 
 <!-- - [Online visualization][sapviz-v02] -->
-<!-- - [Download][sappdf-v02] -->
+<!-- - [PDF][sappdf-v02] -->
 
 - [Online visualization][sapviz-v01]
 - [PDF][sappdf-v01]
@@ -24,7 +24,7 @@ Statistical Analysis for PERSON (PLACE, yyyy)
 ### Statistical Analysis Report (SAR)
 
 <!-- - [Online visualization][reportviz-v02] -->
-<!-- - [Download][pdf-v02] -->
+<!-- - [PDF][pdf-v02] -->
 
 - [Online visualization][reportviz-v01]
 - [PDF][pdf-v01]

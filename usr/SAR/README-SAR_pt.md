@@ -1,4 +1,4 @@
-# título
+# [title]
 
 Objetivo
 
@@ -16,7 +16,7 @@ Análise Estatística para PESSOA (LOCAL, aaaa)
 ### Plano Analítico (SAP)
 
 <!-- - [Visualização online][sapviz-v02] -->
-<!-- - [Download][sappdf-v02] -->
+<!-- - [PDF][sappdf-v02] -->
 
 - [Visualização online][sapviz-v01]
 - [PDF][sappdf-v01]
@@ -24,7 +24,7 @@ Análise Estatística para PESSOA (LOCAL, aaaa)
 ### Relatório de Análise Estatística (SAR)
 
 <!-- - [Visualização online][reportviz-v02] -->
-<!-- - [Download][pdf-v02] -->
+<!-- - [PDF][pdf-v02] -->
 
 - [Visualização online][reportviz-v01]
 - [PDF][pdf-v01]
