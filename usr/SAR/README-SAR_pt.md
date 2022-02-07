@@ -1,11 +1,4 @@
-<!-- Instruções -->
-
-<!-- - substituir yyyy-NNN-XX -->
-<!-- - v01: substituir mmm01/mmm02 pela milestone -->
-<!-- - v02: substituir ppp01/ppp02 pelo projeto -->
-<!-- - Remover esse bloco -->
-
-# título
+# [title]
 
 Objetivo
 
@@ -16,6 +9,7 @@ Análise Estatística para PESSOA (LOCAL, aaaa)
 1. Análise descritiva
 1. Análise inferencial
 1. Análise de poder
+1. Imputação de dados faltantes
 1. Modelagem estatística
 
 ## Documentos
@@ -23,7 +17,7 @@ Análise Estatística para PESSOA (LOCAL, aaaa)
 ### Plano Analítico (SAP)
 
 <!-- - [Visualização online][sapviz-v02] -->
-<!-- - [Download][sappdf-v02] -->
+<!-- - [PDF][sappdf-v02] -->
 
 - [Visualização online][sapviz-v01]
 - [PDF][sappdf-v01]
@@ -31,10 +25,18 @@ Análise Estatística para PESSOA (LOCAL, aaaa)
 ### Relatório de Análise Estatística (SAR)
 
 <!-- - [Visualização online][reportviz-v02] -->
-<!-- - [Download][pdf-v02] -->
+<!-- - [PDF][pdf-v02] -->
 
 - [Visualização online][reportviz-v01]
 - [PDF][pdf-v01]
+
+<!-- ## Análises associadas -->
+
+<!-- Esta análise é parte de um projeto maior e é suportada por outras análises, disponíveis abaixo. -->
+
+<!-- **[assoc_title]** -->
+
+<!-- <[assoc_link]> -->
 
 ## Portfólio
 
@@ -56,9 +58,3 @@ Outras análises também podem ser vistas em:
 [pdf-v02]: https://docs.google.com/viewer?url=https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/raw/main/report/SAR-yyyy-NNN-XX-v02.pdf
 [docx-v01]: https://docs.google.com/viewer?url=https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/raw/main/report/SAR-yyyy-NNN-XX-v01.docx
 [docx-v02]: https://docs.google.com/viewer?url=https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/raw/main/report/SAR-yyyy-NNN-XX-v02.docx
-
-[releases]: https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/releases/
-[milestone-v01]: https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/milestone/mmm01
-[v01-project]: https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/projects/ppp01
-[milestone-v02]: https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/milestone/mmm02
-[v02-project]: https://github.com/philsf-biostat/SAR-yyyy-NNN-XX/projects/ppp02
