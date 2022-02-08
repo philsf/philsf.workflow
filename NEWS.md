@@ -1,4 +1,4 @@
-# philsf.workflow (development version)
+# philsf.workflow 0.13.0
 
 * templates updates #131
 * scripts updates (new gtsummary theme prototype) #132
