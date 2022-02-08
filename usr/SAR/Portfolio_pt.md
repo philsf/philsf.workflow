@@ -1,6 +1,6 @@
 ---
 title: '[title]'
-date: yyyy-mm-dd
+date: ""
 permalink: /portfolio/SAR-yyyy-NNN/
 redirect_from:
   - /portfolio/SAR-yyyy-NNN-XX/
