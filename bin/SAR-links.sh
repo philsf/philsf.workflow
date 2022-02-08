@@ -9,4 +9,8 @@ then
     exit
 fi
 
-sed -i "s/$orig/$dest/g" README.md scripts/* report/*md 2>&1 >/dev/null
+orig_short=${orig:0:8}
+dest_short=${dest:0:8}
+
+sed -i "s/$orig/$dest/g" README.md scripts/* report/*md Portfolio.md 2>&1 >/dev/null
+sed -i "s/$orig_short/$dest_short/g" README.md scripts/* report/*md Portfolio.md 2>&1 >/dev/null
