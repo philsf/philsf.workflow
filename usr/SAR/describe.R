@@ -29,7 +29,6 @@ set_gtsummary_theme(lst_theme)
 theme_gtsummary_compact()
 # theme_gtsummary_language(language = "pt") # traduzir
 
-apiclus1 %>% tbl_summary(include = c(yr.rnd, emer, cname), by = both) %>% add_difference()
 # exploratory -------------------------------------------------------------
 
 # overall description
