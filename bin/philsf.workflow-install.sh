@@ -36,6 +36,8 @@ plots-save.R
 README-R.md
 README-SAR_en.md
 README-SAR_pt.md
+Portfolio-en.md
+Portfolio-pt.md
 "
 
 echo "Installing files into $SCRIPTDIR/"

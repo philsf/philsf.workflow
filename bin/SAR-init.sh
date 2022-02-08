@@ -13,3 +13,6 @@ dataset/" >> .gitignore
 
 echo "README (en) applied over default (opt-out?)"
 cp ~/usr/SAR/README-SAR_en.md README.md
+
+echo "Porfolio (en) applied over default (opt-out?)"
+cp ~/usr/SAR/Portfolio_en.md Portfolio.md

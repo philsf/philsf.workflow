@@ -2,6 +2,7 @@
 
 * templates updates #131
 * scripts updates (new gtsummary theme prototype) #132
+* Portfolio item template #130
 
 # philsf.workflow 0.12.0
 

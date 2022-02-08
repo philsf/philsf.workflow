@@ -21,3 +21,6 @@ mv scripts/README-R.md scripts/README.md
 
 # apply default template repo README
 cp ~/usr/SAR/README-SAR_pt.md README.md
+
+# apply default template repo Portfolio
+cp ~/usr/SAR/Portfolio_pt.md Portfolio.md
