@@ -10,11 +10,26 @@ library(gt)
 # library(finalfit) # missing_compare
 
 # setup gtsummary theme
-theme_gtsummary_journal("nejm")
+lst_theme <- list(`pkgwide-str:theme_name` = "FF gtsummary theme",
+                  `pkgwide-fn:pvalue_fun` = function(x) style_pvalue(x,  digits = 3),
+                  `pkgwide-fn:prependpvalue_fun` = function(x) style_pvalue(x, digits = 3, prepend_p = TRUE),
+                  `tbl_summary-str:continuous_stat` = "{mean} ({sd})",
+                  `add_p.tbl_summary-attr:test.continuous_by2` = "t.test",
+                  `add_p.tbl_summary-attr:test.continuous` = "aov",
+                  `add_p.tbl_svysummary-attr:test.continuous` = "svy.t.test",
+                  `add_p.tbl_svysummary-attr:test.categorical` = "svy.adj.chisq.test",
+                  `style_number-arg:decimal.mark` = ".",
+                  `style_number-arg:big.mark` = ",",
+                  `tbl_summary-fn:addnl-fn-to-run` = function(x) add_stat_label(x),
+                  # `tbl_summary-str:categorical_stat` = "{n} ({p}%)",
+                  `tbl_svysummary-fn:addnl-fn-to-run` = function(x) add_stat_label(x),
+                  `pkgwide-str:ci.sep` = " to ")
+
+set_gtsummary_theme(lst_theme)
 theme_gtsummary_compact()
-theme_gtsummary_mean_sd() # mean/sd
 # theme_gtsummary_language(language = "pt") # traduzir
 
+apiclus1 %>% tbl_summary(include = c(yr.rnd, emer, cname), by = both) %>% add_difference()
 # exploratory -------------------------------------------------------------
 
 # overall description
