@@ -4,6 +4,7 @@
 * scripts updates (new gtsummary theme prototype) #132
 * Portfolio item template #130
 * SAR-links now prints usage when called with not args #109
+* SAR-links can now update Portfolio links (substrings) #136
 
 # philsf.workflow 0.12.0
 
