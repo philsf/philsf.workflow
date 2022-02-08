@@ -4,7 +4,7 @@ SAR=${PWD##*/} # local dir
 
 echo "Initializing repository: $SAR"
 git init >/dev/null
-git add .gitignore README.md "$SAR.Rproj" scripts
+git add .gitignore README.md "$SAR.Rproj" scripts Portfolio.md
 git commit -m "Initial commit" >/dev/null
 
 echo "Client dataset made private (opt-out?)"
