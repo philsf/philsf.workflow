@@ -58,10 +58,11 @@ kable(history)
 - CI: confidence interval
 - CV: coefficient of variation
 - d: Cohen's D effect size
-- HR: hazard ratio
+- HR: hazards ratio
 - IQR: interquartile range
 - IRR: incidence rate ratio
 - OR: odds ratio
+- RR: risks ratio
 - SD: standard deviation
 
 # Context
