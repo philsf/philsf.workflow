@@ -2,7 +2,6 @@
 
 # library(Hmisc) # describe
 # library(skimr) # skim
-# library(tableone)
 # library(gmodels) # CrossTable
 library(gtsummary)
 library(gt)

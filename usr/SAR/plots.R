@@ -1,5 +1,4 @@
 # setup -------------------------------------------------------------------
-# library(ggplot2)
 # library(survminer)
 
 ff.col <- "steelblue" # good for single groups scale fill/color brewer
