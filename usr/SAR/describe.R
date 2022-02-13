@@ -41,12 +41,9 @@ theme_gtsummary_compact()
 # tables ------------------------------------------------------------------
 
 tab_desc <- analytical %>%
-  # select
-  select(
-    -id,
-  ) %>%
   tbl_summary(
-    # by = group
+    include = c(group, outcome),
+    # by = group,
   ) %>%
   # modify_caption(caption = "**Tabela 1** Características demográficas") %>%
   # modify_header(label ~ "**Características dos pacientes**") %>%
