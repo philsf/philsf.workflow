@@ -54,15 +54,16 @@ kable(history)
 
 # Lista de abreviaturas
 
-- d: Tamanho de efeito D de Cohen
-- CV: Coeficiente de Variação
-- DP: Desvio padrão
-- HR: Razão de risco (*hazard ratio*)
-- IC: Intervalo de confiança
-- IIQ: Intervalo Interquartílico
-- IMC: Índice de massa corpórea
-- IRR: Razão de taxas de incidência (*incidence rate ratio*)
-- OR: Razão de chances (*odds ratio*)
+- d: tamanho de efeito D de Cohen
+- CV: coeficiente de variação
+- DP: desvio padrão
+- HR: razão de risco (*hazards ratio*)
+- IC: intervalo de confiança
+- IIQ: intervalo interquartílico
+- IMC: índice de massa corpórea
+- IRR: razão de taxas de incidência (*incidence rates ratio*)
+- OR: razão de chances (*odds ratio*)
+- RR: razão de riscos (*risks ratio*)
 
 # Contexto
 
@@ -125,7 +126,7 @@ serão descritas como
 média (DP)
 <!-- mediana (IIQ) -->
 ou frequência e proporção (%), conforme apropriado.
-As distribuições das caracerísticas dos participantes serão resumidas em tabelas e visualizadas em gráficos exploratórios
+As distribuições das características dos participantes serão resumidas em tabelas e visualizadas em gráficos exploratórios
 
 ### Análise inferencial
 
@@ -182,7 +183,7 @@ d <- pwr::pwr.t.test(n = total/2, power = .8, sig.level = .05)$d %>%
 
 <!-- Com estes tamanhos amostrais um teste t pode detectar um tamanho de efeito tão grande quanto -->
 <!-- **d = `r d`** -->
-<!-- com poder estatísticod e 80% e um nível de significância de 5% (Cohen, 1988). -->
+<!-- com poder estatístico de 80% e um nível de significância de 5% (Cohen, 1988). -->
 
 N/A
 
@@ -196,12 +197,12 @@ Esta análise será realizada utilizando-se o software `R` versão `r getRversio
 
 - **SAR-yyyy-NNN-XX-v01** -- [title]
 <!-- - Cohen, J. (1988). Statistical power analysis for the behavioral sciences (2nd Ed.). New York: Routledge. -->
-- Zarin DA, et al. The ClinicalTrials.gov results database — update and key issues. N Engl J Med 2011;364:852-60 (<https://doi.org/10.1056/NEJMsa1012065>).
+- Zarin DA, et al. The ClinicalTrials.gov results database -- update and key issues. N Engl J Med 2011;364:852-60 (<https://doi.org/10.1056/NEJMsa1012065>).
 - Gamble C, et al. Guidelines for the Content of Statistical Analysis Plans in Clinical Trials. JAMA. 2017;318(23):2337–2343 (<https://doi.org/10.1001/jama.2017.18556>).
 
 # Apêndice
 
-Este documento foi elaborado seguindo seguindo recomendações de estrutura para Planos de Análise Estatística (Gamble, 2017) para maior transparência e clareza.
+Este documento foi elaborado seguindo recomendações de estrutura para Planos de Análise Estatística (Gamble, 2017) para maior transparência e clareza.
 
 ## Disponibilidade
 

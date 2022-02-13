@@ -83,9 +83,13 @@ Esta análise foi realizada utilizando-se o software `R` versão `r getRversion(
 ```{r tab_desc}
 tab_desc %>%
     as_kable(
-    align = "lccc",
     caption = "**Tabela 1** caption"
   )
+```
+
+```{r fig1, fig.cap="**Figura 1** caption"}
+# ![Age](../figures/outcome.png)
+# knitr::include_graphics("../figures/outcome.png", error = FALSE)
 ```
 
 ## Análise inferencial
@@ -93,7 +97,6 @@ tab_desc %>%
 ```{r tab_inf}
 tab_inf %>%
     as_kable(
-    align = "lccc",
     caption = "**Tabela 2** caption"
   )
 ```
@@ -105,7 +108,6 @@ tab_inf %>%
 # Referências
 
 - **SAP-yyyy-NNN-XX-v01** -- Plano Analítico para [title]
-<!-- - Cohen, J. (1988). Statistical power analysis for the behavioral sciences (2nd Ed.). New York: Routledge. -->
 
 # Apêndice
 
