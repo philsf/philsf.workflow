@@ -126,7 +126,7 @@ serão descritas como
 média (DP)
 <!-- mediana (IIQ) -->
 ou frequência e proporção (%), conforme apropriado.
-As distribuições das caracerísticas dos participantes serão resumidas em tabelas e visualizadas em gráficos exploratórios
+As distribuições das características dos participantes serão resumidas em tabelas e visualizadas em gráficos exploratórios
 
 ### Análise inferencial
 
@@ -183,7 +183,7 @@ d <- pwr::pwr.t.test(n = total/2, power = .8, sig.level = .05)$d %>%
 
 <!-- Com estes tamanhos amostrais um teste t pode detectar um tamanho de efeito tão grande quanto -->
 <!-- **d = `r d`** -->
-<!-- com poder estatísticod e 80% e um nível de significância de 5% (Cohen, 1988). -->
+<!-- com poder estatístico de 80% e um nível de significância de 5% (Cohen, 1988). -->
 
 N/A
 
