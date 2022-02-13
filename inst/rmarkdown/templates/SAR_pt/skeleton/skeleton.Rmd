@@ -83,7 +83,6 @@ Esta análise foi realizada utilizando-se o software `R` versão `r getRversion(
 ```{r tab_desc}
 tab_desc %>%
     as_kable(
-    align = "lccc",
     caption = "**Tabela 1** caption"
   )
 ```
@@ -98,7 +97,6 @@ tab_desc %>%
 ```{r tab_inf}
 tab_inf %>%
     as_kable(
-    align = "lccc",
     caption = "**Tabela 2** caption"
   )
 ```
