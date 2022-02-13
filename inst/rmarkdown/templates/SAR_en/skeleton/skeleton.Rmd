@@ -88,6 +88,11 @@ tab_desc %>%
   )
 ```
 
+```{r fig1, fig.cap="**Figure 1** caption"}
+# ![Age](../figures/outcome.png)
+# knitr::include_graphics("../figures/outcome.png", error = FALSE)
+```
+
 ## Inferential analysis
 
 ```{r tab_inf}
