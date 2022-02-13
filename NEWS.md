@@ -1,6 +1,7 @@
 # philsf.workflow (development version)
 
 * scripts updates #139
+* templates updates #140
 * Don't switch to `github_document` #24
 
 # philsf.workflow 0.13.0
