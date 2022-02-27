@@ -81,11 +81,26 @@ source("scripts/input.R", encoding = 'UTF-8')
 
 ## Raw data
 
+The original data base had
+`r Nvar_orig`
+variables collected on
+`r Nobs_orig`
+observations.
+
 ## Analytical dataset
 
 All variables in the analytical set were labeled according to the raw data provided and values were labeled according to the data dictionary for the preparation of production-quality results tables and figures.
 
-After the cleaning process `r ncol(analytical)` variables were included in the analysis with `r nrow(analytical)` observations.
+<!-- After the cleaning process -->
+<!-- `r Nvar_final` -->
+<!-- variables were included in the analysis -->
+<!-- with -->
+<!-- `r Nobs_final` -->
+<!-- observations. -->
+After the cleaning process
+`r Nvar_final`
+variables were included in the analysis.
+The total number of observations excluded due to incompleteness and exclusion criteria will be reported in the analysis.
 Table 1 shows the structure of the analytical dataset.
 
 ```{r analytical data}
@@ -93,7 +108,7 @@ analytical_mockup %>%
   pander(caption = "**Table 1** Analytical dataset structure after variable selection and cleaning.")
 ```
 
-The analytical dataset will be included in the private version of the report, and will be omitted from the public version of the report.
+<!-- The analytical dataset will be included in the private version of the report, and will be omitted from the public version of the report. -->
 
 # Study variables
 
