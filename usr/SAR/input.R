@@ -54,7 +54,8 @@ Nvar_final <- analytical %>% ncol
 Nobs_final <- analytical %>% nrow
 
 # mockup of analytical dataset for SAP and public SAR
-analytical_mockup <- tibble( id = c( "1", "2", "3", "...", as.character(nrow(analytical)) ) ) %>%
+analytical_mockup <- tibble( id = c( "1", "2", "3", "...", "N") ) %>%
+# analytical_mockup <- tibble( id = c( "1", "2", "3", "...", as.character(Nobs_final) ) ) %>%
   left_join(analytical %>% head(0), by = "id") %>%
   mutate_all(as.character) %>%
   replace(is.na(.), "")
