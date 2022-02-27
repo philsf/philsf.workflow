@@ -15,6 +15,9 @@ data.raw <- tibble(id=gl(2, 10), group = gl(2, 10), outcome = rnorm(20))
 # data.raw <- read_excel("dataset/file.xlsx") %>%
 #   janitor::clean_names()
 
+Nvar_orig <- data.raw %>% ncol
+Nobs_orig <- data.raw %>% nrow
+
 # data cleaning -----------------------------------------------------------
 
 data.raw <- data.raw %>%
@@ -47,8 +50,12 @@ analytical <- data.raw %>%
     outcome,
   )
 
+Nvar_final <- analytical %>% ncol
+Nobs_final <- analytical %>% nrow
+
 # mockup of analytical dataset for SAP and public SAR
-analytical_mockup <- tibble( id = c( "1", "2", "3", "...", as.character(nrow(analytical)) ) ) %>%
+analytical_mockup <- tibble( id = c( "1", "2", "3", "...", "N") ) %>%
+# analytical_mockup <- tibble( id = c( "1", "2", "3", "...", as.character(Nobs_final) ) ) %>%
   left_join(analytical %>% head(0), by = "id") %>%
   mutate_all(as.character) %>%
   replace(is.na(.), "")

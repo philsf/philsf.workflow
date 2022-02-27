@@ -1,3 +1,7 @@
+# philsf.workflow (development version)
+
+* account for N changes during cleaning procedures #143
+
 # philsf.workflow 0.13.1
 
 * scripts updates #139
