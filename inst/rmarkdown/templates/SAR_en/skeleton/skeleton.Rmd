@@ -134,13 +134,11 @@ Both this document and the corresponding analytical plan (**SAP-yyyy-NNN-XX-v01*
 
 ## Analytical dataset
 
-Due to confidentiality the data-set used in this analysis cannot be shared online in the public version of this report.
+Table A1 shows the structure of the analytical dataset.
 
 ```{r data}
-# print analytical of analytical_mockup whether it is the private or public version of the SAR
-
-# analytical %>%
-#   pander(caption = "**Table A1** Analytical dataset")
 analytical_mockup %>%
   pander(caption = "**Table A1** Analytical dataset structure")
 ```
+
+Due to confidentiality the data-set used in this analysis cannot be shared online in the public version of this report.

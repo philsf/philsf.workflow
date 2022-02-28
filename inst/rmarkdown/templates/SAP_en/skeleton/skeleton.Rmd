@@ -108,8 +108,6 @@ analytical_mockup %>%
   pander(caption = "**Table 1** Analytical dataset structure after variable selection and cleaning.")
 ```
 
-<!-- The analytical dataset will be included in the private version of the report, and will be omitted from the public version of the report. -->
-
 # Study variables
 
 ## Primary and secondary outcomes

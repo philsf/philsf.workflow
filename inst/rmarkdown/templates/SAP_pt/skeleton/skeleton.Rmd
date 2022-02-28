@@ -104,8 +104,6 @@ analytical_mockup %>%
   pander(caption = "**Tabela 1** Estrutura da tabela de dados analíticos após seleção e limpeza das variáveis.")
 ```
 
-<!-- A tabela de dados analíticos serão disponibilizados na versão privada do relatório, e serão omitidas da versão pública do relatório. -->
-
 # Variáveis do estudo
 
 ## Desfechos primário e secundários

@@ -134,13 +134,11 @@ Tanto este documento como o plano analítico correspondente (**SAP-yyyy-NNN-XX-v
 
 ## Dados utilizados
 
-Os dados utilizados neste relatório não podem ser publicados online por questões de sigilo.
+A tabela A1 mostra a estrutura  da tabela de dados analíticos.
 
 ```{r data}
-# print analytical of analytical_mockup whether it is the private or public version of the SAR
-
-# analytical %>%
-#   pander(caption = "**Tabela A1** Tabela de dados analíticos")
 analytical_mockup %>%
   pander(caption = "**Tabela A1** Estrutura da tabela de dados analíticos")
 ```
+
+Os dados utilizados neste relatório não podem ser publicados online por questões de sigilo.
