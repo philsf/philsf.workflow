@@ -1,6 +1,7 @@
 # philsf.workflow (development version)
 
 * account for N changes during cleaning procedures #143
+* drop private version of reports #144
 
 # philsf.workflow 0.13.1
 
