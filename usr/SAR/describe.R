@@ -35,7 +35,9 @@ theme_gtsummary_compact()
 #   skimr::skim()
 
 # minimum detectable effect size
-# interpret_d(0.5)
+# interpret_cohens_d(0.5)
+# cohens_d(outcome ~ group, data = analytical) %>% interpret_cohens_d()
+# interpret_icc(0.7)
 
 # tables ------------------------------------------------------------------
 
