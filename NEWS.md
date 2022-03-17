@@ -1,5 +1,7 @@
 # philsf.workflow (development version)
 
+* install without changing file attributes #147
+
 # philsf.workflow 0.14.0
 
 * account for N changes during cleaning procedures #143

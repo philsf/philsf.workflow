@@ -44,6 +44,6 @@ echo "Installing files into $SCRIPTDIR/"
 echo "Installing files into $CFGDIR/"
 mkdir -p "$SCRIPTDIR" "$CFGDIR"
 
-for f in $SCRIPTS; do /bin/cp bin/$f "$SCRIPTDIR"; done
-for f in $CFG; do /bin/cp usr/SAR/$f "$CFGDIR"; done
-for f in $RSCRIPTS; do /bin/cp usr/SAR/$f "$CFGDIR"; done
+for f in $SCRIPTS; do /bin/cp -a bin/$f "$SCRIPTDIR"; done
+for f in $CFG; do /bin/cp -a usr/SAR/$f "$CFGDIR"; done
+for f in $RSCRIPTS; do /bin/cp -a usr/SAR/$f "$CFGDIR"; done
