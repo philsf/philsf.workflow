@@ -25,6 +25,11 @@ BM-setup.sh
 CFG="
 gitignore
 new-rproj
+SAP_en.Rmd
+SAP_pt.Rmd
+SAR_en.Rmd
+SAR_pt.Rmd
+misc/
 "
 RSCRIPTS="
 input.R
@@ -45,6 +50,6 @@ echo "Removing files from $SCRIPTDIR"
 for f in $SCRIPTS; do rm -f "$SCRIPTDIR/$f"; done
 rmdir -p --ignore-fail-on-non-empty "$SCRIPTDIR"
 echo "Removing files from $CFGDIR"
-for f in $CFG; do rm -f "$CFGDIR/$f"; done
+for f in $CFG; do rm -rf "$CFGDIR/$f"; done
 for f in $RSCRIPTS; do rm -f "$CFGDIR/$f"; done
 rmdir -p --ignore-fail-on-non-empty "$CFGDIR"

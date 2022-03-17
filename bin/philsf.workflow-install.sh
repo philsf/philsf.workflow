@@ -24,6 +24,11 @@ philsf.workflow-uninstall.sh
 CFG="
 gitignore
 new-rproj
+SAP_en.Rmd
+SAP_pt.Rmd
+SAR_en.Rmd
+SAR_pt.Rmd
+misc/
 "
 RSCRIPTS="
 input.R
