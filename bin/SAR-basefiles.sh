@@ -1,6 +1,7 @@
 #!/bin/bash
 
 SAR=${PWD##*/} # local dir
+SAR_CODE=${SAR/SAR-/""}
 
 RSCRIPTS="
 input.R
@@ -26,6 +27,6 @@ cp ~/usr/SAR/README-SAR_pt.md README.md
 cp ~/usr/SAR/Portfolio_pt.md Portfolio.md
 
 # apply default SAP/SAR templates
-cp ~/usr/SAR/SAP_pt.Rmd report/SAP-yyyy-NNN-XX-v01.Rmd
-cp ~/usr/SAR/SAR_pt.Rmd report/SAR-yyyy-NNN-XX-v01.Rmd
+cp ~/usr/SAR/SAP_pt.Rmd report/SAP-$SAR_CODE-v01.Rmd
+cp ~/usr/SAR/SAR_pt.Rmd report/SAR-$SAR_CODE-v01.Rmd
 cp -a ~/usr/SAR/misc/*pt.docx report/misc/
