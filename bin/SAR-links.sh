@@ -1,7 +1,7 @@
 #!/bin/bash
 
 orig="yyyy-NNN-XX"
-dest=$1
+dest=${1/SAR-/""} # drop SAR prefix, if received
 
 if [[ "$dest" == "" ]]
 then
