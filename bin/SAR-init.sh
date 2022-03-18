@@ -8,6 +8,10 @@ git init >/dev/null
 git add .gitignore README.md "$SAR.Rproj" scripts Portfolio.md report
 git commit -m "Initial commit" >/dev/null
 
+# initialize data repo
+git init dataset/
+
+# protect data by default
 echo "Client dataset made private by default (revert to open data)"
 echo "# dataset is private and cannot be publicly versioned
 dataset/" >> .gitignore

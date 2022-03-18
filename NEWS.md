@@ -4,6 +4,7 @@
 * Auto create document templates when creating a SAR repo #36
 * check argument in SAR-links #148
 * private data by default #152
+* initialize dataset private repo by default #154
 
 # philsf.workflow 0.14.0
 
