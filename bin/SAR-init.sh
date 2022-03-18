@@ -13,6 +13,7 @@ echo "# dataset is private and cannot be publicly versioned
 dataset/" >> .gitignore
 git add .gitignore
 git commit -m "dataset is private and cannot be publicly versioned"
+git init dataset/
 
 echo "README (en) applied over default (opt-out?)"
 cp ~/usr/SAR/README-SAR_en.md README.md
