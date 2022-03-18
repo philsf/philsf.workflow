@@ -3,6 +3,7 @@
 * install without changing file attributes #147
 * Auto create document templates when creating a SAR repo #36
 * check argument in SAR-links #148
+* private data by default #152
 
 # philsf.workflow 0.14.0
 
