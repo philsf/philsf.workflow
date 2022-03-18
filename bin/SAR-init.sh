@@ -8,9 +8,11 @@ git init >/dev/null
 git add .gitignore README.md "$SAR.Rproj" scripts Portfolio.md report
 git commit -m "Initial commit" >/dev/null
 
-echo "Client dataset made private (opt-out?)"
+echo "Client dataset made private by default (revert to open data)"
 echo "# dataset is private and cannot be publicly versioned
 dataset/" >> .gitignore
+git add .gitignore
+git commit -m "dataset is private and cannot be publicly versioned"
 
 echo "README (en) applied over default (opt-out?)"
 cp ~/usr/SAR/README-SAR_en.md README.md
