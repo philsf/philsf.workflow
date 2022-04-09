@@ -14,6 +14,9 @@ categories:
   - ecological
   - epidemiology
   - bioassay
+  - systematic-review
+  - technical-report
+  - data-product
 tags:
   - prevalence
   - incidence
@@ -23,13 +26,17 @@ tags:
   - efficacy
   - concordance-analysis
   - survey
+  - meta-analysis
+  - decision-trees
   - machine-learning
   - unsupervised-learning
+  - data-instrument
 ---
 
 Objective
 
 Statistical Analysis for PERSON (PLACE, yyyy)
+<!-- Technical Report for  PERSON (PLACE, yyyy) -->
 
 ## Analyses performed
 
