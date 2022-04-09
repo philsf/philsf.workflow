@@ -66,9 +66,15 @@ kable(history)
 source("scripts/results.R", encoding = 'UTF-8')
 ```
 
-## Variables
+## Study parameters
 
-### Primary and secondary outcomes
+### Study design
+
+### Inclusion and exclusion criteria
+
+### Exposures
+
+### Outcomes
 
 ### Covariates
 

@@ -104,9 +104,13 @@ analytical_mockup %>%
   pander(caption = "**Tabela 1** Estrutura da tabela de dados analíticos após seleção e limpeza das variáveis.")
 ```
 
-# Variáveis do estudo
+# Parâmetros do estudo
 
-## Desfechos primário e secundários
+## Critérios de inclusão e exclusão
+
+## Exposições
+
+## Desfechos
 
 **Especificação das medidas de desfecho** (Zarin, 2011):
 
