@@ -120,18 +120,16 @@ tab_inf %>%
 
 ## Disponibilidade
 
-Tanto este documento como o plano analítico correspondente (**SAP-yyyy-NNN-XX-v01**) podem ser obtidos no seguinte endereço:
-
-<!-- Este documento pode ser obtido no seguinte endereço: -->
+Todos os documentos gerados nessa consultoria foram incluídos no portfólio do consultor.
 
 <!-- O cliente solicitou que esta análise seja mantida confidencial até uma futura data, determinada pelo próprio cliente. -->
-<!-- Tanto este documento como o plano analítico correspondente (**SAP-yyyy-NNN-XX-v01**) portanto não foram publicados online e apenas o título e o ano da análise foram incluídas no portfólio do consultor. -->
+<!-- Todos os documentos gerados nessa consultoria portanto não foram publicados online e apenas o título e o ano da análise foram incluídas no portfólio do consultor. -->
 <!-- Após a data acordada, os documentos serão disponibilizados. -->
-<!-- O portfólio pode ser visto em: -->
 
 <!-- O cliente solicitou que esta análise seja mantida confidencial. -->
-<!-- Tanto este documento como o plano analítico correspondente (**SAP-yyyy-NNN-XX-v01**) portanto não foram publicados online e apenas o título e o ano da análise foram incluídas no portfólio do consultor. -->
-<!-- O portfólio pode ser visto em: -->
+<!-- Todos os documentos gerados nessa consultoria portanto não foram publicados online e apenas o título e o ano da análise foram incluídas no portfólio do consultor. -->
+
+O portfólio pode ser visto em:
 
 <https://philsf-biostat.github.io/SAR-yyyy-NNN-XX/>
 
