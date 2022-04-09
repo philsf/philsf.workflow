@@ -6,6 +6,7 @@
 * private data by default #152
 * initialize dataset private repo by default #154
 * new document tags/categories #161
+* Use new gtsummary theme in scripts #157
 
 # philsf.workflow 0.14.0
 
