@@ -5,6 +5,7 @@
 * check argument in SAR-links #148
 * private data by default #152
 * initialize dataset private repo by default #154
+* new document tags/categories #161
 
 # philsf.workflow 0.14.0
 

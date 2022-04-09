@@ -14,6 +14,9 @@ categories:
   - ecological
   - epidemiology
   - bioassay
+  - systematic-review
+  - technical-report
+  - data-product
 tags:
   - prevalence
   - incidence
@@ -23,13 +26,17 @@ tags:
   - efficacy
   - concordance-analysis
   - survey
+  - meta-analysis
+  - decision-trees
   - machine-learning
   - unsupervised-learning
+  - data-instrument
 ---
 
 Objetivo
 
 Análise Estatística para PESSOA (LOCAL, aaaa)
+<!-- Relatório técnico para PESSOA (LOCAL, aaaa) -->
 
 ## Análises realizadas
 
