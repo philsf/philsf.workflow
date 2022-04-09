@@ -29,3 +29,6 @@ cp -f ~/usr/SAR/SAP_en.Rmd report/SAP-$SAR_CODE-v01.Rmd
 cp -f ~/usr/SAR/SAR_en.Rmd report/SAR-$SAR_CODE-v01.Rmd
 cp -a ~/usr/SAR/misc/*en.docx report/misc/
 rm -f report/misc/*pt.docx
+
+# update links
+SAR-links.sh $SAR_CODE
