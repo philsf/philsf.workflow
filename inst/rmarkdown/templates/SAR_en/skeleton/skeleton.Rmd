@@ -124,13 +124,16 @@ Both this document and the corresponding analytical plan (**SAP-yyyy-NNN-XX-v01*
 
 <!-- This document can be downloaded in the following address: -->
 
-<https://philsf-biostat.github.io/SAR-yyyy-NNN-XX/>
+<!-- The client has requested that this analysis be kept confidential until a future date, determined by the client. -->
+<!-- Both this document and the corresponding analytical plan (**SAP-yyyy-NNN-XX-v01**) are therefore not published online and only the title and year of the analysis will be included in the consultant's Portfolio. -->
+<!-- After the agreed date is reached, the documents will be released. -->
+<!-- The portfolio is available at: -->
 
 <!-- The client has requested that this analysis be kept confidential. -->
 <!-- Both this document and the corresponding analytical plan (**SAP-yyyy-NNN-XX-v01**) are therefore not published online and only the title and year of the analysis will be included in the consultant's Portfolio. -->
 <!-- The portfolio is available at: -->
 
-<!-- <https://philsf-biostat.github.io/> -->
+<https://philsf-biostat.github.io/SAR-yyyy-NNN-XX/>
 
 ## Analytical dataset
 

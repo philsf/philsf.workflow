@@ -216,10 +216,13 @@ Este documento foi elaborado seguindo recomendações de estrutura para Planos d
 
 Tanto este plano analítico como o relatório correspondente (**SAR-yyyy-NNN-XX-v01**) podem ser obtidos no seguinte endereço:
 
-<https://philsf-biostat.github.io/SAR-yyyy-NNN-XX/>
+<!-- O cliente solicitou que esta análise seja mantida confidencial até uma futura data, determinada pelo próprio cliente. -->
+<!-- Tanto este plano analítico como o relatório correspondente (**SAR-yyyy-NNN-XX-v01**) portanto não foram publicados online e apenas o título e o ano da análise foram incluídas no portfólio do consultor. -->
+<!-- Após a data acordada, os documentos serão disponibilizados. -->
+<!-- O portfólio pode ser visto em: -->
 
 <!-- O cliente solicitou que esta análise seja mantida confidencial. -->
 <!-- Tanto este plano analítico como o relatório correspondente (**SAR-yyyy-NNN-XX-v01**) portanto não foram publicados online e apenas o título e o ano da análise foram incluídas no portfólio do consultor. -->
 <!-- O portfólio pode ser visto em: -->
 
-<!-- <https://philsf-biostat.github.io/> -->
+<https://philsf-biostat.github.io/SAR-yyyy-NNN-XX/>
