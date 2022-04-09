@@ -218,12 +218,15 @@ This document was elaborated following recommendations on the structure for Stat
 
 ## Availability
 
-Both this analytical plan and the corresponding analysis report (**SAR-yyyy-NNN-XX-v01**) can be downloaded in the following address:
+All documents from this consultation were included in the consultant's Portfolio.
 
-<https://philsf-biostat.github.io/SAR-yyyy-NNN-XX/>
+<!-- The client has requested that this analysis be kept confidential until a future date, determined by the client. -->
+<!-- All documents from this consultation are therefore not published online and only the title and year of the analysis will be included in the consultant's Portfolio. -->
+<!-- After the agreed date is reached, the documents will be released. -->
 
 <!-- The client has requested that this analysis be kept confidential. -->
-<!-- Both this analytical plan and the corresponding analysis report (**SAR-yyyy-NNN-XX-v01**) are therefore not published online and only the title and year of the analysis will be included in the consultant's Portfolio. -->
-<!-- The portfolio is available at: -->
+<!-- All documents from this consultation are therefore not published online and only the title and year of the analysis will be included in the consultant's Portfolio. -->
 
-<!-- <https://philsf-biostat.github.io/> -->
+The portfolio is available at:
+
+<https://philsf-biostat.github.io/SAR-yyyy-NNN-XX/>
