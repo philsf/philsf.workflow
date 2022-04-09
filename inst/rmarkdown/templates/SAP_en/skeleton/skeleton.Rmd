@@ -108,9 +108,13 @@ analytical_mockup %>%
   pander(caption = "**Table 1** Analytical dataset structure after variable selection and cleaning.")
 ```
 
-# Study variables
+# Study parameters
 
-## Primary and secondary outcomes
+## Inclusion and exclusion criteria
+
+## Exposures
+
+## Outcomes
 
 **Specification of outcome measures** (Zarin, 2011):
 

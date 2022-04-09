@@ -66,9 +66,15 @@ kable(history)
 source("scripts/results.R", encoding = 'UTF-8')
 ```
 
-## Variáveis
+## Parâmetros do estudo
 
-### Desfechos primário e secundário
+### Desenho do estudo
+
+### Critérios de inclusão e exclusão
+
+### Exposições
+
+### Desfechos
 
 ### Covariáveis
 
