@@ -9,6 +9,7 @@
 * Use new gtsummary theme in scripts #157
 * Call SAR-links automatically upon repo creation #158
 * New template for future availability #160
+* New sections in SAP #159
 
 # philsf.workflow 0.14.0
 
