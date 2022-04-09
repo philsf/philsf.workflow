@@ -8,6 +8,7 @@
 * new document tags/categories #161
 * Use new gtsummary theme in scripts #157
 * Call SAR-links automatically upon repo creation #158
+* New template for future availability #160
 
 # philsf.workflow 0.14.0
 
