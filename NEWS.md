@@ -7,6 +7,7 @@
 * initialize dataset private repo by default #154
 * new document tags/categories #161
 * Use new gtsummary theme in scripts #157
+* Call SAR-links automatically upon repo creation #158
 
 # philsf.workflow 0.14.0
 

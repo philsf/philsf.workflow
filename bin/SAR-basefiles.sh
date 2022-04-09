@@ -30,3 +30,6 @@ cp ~/usr/SAR/Portfolio_pt.md Portfolio.md
 cp ~/usr/SAR/SAP_pt.Rmd report/SAP-$SAR_CODE-v01.Rmd
 cp ~/usr/SAR/SAR_pt.Rmd report/SAR-$SAR_CODE-v01.Rmd
 cp -a ~/usr/SAR/misc/*pt.docx report/misc/
+
+# update links
+SAR-links.sh $SAR_CODE
