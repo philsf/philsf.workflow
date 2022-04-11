@@ -10,6 +10,7 @@
 * Call SAR-links automatically upon repo creation #158
 * New template for future availability #160
 * New sections in SAP #159
+* Create script to update doc templates to be installed in new repos #169
 
 # philsf.workflow 0.14.0
 
