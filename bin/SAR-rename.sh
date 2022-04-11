@@ -13,7 +13,9 @@ echo "Renaming $OLD_SAR to $NEW_SAR"
 cd ..
 error=$(mv "$OLD_SAR" "$NEW_SAR" 2>&1) || echo "Can't rename repository: $error"
 cd "$NEW_SAR" || { echo "Can't enter repository"; exit 1; }
-error=$(mv "$OLD_SAR.Rproj" "$NEW_SAR.Rproj" 2>&1) || echo "Can't rename RStudio Project: $error"
+
+# rename Rstudio project
+error=$(git mv "$OLD_SAR.Rproj" "$NEW_SAR.Rproj" 2>&1) || echo "Can't rename RStudio Project: $error"
 
 echo "Remotes available for updating/renaming:"
 for REMOTE in $(git remote)
