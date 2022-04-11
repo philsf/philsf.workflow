@@ -104,9 +104,13 @@ analytical_mockup %>%
   pander(caption = "**Tabela 1** Estrutura da tabela de dados analíticos após seleção e limpeza das variáveis.")
 ```
 
-# Variáveis do estudo
+# Parâmetros do estudo
 
-## Desfechos primário e secundários
+## Critérios de inclusão e exclusão
+
+## Exposições
+
+## Desfechos
 
 **Especificação das medidas de desfecho** (Zarin, 2011):
 
@@ -214,12 +218,15 @@ Este documento foi elaborado seguindo recomendações de estrutura para Planos d
 
 ## Disponibilidade
 
-Tanto este plano analítico como o relatório correspondente (**SAR-yyyy-NNN-XX-v01**) podem ser obtidos no seguinte endereço:
+Todos os documentos gerados nessa consultoria foram incluídos no portfólio do consultor.
 
-<https://philsf-biostat.github.io/SAR-yyyy-NNN-XX/>
+<!-- O cliente solicitou que esta análise seja mantida confidencial até uma futura data, determinada pelo próprio cliente. -->
+<!-- Todos os documentos gerados nessa consultoria portanto não foram publicados online e apenas o título e o ano da análise foram incluídas no portfólio do consultor. -->
+<!-- Após a data acordada, os documentos serão disponibilizados. -->
 
 <!-- O cliente solicitou que esta análise seja mantida confidencial. -->
-<!-- Tanto este plano analítico como o relatório correspondente (**SAR-yyyy-NNN-XX-v01**) portanto não foram publicados online e apenas o título e o ano da análise foram incluídas no portfólio do consultor. -->
-<!-- O portfólio pode ser visto em: -->
+<!-- Todos os documentos gerados nessa consultoria portanto não foram publicados online e apenas o título e o ano da análise foram incluídas no portfólio do consultor. -->
 
-<!-- <https://philsf-biostat.github.io/> -->
+O portfólio pode ser visto em:
+
+<https://philsf-biostat.github.io/SAR-yyyy-NNN-XX/>
