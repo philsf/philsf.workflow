@@ -22,8 +22,10 @@ OLD_SAP_FILE=${OLD_SAR/SAR-/"SAP-"}
 NEW_SAP_FILE=${NEW_SAR/SAR-/"SAP-"}
 
 error=$(git mv "report/$OLD_SAP_FILE-v01.Rmd" "report/$NEW_SAP_FILE-v01.Rmd" 2>&1) || echo "Can't rename SAP v01: $error"
+error=$(git mv -k "report/$OLD_SAP_FILE-v01.md" "report/$NEW_SAP_FILE-v01.md" 2>&1) || echo "Can't rename SAP v01: $error"
 
 error=$(git mv "report/$OLD_SAR-v01.Rmd" "report/$NEW_SAR-v01.Rmd" 2>&1) || echo "Can't rename SAR v01: $error"
+error=$(git mv -k "report/$OLD_SAR-v01.md" "report/$NEW_SAR-v01.md" 2>&1) || echo "Can't rename SAR v01: $error"
 
 echo "Remotes available for updating/renaming:"
 for REMOTE in $(git remote)
