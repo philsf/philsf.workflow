@@ -12,6 +12,7 @@
 * New sections in SAP #159
 * Create script to update doc templates to be installed in new repos #169
 * SAR-rename should rename all relevant files into git #163
+* Remove ".sh" from all scripts' names #156
 
 # philsf.workflow 0.14.0
 
