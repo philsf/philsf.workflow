@@ -2,7 +2,7 @@
 
 if [[ "$1" == "" ]]
 then
-    echo "Usage: SAR-remote-set.sh REMOTE REMOTE_DIR"
+    echo "Usage: SAR-remote-set REMOTE REMOTE_DIR"
     exit
 fi
 

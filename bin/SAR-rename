@@ -2,7 +2,7 @@
 
 if [[ "$1" == "" ]]
 then
-    echo "Usage: SAR-rename.sh SAR_NEW"
+    echo "Usage: SAR-rename SAR_NEW"
     exit
 fi
 
@@ -30,6 +30,6 @@ error=$(git mv -k "report/$OLD_SAR-v01.md" "report/$NEW_SAR-v01.md" 2>&1) || ech
 echo "Remotes available for updating/renaming:"
 for REMOTE in $(git remote)
 do
-    # SAR-remote-rename.sh $NEW_SAR $REMOTE
+    # SAR-remote-rename $NEW_SAR $REMOTE
     echo "$REMOTE: " $(git remote get-url $REMOTE)
 done

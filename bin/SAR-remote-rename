@@ -2,7 +2,7 @@
 
 if [[ "$1" == "" ]]
 then
-    echo "Usage: SAR-remote-rename.sh REMOTE"
+    echo "Usage: SAR-remote-rename REMOTE"
     exit
 fi
 

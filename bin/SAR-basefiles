@@ -32,4 +32,4 @@ cp ~/usr/SAR/SAR_pt.Rmd report/SAR-$SAR_CODE-v01.Rmd
 cp -a ~/usr/SAR/misc/*pt.docx report/misc/
 
 # update links
-SAR-links.sh $SAR_CODE
+SAR-links $SAR_CODE

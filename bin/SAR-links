@@ -5,7 +5,7 @@ dest=${1/SAR-/""} # drop SAR prefix, if received
 
 if [[ "$dest" == "" ]]
 then
-    echo "Usage: SAR-links.sh $orig"
+    echo "Usage: SAR-links $orig"
     exit
 fi
 
