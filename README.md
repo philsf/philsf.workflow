@@ -9,31 +9,31 @@ They also simplify the synchronization between repo remotes, regardless of locat
 
 Essential scripts:
 
-- `SAR-new.sh` - Creates a new SAR dir (argument) in a sub-dir of the current dir
-- `SAR-remote-set.sh` - defines a remote for a SAR repo (in current dir)
+- `SAR-new` - Creates a new SAR dir (argument) in a sub-dir of the current dir
+- `SAR-remote-set` - defines a remote for a SAR repo (in current dir)
 
 Accessory scripts:
 
-- `SAR-rename.sh` - Renames a SAR repo
-- `SAR-remote-set.sh` - Creates and configures a SAR remote in a local/network dir
+- `SAR-rename` - Renames a SAR repo
+- `SAR-remote-set` - Creates and configures a SAR remote in a local/network dir
 
 Used internally:
 
-- `SAR-init.sh`       - Initiates the SAR repo
-- `SAR-basedirs.sh`  - Creates the standardized  dir structure for the SAR repo
-- `SAR-basefiles.sh` - Creates the stardardized file structure for the SAR repo
+- `SAR-init`       - Initiates the SAR repo
+- `SAR-basedirs`  - Creates the standardized  dir structure for the SAR repo
+- `SAR-basefiles` - Creates the stardardized file structure for the SAR repo
 
 ### Maintenance of a SAR repo
 
 Essencial scripts:
 
-- `SAR-sync.sh` - Syncs all remotes in the **current** dir (no arguments)
-- `SAR-sync-all.sh` - Syncs all remotes in all dirs (dirs as arguments)
+- `SAR-sync` - Syncs all remotes in the **current** dir (no arguments)
+- `SAR-sync-all` - Syncs all remotes in all dirs (dirs as arguments)
 
 Accessory scripts:
 
-- `SAR-remote-rename.sh` - Rename a git remote, and update its reference (also renames remote dir)
-- `SAR-remote-set-all.sh` - Batch creation and configuration of several SAR remotes
+- `SAR-remote-rename` - Rename a git remote, and update its reference (also renames remote dir)
+- `SAR-remote-set-all` - Batch creation and configuration of several SAR remotes
 
 ## Document templates
 

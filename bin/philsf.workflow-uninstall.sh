@@ -21,6 +21,17 @@ SAR-sync.sh
 SAR-sync-all.sh
 philsf.workflow-uninstall.sh
 BM-setup.sh
+SAR-basedirs
+SAR-basefiles
+SAR-init
+SAR-links
+SAR-new
+SAR-remote-rename
+SAR-remote-set
+SAR-remote-set-all
+SAR-rename
+SAR-sync
+SAR-sync-all
 "
 CFG="
 gitignore
