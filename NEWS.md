@@ -1,4 +1,4 @@
-# philsf.workflow (development version)
+# philsf.workflow 0.15.0
 
 * install without changing file attributes #147
 * Auto create document templates when creating a SAR repo #36
