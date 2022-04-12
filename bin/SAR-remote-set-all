@@ -2,7 +2,7 @@
 
 if [[ "$2" == "" ]]
 then
-    echo "Usage: SAR-remote-set-all.sh REMOTE REMOTES_DIR [SAR_LIST]"
+    echo "Usage: SAR-remote-set-all REMOTE REMOTES_DIR [SAR_LIST]"
     exit
 fi
 
@@ -21,6 +21,6 @@ fi
 for SAR in $SAR_LIST
 do
     cd "$SAR"
-    SAR-remote-set.sh "$REMOTENAME" "$REMOTES_DIR"
+    SAR-remote-set "$REMOTENAME" "$REMOTES_DIR"
     cd - > /dev/null
 done

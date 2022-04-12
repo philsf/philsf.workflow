@@ -5,7 +5,7 @@ DIRECTORIES=("$@")
 for REPO in "${DIRECTORIES[@]}";
 do echo -n "Entering $REPO ";
    cd "$REPO";
-   SAR-sync.sh
+   SAR-sync
    echo ""
    cd - >/dev/null;
 done
