@@ -1,5 +1,7 @@
 # philsf.workflow (development version)
 
+* Scripts were not updated after API change #173
+
 # philsf.workflow 0.15.0
 
 * install without changing file attributes #147
