@@ -7,7 +7,7 @@
 tab_inf <- analytical %>%
   tbl_summary(
     include = -id,
-    by = group,
+    by = exposure,
   ) %>%
   # include study N
   add_overall() %>%
@@ -44,7 +44,7 @@ tab_inf <- analytical %>%
 #     -id,
 #   ) %>%
 #   tbl_summary(
-#     by = group,
+#     by = exposure,
 #   ) %>%
 #   add_difference(
 #     test = all_continuous() ~ "cohens_d",

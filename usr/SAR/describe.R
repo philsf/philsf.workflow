@@ -22,7 +22,7 @@ theme_gtsummary_compact()
 
 # minimum detectable effect size
 # interpret_cohens_d(0.5)
-# cohens_d(outcome ~ group, data = analytical) %>% interpret_cohens_d()
+# cohens_d(outcome ~ exposure, data = analytical) %>% interpret_cohens_d()
 # interpret_icc(0.7)
 
 # tables ------------------------------------------------------------------
@@ -30,7 +30,7 @@ theme_gtsummary_compact()
 tab_desc <- analytical %>%
   tbl_summary(
     include = -id,
-    # by = group,
+    # by = exposure,
   ) %>%
   # modify_caption(caption = "**Tabela 1** Características demográficas") %>%
   # modify_header(label ~ "**Características dos pacientes**") %>%

@@ -11,7 +11,7 @@ library(labelled)
 
 # data loading ------------------------------------------------------------
 set.seed(42)
-data.raw <- tibble(id=gl(2, 10), group = gl(2, 10), outcome = rnorm(20))
+data.raw <- tibble(id=gl(2, 10), exposure = gl(2, 10), outcome = rnorm(20))
 # data.raw <- read_excel("dataset/file.xlsx") %>%
 #   janitor::clean_names()
 
@@ -36,7 +36,7 @@ data.raw <- data.raw %>%
 
 data.raw <- data.raw %>%
   set_variable_labels(
-    group = "Study group",
+    exposure = "Study exposure",
     outcome = "Study outcome",
   )
 
@@ -46,7 +46,7 @@ analytical <- data.raw %>%
   # select analytic variables
   select(
     id,
-    group,
+    exposure,
     outcome,
   )
 
