@@ -1,6 +1,6 @@
 # philsf.workflow (development version)
 
-* 
+* SAR-sync now accepts a getopt toggle to use git garbage collector #176
 
 # philsf.workflow 0.15.1
 
