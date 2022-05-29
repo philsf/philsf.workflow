@@ -4,6 +4,7 @@
 * template installation is now done in SAR-basefiles, instead of SAR-init #184
 * language support for SAR-new -l (default = pt) #179
 * SAR-sync now supports remote selection #16
+* SAR-new now creates several repos at once #182
 
 # philsf.workflow 0.15.1
 
