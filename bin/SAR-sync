@@ -44,6 +44,8 @@ if git rev-parse ; then
 	    git pull $PRUNE $REMOTE $BRANCH 2>&1 | egrep -v "$PULL_IGNORE|$X11_IGNORE"
 	    git push $REMOTE : 2>&1 | egrep -v "$PUSH_IGNORE|$X11_IGNORE"
 	    git push --tags $REMOTE 2>&1 | egrep -v "$PUSH_IGNORE|$X11_IGNORE"
+	else
+	    echo -n "(not available) "
 	fi
     done
 fi
