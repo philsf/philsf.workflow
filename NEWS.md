@@ -10,6 +10,7 @@
 * scripts updates #175
 * portfolio: include simplified code in site root
 * Will not uninstall during upgrades #162
+* SAR-sync now tests if remote is available before syncing #188
 
 # philsf.workflow 0.15.1
 
