@@ -1,11 +1,29 @@
 #!/bin/bash
 
+SAR_GC=""
+OPTIND=1
+
+while getopts "hg" opt; do
+    case $opt in
+	h) #display help syntax
+	    echo "help syntax"
+	    exit 0
+	    ;;
+	g) GC_flag="-g"
+	   ;;
+	\?) # Invalid option
+            echo "Error: Invalid option"
+            exit 0
+	    ;;
+    esac
+done
+
 DIRECTORIES=("$@")
 
 for REPO in "${DIRECTORIES[@]}";
 do echo -n "Entering $REPO ";
    cd "$REPO";
-   SAR-sync
-   echo ""
+   SAR-sync ${GC_flag}
+   echo "";
    cd - >/dev/null;
 done
