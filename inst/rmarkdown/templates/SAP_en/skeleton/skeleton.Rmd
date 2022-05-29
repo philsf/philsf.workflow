@@ -150,7 +150,8 @@ All comparisons between groups will be performed as univariate analyses.
 Continuous variables will be compared between groups with the
 independent t test with Welch correction.
 <!-- paired t test. -->
-<!-- Wilcoxon test. -->
+<!-- Mann-Whitney test. -->
+<!-- signed rank Wilcoxon test. -->
 Differences in distribution of categorical variables will be assessed with the
 Fisher exact test.
 <!-- chi-square test. -->
