@@ -89,8 +89,6 @@ observations.
 
 ## Analytical dataset
 
-All variables in the analytical set were labeled according to the raw data provided and values were labeled according to the data dictionary for the preparation of production-quality results tables and figures.
-
 <!-- After the cleaning process -->
 <!-- `r Nvar_final` -->
 <!-- variables were included in the analysis -->
@@ -107,6 +105,8 @@ Table 1 shows the structure of the analytical dataset.
 analytical_mockup %>%
   pander(caption = "**Table 1** Analytical dataset structure after variable selection and cleaning.")
 ```
+
+All variables in the analytical set were labeled according to the raw data provided and values were labeled according to the data dictionary for the preparation of production-quality results tables and figures.
 
 # Study parameters
 
