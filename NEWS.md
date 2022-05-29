@@ -6,6 +6,7 @@
 * SAR-sync now supports remote selection #16
 * SAR-new now creates several repos at once #182
 * SAP template updates #185
+* TOC: spacing removed after summary headers 1-3 #183
 
 # philsf.workflow 0.15.1
 
