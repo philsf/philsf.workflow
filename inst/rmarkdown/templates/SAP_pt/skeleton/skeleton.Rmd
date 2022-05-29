@@ -33,6 +33,10 @@ panderOptions('table.style', 'rmarkdown')
 panderOptions('table.split.table', 160)
 ```
 
+```{r cleaning, include=FALSE}
+source("scripts/input.R", encoding = 'UTF-8')
+```
+
 ---
 
 \newpage
@@ -74,10 +78,6 @@ kable(history)
 ## Desenho do estudo
 
 # Dados
-
-```{r cleaning, include=FALSE}
-source("scripts/input.R", encoding = 'UTF-8')
-```
 
 ## Dados brutos
 
