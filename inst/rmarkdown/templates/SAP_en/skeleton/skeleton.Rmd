@@ -75,8 +75,6 @@ source("scripts/input.R", encoding = 'UTF-8')
 
 ## Hypotheses
 
-## Study design
-
 # Data
 
 ## Raw data
@@ -109,6 +107,8 @@ analytical_mockup %>%
 All variables in the analytical set were labeled according to the raw data provided and values were labeled according to the data dictionary for the preparation of production-quality results tables and figures.
 
 # Study parameters
+
+## Study design
 
 ## Inclusion and exclusion criteria
 

@@ -75,8 +75,6 @@ kable(history)
 
 ## Hipóteses
 
-## Desenho do estudo
-
 # Dados
 
 ## Dados brutos
@@ -105,6 +103,8 @@ Todas as variáveis da tabela de dados analíticos foram identificadas de acordo
 Estas identificações possibilitarão a criação de tabelas de resultados com qualidade de produção final.
 
 # Parâmetros do estudo
+
+## Desenho do estudo
 
 ## Critérios de inclusão e exclusão
 
