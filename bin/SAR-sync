@@ -1,5 +1,25 @@
 #!/bin/bash
 
+OPTIND=1
+
+while getopts "hg" opt; do
+    case $opt in
+	h) #display help syntax
+	    echo "help syntax"
+	    exit 0
+	    ;;
+	g)
+	    echo ""
+	    echo "Calling git garbage collector"
+	    git gc 2>&1 >/dev/null
+	   ;;
+	\?) # Invalid option
+            echo "Error: Invalid option"
+            exit 0
+	    ;;
+    esac
+done
+
 X11_IGNORE="X11 forwarding request failed on channel"
 PULL_IGNORE="up-to-date|up to date|FETCH_HEAD|^From|$X11_IGNORE|fatal: couldn't find remote ref|You asked to pull|Because this is not|you must specify"
 PUSH_IGNORE="up-to-date|up to date"
