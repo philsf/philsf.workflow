@@ -24,19 +24,25 @@ while getopts "hgr:" opt; do
     esac
 done
 
+# strings to ignore
 X11_IGNORE="X11 forwarding request failed on channel"
 PULL_IGNORE="up-to-date|up to date|FETCH_HEAD|^From|$X11_IGNORE|fatal: couldn't find remote ref|You asked to pull|Because this is not|you must specify"
 PUSH_IGNORE="up-to-date|up to date"
 
+# test if we are inside a git repo
 if git rev-parse ; then
+    # get the current branch name
     BRANCH=`git branch | grep '^*' | sed 's/^\* //'`
 
     for REMOTE in $REMOTES
     do
+	# test if remote is available
 	echo -n "$REMOTE "
-	git fetch --prune 2>&1| egrep -v "Fetching|$X11_IGNORE"
-	git pull $REMOTE $BRANCH 2>&1 | egrep -v "$PULL_IGNORE|$X11_IGNORE"
-	git push $REMOTE : 2>&1 | egrep -v "$PUSH_IGNORE|$X11_IGNORE"
-	git push --tags $REMOTE 2>&1 | egrep -v "$PUSH_IGNORE|$X11_IGNORE"
+	if git fetch --prune 2>&1| egrep -v "Fetching|$X11_IGNORE" ; then
+	    # sync remote
+	    git pull $REMOTE $BRANCH 2>&1 | egrep -v "$PULL_IGNORE|$X11_IGNORE"
+	    git push $REMOTE : 2>&1 | egrep -v "$PUSH_IGNORE|$X11_IGNORE"
+	    git push --tags $REMOTE 2>&1 | egrep -v "$PUSH_IGNORE|$X11_IGNORE"
+	fi
     done
 fi
