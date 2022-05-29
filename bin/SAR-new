@@ -1,6 +1,5 @@
 #!/bin/bash
 
-SAR=$1
 SAR_LANG="pt"
 OPTIND=1
 
@@ -25,13 +24,11 @@ done
 
 shift "$((OPTIND-1))"
 
-if [[ "$1" == "" ]]
-then
-    SAR=${PWD##*/} # local dir
-fi
-
+for SAR in $@; do
+echo "Preparing local repository: $SAR"
 mkdir -p "$SAR"
 cd "$SAR"
 SAR-basedirs
 SAR-basefiles -l $SAR_LANG
 SAR-init
+done
