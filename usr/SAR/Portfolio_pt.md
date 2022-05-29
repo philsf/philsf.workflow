@@ -5,6 +5,7 @@ permalink: /portfolio/SAR-yyyy-NNN/
 redirect_from:
   - /portfolio/SAR-yyyy-NNN-XX/
   - /SAR-yyyy-NNN-XX/
+  - /SAR-yyyy-NNN/
 categories:
   - case-control
   - cross-sectional
