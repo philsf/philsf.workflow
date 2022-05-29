@@ -33,6 +33,10 @@ panderOptions('table.style', 'rmarkdown')
 panderOptions('table.split.table', 160)
 ```
 
+```{r cleaning, include=FALSE}
+source("scripts/input.R", encoding = 'UTF-8')
+```
+
 ---
 
 \newpage
@@ -71,13 +75,7 @@ kable(history)
 
 ## Hipóteses
 
-## Desenho do estudo
-
 # Dados
-
-```{r cleaning, include=FALSE}
-source("scripts/input.R", encoding = 'UTF-8')
-```
 
 ## Dados brutos
 
@@ -88,9 +86,6 @@ variáveis coletadas de
 observações.
 
 ## Tabela de dados analíticos
-
-Todas as variáveis da tabela de dados analíticos foram identificadas de acordo com as descrições das variáveis, e os valores foram identificados de acordo com o dicionário de dados providenciado.
-Estas identificações possibilitarão a criação de tabelas de resultados com qualidade de produção final.
 
 Depois dos procedimentos de limpeza e seleção
 `r Nvar_final`
@@ -104,7 +99,12 @@ analytical_mockup %>%
   pander(caption = "**Tabela 1** Estrutura da tabela de dados analíticos após seleção e limpeza das variáveis.")
 ```
 
+Todas as variáveis da tabela de dados analíticos foram identificadas de acordo com as descrições das variáveis, e os valores foram identificados de acordo com o dicionário de dados providenciado.
+Estas identificações possibilitarão a criação de tabelas de resultados com qualidade de produção final.
+
 # Parâmetros do estudo
+
+## Desenho do estudo
 
 ## Critérios de inclusão e exclusão
 
@@ -146,6 +146,7 @@ Todas as comparações entre os grupos serão avaliadas como análises univariad
 Variáveis contínuas serão comparadas entre os grupos com o
 teste t de grupos independentes com a correção de Welch.
 <!-- teste t pareado. -->
+<!-- teste de Mann-Whitney. -->
 <!-- teste de Wilcoxon. -->
 Diferenças nas distribuições de variáveis categóricas serão avaliadas com o teste
 exato de Fisher.

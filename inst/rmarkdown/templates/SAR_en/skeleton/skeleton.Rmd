@@ -50,6 +50,10 @@ colnames(history) <- c("Version", "Alterations")
 kable(history)
 ```
 
+```{r results, include=FALSE}
+source("scripts/results.R", encoding = 'UTF-8')
+```
+
 ---
 
 # Abbreviations
@@ -61,10 +65,6 @@ kable(history)
 ## Data reception and cleaning
 
 # Methods
-
-```{r results, include=FALSE}
-source("scripts/results.R", encoding = 'UTF-8')
-```
 
 ## Study parameters
 
