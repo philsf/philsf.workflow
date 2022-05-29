@@ -53,6 +53,7 @@ analytical <- data.raw %>%
     id,
     exposure,
     outcome,
+    everything(),
   )
 
 Nvar_final <- analytical %>% ncol
