@@ -6,13 +6,13 @@
 # template p-value table
 tab_inf <- analytical %>%
   tbl_summary(
-    include = c(group, outcome),
-    by = group,
+    include = -id,
+    by = exposure,
   ) %>%
   # include study N
   add_overall() %>%
   # pretty format categorical variables
-  bold_labels() %>%
+  # bold_labels() %>%
   # bring home the bacon! (options: add_p or add_difference)
   # add_p: quick and dirty
   add_p(
@@ -44,7 +44,7 @@ tab_inf <- analytical %>%
 #     -id,
 #   ) %>%
 #   tbl_summary(
-#     by = group,
+#     by = exposure,
 #   ) %>%
 #   add_difference(
 #     test = all_continuous() ~ "cohens_d",
