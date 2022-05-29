@@ -1,6 +1,29 @@
 #!/bin/bash
 
 SAR=$1
+SAR_LANG="pt"
+OPTIND=1
+
+while getopts "l:h" opt; do
+    case $opt in
+	l) SAR_LANG=${OPTARG}
+	   if [[  "$SAR_LANG" != "pt" && "$SAR_LANG" != "en" ]]; then
+	       echo "Supported languagues: pt and en (received $SAR_LANG)"
+	       exit
+	   fi
+	   ;;
+	h) #display help syntax
+	    echo "help syntax"
+	    exit 0
+	    ;;
+	\?) # Invalid option
+            echo "Error: Invalid option"
+            exit 0
+	    ;;
+    esac
+done
+
+shift "$((OPTIND-1))"
 
 if [[ "$1" == "" ]]
 then
@@ -10,5 +33,5 @@ fi
 mkdir -p "$SAR"
 cd "$SAR"
 SAR-basedirs
-SAR-basefiles
+SAR-basefiles -l $SAR_LANG
 SAR-init

@@ -2,6 +2,7 @@
 
 * SAR-sync now accepts a getopt toggle to use git garbage collector #176
 * template installation is now done in SAR-basefiles, instead of SAR-init #184
+* language support for SAR-new -l (default = pt) #179
 
 # philsf.workflow 0.15.1
 
