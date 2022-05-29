@@ -6,7 +6,7 @@
 # template p-value table
 tab_inf <- analytical %>%
   tbl_summary(
-    include = c(group, outcome),
+    include = -id,
     by = group,
   ) %>%
   # include study N

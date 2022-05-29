@@ -29,7 +29,7 @@ theme_gtsummary_compact()
 
 tab_desc <- analytical %>%
   tbl_summary(
-    include = c(group, outcome),
+    include = -id,
     # by = group,
   ) %>%
   # modify_caption(caption = "**Tabela 1** Características demográficas") %>%
