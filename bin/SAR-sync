@@ -2,6 +2,7 @@
 
 OPTIND=1
 REMOTES=`git remote`
+PRUNE="--prune"
 
 while getopts "hgr:" opt; do
     case $opt in
@@ -38,9 +39,9 @@ if git rev-parse ; then
     do
 	# test if remote is available
 	echo -n "$REMOTE "
-	if git fetch --prune 2>&1| egrep -v "Fetching|$X11_IGNORE" ; then
+	if git fetch 2>&1| egrep -v "Fetching|$X11_IGNORE" ; then
 	    # sync remote
-	    git pull $REMOTE $BRANCH 2>&1 | egrep -v "$PULL_IGNORE|$X11_IGNORE"
+	    git pull $PRUNE $REMOTE $BRANCH 2>&1 | egrep -v "$PULL_IGNORE|$X11_IGNORE"
 	    git push $REMOTE : 2>&1 | egrep -v "$PUSH_IGNORE|$X11_IGNORE"
 	    git push --tags $REMOTE 2>&1 | egrep -v "$PUSH_IGNORE|$X11_IGNORE"
 	fi
