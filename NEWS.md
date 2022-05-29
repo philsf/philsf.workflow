@@ -9,6 +9,7 @@
 * TOC: spacing removed after summary headers 1-3 #183
 * scripts updates #175
 * portfolio: include simplified code in site root
+* Will not uninstall during upgrades #162
 
 # philsf.workflow 0.15.1
 
