@@ -12,7 +12,7 @@ tab_inf <- analytical %>%
   # include study N
   add_overall() %>%
   # pretty format categorical variables
-  bold_labels() %>%
+  # bold_labels() %>%
   # bring home the bacon! (options: add_p or add_difference)
   # add_p: quick and dirty
   add_p(
