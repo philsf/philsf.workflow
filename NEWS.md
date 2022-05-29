@@ -7,6 +7,7 @@
 * SAR-new now creates several repos at once #182
 * SAP template updates #185
 * TOC: spacing removed after summary headers 1-3 #183
+* scripts updates #175
 
 # philsf.workflow 0.15.1
 
