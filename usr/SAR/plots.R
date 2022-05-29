@@ -4,11 +4,10 @@
 ff.col <- "steelblue" # good for single groups scale fill/color brewer
 ff.pal <- "Paired"    # good for binary groups scale fill/color brewer
 
-scale_color_discrete <- function(...) scale_color_brewer(palette = ff.pal, ...)
-scale_fill_discrete <- function(...) scale_fill_brewer(palette = ff.pal, ...)
-
 gg <- analytical %>%
   ggplot() +
+  scale_color_brewer(palette = ff.pal) +
+  scale_fill_brewer(palette = ff.pal) +
   theme_ff()
 
 # plots -------------------------------------------------------------------
