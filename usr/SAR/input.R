@@ -21,9 +21,14 @@ Nobs_orig <- data.raw %>% nrow
 # data cleaning -----------------------------------------------------------
 
 data.raw <- data.raw %>%
-  # select() %>%
-  mutate() %>%
-  filter()
+  select(
+  ) %>%
+  rename(
+  ) %>%
+  mutate(
+  ) %>%
+  filter(
+  )
 
 # data wrangling ----------------------------------------------------------
 
