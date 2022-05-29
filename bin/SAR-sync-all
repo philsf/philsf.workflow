@@ -3,13 +3,16 @@
 SAR_GC=""
 OPTIND=1
 
-while getopts "hg" opt; do
+while getopts "hgr:" opt; do
     case $opt in
 	h) #display help syntax
 	    echo "help syntax"
 	    exit 0
 	    ;;
 	g) GC_flag="-g"
+	   ;;
+	r) # replace REMOTES array
+	    REMOTE_flag="-r ${OPTARG}"
 	   ;;
 	\?) # Invalid option
             echo "Error: Invalid option"
@@ -18,12 +21,14 @@ while getopts "hg" opt; do
     esac
 done
 
+shift "$((OPTIND-1))"
+
 DIRECTORIES=("$@")
 
 for REPO in "${DIRECTORIES[@]}";
 do echo -n "Entering $REPO ";
    cd "$REPO";
-   SAR-sync ${GC_flag}
+   SAR-sync ${GC_flag} ${REMOTE_flag}
    echo "";
    cd - >/dev/null;
 done
