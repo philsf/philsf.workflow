@@ -2,6 +2,27 @@
 
 SAR=${PWD##*/} # local dir
 SAR_CODE=${SAR/SAR-/""}
+SAR_LANG="pt"
+OPTIND=1
+
+while getopts "l:h" opt; do
+    case $opt in
+	l) SAR_LANG=${OPTARG}
+	   if [[  "$SAR_LANG" != "pt" && "$SAR_LANG" != "en" ]]; then
+	       echo "Supported languagues: pt and en (received $SAR_LANG)"
+	       exit
+	   fi
+	   ;;
+	h) #display help syntax
+	    echo "help syntax"
+	    exit 0
+	    ;;
+	\?) # Invalid option
+            echo "Error: Invalid option"
+            exit 0
+	    ;;
+    esac
+done
 
 RSCRIPTS="
 input.R
@@ -17,19 +38,21 @@ cp ~/usr/SAR/gitignore .gitignore
 cp ~/usr/SAR/new-rproj $SAR.Rproj
 for r in $RSCRIPTS; do cp ~/usr/SAR/$r scripts/; done
 
+echo "Installing templates for language: ${SAR_LANG}"
+
 # rename scripts README
 mv scripts/README-R.md scripts/README.md
 
 # apply default template repo README
-cp ~/usr/SAR/README-SAR_pt.md README.md
+cp ~/usr/SAR/README-SAR_${SAR_LANG}.md README.md
 
 # apply default template repo Portfolio
-cp ~/usr/SAR/Portfolio_pt.md Portfolio.md
+cp ~/usr/SAR/Portfolio_${SAR_LANG}.md Portfolio.md
 
 # apply default SAP/SAR templates
-cp ~/usr/SAR/SAP_pt.Rmd report/SAP-$SAR_CODE-v01.Rmd
-cp ~/usr/SAR/SAR_pt.Rmd report/SAR-$SAR_CODE-v01.Rmd
-cp -a ~/usr/SAR/misc/*pt.docx report/misc/
+cp ~/usr/SAR/SAP_${SAR_LANG}.Rmd report/SAP-$SAR_CODE-v01.Rmd
+cp ~/usr/SAR/SAR_${SAR_LANG}.Rmd report/SAR-$SAR_CODE-v01.Rmd
+cp -a ~/usr/SAR/misc/*${SAR_LANG}.docx report/misc/
 
 # update links
 SAR-links $SAR_CODE
