@@ -215,7 +215,7 @@ two-tailed.
 
 ```{r}
 n <- analytical %>%
-  count(group) %>%
+  count(exposure) %>%
   pull(n)
 n1 <- n[1]
 n2 <- n[2]
