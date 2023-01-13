@@ -252,6 +252,7 @@ This analysis will be performed using statistical software `R` version `r getRve
 The adoption of the EQUATOR network (<http://www.equator-network.org/>) reporting guidelines have seen increasing adoption by scientific journals.
 All observational studies are recommended to be reported following the STROBE guideline (von Elm et al, 2014).
 All clinical trials are recommended to be reported following the CONSORT guideline (Schulz K F, Altman D G, Moher D., 2010).
+All systematic reviews are recommended to be reported following the PRISMA guideline (Page et al, 2021).
 
 In particular when a retrospective study is conducted using hospital records, it is recommended that the RECORD extension of the STROBE guideline is considered (Benchimol et al, 2015).
 
@@ -264,6 +265,7 @@ In particular when a retrospective study is conducted using hospital records, it
 - von Elm E, Altman DG, Egger M, Pocock SJ, Gøtzsche PC, Vandenbroucke JP; STROBE Initiative. The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: guidelines for reporting observational studies. Int J Surg. 2014 Dec;12(12):1495-9 (<https://doi.org/10.1016/j.ijsu.2014.07.013>).
 - Benchimol EI, Smeeth L, Guttmann A, Harron K, Moher D, Petersen I, Sørensen HT, von Elm E, Langan SM; RECORD Working Committee. The REporting of studies Conducted using Observational Routinely-collected health Data (RECORD) statement. PLoS Med. 2015 Oct 6;12(10):e1001885 (<https://doi.org/10.1371/journal.pmed.1001885>).
 - Schulz K F, Altman D G, Moher D. CONSORT 2010 Statement: updated guidelines for reporting parallel group randomised trials BMJ 2010; 340 :c332 (<https://doi.org/10.1136/bmj.c332>).
+- Page M J, McKenzie J E, Bossuyt P M, Boutron I, Hoffmann T C, Mulrow C D et al. The PRISMA 2020 statement: an updated guideline for reporting systematic reviews BMJ 2021; 372 :n71 (<https://doi.org/10.1136/bmj.n71>).
 
 # Appendix
 
