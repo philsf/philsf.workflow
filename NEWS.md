@@ -1,6 +1,7 @@
 # philsf.workflow (development version)
 
 * Reference major study reporting guidelines in SAP templates #177
+* SAR-new: allow creation of multiple repos #198
 
 # philsf.workflow 0.15.2
 

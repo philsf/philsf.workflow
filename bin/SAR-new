@@ -31,4 +31,5 @@ cd "$SAR"
 SAR-basedirs
 SAR-basefiles -l $SAR_LANG
 SAR-init
+cd -
 done
