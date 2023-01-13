@@ -66,6 +66,8 @@ source("scripts/results.R", encoding = 'UTF-8')
 
 # Methods
 
+<!-- The data procedures, design and analysis methods used in this report are fully described in the annex document **SAP-yyyy-NNN-XX-v01**. -->
+
 ## Study parameters
 
 ### Study design

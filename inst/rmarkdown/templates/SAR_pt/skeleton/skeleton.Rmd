@@ -66,6 +66,8 @@ source("scripts/results.R", encoding = 'UTF-8')
 
 # Metodologia
 
+<!-- Os procedimentos de limpeza de dados, desenho do estudo e métodos de análise usados neste relatório estão descritos no documento anexo **SAP-yyyy-NNN-XX-v01**. -->
+
 ## Parâmetros do estudo
 
 ### Desenho do estudo

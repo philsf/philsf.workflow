@@ -50,6 +50,10 @@ colnames(history) <- c("Versão", "Alterações")
 kable(history)
 ```
 
+```{r results, include=FALSE}
+source("scripts/results.R", encoding = 'UTF-8')
+```
+
 ---
 
 # Lista de abreviaturas
@@ -62,9 +66,7 @@ kable(history)
 
 # Metodologia
 
-```{r results, include=FALSE}
-source("scripts/results.R", encoding = 'UTF-8')
-```
+<!-- Os procedimentos de limpeza de dados, desenho do estudo e métodos de análise usados neste relatório estão descritos no documento anexo **SAP-yyyy-NNN-XX-v01**. -->
 
 ## Parâmetros do estudo
 

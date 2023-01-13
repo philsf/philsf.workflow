@@ -23,6 +23,7 @@ tags:
   - incidence
   - diagnostic-models
   - prognostic-models
+  - imputation-models
   - survival-analysis
   - efficacy
   - concordance-analysis
@@ -36,8 +37,8 @@ tags:
 
 Objetivo
 
-Análise Estatística para PESSOA (LOCAL, aaaa)
-<!-- Relatório técnico para PESSOA (LOCAL, aaaa) -->
+Análise Estatística para PESSOA (LOCAL, yyyy)
+<!-- Relatório técnico para PESSOA (LOCAL, yyyy) -->
 
 ## Análises realizadas
 
