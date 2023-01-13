@@ -202,6 +202,7 @@ Fisher exact test.
 
 No missing data imputation will be performed.
 All evaluations will be performed as complete case analyses.
+Missing data counts and proportions will be reported in tables.
 
 ## Significance and Confidence Intervals
 

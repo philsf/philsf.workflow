@@ -161,6 +161,8 @@ exato de Fisher.
 
 Não serão realizadas imputações de dados faltantes.
 Todas as avaliações serão realizadas como análises de casos completos.
+As frequências e proporções de dados faltantes serão reportadas em tabelas.
+
 
 ## Significância e Intervalos de Confiança
 
