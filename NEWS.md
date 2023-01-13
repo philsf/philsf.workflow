@@ -1,5 +1,7 @@
 # philsf.workflow (development version)
 
+* Reference major study reporting guidelines in SAP templates #177
+
 # philsf.workflow 0.15.2
 
 * SAR-sync now accepts a getopt toggle to use git garbage collector #176
