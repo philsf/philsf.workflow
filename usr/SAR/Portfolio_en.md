@@ -38,7 +38,7 @@ tags:
 Objective
 
 Statistical Analysis for PERSON (PLACE, yyyy)
-<!-- Technical Report for  PERSON (PLACE, yyyy) -->
+<!-- Technical Report for PERSON (PLACE, yyyy) -->
 
 ## Analyses performed
 
