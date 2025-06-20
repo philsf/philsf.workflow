@@ -1,8 +1,11 @@
-# philsf.workflow (development version)
+# philsf.workflow 0.15.3
 
 * Reference major study reporting guidelines in SAP templates #177
 * SAR-new: allow creation of multiple repos #198
 * General improvements #197
+* update package for new environment versions #210
+* template styles header/footer fixed #208
+* new R packages in script templates #211
 
 # philsf.workflow 0.15.2
 
