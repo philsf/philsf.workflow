@@ -5,6 +5,9 @@
 # library(gmodels) # CrossTable
 library(gtsummary)
 library(gt)
+# library(gtreg)
+# library(epiR)
+# library(epitools)
 # library(effectsize)
 # library(finalfit) # missing_compare
 
