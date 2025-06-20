@@ -1,5 +1,6 @@
 # setup -------------------------------------------------------------------
 # library(survminer)
+# library(gridExtra)
 
 ff.col <- "steelblue" # good for single groups scale fill/color brewer
 ff.pal <- "Paired"    # good for binary groups scale fill/color brewer
