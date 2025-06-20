@@ -4,6 +4,7 @@
 * SAR-new: allow creation of multiple repos #198
 * General improvements #197
 * update package for new environment versions #210
+* template styles header/footer fixed #208
 
 # philsf.workflow 0.15.2
 
