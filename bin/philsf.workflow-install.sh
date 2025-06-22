@@ -18,7 +18,6 @@ SAR-remote-set
 SAR-remote-set-all
 SAR-rename
 SAR-sync
-SAR-sync-all
 philsf.workflow-uninstall.sh
 "
 CFG="
