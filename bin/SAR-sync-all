@@ -30,7 +30,7 @@ X11_IGNORE="X11 forwarding request failed on channel"
 PULL_IGNORE="up-to-date|up to date|FETCH_HEAD|^From|$X11_IGNORE|fatal: couldn't find remote ref|You asked to pull|Because this is not|you must specify"
 PUSH_IGNORE="up-to-date|up to date"
 
-# ${#my_array_empty[@]}
+# default to local dir, if none in arguments
 if [ ${#DIRECTORIES[@]} -eq 0 ]; then
     DIRECTORIES=(".")
 fi
@@ -49,20 +49,22 @@ do echo -n "Entering $REPO ";
        BRANCH=`git branch | grep '^*' | sed 's/^\* //'`
 
        if [ -n "$REMOTE_flag" ]; then
-	   # override list of remotes
+	   # -r overrides list of remotes
 	   REMOTES=$REMOTE_flag
        else
 	   # get list of remotes in local dir
 	   REMOTES=`git remote`
        fi
 
+       # sync remote
        for REMOTE in $REMOTES
        do
-	   # test if remote is available
 	   echo -n "$REMOTE "
+	   # test if remote is available
 	   if git fetch $REMOTE 2>/dev/null 1>/dev/null ; then
-	       # sync remote
+	       # get (pull)
 	       git pull $PRUNE $REMOTE $BRANCH 2>&1 | egrep -v "$PULL_IGNORE|$X11_IGNORE"
+	       # send (push)
 	       git push $REMOTE : 2>&1 | egrep -v "$PUSH_IGNORE|$X11_IGNORE"
 	       git push --tags $REMOTE 2>&1 | egrep -v "$PUSH_IGNORE|$X11_IGNORE"
 	   else
