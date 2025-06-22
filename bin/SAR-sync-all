@@ -27,8 +27,9 @@ DIRECTORIES=("$@")
 
 for REPO in "${DIRECTORIES[@]}";
 do echo -n "Entering $REPO ";
+   # enter directory
    cd "$REPO";
-   SAR-sync ${GC_flag} ${REMOTE_flag}
+   # SAR-sync ${GC_flag} ${REMOTE_flag}
    echo "";
    cd - >/dev/null;
 done
