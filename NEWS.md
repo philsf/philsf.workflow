@@ -1,3 +1,7 @@
+# philsf.workflow (development version)
+
+* Simplify sync routine into a single script #186
+
 # philsf.workflow 0.15.3
 
 * Reference major study reporting guidelines in SAP templates #177
