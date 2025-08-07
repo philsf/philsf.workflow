@@ -15,6 +15,7 @@ SAR-links.sh
 SAR-new.sh
 SAR-remote-rename.sh
 SAR-remote-set.sh
+SAR-remote-set-github
 SAR-remote-set-all.sh
 SAR-rename.sh
 SAR-sync.sh

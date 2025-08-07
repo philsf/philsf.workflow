@@ -15,6 +15,7 @@ SAR-links
 SAR-new
 SAR-remote-rename
 SAR-remote-set
+SAR-remote-set-github
 SAR-remote-set-all
 SAR-rename
 SAR-sync
