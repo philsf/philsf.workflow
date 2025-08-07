@@ -1,0 +1,17 @@
+#!/bin/bash
+
+SAR=${PWD##*/} # local dir
+SAR_CODE=${SAR/SAR-/""}
+
+echo $SAR
+echo $SAR_CODE
+
+gh repo create philsf-biostat/$SAR --private --push --source=. --remote=origin
+
+gh issue create --title "repo setup" --body ""
+gh issue create --title "SAP" --body ""
+gh issue create --title "describe" --body ""
+gh issue create --title "model" --body ""
+gh issue create --title "inference" --body ""
+gh issue create --title "report checklist" --body ""
+
