@@ -10,6 +10,7 @@
 * update package for new environment versions #210
 * template styles header/footer fixed #208
 * new R packages in script templates #211
+* new github repo setup script #206
 
 # philsf.workflow 0.15.2
 
