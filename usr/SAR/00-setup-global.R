@@ -59,12 +59,23 @@ library(ggfortify) # autoplot
 # setup themes ------------------------------------------------------------
 
 # setup gtsummary theme
-
 theme_ff_gtsummary()
 theme_gtsummary_compact()
 # theme_gtsummary_language(language = "pt") # traduzir
 
+# setup ggplot theme
 theme_set(theme_ff())
+
+ff.col <- "steelblue" # good for single groups scale fill/color brewer
+ff.pal <- "Paired"    # good for binary groups scale fill/color brewer
+# ff.pal <- "Blues"   # good for sequential multiple groups
+# ff.pal <- "Set1"    # good for non-sequential multiple groups
+
+gg <- data.ads %>%
+  ggplot() +
+  scale_color_brewer(palette = ff.pal) +
+  scale_fill_brewer(palette = ff.pal) +
+  theme_ff()
 
 # global variables --------------------------------------------------------
 

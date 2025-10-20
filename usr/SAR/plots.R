@@ -1,23 +1,32 @@
-# setup -------------------------------------------------------------------
-# library(survminer)
-# library(gridExtra)
+# 23_output_primary_plot.R
 
-ff.col <- "steelblue" # good for single groups scale fill/color brewer
-ff.pal <- "Paired"    # good for binary groups scale fill/color brewer
+# Preamble ----------------------------------------------------------------
+# Purpose: create the figures for the Primary Objective
+# Use the gg base plot defined in 00-
 
-gg <- analytical %>%
+# 1. Primary Outcome by exposure Figure (e.g., Figure 1) ------------------
+
+gg.primary.outcome <- gg %>%
+  # Start with the ggplot code from your old plots.R
   ggplot() +
-  scale_color_brewer(palette = ff.pal) +
-  scale_fill_brewer(palette = ff.pal) +
-  theme_ff()
-
-# plots -------------------------------------------------------------------
-
-gg.outcome <- gg +
   geom_density(aes(outcome, fill = exposure), alpha = .8) +
-  # geom_bar(aes(outcome, fill = exposure)) +
-  xlab(attr(analytical$outcome, "label")) +
-  ylab("")
+  # Apply themes/labels defined in 00_setup_global.R
+  labs(
+    x = lab.primary.outcome
+    )
+
+# 99. Age by Sex Figure (e.g., Figure A1) ---------------------------------
+
+gg.appendix.age <- gg +
+  aes(age, fill = sex) +
+  geom_density(data = analytical, alpha = .9) +
+  labs(
+    x = attr(analytical$age, "label"),
+    y = "Distribution density",
+    fill = attr(analytical$sex, "label"),
+  )
+
+gg.age
 
 # cool facet trick from https://stackoverflow.com/questions/3695497 by JWilliman
 # gg +
