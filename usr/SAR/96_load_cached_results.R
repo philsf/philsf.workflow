@@ -24,7 +24,7 @@ if (file.exists("results/tab.primary.inf.rds")) {
 
 # Load the single, canonical Table A1 object
 if (file.exists("results/tab.primary.inf.full.rds")) {
-  tab.primary.inf <- read_rds("results/tab.primary.inf.full.rds")
+  tab.primary.inf.full <- read_rds("results/tab.primary.inf.full.rds")
 }
 
 # 4. Load Final Plot Objects
