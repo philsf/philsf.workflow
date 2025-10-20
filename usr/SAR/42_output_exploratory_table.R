@@ -21,8 +21,4 @@ tab.exploratory.inf <- tab_adj(
 
 # 2. Final Tables List ----------------------------------------------------
 
-# Optional: Create a list of all tables for easy reference later
-final.tables.list <- list(
-  "Table 1: Baseline" = tab.exploratory.desc,
-  "Table 2: exploratory Inference" = tab.exploratory.inf
-)
+final.tables.list[["Table 5: Exploratory Inf"]] <- tab.exploratory.inf

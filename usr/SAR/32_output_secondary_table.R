@@ -21,8 +21,4 @@ tab.secondary.inf <- tab_adj(
 
 # 2. Final Tables List ----------------------------------------------------
 
-# Optional: Create a list of all tables for easy reference later
-final.tables.list <- list(
-  "Table 1: Baseline" = tab.secondary.desc,
-  "Table 2: secondary Inference" = tab.secondary.inf
-)
+final.tables.list[["Table 4: Secondary Inf"]] <- tab.secondary.inf

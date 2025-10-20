@@ -37,8 +37,4 @@ tab.primary.inf.full <- tab_adj(
 
 # 3. Final Tables List ----------------------------------------------------
 
-# Optional: Create a list of all tables for easy reference later
-final.tables.list <- list(
-  "Table 3: Primary Sensitivity"  = tab.primary.inf.sens,
-  "Table A2: Primary Sensitivity" = tab.primary.inf.full.sens
-)
+final.tables.list[["Table 3: Sensitivity"]] <- tab.primary.inf.sens
