@@ -1,24 +1,32 @@
 # 32_output_secondary_table.R
 
 # Preamble ----------------------------------------------------------------
-# Purpose: Create the secondary Inferential Table (Table 2) by formatting
-#          raw model objects from 21- [Multivariate Gig].
+# Purpose: Create the secondary Inferential Table (Table 4) by formatting
+#          raw model objects from 31_analysis_secondary_model.R
 
-# 1. secondary Inferential Table (e.g., Table 2) ----------------------------
-
+# 1. Secondary Inferential Table (e.g., Table 4 - Reduced) -----------------
 # Uses the helper functions (tab, tab_adj) defined in 00_setup_global.R
 tab.secondary.inf <- tab_adj(
   crude    = model.secondary.raw,
   adjusted = model.secondary.adj,
-  include  = c("exposure"), # Example: Only include the main exposure in the final table
-  # exp = FALSE, # Use the global 'exponentiate' variable defined in 00-
+  include  = c("exposure"), # Only include the main exposure
 ) %>%
   # Apply final formatting (e.g., adding footnotes, headers)
-  # modify_table_styling(columns = "label", align = "center") %>%
-  # bold_labels() %>%
-  # modify_header(label ~ "...") %>%
   modify_footnote()
 
-# 2. Final Tables List ----------------------------------------------------
+# 2. Full Secondary Table (Appendix - Table A3) ---------------------------
 
+# Create the full table for the Appendix, including all variables
+tab.secondary.inf.full <- tab_adj(
+  crude    = model.secondary.raw,
+  adjusted = model.secondary.adj,
+  include  = everything(), # Include all variables
+) %>%
+  # Apply final formatting (e.g., adding footnotes, headers)
+  modify_footnote()
+
+# 3. Final Tables List ----------------------------------------------------
+
+# Correctly appends to the existing final.tables.list
 final.tables.list[["Table 4: Secondary Inf"]] <- tab.secondary.inf
+final.tables.list[["Table A3: Full Secondary Inf"]] <- tab.secondary.inf.full

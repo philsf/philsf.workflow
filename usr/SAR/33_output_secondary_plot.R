@@ -16,6 +16,14 @@ gg.secondary.outcome <- data.ads %>%
 
 gg.secondary.outcome
 
+# 2. Model effects plot ---------------------------------------------------
+
+# Only create this model-based plot if the model object exists
+if (exists("model.secondary.adj")) {
+  # This block will run in the Multivariate Gig but be skipped in the Univariate Gig
+  gg.secondary.predict <- model.secondary.adj %>% effect_plot()
+}
+
 # 99. Age by Sex Figure (e.g., Figure A1) ---------------------------------
 
 gg.appendix.age <- data.ads %>%

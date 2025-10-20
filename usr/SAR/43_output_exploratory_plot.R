@@ -16,6 +16,14 @@ gg.exploratory.outcome <- data.ads %>%
 
 gg.exploratory.outcome
 
+# 2. Model effects plot ---------------------------------------------------
+
+# Only create this model-based plot if the model object exists
+if (exists("model.exploratory.adj")) {
+  # This block will run in the Multivariate Gig but be skipped in the Univariate Gig
+  gg.exploratory.predict <- model.exploratory.adj %>% effect_plot()
+}
+
 # 99. Age by Sex Figure (e.g., Figure A1) ---------------------------------
 
 gg.appendix.age <- data.ads %>%

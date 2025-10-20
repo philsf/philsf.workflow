@@ -39,14 +39,22 @@ model.primary.adj <- glm(
 model.primary.adj %>% performance::check_model()
 model.primary.adj %>% performance::r2()
 
-# 2. Collinearity Check (Requires library(car) in 00-):
+# 2. Normality of Residuals
+model.primary.adj %>% performance::check_normality()
+model.primary.adj %>% car::qqPlot()
+
+# 3. Homoscedasticity (Variance Homogeneity)
+model.primary.adj %>% car::ncvTest()
+
+# 4. Collinearity Check
 model.primary.adj %>% car::vif()
 
-# 3. Influence/Leverage checks on adjusted model (Augmenting model data):
-model.primary.adj %>% augment() %>% slice_max(.cooksd, n = 5) # Highest influence
-model.primary.adj %>% augment() %>% slice_max(.hat, n = 5)    # Highest leverage
+# 5. Influence/Leverage/Outliers
+model.primary.adj %>% car::outlierTest()
+model.primary.adj %>% broom::augment() %>% slice_max(.cooksd, n = 5) # Highest influence
+model.primary.adj %>% broom::augment() %>% slice_max(.hat,    n = 5) # Highest leverage
 
-# 4. Model Comparison
+# 6. Model Comparison
 anova(model.primary.raw, model.primary.adj)
 
 # APPENDIX CHECKS: Full Diagnostics Plots (ggfortify)

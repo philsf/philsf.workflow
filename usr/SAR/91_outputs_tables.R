@@ -9,17 +9,64 @@ source("96_load_cached_results.R")
 
 # 2. Save Tables to Excel (The Client-Ready Output) -------------------------
 
-# The as.data.frame() conversion extracts the final rendered table content.
-if (exists("tab.primary.desc") && exists("tab.primary.inf") && exists("tab.primary.inf.full")) {
-  list(
-    "Table 1: Baseline"           = tab.primary.desc     %>% as.data.frame(),
-    "Table 2: Primary Inference"  = tab.primary.inf      %>% as.data.frame(),
-    "Table A1: Primary Inference" = tab.primary.inf.full %>% as.data.frame(),
-  ) %>%
-    # writexl library is loaded in 00-setup-global.R
-    writexl::write_xlsx(path = "report/tables/Primary_Objective_Tables.xlsx")
+# Initialize a master list for all final tables (T1, T2, T3, T4, T5, and Appendices)
+final.excel.list <- list()
 
-  message("Saved Tables 1 and 2 to report/tables/Primary_Objective_Tables.xlsx")
+# ----------------- PRIMARY TABLES (T1, T2, A1) --------------------------
+
+# Table 1: Baseline (Always created by 20-)
+if (exists("tab.primary.desc")) {
+  final.excel.list[["Table 1: Baseline"]] <- tab.primary.desc %>% as.data.frame()
+}
+
+# Table 2: Primary Inference (Created by 22- or 24-)
+if (exists("tab.primary.inf")) {
+  final.excel.list[["Table 2: Primary Inference"]] <- tab.primary.inf %>% as.data.frame()
+}
+
+# Table A1: Full Primary (Created by 22- in Multivariate Gig)
+if (exists("tab.primary.inf.full")) {
+  final.excel.list[["Table A1: Primary Inference (Full)"]] <- tab.primary.inf.full %>% as.data.frame()
+}
+
+# ----------------- SENSITIVITY TABLES (T3, A2) --------------------------
+# Created by 26_output_primary_sens_table.R
+if (exists("tab.primary.inf.sens")) {
+  final.excel.list[["Table 3: Sensitivity Inf"]] <- tab.primary.inf.sens %>% as.data.frame()
+}
+if (exists("tab.primary.inf.full.sens")) {
+  final.excel.list[["Table A2: Full Sensitivity Inf"]] <- tab.primary.inf.full.sens %>% as.data.frame()
+}
+
+# ----------------- SECONDARY TABLES (T4, A3) -----------------------------
+# Created by 32_output_secondary_table.R
+if (exists("tab.secondary.inf")) {
+  final.excel.list[["Table 4: Secondary Inf"]] <- tab.secondary.inf %>% as.data.frame()
+}
+if (exists("tab.secondary.inf.full")) {
+  final.excel.list[["Table A3: Full Secondary Inf"]] <- tab.secondary.inf.full %>% as.data.frame()
+}
+
+# ----------------- EXPLORATORY TABLES (T5, A4) ---------------------------
+# Created by 42_output_exploratory_table.R
+if (exists("tab.exploratory.inf")) {
+  final.excel.list[["Table 5: Exploratory Inf"]] <- tab.exploratory.inf %>% as.data.frame()
+}
+if (exists("tab.exploratory.inf.full")) {
+  final.excel.list[["Table A4: Full Exploratory Inf"]] <- tab.exploratory.inf.full %>% as.data.frame()
+}
+
+
+# ----------------- FINAL SAVE CHECK --------------------------------------
+
+# Save the master list if at least one table (Table 1) was found.
+if (length(final.excel.list) >= 1) {
+
+  final.excel.list %>%
+    # writexl library is loaded in 00-setup-global.R
+    writexl::write_xlsx(path = "report/tables/All_Objective_Tables.xlsx")
+
+  message(paste("Saved", length(final.excel.list), "tables to report/tables/All_Objective_Tables.xlsx"))
 } else {
-  warning("Required table objects (tab.primary.desc, tab.primary.inf, tab.primary.inf.full) not found. Run 99_full_analysis_run.R first.")
+  warning("No tables found to save. Please run 99_full_analysis_run.R first.")
 }

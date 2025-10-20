@@ -18,7 +18,11 @@ gg.primary.outcome
 
 # 2. Model effects plot ---------------------------------------------------
 
-gg.primary.predict <- model.primary.adj %>% effect_plot()
+# Only create this model-based plot if the model object exists
+if (exists("model.primary.adj")) {
+  # This block will run in the Multivariate Gig but be skipped in the Univariate Gig
+  gg.primary.predict <- model.primary.adj %>% effect_plot()
+}
 
 # 99. Age by Sex Figure (e.g., Figure A1) ---------------------------------
 
