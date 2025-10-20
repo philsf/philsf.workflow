@@ -25,8 +25,3 @@ model.primary.adj <- glm(
 # NOTE: No gtsummary or plotting functions should be used here.
 # These raw objects (model.primary.raw, model.primary.adj)
 # will be formatted into final tables/figures in 22- and 23- scripts.
-
-# 3. Save model objects ---------------------------------------------------
-
-model.primary.raw %>% write_rds("model.primary.raw")
-model.primary.adj %>% write_rds("model.primary.adj")
