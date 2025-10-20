@@ -81,6 +81,13 @@ gg.template <- ggplot() +
 # do we exponentiate results (OR/RR)?
 exponentiate <- FALSE
 
+# Define Plot Parameters
+fig.height <- 12
+fig.width <- 12
+fig.units <- "cm"
+fig.dpi    <- 300
+fig.device <- "png" # Use "pdf" or "tiff" for publication
+
 # helper functions --------------------------------------------------------
 
 tab <- function(model, include = everything(), exp=exponentiate, digits = 3, ...) {
