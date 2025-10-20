@@ -1,0 +1,63 @@
+# 15_imputation.R
+
+# Preamble ----------------------------------------------------------------
+# Purpose: Create multiply imputed datasets using MICE (or other methods).
+# Only run this script if missing data imputation is pre-specified in the SAP.
+
+# Prerequisites:
+# - library(mice) loaded in 00_setup_global.R
+# - Complete master ADS (data.ads) created by 10_data_prep.R
+
+# 1. Missing Data Pattern Exploration ------------------------------------
+
+# Visualize missingness
+data.ads %>% naniar::vis_miss()
+data.ads %>% naniar::gg_miss_var()
+
+# Pattern analysis
+data.ads %>% mice::md.pattern()
+
+# 2. Multiple Imputation Setup --------------------------------------------
+
+# Define imputation model
+# Exclude ID and outcome variables from predictors if doing sensitivity
+impute_vars <- data.ads %>%
+  select(-id) %>%  # Never impute IDs
+  names()
+
+# MICE imputation (m=5 datasets, seed for reproducibility)
+set.seed(42)
+data.ads.imp <- data.ads %>%
+  mice::mice(
+    m = 5,                    # Number of imputed datasets
+    method = "pmm",           # Predictive mean matching (safe default)
+    maxit = 20,               # Iterations
+    printFlag = FALSE
+  )
+
+# 3. Diagnostics ----------------------------------------------------------
+
+# Convergence check
+plot(data.ads.imp)
+
+# Imputed values vs observed (should overlap well)
+densityplot(data.ads.imp)
+
+# 4. Create Pooled Analysis Objects ---------------------------------------
+
+# For PRIMARY analysis: Complete case (default)
+# data.ads remains unchanged
+
+# For SENSITIVITY analysis: Use imputed data
+# Models in 25- will use mice::with() and pool()
+# Example structure for 25_analysis_primary_sensitivity.R:
+# model.primary.adj.sens <- with(data.ads.imp,
+#   glm(formula = model.primary.formula, family = gaussian))
+# model.primary.adj.sens.pooled <- mice::pool(model.primary.adj.sens)
+
+# 5. Export for Use in Analysis Scripts -----------------------------------
+
+# Save the mids object for use in sensitivity analyses
+write_rds(data.ads.imp, "results/data.ads.imp.rds")
+
+message("Multiple imputation complete. Use data.ads.imp in sensitivity scripts (25-series).")
