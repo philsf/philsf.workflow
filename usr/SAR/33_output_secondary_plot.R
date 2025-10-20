@@ -4,7 +4,7 @@
 # Purpose: create the figures for the secondary Objective
 # Use the gg.template base plot defined in 00-
 
-# 1. secondary Outcome by exposure Figure (e.g., Figure 1) ------------------
+# 1. Secondary Outcome by exposure Figure (e.g., Figure 1) ------------------
 
 gg.secondary.outcome <- data.ads %>%
   gg.template +

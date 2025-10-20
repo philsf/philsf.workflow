@@ -4,7 +4,7 @@
 # Purpose: create the figures for the exploratory Objective
 # Use the gg.template base plot defined in 00-
 
-# 1. exploratory Outcome by exposure Figure (e.g., Figure 1) ------------------
+# 1. Exploratory Outcome by exposure Figure (e.g., Figure 1) ------------------
 
 gg.exploratory.outcome <- data.ads %>%
   gg.template +
