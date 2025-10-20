@@ -28,10 +28,7 @@ model.primary.adj <- glm(
 
 # 3. Model diagnostics ----------------------------------------------------
 
-# 3. Model diagnostics ----------------------------------------------------
-
 # CRITICAL CHECKS: Adjusted Model
-# -------------------------------------------------------------------------
 
 # 1. Global Diagnostic Report (Requires library(performance) in 00-):
 #    - For GLMs (logistic, Poisson), this uses appropriate residuals (e.g., Dunn-Smyth).
@@ -39,22 +36,32 @@ model.primary.adj <- glm(
 model.primary.adj %>% performance::check_model()
 model.primary.adj %>% performance::r2()
 
-# 2. Normality of Residuals
-model.primary.adj %>% performance::check_normality()
-model.primary.adj %>% car::qqPlot()
+# # 2. Linear models
+# # Normality of Residuals
+# model.primary.adj %>% performance::check_normality()
+# model.primary.adj %>% car::qqPlot()
+# # Homoscedasticity (Variance Homogeneity)
+# model.primary.adj %>% car::ncvTest()
 
-# 3. Homoscedasticity (Variance Homogeneity)
-model.primary.adj %>% car::ncvTest()
+# # 2'. Logistic GLMs
+# # Goodness-of-Fit (Calibration)
+# model.primary.adj%>% performance::check_hosmerlemeshow()
+# # Discrimination / C-statistic/ ROC-AUC
+# model.primary.adj%>% performance::performance_auc()
 
-# 4. Collinearity Check
+# # 2''. Poisson vs Negative Binomial models
+# model.primary.raw %>% AER::dispersiontest()
+# model.primary.adj %>% AER::dispersiontest()
+
+# 3. Collinearity Check
 model.primary.adj %>% car::vif()
 
-# 5. Influence/Leverage/Outliers
+# 4. Influence/Leverage/Outliers
 model.primary.adj %>% car::outlierTest()
-model.primary.adj %>% broom::augment() %>% slice_max(.cooksd, n = 5) # Highest influence
-model.primary.adj %>% broom::augment() %>% slice_max(.hat,    n = 5) # Highest leverage
+model.primary.adj %>% broom::augment() %>% slice_max(.cooksd, n = 5) # Highest influence / extreme response
+model.primary.adj %>% broom::augment() %>% slice_max(.hat,    n = 5) # Highest leverage  / extreme predictor
 
-# 6. Model Comparison
+# 5. Model Comparison
 anova(model.primary.raw, model.primary.adj)
 
 # APPENDIX CHECKS: Full Diagnostics Plots (ggfortify)
@@ -62,7 +69,3 @@ anova(model.primary.raw, model.primary.adj)
 # Full Diagnostic Plots (Good for Appendix/Internal QC)
 model.primary.raw %>% autoplot()
 model.primary.adj %>% autoplot()
-
-# # Poisson models
-# model.primary.raw %>% AER::dispersiontest()
-# model.primary.adj %>% AER::dispersiontest()
