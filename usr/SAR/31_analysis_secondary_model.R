@@ -2,6 +2,7 @@
 
 # Preamble ----------------------------------------------------------------
 # Purpose: Fit the secondary statistical model(s) and save the raw model object.
+# Note: might include subgroup analyses
 
 # 1. secondary Model (Unadjusted) -------------------------------------------
 # Use the formula defined in 00_setup_global.R

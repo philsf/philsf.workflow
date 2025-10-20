@@ -2,6 +2,7 @@
 
 # Preamble ----------------------------------------------------------------
 # Purpose: Fit the exploratory statistical model(s) and save the raw model object.
+# Note: might include subgroup analyses
 
 # 1. exploratory Model (Unadjusted) -------------------------------------------
 # Use the formula defined in 00_setup_global.R
