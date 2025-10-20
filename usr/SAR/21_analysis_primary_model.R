@@ -25,3 +25,26 @@ model.primary.adj <- glm(
 # NOTE: No gtsummary or plotting functions should be used here.
 # These raw objects (model.primary.raw, model.primary.adj)
 # will be formatted into final tables/figures in 22- and 23- scripts.
+
+# 3. Model diagnostics ----------------------------------------------------
+
+# Not applicable to
+model.primary.raw %>% resid() %>% shapiro.test()
+model.primary.adj %>% resid() %>% shapiro.test()
+
+model.primary.raw %>% augment() %>% slice_max(.cooksd, n = 5)
+# model.primary.raw %>% augment() %>% slice_min(.cooksd, n = 5)
+model.primary.raw %>% augment() %>% slice_max(.hat, n = 5)
+# model.primary.raw %>% augment() %>% slice_min(.hat, n = 5)
+
+model.primary.raw %>% autoplot()
+model.primary.raw %>% autoplot()
+
+anova(model.primary.raw, model.primary.adj)
+
+# model.primary.raw %>% car::vif() # univariate model does not have a VIF
+model.primary.adj %>% car::vif()
+
+# # Poisson models
+# model.primary.raw %>% AER::dispersiontest()
+# model.primary.adj %>% AER::dispersiontest()
