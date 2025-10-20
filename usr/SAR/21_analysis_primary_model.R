@@ -28,22 +28,32 @@ model.primary.adj <- glm(
 
 # 3. Model diagnostics ----------------------------------------------------
 
-# Not applicable to
-model.primary.raw %>% resid() %>% shapiro.test()
-model.primary.adj %>% resid() %>% shapiro.test()
+# 3. Model diagnostics ----------------------------------------------------
 
-model.primary.raw %>% augment() %>% slice_max(.cooksd, n = 5)
-# model.primary.raw %>% augment() %>% slice_min(.cooksd, n = 5)
-model.primary.raw %>% augment() %>% slice_max(.hat, n = 5)
-# model.primary.raw %>% augment() %>% slice_min(.hat, n = 5)
+# CRITICAL CHECKS: Adjusted Model
+# -------------------------------------------------------------------------
 
-model.primary.raw %>% autoplot()
-model.primary.raw %>% autoplot()
+# 1. Global Diagnostic Report (Requires library(performance) in 00-):
+#    - For GLMs (logistic, Poisson), this uses appropriate residuals (e.g., Dunn-Smyth).
+#    - For LMs (gaussian), this provides standard assumption checks.
+model.primary.adj %>% performance::check_model()
+model.primary.adj %>% performance::r2()
 
+# 2. Collinearity Check (Requires library(car) in 00-):
+model.primary.adj %>% car::vif()
+
+# 3. Influence/Leverage checks on adjusted model (Augmenting model data):
+model.primary.adj %>% augment() %>% slice_max(.cooksd, n = 5) # Highest influence
+model.primary.adj %>% augment() %>% slice_max(.hat, n = 5)    # Highest leverage
+
+# 4. Model Comparison
 anova(model.primary.raw, model.primary.adj)
 
-# model.primary.raw %>% car::vif() # univariate model does not have a VIF
-model.primary.adj %>% car::vif()
+# APPENDIX CHECKS: Full Diagnostics Plots (ggfortify)
+
+# Full Diagnostic Plots (Good for Appendix/Internal QC)
+model.primary.raw %>% autoplot()
+model.primary.adj %>% autoplot()
 
 # # Poisson models
 # model.primary.raw %>% AER::dispersiontest()

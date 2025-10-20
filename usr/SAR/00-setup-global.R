@@ -46,7 +46,7 @@ library(ggfortify) # autoplot
 # library(car)
 # library(MASS)
 # library(rms)
-# library(performance)
+library(performance)
 
 # inference ---------------------------------------------------------------
 
@@ -79,7 +79,7 @@ gg.template <- ggplot() +
 
 # global variables --------------------------------------------------------
 
-# do we exponentiate results (OR/RR)?
+# do we exponentiate results (OR/RR/HR)?
 exponentiate <- FALSE
 
 # Define Plot Parameters
