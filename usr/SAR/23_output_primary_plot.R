@@ -2,31 +2,33 @@
 
 # Preamble ----------------------------------------------------------------
 # Purpose: create the figures for the Primary Objective
-# Use the gg base plot defined in 00-
+# Use the gg.template base plot defined in 00-
 
 # 1. Primary Outcome by exposure Figure (e.g., Figure 1) ------------------
 
-gg.primary.outcome <- gg %>%
-  # Start with the ggplot code from your old plots.R
-  ggplot() +
+gg.primary.outcome <- data.ads %>%
+  gg.template +
   geom_density(aes(outcome, fill = exposure), alpha = .8) +
   # Apply themes/labels defined in 00_setup_global.R
   labs(
     x = lab.primary.outcome
-    )
+  )
+
+gg.primary.outcome
 
 # 99. Age by Sex Figure (e.g., Figure A1) ---------------------------------
 
-gg.appendix.age <- gg +
+gg.appendix.age <- data.ads %>%
+  gg.template +
   aes(age, fill = sex) +
-  geom_density(data = analytical, alpha = .9) +
+  geom_density(alpha = .9) +
   labs(
-    x = attr(analytical$age, "label"),
+    x = attr(data.ads$age, "label"),
     y = "Distribution density",
-    fill = attr(analytical$sex, "label"),
+    fill = attr(data.ads$sex, "label"),
   )
 
-gg.age
+gg.appendix.age
 
 # cool facet trick from https://stackoverflow.com/questions/3695497 by JWilliman
 # gg +

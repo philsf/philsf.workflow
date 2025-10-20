@@ -71,8 +71,7 @@ ff.pal <- "Paired"    # good for binary groups scale fill/color brewer
 # ff.pal <- "Blues"   # good for sequential multiple groups
 # ff.pal <- "Set1"    # good for non-sequential multiple groups
 
-gg <- data.ads %>%
-  ggplot() +
+gg.template <- ggplot() +
   scale_color_brewer(palette = ff.pal) +
   scale_fill_brewer(palette = ff.pal) +
   theme_ff()
