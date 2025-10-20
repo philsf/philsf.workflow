@@ -7,7 +7,7 @@
 # 1. Primary Descriptive Table (Table 1) ----------------------------------
 
 # Ensure you use the new object name: data.ads
-tab.primary.obj.desc <- data.ads %>%
+tab.primary.desc <- data.ads %>%
   # Start with your existing table logic from describe.R
   tbl_summary(
     include = -id,
@@ -19,5 +19,5 @@ tab.primary.obj.desc <- data.ads %>%
   # bold_labels() %>%
   modify_table_styling(columns = "label", align = "center")
 
-# NOTE: The resulting object is named tab.primary.desc.obj
+# NOTE: The resulting object is named tab.primary.desc
 # It is now ready to be saved by 95_cache_results.R

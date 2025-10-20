@@ -1,3 +1,5 @@
+# 00-setup-global.R
+
 # Preamble ----------------------------------------------------------------
 # Purpose: Master script for setting up the environment.
 # Library Loading, Theme and Options and Global Functions and Labels
