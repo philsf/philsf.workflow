@@ -1,16 +1,8 @@
-# setup -------------------------------------------------------------------
-library(philsfmisc)
-# library(data.table)
-library(tidyverse)
-library(readxl)
-# library(haven)
-# library(foreign)
-# library(DBI)
-# library(lubridate)
-# library(naniar)
-library(labelled)
+# Preamble ----------------------------------------------------------------
+# Purpose: Master script for creating the 'analytical' dataset.
+# This dataset contains all cleaned, derived, and labeled variables for the study.
 
-# data loading ------------------------------------------------------------
+# Data Loading ------------------------------------------------------------
 set.seed(42)
 data.raw <- tibble(id=gl(2, 10), exposure = gl(2, 10), outcome = rnorm(20))
 # data.raw <- read_excel("dataset/file.xlsx") %>%
@@ -19,38 +11,44 @@ data.raw <- tibble(id=gl(2, 10), exposure = gl(2, 10), outcome = rnorm(20))
 Nvar_orig <- data.raw %>% ncol
 Nobs_orig <- data.raw %>% nrow
 
-# data cleaning -----------------------------------------------------------
+# Data Cleaning & Core Derivations -----------------------------------------
 
 data.raw <- data.raw %>%
+  # 1. Cleaning: Rename, Select, Filter, Mutate operations common to ALL analyses
   rename(
   ) %>%
   select(
     everything(),
   ) %>%
   mutate(
+    # e.g., create age groups, convert dates to days, recode key variables
   ) %>%
   filter(
+    # e.g., apply global exclusion criteria
   )
 
-# data wrangling ----------------------------------------------------------
-
+# Data Wrangling (e.g., ID formatting)
 data.raw <- data.raw %>%
   mutate(
     id = factor(id), # or as.character
+    # Other wrangling, e.g., pivot_longer for common wide-to-long structures
   )
 
-# labels ------------------------------------------------------------------
+# Variable Labels and Metadata --------------------------------------------
+# This section is critical for quality gtsummary and SAR output.
 
 data.raw <- data.raw %>%
   set_variable_labels(
-    exposure = "Study exposure",
-    outcome = "Study outcome",
+    exposure = lab.exposure,
+    outcome = lab.primary.outcome,
+    # Add all key variables here
   )
 
-# analytical dataset ------------------------------------------------------
+# Master Analytical Dataset (ADS) -----------------------------------------
+# Final assignment of 'data.ads' object for all subsequent scripts (20+, 30+).
 
-analytical <- data.raw %>%
-  # select analytic variables
+data.ads <- data.raw %>%
+  # Select analytic variables only
   select(
     id,
     exposure,
@@ -58,12 +56,22 @@ analytical <- data.raw %>%
     everything(),
   )
 
-Nvar_final <- analytical %>% ncol
-Nobs_final <- analytical %>% nrow
+Nvar_final <- data.ads %>% ncol
+Nobs_final <- data.ads %>% nrow
 
-# mockup of analytical dataset for SAP and public SAR
-analytical_mockup <- tibble( id = c( "1", "2", "3", "...", "N") ) %>%
-# analytical_mockup <- tibble( id = c( "1", "2", "3", "...", as.character(Nobs_final) ) ) %>%
-  left_join(analytical %>% head(0), by = "id") %>%
-  mutate_all(as.character) %>%
-  replace(is.na(.), "")
+
+# Objective-Specific ADS Hooks (Future Use) --------------------------------
+
+# NOTE TO USER: Any data manipulation specific to a primary or secondary objective
+# (e.g., filtering a cohort, reshaping for a repeated-measures model,
+# creating an outcome specific to a single endpoint) MUST occur within the
+# respective 20- or 30- series analysis script, NOT here.
+
+# Example of a Primary Objective ADS (for internal use in 21_analysis_...)
+# data.primary <- data.ads %>%
+#   filter(is.primary.cohort == TRUE)
+
+# Example of a Secondary Objective ADS
+# data.secondary <- data.ads %>%
+#   select(-some_primary_vars) %>%
+#   mutate(new_secondary_outcome = ...)
