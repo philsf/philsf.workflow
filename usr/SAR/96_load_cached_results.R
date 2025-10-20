@@ -4,8 +4,8 @@
 # Purpose:
 
 # 1. Check for results directory ------------------------------------------
-if (!dir.exists("results")) {
-  stop("The 'results' directory does not exist. Please run 99_full_analysis_run.R first.")
+if (!file.exists("results/tab.primary.desc.rds")) {
+  stop("File 'results/tab.primary.desc.rds' does not exist. Please run 99_full_analysis_run.R first.")
 }
 
 # 2. Load Model Objects (needed if you reference them in the report)
@@ -20,6 +20,11 @@ tab.primary.desc <- read_rds("results/tab.primary.desc.rds")
 # Load the single, canonical Table 2 object
 if (file.exists("results/tab.primary.inf.rds")) {
   tab.primary.inf <- read_rds("results/tab.primary.inf.rds")
+}
+
+# Load the single, canonical Table A1 object
+if (file.exists("results/tab.primary.inf.full.rds")) {
+  tab.primary.inf <- read_rds("results/tab.primary.inf.full.rds")
 }
 
 # 4. Load Final Plot Objects
