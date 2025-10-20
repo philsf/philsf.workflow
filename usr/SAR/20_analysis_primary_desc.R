@@ -1,41 +1,23 @@
-# setup -------------------------------------------------------------------
+# 20_analysis_primary_desc.R
 
-# library(Hmisc) # describe
-# library(skimr) # skim
-# library(gmodels) # CrossTable
-library(gtsummary)
-library(gt)
-# library(gtreg)
-# library(epiR)
-# library(epitools)
-# library(effectsize)
-# library(finalfit) # missing_compare
+# Preamble ----------------------------------------------------------------
+# Purpose: Create the primary descriptive table (e.g., Table 1).
+# Uses the master ADS (data.ads) created in 10_data_prep.R
 
-# setup gtsummary theme
+# 1. Primary Descriptive Table (Table 1) ----------------------------------
 
-theme_ff_gtsummary()
-theme_gtsummary_compact()
-# theme_gtsummary_language(language = "pt") # traduzir
-
-# exploratory -------------------------------------------------------------
-
-# overall description
-# analytical %>%
-#   skimr::skim()
-
-# minimum detectable effect size
-# interpret_cohens_d(0.5)
-# cohens_d(outcome ~ exposure, data = analytical) %>% interpret_cohens_d()
-# interpret_icc(0.7)
-
-# tables ------------------------------------------------------------------
-
-tab_desc <- analytical %>%
+# Ensure you use the new object name: data.ads
+tab.primary.obj.desc <- data.ads %>%
+  # Start with your existing table logic from describe.R
   tbl_summary(
     include = -id,
-    # by = exposure,
+    # by = exposure, # Uncomment if you want stratification
   ) %>%
-  # modify_caption(caption = "**Tabela 1** Características demográficas") %>%
-  # modify_header(label ~ "**Características dos pacientes**") %>%
+  # Apply all your existing formatting:
+  # modify_caption(caption = "...") %>%
+  # modify_header(label ~ "...") %>%
   # bold_labels() %>%
   modify_table_styling(columns = "label", align = "center")
+
+# NOTE: The resulting object is named tab.primary.desc.obj
+# It is now ready to be saved by 95_cache_results.R
