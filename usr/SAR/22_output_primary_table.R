@@ -7,15 +7,17 @@
 # 1. Primary Inferential Table (e.g., Table 2) ----------------------------
 
 # Uses the helper functions (tab, tab_adj) defined in 00_setup_global.R
-# This logic replaces the core of your old inference.R
 tab.primary.inf <- tab_adj(
-  crude = model.primary.raw,
+  crude    = model.primary.raw,
   adjusted = model.primary.adj,
-  include = c("exposure"), # Example: Only include the main exposure in the final table
+  include  = c("exposure"), # Example: Only include the main exposure in the final table
   # exp = FALSE, # Use the global 'exponentiate' variable defined in 00-
 ) %>%
   # Apply final formatting (e.g., adding footnotes, headers)
-  modify_caption(caption = "**Table 2** Primary Analysis Results")
+  # modify_table_styling(columns = "label", align = "center") %>%
+  # bold_labels() %>% # bolding is preferably done in the document template
+  # modify_header(label ~ "...") %>%
+  modify_footnote()
 
 # 2. Final Tables List ----------------------------------------------------
 

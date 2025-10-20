@@ -89,7 +89,7 @@ tab <- function(model, include = everything(), exp=exponentiate, digits = 3, ...
       exp = exp,
       include = all_of(include),
       # estimate_fun = purrr::partial(style_ratio,  digits = digits),
-      label = list(exposure = lab.exposure, dose = lab.dose),
+      # label = list(exposure = lab.exposure),
       ...,
     ) %>%
     add_n()

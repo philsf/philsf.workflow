@@ -13,11 +13,11 @@ tab.primary.desc <- data.ads %>%
     include = -id,
     # by = exposure, # Uncomment if you want stratification
   ) %>%
-  # Apply all your existing formatting:
-  # modify_caption(caption = "...") %>%
+  # Apply final formatting (e.g., adding footnotes, headers)
+  # modify_table_styling(columns = "label", align = "center") %>%
+  # bold_labels() %>% # bolding is preferably done in the document template
   # modify_header(label ~ "...") %>%
-  # bold_labels() %>%
-  modify_table_styling(columns = "label", align = "center")
+  modify_footnote()
 
 # NOTE: The resulting object is named tab.primary.desc
 # It is now ready to be saved by 95_cache_results.R

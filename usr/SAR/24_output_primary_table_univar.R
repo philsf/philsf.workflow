@@ -11,19 +11,20 @@ tab.primary.inf <- data.ads %>%
   ) %>%
   add_overall() %>%
 
-  # --- CHOOSE ONE TEMPLATE OPTION BELOW ---
+# CHOOSE ONE TEMPLATE OPTION BELOW ----------------------------------------
 
-  # TEMPLATE OPTION 1: Standard P-value Tests (add_p) ---------------------
+# OPTION 1: Standard P-value Tests (add_p) --------------------------------
+
 add_p(
   # use Fisher test (defaults to chi-square)
   test = all_categorical() ~ "fisher.test",
   # use 3 digits in pvalue
   pvalue_fun = function(x) style_pvalue(x, digits = 3),
 ) %>%
-  bold_p() %>% # Bold significant p-values
-  # ----------------------------------------------------------------------
 
-# # TEMPLATE OPTION 2: Effect Size (Cohen's d) or Mean Difference (add_difference)
+# OPTION 2: Effect Size or Mean Difference (add_difference) ---------------
+
+
 # # Uncomment this block and comment out the add_p block above to switch
 # add_difference(
 #    test = all_continuous() ~ "cohens_d", # or t.test for mean difference
@@ -32,7 +33,19 @@ add_p(
 # # Use appropriate header/footnote for the chosen effect size or difference
 # modify_header(estimate ~ '**d**') %>% # Example for Cohen's d
 # # modify_footnote(update = c(estimate, ci, p.value) ~ "ANCOVA (adjusted by sex, age and BMI)") %>%
-# bold_labels() %>%
-# ----------------------------------------------------------------------
 
-modify_table_styling(columns = "label", align = "center")
+# FINAL FORMATTING --------------------------------------------------------
+
+  # Apply final formatting (e.g., adding footnotes, headers)
+  # modify_table_styling(columns = "label", align = "center") %>%
+  # bold_labels() %>% # bolding is preferably done in the document template
+  # modify_header(label ~ "...") %>%
+  modify_footnote()
+
+# 2. Final Tables List ----------------------------------------------------
+
+# Optional: Create a list of all tables for easy reference later
+final.tables.list <- list(
+  "Table 1: Baseline" = tab.primary.desc,
+  "Table 2: Primary Inference" = tab.primary.inf
+)
