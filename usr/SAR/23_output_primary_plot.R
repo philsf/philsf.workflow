@@ -16,6 +16,10 @@ gg.primary.outcome <- data.ads %>%
 
 gg.primary.outcome
 
+# 2. Model effects plot ---------------------------------------------------
+
+gg.primary.predict <- model.primary.adj %>% effect_plot()
+
 # 99. Age by Sex Figure (e.g., Figure A1) ---------------------------------
 
 gg.appendix.age <- data.ads %>%

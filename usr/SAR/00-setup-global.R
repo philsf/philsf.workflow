@@ -113,34 +113,35 @@ tab_adj <- function(crude, adjusted, include=everything(), exp=exponentiate, dig
   )
 }
 
-effect_plot <- function(model, plot_title, y_label) {
+effect_plot <- function(model) {
 
-  # 1. Obter as Médias Marginais Estimadas (EMMs) condicionadas à Dose e Exposição
-  # A ordem c("dose", "exposure") garante que 'x' seja dose e 'group' seja exposure
-  predicted_values <- ggpredict(model, terms = c("dose", "exposure"))
+  # 1. Obtain Estimated marginal Means (EMMs) conditional to the Exposure
+  predicted_values <- ggeffects::ggpredict(model, terms = c("exposure"))
 
-  # 2. Gerar o Gráfico de Pontos e Erros (Sem Linhas)
+  # 2. Obtain the outcome label from the model (substitude plot_title)
+  lab.outcome  <- model %>% augment() %>% pull(outcome)  %>% var_label()
+  lab.exposure <- model %>% augment() %>% pull(exposure) %>% var_label()
+
+  # 3. Create plot with points and errors
   predicted_plot <- ggplot(predicted_values, aes(x = x, y = predicted, color = group)) +
 
-    # Adiciona os pontos das médias estimadas (posicionamento ajustado para não se sobreporem)
+    # Add estimated means (position adjusted to avoid overlap)
     geom_point(size = 3, position = position_dodge(width = 0.5)) +
 
-    # Adiciona as barras de erro (IC 95%)
+    # Add error bars (95% CI)
     geom_errorbar(aes(ymin = conf.low, ymax = conf.high, group = group),
                   width = 0.1, position = position_dodge(width = 0.5)) +
 
-    # Rótulos e Títulos
+    # Plot labels
     labs(
-      x = "Dose",
-      y = paste("Valor predito de", plot_title),
-      # title = paste("Médias Estimadas de", plot_title, "por Exposição e Visita"),
-      color = "Exposição"
+      x = lab.exposure,
+      y = paste("Predicted value of", lab.outcome),
     ) +
 
-    # Configurações de cores e tema
+    # Theme and color configuration
     # Paleta ColorBrewer (Set1) para X e Y, mantendo V0 em cinza neutro
-    scale_color_manual(values = c("V0" = "#9ca3af", "X" = "#377EB8", "Y" = "#E41A1C")) +
-    scale_x_discrete(labels = c("0.5" = "Dose 0,5ml", "1.0" = "Dose 1,0ml", "1.5" = "Dose 1,5ml")) +
+    # scale_color_manual(values = c("V0" = "#9ca3af", "X" = "#377EB8", "Y" = "#E41A1C")) +
+    # scale_x_discrete(labels = c("0.5" = "Dose 0,5ml", "1.0" = "Dose 1,0ml", "1.5" = "Dose 1,5ml")) +
     theme_ff() +
     theme(
       plot.title = element_text(face = "bold", size = 14),
