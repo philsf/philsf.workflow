@@ -1,6 +1,7 @@
 # ============================================================
 # Script:   15_imputation.R
 # Purpose:  Create multiply imputed datasets using MICE (or other methods).
+#
 # Note:     Only run this script if missing data imputation is pre-specified in the SAP.
 # Prerequisites:
 #     - library(mice) loaded in 00_setup_global.R

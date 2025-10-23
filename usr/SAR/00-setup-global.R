@@ -1,6 +1,7 @@
 # ============================================================
 # Script:   00_setup_global.R
 # Purpose:  Master script for setting up the environment.
+#
 # Note:     Library Loading, Theme and Options and Global Functions and Labels
 #
 # Version:  0.xx.x

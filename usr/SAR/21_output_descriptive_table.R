@@ -1,6 +1,7 @@
 # ============================================================
 # Script:   21_output_descriptive_table.R
 # Purpose:  Create the primary descriptive table (e.g., Table 1).
+#
 # Note:     Uses the master ADS (data.ads) created in 10_data_prep.R, optionally data.descriptive.ads from 20_data_descriptive_ads.R
 #
 # Version:  0.xx.x

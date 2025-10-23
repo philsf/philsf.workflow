@@ -1,6 +1,7 @@
 # ============================================================
 # Script:   10_data_prep.R
 # Purpose:  Creates the Master Analysis Dataset (ADS).
+#
 # Note:     This dataset contains all cleaned, derived, and labeled variables for the study.
 #
 # Version:  0.xx.x

@@ -1,6 +1,7 @@
 # ============================================================
 # Script:   05_sample_size.R
 # Purpose:  Sample size calculation
+#
 # Note:     N/A
 #
 # Version:  0.xx.x
