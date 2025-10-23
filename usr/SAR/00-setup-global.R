@@ -1,8 +1,16 @@
-# 00-setup-global.R
-
-# Preamble ----------------------------------------------------------------
-# Purpose: Master script for setting up the environment.
-# Library Loading, Theme and Options and Global Functions and Labels
+# ============================================================
+# Script:   00_setup_global.R
+# Purpose:  Master script for setting up the environment.
+# Note:     Library Loading, Theme and Options and Global Functions and Labels
+#
+# Version:  0.xx.x
+# Author:   Felipe Figueiredo
+# Created:  2025-10-20
+#
+# ------------------------------------------------------------
+# QC Date:  YYYY-MM-DD
+# ------------------------------------------------------------
+# ============================================================
 
 # input & data ------------------------------------------------------------
 
