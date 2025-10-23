@@ -1,8 +1,17 @@
-# 53_output_exploratory_plot.R
-
-# Preamble ----------------------------------------------------------------
-# Purpose: create the figures for the exploratory Objective
-# Use the gg.template base plot defined in 00-
+# ============================================================
+# Script:   53_output_exploratory_plot.R
+# Purpose:  Create the figures for the exploratory Objective
+#
+# Note:     Use the gg.template base plot defined in 00-
+#
+# Version:  0.xx.x
+# Author:   Felipe Figueiredo
+# Created:  2025-10-20
+#
+# ------------------------------------------------------------
+# QC Date:  YYYY-MM-DD
+# ------------------------------------------------------------
+# ============================================================
 
 # 1. Exploratory Outcome by exposure Figure (e.g., Figure 1) ------------------
 
