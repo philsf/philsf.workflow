@@ -1,8 +1,17 @@
-# 52_output_exploratory_table.R
-
-# Preamble ----------------------------------------------------------------
-# Purpose: Create the exploratory Inferential Table (Table 5) by formatting
-#          raw model objects from 41_analysis_exploratory_model.R
+# ============================================================
+# Script:   52_output_exploratory_table.R
+# Purpose:  Create the exploratory Inferential Table (Table 5) by formatting
+#           raw model objects from 51_analysis_exploratory_model.R
+# Note:     N/A
+#
+# Version:  0.xx.x
+# Author:   Felipe Figueiredo
+# Created:  2025-10-20
+#
+# ------------------------------------------------------------
+# QC Date:  YYYY-MM-DD
+# ------------------------------------------------------------
+# ============================================================
 
 # 1. Exploratory Inferential Table (e.g., Table 5 - Reduced) ----------------
 # Uses the helper functions (tab, tab_adj) defined in 00_setup_global.R
