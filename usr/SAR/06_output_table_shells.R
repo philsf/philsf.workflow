@@ -13,21 +13,9 @@
 # ------------------------------------------------------------
 # ============================================================
 
-# 1. Create Mock Data for Structural Integrity ------------------------------
-# NOTE: This data frame must contain all variables used in ALL final tables (T1, T2, T3, etc.)
-# It primarily serves to provide the correct variable labels and types.
+# 1. Table 1: Baseline Characteristics Shell ---------------------------------
 
-data.mock <- data.frame(
-  id = 1:10, # Always include ID if used in data.master.ads
-  outcome = rnorm(10), # Continuous outcome
-  exposure = factor(sample(c("Group A", "Group B"), 10, replace = TRUE)),
-  age = runif(10, 20, 60),
-  sex = factor(sample(c("Male", "Female"), 10, replace = TRUE))
-)
-
-# 2. Table 1: Baseline Characteristics Shell ---------------------------------
-
-tab.baseline.shell <- data.mock %>%
+tab.baseline.shell <- data.master.ads %>%
   tbl_summary(
     include = -id,
     by = exposure
@@ -54,15 +42,15 @@ tab.baseline.shell <- data.mock %>%
   # Final SAP footnote
   modify_footnote(update = all_stat_cols() ~ "Data presented as mean (SD) or N (%); p-values are placeholders.")
 
-# 3. Table 2: Primary Inference Shell ----------------------------------------
+# 2. Table 2: Primary Inference Shell ----------------------------------------
 # NOTE: This requires a mocked model or manual header modification.
 
 # For simplicity, we create the shell by modifying an empty gtsummary table
 tab.inference.shell <- tbl_regression(
   # Provide a simple linear model formula to define the column structure
-  glm(outcome ~ exposure + age + sex, data = data.mock)
+  glm(outcome ~ exposure + age + sex, data = data.master.ads)
 ) %>%
-  # Apply the same logic as the final output in 22- (e.g., using exp = FALSE)
+  # Apply the same logic as the final output in 32- (e.g., using exp = FALSE)
   # Here we manually replace the header and footer for simplicity
   modify_header(
     estimate ~ "**Estimate**",
@@ -79,7 +67,7 @@ tab.inference.shell <- tbl_regression(
   ) %>%
   modify_footnote(update = everything() ~ "Mock estimates and confidence intervals are placeholders.")
 
-# 4. Save Shells for SAP -----------------------------------------------------
+# 3. Save Shells for SAP -----------------------------------------------------
 
 shell.list <- list(
   "Table 1 Shell" = tab.baseline.shell,

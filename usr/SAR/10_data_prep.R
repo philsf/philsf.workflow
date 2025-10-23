@@ -14,11 +14,22 @@
 # ============================================================
 
 # Data Loading ------------------------------------------------------------
-data.raw <- tibble(
-  id=gl(2, 10),
-  exposure = gl(2, 10),
-  outcome = rnorm(20),
-  )
+
+## Create Mock Data for Structural Integrity ------------------------------
+# NOTE: This data frame must contain all variables used in ALL final tables (T1, T2, T3, etc.)
+# It primarily serves to provide the correct variable labels and types.
+
+data.mock.ads <- data.frame(
+  id = 1:10, # Always include ID if used in data.master.ads
+  outcome = rnorm(10), # Continuous outcome
+  exposure = factor(sample(c("Group A", "Group B"), 10, replace = TRUE)),
+  age = runif(10, 20, 60),
+  sex = factor(sample(c("Male", "Female"), 10, replace = TRUE))
+)
+
+## Load raw data file
+
+data.raw <- data.mock.ads
 # data.raw <- read_excel("dataset/file.xlsx") %>%
 #   janitor::clean_names()
 
