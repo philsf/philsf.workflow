@@ -88,6 +88,9 @@ gg.template <- ggplot() +
 
 # global variables --------------------------------------------------------
 
+# Set random seed
+set.seed(42)
+
 # do we exponentiate results (OR/RR/HR)?
 exponentiate <- FALSE
 
