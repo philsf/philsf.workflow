@@ -1,7 +1,17 @@
-# 96_load_cached_results.R
-
-# Preamble ----------------------------------------------------------------
-# Purpose: Load cached results for use in output scripts or report compilation.
+# ============================================================
+# Script:   96_load_cached_results.R
+# Purpose:  Load cached results for use in output scripts or report compilation.
+#
+# Note:     N/A
+#
+# Version:  0.xx.x
+# Author:   Felipe Figueiredo
+# Created:  2025-10-20
+#
+# ------------------------------------------------------------
+# QC Date:  YYYY-MM-DD
+# ------------------------------------------------------------
+# ============================================================
 
 # 1. Check for results directory ------------------------------------------
 if (!file.exists("results/tab.primary.desc.rds")) {
