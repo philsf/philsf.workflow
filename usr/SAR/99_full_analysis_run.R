@@ -7,6 +7,8 @@
 # 1. Setup and Data Prep --------------------------------------------------
 source("scripts/00_setup_global.R")
 source("scripts/10_data_prep.R")
+# source("scripts/05_sample_size_calculation.R") # Optional: if needed
+# source("scripts/06_output_table_shells.R") # Optional: if needed
 # source("scripts/15_imputation.R") # Optional: if needed
 
 # 2. Primary Objective Analysis (2x- Series) ------------------------------
