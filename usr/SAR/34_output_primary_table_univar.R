@@ -1,8 +1,17 @@
-# 34_output_primary_table_univar.R
-
-# Preamble ----------------------------------------------------------------
-# Purpose: Create the Primary Inferential Table (Table 2) using univariate
-#          group comparison tests or effect sizes [Univariate Gig].
+# ============================================================
+# Script:   34_output_primary_table_univar.R
+# Purpose:  Create the Primary Inferential Table (Table 2) using univariate
+#           group comparison tests or effect sizes [Univariate Gig].
+# Note:     N/A
+#
+# Version:  0.xx.x
+# Author:   Felipe Figueiredo
+# Created:  2025-10-20
+#
+# ------------------------------------------------------------
+# QC Date:  YYYY-MM-DD
+# ------------------------------------------------------------
+# ============================================================
 
 tab.primary.inf <- data.ads %>%
   tbl_summary(
