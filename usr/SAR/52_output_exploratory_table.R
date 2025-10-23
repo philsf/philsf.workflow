@@ -1,4 +1,4 @@
-# 42_output_exploratory_table.R
+# 52_output_exploratory_table.R
 
 # Preamble ----------------------------------------------------------------
 # Purpose: Create the exploratory Inferential Table (Table 5) by formatting
