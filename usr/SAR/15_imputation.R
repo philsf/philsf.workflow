@@ -1,12 +1,19 @@
-# 15_imputation.R
-
-# Preamble ----------------------------------------------------------------
-# Purpose: Create multiply imputed datasets using MICE (or other methods).
-# Only run this script if missing data imputation is pre-specified in the SAP.
-
+# ============================================================
+# Script:   15_imputation.R
+# Purpose:  Create multiply imputed datasets using MICE (or other methods).
+# Note:     Only run this script if missing data imputation is pre-specified in the SAP.
 # Prerequisites:
-# - library(mice) loaded in 00_setup_global.R
-# - Complete master ADS (data.ads) created by 10_data_prep.R
+#     - library(mice) loaded in 00_setup_global.R
+#     - Complete master ADS (data.master.ads) created by 10_data_prep.R
+#
+# Version:  0.xx.x
+# Author:   Felipe Figueiredo
+# Created:  2025-10-20
+#
+# ------------------------------------------------------------
+# QC Date:  YYYY-MM-DD
+# ------------------------------------------------------------
+# ============================================================
 
 # 1. Missing Data Pattern Exploration ------------------------------------
 
