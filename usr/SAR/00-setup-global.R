@@ -76,14 +76,17 @@ theme_gtsummary_compact()
 # setup ggplot theme
 theme_set(theme_ff())
 
-ff.col <- "steelblue" # good for single groups scale fill/color brewer
-ff.pal <- "Paired"    # good for binary groups scale fill/color brewer
-# ff.pal <- "Blues"   # good for sequential multiple groups
-# ff.pal <- "Set1"    # good for non-sequential multiple groups
+ff.col <- "steelblue" # good for single groups scale  fill/color brewer
+ff.pal <- "Paired"    # good for binary groups scale  fill/color brewer
+# ff.pal <- "Blues"   # good for sequential groups    fill/color brewer
+# ff.pal <- "Set1"    # good for discrete groups      fill/color brewer
+# other palettes: "Blues" for sequential and "Set1" or viridis_d() for discrete
 
 gg.template <- ggplot() +
   scale_color_brewer(palette = ff.pal) +
   scale_fill_brewer(palette = ff.pal) +
+  # scale_fill_viridis_d() +                # discrete palette
+  # scale_color_viridis_d() +               # discrete palette
   theme_ff()
 
 # global variables --------------------------------------------------------
