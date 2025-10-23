@@ -58,7 +58,7 @@ source("scripts/95_cache_results.R") # Run last to save all objects
 
 # Output Rendering
 # Uses 96_load_cached_results.R internally to load the saved objects
-source("scripts/91_outputs_tables.R") # Renders final tables to Excel
-source("scripts/90_outputs_plots.R")  # Renders final plots to PNGs
+source("scripts/90_outputs_tables.R") # Renders final tables to Excel
+source("scripts/91_outputs_plots.R")  # Renders final plots to PNGs
 
 message("Full pipeline executed. All results cached and final outputs saved.")
