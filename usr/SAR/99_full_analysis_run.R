@@ -16,16 +16,16 @@
 # 1. Setup and Data Prep --------------------------------------------------
 source("scripts/00_setup_global.R")
 source("scripts/10_data_prep.R")
-# source("scripts/05_sample_size_calculation.R") # Optional: if needed
-# source("scripts/06_output_table_shells.R") # Optional: if needed
-# source("scripts/15_imputation.R") # Optional: if needed
+# source("scripts/05_sample_size_calculation.R")  # Optional: if contracted
+# source("scripts/06_output_table_shells.R")      # Optional: if contracted
+# source("scripts/15_imputation.R")               # Optional: if contracted
 
 # 2. Primary Objective Analysis (3x- Series) ------------------------------
 
 # DESCRIPTIVE ANALYSIS
-# source("scripts/20_data_descriptive_ads.R") # optional: objective-specific ADS
+# source("scripts/20_data_descriptive_ads.R")   # optional: objective-specific ADS
 source("scripts/21_output_descriptive_table.R") # Table 1 is always created
-source("scripts/22_output_descriptive_plot.R")   # Plot is usually created
+source("scripts/22_output_descriptive_plot.R")  # Plot is usually created
 
 # MULTIVARIATE ANALYSIS GIG (Full Regression) - ACTIVE
 # source("scripts/30_data_primary_ads.R") # optional: objective-specific ADS
@@ -47,9 +47,9 @@ source("scripts/41_analysis_secondary_model.R")
 source("scripts/42_output_secondary_table.R")    # Appends to final.tables.list
 
 # Exploratory
-# source("scripts/50_data_exploratory_ads.R") # optional: objective-specific ADS
+# source("scripts/50_data_exploratory_ads.R")     # optional: objective-specific ADS
 source("scripts/51_analysis_exploratory_model.R")
-source("scripts/52_output_exploratory_table.R")  # Appends to final.tables.list
+source("scripts/52_output_exploratory_table.R")   # Appends to final.tables.list
 
 # 4. Final Output Generation (9x- Series) ---------------------------------
 
