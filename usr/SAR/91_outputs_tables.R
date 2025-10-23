@@ -1,8 +1,17 @@
-# 91_outputs_tables.R
-
-# Preamble ----------------------------------------------------------------
-# Purpose: Render and save final tables from cached gtsummary objects to Excel.
-# NOTE: This script ASSUMES the cache has been created by running 99_full_analysis_run.R
+# ============================================================
+# Script:   91_outputs_tables.R
+# Purpose:  Render and save final tables from cached gtsummary objects to Excel.
+#
+# Note:     This script ASSUMES the cache has been created by running 99_full_analysis_run.R
+#
+# Version:  0.xx.x
+# Author:   Felipe Figueiredo
+# Created:  2025-10-20
+#
+# ------------------------------------------------------------
+# QC Date:  YYYY-MM-DD
+# ------------------------------------------------------------
+# ============================================================
 
 # 1. Load Cached Results --------------------------------------------------
 source("96_load_cached_results.R")
