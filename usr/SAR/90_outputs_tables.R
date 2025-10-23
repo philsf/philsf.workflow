@@ -14,7 +14,15 @@
 # ============================================================
 
 # 1. Load Cached Results --------------------------------------------------
-source("scripts/96_load_cached_results.R")
+
+# ONLY load the cache if a key analysis object (like the descriptive table)
+# is NOT found in the current environment. This prevents redundant re-loading
+# when sourced by the full analysis script (99_full_analysis_run.R).
+if (!exists("tab.primary.desc")) {
+  source("scripts/96_load_cached_results.R")
+}
+# NOTE: If we run in Manual Mode, 96- will load tab.primary.desc,
+# and the rest of the script will proceed normally.
 
 # 2. Save Tables to Excel (The Client-Ready Output) -------------------------
 
