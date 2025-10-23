@@ -1,8 +1,17 @@
-# 10_data_prep.R
-
-# Preamble ----------------------------------------------------------------
-# Purpose: Master script for creating the 'analytical' dataset.
-# This dataset contains all cleaned, derived, and labeled variables for the study.
+# ============================================================
+# Script:   10_data_prep.R
+# Purpose:  Creates the Master Analysis Dataset (ADS).
+#
+# Note:     This dataset contains all cleaned, derived, and labeled variables for the study.
+#
+# Version:  0.xx.x
+# Author:   Felipe Figueiredo
+# Created:  2025-10-20
+#
+# ------------------------------------------------------------
+# QC Date:  YYYY-MM-DD
+# ------------------------------------------------------------
+# ============================================================
 
 # Data Loading ------------------------------------------------------------
 set.seed(42)

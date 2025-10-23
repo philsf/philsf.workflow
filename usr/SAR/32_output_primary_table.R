@@ -1,8 +1,17 @@
-# 32_output_primary_table.R
-
-# Preamble ----------------------------------------------------------------
-# Purpose: Create the Primary Inferential Table (Table 2) by formatting
-#          raw model objects from 21- [Multivariate Gig].
+# ============================================================
+# Script:   32_output_primary_table.R
+# Purpose:  Create the Primary Inferential Table (Table 2) by formatting
+#           raw model objects from 31- [Multivariate Gig].
+# Note:     Library Loading, Theme and Options and Global Functions and Labels
+#
+# Version:  0.xx.x
+# Author:   Felipe Figueiredo
+# Created:  2025-10-20
+#
+# ------------------------------------------------------------
+# QC Date:  YYYY-MM-DD
+# ------------------------------------------------------------
+# ============================================================
 
 # 1. Primary Inferential Table (e.g., Table 2) ----------------------------
 

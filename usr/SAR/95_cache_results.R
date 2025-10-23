@@ -1,8 +1,17 @@
-# 95_cache_results.R
-
-# Preamble ----------------------------------------------------------------
-# Purpose: Cache all final analysis objects (models, tables, plots) for efficient
-#          loading by output scripts (90-, 91-) and RMarkdown reports.
+# ============================================================
+# Script:   95_cache_results.R
+# Purpose:  Cache all final analysis objects (models, tables, plots) for efficient
+#           loading by output scripts (90-, 91-) and RMarkdown reports.
+# Note:     N/A
+#
+# Version:  0.xx.x
+# Author:   Felipe Figueiredo
+# Created:  2025-10-20
+#
+# ------------------------------------------------------------
+# QC Date:  YYYY-MM-DD
+# ------------------------------------------------------------
+# ============================================================
 
 # 1. Save Model Objects (Raw output) --------------------------------------
 

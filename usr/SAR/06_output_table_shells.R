@@ -1,8 +1,17 @@
-# 06_output_table_shells.R
-
-# Preamble ----------------------------------------------------------------
-# Purpose: Create mockup table shells for the Statistical Analysis Plan (SAP)
-#          using placeholder text instead of real estimates.
+# ============================================================
+# Script:   06_output_table_shells.R
+# Purpose:  Create mockup table shells for the Statistical Analysis Plan (SAP)
+#           using placeholder text instead of real estimates.
+# Note:     N/A
+#
+# Version:  0.xx.x
+# Author:   Felipe Figueiredo
+# Created:  2025-10-20
+#
+# ------------------------------------------------------------
+# QC Date:  YYYY-MM-DD
+# ------------------------------------------------------------
+# ============================================================
 
 # 1. Create Mock Data for Structural Integrity ------------------------------
 # NOTE: This data frame must contain all variables used in ALL final tables (T1, T2, T3, etc.)

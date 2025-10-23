@@ -1,8 +1,17 @@
-# 51_analysis_exploratory_model.R
-
-# Preamble ----------------------------------------------------------------
-# Purpose: Fit the exploratory statistical model(s) and save the raw model object.
-# Note: might include subgroup analyses
+# ============================================================
+# Script:   51_analysis_exploratory_model.R
+# Purpose:  Fit the exploratory statistical model(s) and save the raw model object.
+#
+# Note:     May be used to include subgroup analyses.
+#
+# Version:  0.xx.x
+# Author:   Felipe Figueiredo
+# Created:  2025-10-20
+#
+# ------------------------------------------------------------
+# QC Date:  YYYY-MM-DD
+# ------------------------------------------------------------
+# ============================================================
 
 # 1. Exploratory Model (Unadjusted) -------------------------------------------
 # Use the formula defined in 00_setup_global.R

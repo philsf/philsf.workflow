@@ -1,8 +1,17 @@
-# 36_output_primary_sens_table.R
-
-# Preamble ----------------------------------------------------------------
-# Purpose: Create the Primary Sensitivity Inferential Table (Table 3)
-#          by formatting raw model objects from 25- [Sensitivity Gig].
+# ============================================================
+# Script:   36_output_primary_sens_table.R
+# Purpose:  Create the Primary Sensitivity Inferential Table (Table 3)
+#           by formatting raw model objects from 25- [Sensitivity Gig].
+# Note:     N/A
+#
+# Version:  0.xx.x
+# Author:   Felipe Figueiredo
+# Created:  2025-10-20
+#
+# ------------------------------------------------------------
+# QC Date:  YYYY-MM-DD
+# ------------------------------------------------------------
+# ============================================================
 
 # 1. Primary Inferential Table (e.g., Table 3) ----------------------------
 tab.primary.inf.sens <- tab_adj(

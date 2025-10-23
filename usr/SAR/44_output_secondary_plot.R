@@ -1,8 +1,17 @@
-# 43_output_secondary_plot.R
-
-# Preamble ----------------------------------------------------------------
-# Purpose: create the figures for the secondary Objective
-# Use the gg.template base plot defined in 00-
+# ============================================================
+# Script:   43_output_secondary_plot.R
+# Purpose:  Create the figures for the secondary Objective
+#
+# Note:     Use the gg.template base plot defined in 00-
+#
+# Version:  0.xx.x
+# Author:   Felipe Figueiredo
+# Created:  2025-10-20
+#
+# ------------------------------------------------------------
+# QC Date:  YYYY-MM-DD
+# ------------------------------------------------------------
+# ============================================================
 
 # 1. Secondary Outcome by exposure Figure (e.g., Figure 1) ------------------
 

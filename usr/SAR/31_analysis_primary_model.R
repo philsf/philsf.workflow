@@ -1,7 +1,17 @@
-# 31_analysis_primary_model.R
-
-# Preamble ----------------------------------------------------------------
-# Purpose: Fit the primary statistical model(s) and save the raw model object.
+# ============================================================
+# Script:   31_analysis_primary_model.R
+# Purpose:  Fit the primary statistical model(s) and save the raw model object.
+#
+# Note:     N/A
+#
+# Version:  0.xx.x
+# Author:   Felipe Figueiredo
+# Created:  2025-10-20
+#
+# ------------------------------------------------------------
+# QC Date:  YYYY-MM-DD
+# ------------------------------------------------------------
+# ============================================================
 
 # 1. Primary Model (Unadjusted) -------------------------------------------
 # Use the formula defined in 00_setup_global.R

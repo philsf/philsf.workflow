@@ -1,8 +1,17 @@
-# 99_full_analysis_run.R
-
-# Preamble ----------------------------------------------------------------
-# Purpose: Run all scripts for the current project scope and refresh the cache.
-# This is the ONLY script you should manually run for a fresh analysis.
+# ============================================================
+# Script:   99_full_analysis_run.R
+# Purpose:  Run all scripts for the current project scope and refresh the cache.
+#
+# Note:     This is the ONLY script you should manually run for a fresh analysis.
+#
+# Version:  0.xx.x
+# Author:   Felipe Figueiredo
+# Created:  2025-10-20
+#
+# ------------------------------------------------------------
+# QC Date:  YYYY-MM-DD
+# ------------------------------------------------------------
+# ============================================================
 
 # 1. Setup and Data Prep --------------------------------------------------
 source("scripts/00_setup_global.R")
@@ -11,7 +20,7 @@ source("scripts/10_data_prep.R")
 # source("scripts/06_output_table_shells.R") # Optional: if needed
 # source("scripts/15_imputation.R") # Optional: if needed
 
-# 2. Primary Objective Analysis (2x- Series) ------------------------------
+# 2. Primary Objective Analysis (3x- Series) ------------------------------
 
 # DESCRIPTIVE ANALYSIS
 # source("scripts/20_data_descriptive_ads.R") # optional: objective-specific ADS
@@ -30,7 +39,7 @@ source("scripts/32_output_primary_table.R")   # Formats models into tab.primary.
 # UNIVARIATE ANALYSIS GIG (Group Comparisons) - COMMENTED (Choose one gig)
 # source("scripts/34_output_primary_table_univar.R")
 
-# 3. Secondary & Exploratory Analysis (3x- and 4x- Series) ----------------
+# 3. Secondary & Exploratory Analysis (4x- and 5x- Series) ----------------
 
 # Secondary
 # source("scripts/40_data_secondary_ads.R") # optional: objective-specific ADS
