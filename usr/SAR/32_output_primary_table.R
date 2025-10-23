@@ -1,4 +1,4 @@
-# 22_output_primary_table.R
+# 32_output_primary_table.R
 
 # Preamble ----------------------------------------------------------------
 # Purpose: Create the Primary Inferential Table (Table 2) by formatting

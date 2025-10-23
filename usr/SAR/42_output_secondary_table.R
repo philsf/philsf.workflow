@@ -1,4 +1,4 @@
-# 32_output_secondary_table.R
+# 42_output_secondary_table.R
 
 # Preamble ----------------------------------------------------------------
 # Purpose: Create the secondary Inferential Table (Table 4) by formatting
