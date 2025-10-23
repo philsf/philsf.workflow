@@ -18,7 +18,7 @@
 # It primarily serves to provide the correct variable labels and types.
 
 data.mock <- data.frame(
-  id = 1:10, # Always include ID if used in data.ads
+  id = 1:10, # Always include ID if used in data.master.ads
   outcome = rnorm(10), # Continuous outcome
   exposure = factor(sample(c("Group A", "Group B"), 10, replace = TRUE)),
   age = runif(10, 20, 60),

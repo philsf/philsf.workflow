@@ -13,7 +13,7 @@
 # ------------------------------------------------------------
 # ============================================================
 
-tab.primary.inf <- data.ads %>%
+tab.primary.inf <- data.master.ads %>%
   tbl_summary(
     include = -id,
     by = exposure,

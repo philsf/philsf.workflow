@@ -168,7 +168,7 @@ model.primary.formula <- outcome ~ exposure + age + sex
 # labels ------------------------------------------------------------------
 
 # Naming convention for the Master ADS
-master.ads.name <- "data.ads"
+master.ads.name <- "data.master.ads"
 
 lab.exposure <- "Study exposure"
 lab.primary.outcome <- "Study primary outcome"

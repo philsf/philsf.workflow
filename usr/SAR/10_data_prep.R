@@ -56,9 +56,9 @@ data.raw <- data.raw %>%
   )
 
 # Master Analytical Dataset (ADS) -----------------------------------------
-# Final assignment of 'data.ads' object for all subsequent scripts (20+, 30+).
+# Final assignment of 'data.master.ads' object for all subsequent scripts (20+, 30+, 40+, 50+).
 
-data.ads <- data.raw %>%
+data.master.ads <- data.raw %>%
   # Select analytic variables only
   select(
     id,
@@ -67,8 +67,8 @@ data.ads <- data.raw %>%
     everything(),
   )
 
-Nvar_final <- data.ads %>% ncol
-Nobs_final <- data.ads %>% nrow
+Nvar_final <- data.master.ads %>% ncol
+Nobs_final <- data.master.ads %>% nrow
 
 
 # Objective-Specific ADS Hooks (Future Use) --------------------------------
@@ -76,13 +76,13 @@ Nobs_final <- data.ads %>% nrow
 # NOTE TO USER: Any data manipulation specific to a primary or secondary objective
 # (e.g., filtering a cohort, reshaping for a repeated-measures model,
 # creating an outcome specific to a single endpoint) MUST occur within the
-# respective 20- or 30- series analysis script, NOT here.
+# respective 20-, 30-, 40- or 50- series analysis script, NOT here.
 
 # Example of a Primary Objective ADS (for internal use in 21_analysis_...)
-# data.primary <- data.ads %>%
+# data.primary.ads <- data.master.ads %>%
 #   filter(is.primary.cohort == TRUE)
 
 # Example of a Secondary Objective ADS
-# data.secondary <- data.ads %>%
+# data.secondary.ads <- data.master.ads %>%
 #   select(-some_primary_vars) %>%
 #   mutate(new_secondary_outcome = ...)

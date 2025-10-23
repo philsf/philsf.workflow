@@ -19,7 +19,7 @@
 
 model.exploratory.raw <- glm(
   formula = outcome ~ exposure,
-  data = data.ads,
+  data = data.master.ads,
   family = gaussian(link = "identity") # Customize family/link as needed
 )
 
@@ -28,7 +28,7 @@ model.exploratory.raw <- glm(
 
 model.exploratory.adj <- glm(
   formula = model.exploratory.formula,
-  data = data.ads,
+  data = data.master.ads,
   family = gaussian(link = "identity")
 )
 

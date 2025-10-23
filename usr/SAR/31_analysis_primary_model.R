@@ -19,7 +19,7 @@
 
 model.primary.raw <- glm(
   formula = outcome ~ exposure,
-  data = data.ads,
+  data = data.master.ads,
   family = gaussian(link = "identity") # Customize family/link as needed
 )
 
@@ -28,7 +28,7 @@ model.primary.raw <- glm(
 
 model.primary.adj <- glm(
   formula = model.primary.formula,
-  data = data.ads,
+  data = data.master.ads,
   family = gaussian(link = "identity")
 )
 

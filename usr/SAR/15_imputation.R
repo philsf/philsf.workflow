@@ -19,23 +19,23 @@
 # 1. Missing Data Pattern Exploration ------------------------------------
 
 # Visualize missingness
-data.ads %>% naniar::vis_miss()
-data.ads %>% naniar::gg_miss_var()
+data.master.ads %>% naniar::vis_miss()
+data.master.ads %>% naniar::gg_miss_var()
 
 # Pattern analysis
-data.ads %>% mice::md.pattern()
+data.master.ads %>% mice::md.pattern()
 
 # 2. Multiple Imputation Setup --------------------------------------------
 
 # Define imputation model
 # Exclude ID and outcome variables from predictors if doing sensitivity
-impute_vars <- data.ads %>%
+impute_vars <- data.master.ads %>%
   select(-id) %>%  # Never impute IDs
   names()
 
 # MICE imputation (m=5 datasets, seed for reproducibility)
 set.seed(42)
-data.ads.imp <- data.ads %>%
+data.master.imp <- data.master.ads %>%
   mice::mice(
     m = 5,                    # Number of imputed datasets
     method = "pmm",           # Predictive mean matching (safe default)
@@ -46,26 +46,26 @@ data.ads.imp <- data.ads %>%
 # 3. Diagnostics ----------------------------------------------------------
 
 # Convergence check
-plot(data.ads.imp)
+plot(data.master.imp)
 
 # Imputed values vs observed (should overlap well)
-densityplot(data.ads.imp)
+densityplot(data.master.imp)
 
 # 4. Create Pooled Analysis Objects ---------------------------------------
 
 # For PRIMARY analysis: Complete case (default)
-# data.ads remains unchanged
+# data.master.ads remains unchanged
 
 # For SENSITIVITY analysis: Use imputed data
 # Models in 25- will use mice::with() and pool()
 # Example structure for 25_analysis_primary_sensitivity.R:
-# model.primary.adj.sens <- with(data.ads.imp,
+# model.primary.adj.sens <- with(data.master.imp,
 #   glm(formula = model.primary.formula, family = gaussian))
 # model.primary.adj.sens.pooled <- mice::pool(model.primary.adj.sens)
 
 # 5. Export for Use in Analysis Scripts -----------------------------------
 
 # Save the mids object for use in sensitivity analyses
-write_rds(data.ads.imp, "results/data.ads.imp.rds")
+write_rds(data.master.imp, "results/data.master.imp.rds")
 
-message("Multiple imputation complete. Use data.ads.imp in sensitivity scripts (25-series).")
+message("Multiple imputation complete. Use data.master.imp in sensitivity scripts (25-series).")

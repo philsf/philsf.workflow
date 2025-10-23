@@ -2,7 +2,7 @@
 # Script:   21_output_descriptive_table.R
 # Purpose:  Create the primary descriptive table (e.g., Table 1).
 #
-# Note:     Uses the master ADS (data.ads) created in 10_data_prep.R, optionally data.descriptive.ads from 20_data_descriptive_ads.R
+# Note:     Uses the master ADS (data.master.ads) created in 10_data_prep.R, optionally data.descriptive.ads from 20_data_descriptive_ads.R
 #
 # Version:  0.xx.x
 # Author:   Felipe Figueiredo
@@ -15,8 +15,8 @@
 
 # 1. Primary Descriptive Table (Table 1) ----------------------------------
 
-# Ensure you use the new object name: data.ads
-tab.primary.desc <- data.ads %>%
+# Ensure you use the new object name: data.master.ads
+tab.primary.desc <- data.master.ads %>%
   # Start with your existing table logic from describe.R
   tbl_summary(
     include = -id,

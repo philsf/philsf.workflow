@@ -19,7 +19,7 @@
 
 # model.primary.raw.sens <- glm(
 #   formula = outcome ~ exposure,
-#   data = data.ads.sens,
+#   data = data.sens.ads,
 #   family = gaussian(link = "identity") # Customize family/link as needed
 # )
 
@@ -28,7 +28,7 @@
 
 # model.primary.adj.sens <- glm(
 #   formula = model.primary.formula,
-#   data = data.ads.sens,
+#   data = data.sens.ads,
 #   family = gaussian(link = "identity")
 # )
 
