@@ -45,11 +45,13 @@ source("scripts/32_output_primary_table.R")   # Formats models into tab.primary.
 # source("scripts/40_data_secondary_ads.R") # optional: objective-specific ADS
 source("scripts/41_analysis_secondary_model.R")
 source("scripts/42_output_secondary_table.R")    # Appends to final.tables.list
+source("scripts/43_output_secondary_plot.R")
 
 # Exploratory
 # source("scripts/50_data_exploratory_ads.R")     # optional: objective-specific ADS
 source("scripts/51_analysis_exploratory_model.R")
 source("scripts/52_output_exploratory_table.R")   # Appends to final.tables.list
+source("scripts/53_output_exploratory_plot.R")
 
 # 4. Final Output Generation (9x- Series) ---------------------------------
 

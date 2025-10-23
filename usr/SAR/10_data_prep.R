@@ -92,7 +92,7 @@ Nobs_final <- data.master.ads %>% nrow
 # creating an outcome specific to a single endpoint) MUST occur within the
 # respective 20-, 30-, 40- or 50- series analysis script, NOT here.
 
-# Example of a Primary Objective ADS (for internal use in 21_analysis_...)
+# Example of a Primary Objective ADS (for internal use in 31_analysis_...)
 # data.primary.ads <- data.master.ads %>%
 #   filter(is.primary.cohort == TRUE)
 

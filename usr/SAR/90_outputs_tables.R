@@ -1,5 +1,5 @@
 # ============================================================
-# Script:   91_outputs_tables.R
+# Script:   90_outputs_tables.R
 # Purpose:  Render and save final tables from cached gtsummary objects to Excel.
 #
 # Note:     This script ASSUMES the cache has been created by running 99_full_analysis_run.R
@@ -28,18 +28,18 @@ if (exists("tab.primary.desc")) {
   final.excel.list[["Table 1: Baseline"]] <- tab.primary.desc %>% as.data.frame()
 }
 
-# Table 2: Primary Inference (Created by 22- or 24-)
+# Table 2: Primary Inference (Created by 32- or 34-)
 if (exists("tab.primary.inf")) {
   final.excel.list[["Table 2: Primary Inference"]] <- tab.primary.inf %>% as.data.frame()
 }
 
-# Table A1: Full Primary (Created by 22- in Multivariate Gig)
+# Table A1: Full Primary (Created by 32- in Multivariate Gig)
 if (exists("tab.primary.inf.full")) {
   final.excel.list[["Table A1: Primary Inference (Full)"]] <- tab.primary.inf.full %>% as.data.frame()
 }
 
 # ----------------- SENSITIVITY TABLES (T3, A2) --------------------------
-# Created by 26_output_primary_sens_table.R
+# Created by 36_output_primary_sens_table.R
 if (exists("tab.primary.inf.sens")) {
   final.excel.list[["Table 3: Sensitivity Inf"]] <- tab.primary.inf.sens %>% as.data.frame()
 }
@@ -48,7 +48,7 @@ if (exists("tab.primary.inf.full.sens")) {
 }
 
 # ----------------- SECONDARY TABLES (T4, A3) -----------------------------
-# Created by 32_output_secondary_table.R
+# Created by 42_output_secondary_table.R
 if (exists("tab.secondary.inf")) {
   final.excel.list[["Table 4: Secondary Inf"]] <- tab.secondary.inf %>% as.data.frame()
 }
@@ -57,7 +57,7 @@ if (exists("tab.secondary.inf.full")) {
 }
 
 # ----------------- EXPLORATORY TABLES (T5, A4) ---------------------------
-# Created by 42_output_exploratory_table.R
+# Created by 52_output_exploratory_table.R
 if (exists("tab.exploratory.inf")) {
   final.excel.list[["Table 5: Exploratory Inf"]] <- tab.exploratory.inf %>% as.data.frame()
 }

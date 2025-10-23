@@ -34,4 +34,4 @@
 
 # NOTE: No gtsummary or plotting functions should be used here.
 # These raw objects (model.primary.raw, model.primary.adj)
-# will be formatted into final tables/figures in 22- and 23- scripts.
+# will be formatted into final tables/figures in 36- script.

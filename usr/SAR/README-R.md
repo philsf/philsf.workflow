@@ -10,7 +10,8 @@ To run a **fresh analysis** (e.g., if data or model parameters change):
 
 1.  **Run `scripts/99_full_analysis_run.R`**
     * This script acts as the master controller.
-    * It sources all necessary setup, data prep, and analysis scripts (e.g., `00-`, `10-`, plus the chosen gig: `31-` / `32-` or `34-`).
+    * It sources all necessary setup, data prep, and analysis scripts (e.g., `00-`, `10-`, plus the chosen gig: `21-`, `31-`, `32-`).
+    
     * It finishes by running `95_cache_results.R`, saving all required objects (models, `tab.primary.desc`, `tab.primary.inf`, `gg.primary.outcome`) to the new **`results/`** directory.
 
 ### 2. Report Workflow (The Performance Gain)

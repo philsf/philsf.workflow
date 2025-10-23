@@ -1,7 +1,7 @@
 # ============================================================
 # Script:   42_output_secondary_table.R
 # Purpose:  Create the secondary Inferential Table (Table 4) by formatting
-#           raw model objects from 31_analysis_secondary_model.R
+#           raw model objects from 41_analysis_secondary_model.R
 # Note:     N/A
 #
 # Version:  0.xx.x
