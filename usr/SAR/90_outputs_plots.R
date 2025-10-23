@@ -1,8 +1,17 @@
-# 90_outputs_plots.R
-
-# Preamble ----------------------------------------------------------------
-# Purpose: Render and save final figures from cached objects.
-# NOTE: This script ASSUMES the cache has been created by running 99_full_analysis_run.R
+# ============================================================
+# Script:   90_outputs_plots.R
+# Purpose:  Render and save final figures from cached objects.
+#
+# Note:     This script ASSUMES the cache has been created by running 99_full_analysis_run.R
+#
+# Version:  0.xx.x
+# Author:   Felipe Figueiredo
+# Created:  2025-10-20
+#
+# ------------------------------------------------------------
+# QC Date:  YYYY-MM-DD
+# ------------------------------------------------------------
+# ============================================================
 
 # 1. Load Cached Results --------------------------------------------------
 source("96_load_cached_results.R")
