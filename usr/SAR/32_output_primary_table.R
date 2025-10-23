@@ -46,9 +46,11 @@ tab.primary.inf.full <- tab_adj(
 
 # 3. Final Tables List ----------------------------------------------------
 
-# Optional: Create a list of all tables for easy reference later
-final.tables.list <- list(
-  "Table 1: Baseline"           = tab.primary.desc,
-  "Table 2: Primary Inference"  = tab.primary.inf,
-  "Table A1: Primary Inference" = tab.primary.inf.full
-)
+# Update the list of all tables for easy reference later
+# final.tables.list <- list(
+#   "Table 1: Baseline"           = tab.primary.desc,
+#   "Table 2: Primary Inference"  = tab.primary.inf,
+#   "Table A1: Primary Inference" = tab.primary.inf.full
+# )
+final.tables.list[["Table 2: Primary Inference"]] <- tab.primary.inf
+final.tables.list[["Table A1: Primary Inference"]] <- tab.primary.inf.full

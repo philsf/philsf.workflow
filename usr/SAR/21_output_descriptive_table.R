@@ -30,3 +30,10 @@ tab.primary.desc <- data.ads %>%
 
 # NOTE: The resulting object is named tab.primary.desc
 # It is now ready to be saved by 95_cache_results.R
+
+# 2. Final Tables List ----------------------------------------------------
+
+# Create a list of all tables for easy reference later
+final.tables.list <- list(
+  "Table 1: Baseline"           = tab.primary.desc
+)

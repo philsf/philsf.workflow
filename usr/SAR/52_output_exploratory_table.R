@@ -35,6 +35,6 @@ tab.exploratory.inf.full <- tab_adj(
 
 # 3. Final Tables List ----------------------------------------------------
 
-# Correctly appends to the existing final.tables.list
+# Update the list of all tables for easy reference later
 final.tables.list[["Table 5: Exploratory Inf"]] <- tab.exploratory.inf
 final.tables.list[["Table A4: Full Exploratory Inf"]] <- tab.exploratory.inf.full # NEW: Add the full table

@@ -36,6 +36,6 @@ tab.secondary.inf.full <- tab_adj(
 
 # 3. Final Tables List ----------------------------------------------------
 
-# Correctly appends to the existing final.tables.list
+# Update the list of all tables for easy reference later
 final.tables.list[["Table 4: Secondary Inf"]] <- tab.secondary.inf
 final.tables.list[["Table A3: Full Secondary Inf"]] <- tab.secondary.inf.full
