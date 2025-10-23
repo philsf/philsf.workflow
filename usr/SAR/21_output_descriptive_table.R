@@ -1,8 +1,16 @@
-# 21_output_descriptive_table.R
-
-# Preamble ----------------------------------------------------------------
-# Purpose: Create the primary descriptive table (e.g., Table 1).
-# Note: Uses the master ADS (data.ads) created in 10_data_prep.R, optionally data.descriptive.ads from 20_data_descriptive_ads.R
+# ============================================================
+# Script:   21_output_descriptive_table.R
+# Purpose:  Create the primary descriptive table (e.g., Table 1).
+# Note:     Uses the master ADS (data.ads) created in 10_data_prep.R, optionally data.descriptive.ads from 20_data_descriptive_ads.R
+#
+# Version:  0.xx.x
+# Author:   Felipe Figueiredo
+# Created:  2025-10-20
+#
+# ------------------------------------------------------------
+# QC Date:  YYYY-MM-DD
+# ------------------------------------------------------------
+# ============================================================
 
 # 1. Primary Descriptive Table (Table 1) ----------------------------------
 
