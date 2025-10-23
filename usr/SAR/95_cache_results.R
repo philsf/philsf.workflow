@@ -6,7 +6,7 @@
 
 # 1. Save Model Objects (Raw output) --------------------------------------
 
-# Primary Models (from 21-)
+# Primary Models (from 31-)
 if (exists("model.primary.raw")) {
   write_rds(model.primary.raw, file = "results/model.primary.raw.rds")
   if (exists("model.primary.adj")) {
@@ -14,7 +14,7 @@ if (exists("model.primary.raw")) {
   }
 }
 
-# Sensitivity Models (from 25-)
+# Sensitivity Models (from 35-)
 if (exists("model.primary.raw.sens")) {
   write_rds(model.primary.raw.sens, file = "results/model.primary.raw.sens.rds")
   if (exists("model.primary.adj.sens")) {
@@ -22,7 +22,7 @@ if (exists("model.primary.raw.sens")) {
   }
 }
 
-# Secondary Models (from 31-)
+# Secondary Models (from 41-)
 if (exists("model.secondary.raw")) {
   write_rds(model.secondary.raw, file = "results/model.secondary.raw.rds")
   if (exists("model.secondary.adj")) {
@@ -30,7 +30,7 @@ if (exists("model.secondary.raw")) {
   }
 }
 
-# Exploratory Models (from 41-)
+# Exploratory Models (from 51-)
 if (exists("model.exploratory.raw")) {
   write_rds(model.exploratory.raw, file = "results/model.exploratory.raw.rds")
   if (exists("model.exploratory.adj")) {
@@ -40,7 +40,7 @@ if (exists("model.exploratory.raw")) {
 
 # 2. Save Final Table Objects (gtsummary tables) --------------------------
 
-# Primary Tables (from 20-, 22-, 24-)
+# Primary Tables (from 21-, 32-, 34-)
 write_rds(tab.primary.desc, file = "results/tab.primary.desc.rds") # Always created
 
 if (exists("tab.primary.inf")) {
@@ -50,7 +50,7 @@ if (exists("tab.primary.inf.full")) {
   write_rds(tab.primary.inf.full, file = "results/tab.primary.inf.full.rds")
 }
 
-# Sensitivity Tables (from 26-)
+# Sensitivity Tables (from 36-)
 if (exists("tab.primary.inf.sens")) {
   write_rds(tab.primary.inf.sens, file = "results/tab.primary.inf.sens.rds")
 }
@@ -58,7 +58,7 @@ if (exists("tab.primary.inf.full.sens")) {
   write_rds(tab.primary.inf.full.sens, file = "results/tab.primary.inf.full.sens.rds")
 }
 
-# Secondary Tables (from 32-)
+# Secondary Tables (from 42-)
 if (exists("tab.secondary.inf")) {
   write_rds(tab.secondary.inf, file = "results/tab.secondary.inf.rds")
 }
@@ -66,7 +66,7 @@ if (exists("tab.secondary.inf.full")) {
   write_rds(tab.secondary.inf.full, file = "results/tab.secondary.inf.full.rds")
 }
 
-# Exploratory Tables (from 42-)
+# Exploratory Tables (from 52-)
 if (exists("tab.exploratory.inf")) {
   write_rds(tab.exploratory.inf, file = "results/tab.exploratory.inf.rds")
 }
@@ -76,7 +76,7 @@ if (exists("tab.exploratory.inf.full")) {
 
 # 3. Save Final Plot Objects (ggplot objects) -----------------------------
 
-# Primary Plots (from 23-)
+# Primary Plots (from 33-)
 if (exists("gg.primary.outcome")) {
   write_rds(gg.primary.outcome, file = "results/gg.primary.outcome.rds")
 }
@@ -87,7 +87,7 @@ if (exists("gg.appendix.age")) {
   write_rds(gg.appendix.age, file = "results/gg.appendix.age.rds")
 }
 
-# Secondary Plots (from 33-)
+# Secondary Plots (from 43-)
 if (exists("gg.secondary.outcome")) {
   write_rds(gg.secondary.outcome, file = "results/gg.secondary.outcome.rds")
 }
@@ -95,7 +95,7 @@ if (exists("gg.secondary.predict")) {
   write_rds(gg.secondary.predict, file = "results/gg.secondary.predict.rds")
 }
 
-# Exploratory Plots (from 43-)
+# Exploratory Plots (from 53-)
 if (exists("gg.exploratory.outcome")) {
   write_rds(gg.exploratory.outcome, file = "results/gg.exploratory.outcome.rds")
 }
