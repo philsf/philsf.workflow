@@ -7,6 +7,7 @@ fi
 
 SCRIPTDIR=$HOME/bin
 CFGDIR=$HOME/usr/SAR
+
 SCRIPTS="
 SAR-basedirs.sh
 SAR-basefiles.sh
@@ -34,6 +35,7 @@ SAR-rename
 SAR-sync
 SAR-sync-all
 "
+
 CFG="
 gitignore
 new-rproj
@@ -43,14 +45,9 @@ SAR_en.Rmd
 SAR_pt.Rmd
 misc/
 "
+
 RSCRIPTS="
-input.R
-describe.R
-inference.R
-modeling.R
-plots.R
-results.R
-plots-save.R
+*.R
 README-R.md
 README-SAR_en.md
 README-SAR_pt.md
@@ -58,10 +55,22 @@ Portfolio_en.md
 Portfolio_pt.md
 "
 
+LEGACY_RSCRIPTS="
+input.R
+describe.R
+inference.R
+modeling.R
+plots.R
+results.R
+plots-save.R
+"
+
 echo "Removing files from $SCRIPTDIR"
 for f in $SCRIPTS; do rm -f "$SCRIPTDIR/$f"; done
 rmdir -p --ignore-fail-on-non-empty "$SCRIPTDIR"
+
 echo "Removing files from $CFGDIR"
 for f in $CFG; do rm -rf "$CFGDIR/$f"; done
 for f in $RSCRIPTS; do rm -f "$CFGDIR/$f"; done
+for f in $LEGACY_RSCRIPTS; do rm -f "$CFGDIR/$f"; done
 rmdir -p --ignore-fail-on-non-empty "$CFGDIR"
