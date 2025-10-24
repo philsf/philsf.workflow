@@ -169,7 +169,9 @@ effect_plot <- function(model) {
 
 # Modeling ----------------------------------------------------------------
 
-model.primary.formula <- outcome ~ exposure + age + sex
+model.primary.formula     <- outcome ~ exposure + age + sex
+model.secondary.formula   <- outcome ~ exposure + age + sex
+model.exploratory.formula <- outcome ~ exposure + age + sex
 
 # labels ------------------------------------------------------------------
 
