@@ -21,6 +21,7 @@ SAR-rename
 SAR-sync
 philsf.workflow-uninstall.sh
 "
+
 CFG="
 gitignore
 new-rproj
@@ -30,14 +31,9 @@ SAR_en.Rmd
 SAR_pt.Rmd
 misc/
 "
+
 RSCRIPTS="
-input.R
-describe.R
-inference.R
-modeling.R
-plots.R
-results.R
-plots-save.R
+*.R
 README-R.md
 README-SAR_en.md
 README-SAR_pt.md
