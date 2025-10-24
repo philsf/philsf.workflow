@@ -28,9 +28,10 @@ source("scripts/21_output_descriptive_table.R") # Table 1 is always created
 source("scripts/22_output_descriptive_plot.R")  # Plot is usually created
 
 # MULTIVARIATE ANALYSIS GIG (Full Regression) - ACTIVE
-# source("scripts/30_data_primary_ads.R") # optional: objective-specific ADS
+# source("scripts/30_data_primary_ads.R")     # optional: objective-specific ADS
 source("scripts/31_analysis_primary_model.R") # Fits the models
 source("scripts/32_output_primary_table.R")   # Formats models into tab.primary.inf (Table 2 & A1)
+source("scripts/33_output_primary_plot.R")    # Plots from the model
 
 # Sensitivity Analysis
 # source("scripts/35_analysis_primary_sensitivity.R") # Fits sensitivity models (if active)
