@@ -18,7 +18,7 @@
 # This is typically the raw or unadjusted model
 
 model.exploratory.raw <- glm(
-  formula = outcome ~ exposure,
+  formula = formula.exploratory.raw,
   data = data.master.ads,
   family = gaussian(link = "identity") # Customize family/link as needed
 )
@@ -27,7 +27,7 @@ model.exploratory.raw <- glm(
 # If an adjusted model is pre-specified in the SAP
 
 model.exploratory.adj <- glm(
-  formula = model.exploratory.formula,
+  formula = formula.exploratory.adj,
   data = data.master.ads,
   family = gaussian(link = "identity")
 )

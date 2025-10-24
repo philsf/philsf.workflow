@@ -28,9 +28,10 @@ source("scripts/21_output_descriptive_table.R") # Table 1 is always created
 source("scripts/22_output_descriptive_plot.R")  # Plot is usually created
 
 # MULTIVARIATE ANALYSIS GIG (Full Regression) - ACTIVE
-# source("scripts/30_data_primary_ads.R") # optional: objective-specific ADS
+# source("scripts/30_data_primary_ads.R")     # optional: objective-specific ADS
 source("scripts/31_analysis_primary_model.R") # Fits the models
 source("scripts/32_output_primary_table.R")   # Formats models into tab.primary.inf (Table 2 & A1)
+source("scripts/33_output_primary_plot.R")    # Plots from the model
 
 # Sensitivity Analysis
 # source("scripts/35_analysis_primary_sensitivity.R") # Fits sensitivity models (if active)
@@ -41,17 +42,17 @@ source("scripts/32_output_primary_table.R")   # Formats models into tab.primary.
 
 # 3. Secondary & Exploratory Analysis (4x- and 5x- Series) ----------------
 
-# Secondary
-# source("scripts/40_data_secondary_ads.R") # optional: objective-specific ADS
-source("scripts/41_analysis_secondary_model.R")
-source("scripts/42_output_secondary_table.R")    # Appends to final.tables.list
-source("scripts/43_output_secondary_plot.R")
+# Secondary - Optional: if contracted
+# # source("scripts/40_data_secondary_ads.R") # optional: objective-specific ADS
+# source("scripts/41_analysis_secondary_model.R")
+# source("scripts/42_output_secondary_table.R")    # Appends to final.tables.list
+# source("scripts/43_output_secondary_plot.R")
 
-# Exploratory
-# source("scripts/50_data_exploratory_ads.R")     # optional: objective-specific ADS
-source("scripts/51_analysis_exploratory_model.R")
-source("scripts/52_output_exploratory_table.R")   # Appends to final.tables.list
-source("scripts/53_output_exploratory_plot.R")
+# Exploratory - Optional: if contracted
+# # source("scripts/50_data_exploratory_ads.R")     # optional: objective-specific ADS
+# source("scripts/51_analysis_exploratory_model.R")
+# source("scripts/52_output_exploratory_table.R")   # Appends to final.tables.list
+# source("scripts/53_output_exploratory_plot.R")
 
 # 4. Final Output Generation (9x- Series) ---------------------------------
 

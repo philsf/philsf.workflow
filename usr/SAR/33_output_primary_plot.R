@@ -16,9 +16,11 @@
 # 1. Primary Outcome by exposure Figure (e.g., Figure 1) ------------------
 
 gg.primary.outcome <- data.master.ads %>%
-  gg.template +
-  geom_density(aes(outcome, fill = exposure), alpha = .8) +
+  gg.template() +
+  aes(outcome, fill = exposure) +
+  geom_density(alpha = .8) +
   # Apply themes/labels defined in 00_setup_global.R
+  # gg.template +
   labs(
     x = lab.primary.outcome
   )
@@ -33,10 +35,12 @@ if (exists("model.primary.adj")) {
   gg.primary.predict <- model.primary.adj %>% effect_plot()
 }
 
+gg.primary.predict
+
 # 99. Age by Sex Figure (e.g., Figure A1) ---------------------------------
 
 gg.appendix.age <- data.master.ads %>%
-  gg.template +
+  gg.template() +
   aes(age, fill = sex) +
   geom_density(alpha = .9) +
   labs(

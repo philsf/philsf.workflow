@@ -82,12 +82,23 @@ ff.pal <- "Paired"    # good for binary groups scale  fill/color brewer
 # ff.pal <- "Set1"    # good for discrete groups      fill/color brewer
 # other palettes: "Blues" for sequential and "Set1" or viridis_d() for discrete
 
-gg.template <- ggplot() +
-  scale_color_brewer(palette = ff.pal) +
-  scale_fill_brewer(palette = ff.pal) +
-  # scale_fill_viridis_d() +                # discrete palette
-  # scale_color_viridis_d() +               # discrete palette
-  theme_ff()
+gg.template <- function(data, ...) {
+  # Initialize the plot with the data and the specific aesthetic mappings passed in '...'
+  ggplot(data, ...) +
+    # Add all global components (Scales and Theme)
+    scale_color_brewer(palette = ff.pal) +
+    scale_fill_brewer(palette = ff.pal) +
+    # scale_fill_viridis_d() +                # discrete palette
+    # scale_color_viridis_d() +               # discrete palette
+    theme_ff()
+}
+
+# gg.template <- list(
+#   scale_color_brewer(palette = ff.pal),
+#   scale_fill_brewer(palette = ff.pal),
+#   # scale_fill_viridis_d(),
+#   # scale_color_viridis_d(),
+#   theme_ff())
 
 # global variables --------------------------------------------------------
 
@@ -116,7 +127,7 @@ tab <- function(model, include = everything(), exp=exponentiate, digits = 3, ...
       ...,
     ) %>%
     add_n()
-    # bold_p()
+  # bold_p()
 }
 
 tab_adj <- function(crude, adjusted, include=everything(), exp=exponentiate, digits = 3, ...) {
@@ -124,7 +135,7 @@ tab_adj <- function(crude, adjusted, include=everything(), exp=exponentiate, dig
     list(
       tab(crude,    include=include, exp=exp, digits = digits, ...),
       tab(adjusted, include=include, exp=exp, digits = digits, ...)
-      ), c("Unadjusted", "Adjusted")
+    ), c("Unadjusted", "Adjusted")
   )
 }
 
@@ -133,12 +144,14 @@ effect_plot <- function(model) {
   # 1. Obtain Estimated marginal Means (EMMs) conditional to the Exposure
   predicted_values <- ggeffects::ggpredict(model, terms = c("exposure"))
 
-  # 2. Obtain the outcome label from the model (substitude plot_title)
+  # 2. Obtain the outcome label from the model
   lab.outcome  <- model %>% augment() %>% pull(outcome)  %>% var_label()
   lab.exposure <- model %>% augment() %>% pull(exposure) %>% var_label()
 
   # 3. Create plot with points and errors
-  predicted_plot <- ggplot(predicted_values, aes(x = x, y = predicted, color = group)) +
+  predicted_plot <- predicted_values %>%
+    gg.template() + # standardize visual identity for all plots in gg.template() function
+    aes(x = x, y = predicted, color = x) +
 
     # Add estimated means (position adjusted to avoid overlap)
     geom_point(size = 3, position = position_dodge(width = 0.5)) +
@@ -157,7 +170,7 @@ effect_plot <- function(model) {
     # Paleta ColorBrewer (Set1) para X e Y, mantendo V0 em cinza neutro
     # scale_color_manual(values = c("V0" = "#9ca3af", "X" = "#377EB8", "Y" = "#E41A1C")) +
     # scale_x_discrete(labels = c("0.5" = "Dose 0,5ml", "1.0" = "Dose 1,0ml", "1.5" = "Dose 1,5ml")) +
-    theme_ff() +
+    # theme_ff() + # use gg.template() from now on
     theme(
       plot.title = element_text(face = "bold", size = 14),
       legend.position = "top",
@@ -169,12 +182,19 @@ effect_plot <- function(model) {
 
 # Modeling ----------------------------------------------------------------
 
-model.primary.formula <- outcome ~ exposure + age + sex
+formula.primary.raw     <- outcome ~ exposure
+formula.primary.adj     <- outcome ~ exposure + age + sex
+formula.secondary.raw   <- outcome ~ exposure
+formula.secondary.adj   <- outcome ~ exposure + age + sex
+formula.exploratory.raw <- outcome ~ exposure
+formula.exploratory.adj <- outcome ~ exposure + age + sex
 
 # labels ------------------------------------------------------------------
 
 # Naming convention for the Master ADS
 master.ads.name <- "data.master.ads"
 
-lab.exposure <- "Study exposure"
-lab.primary.outcome <- "Study primary outcome"
+lab.exposure            <- "Study exposure"
+lab.primary.outcome     <- "Study primary outcome"
+lab.secondary.outcome   <- "Study secondary outcome"
+lab.exploratory.outcome <- "Study exploratory outcome"
