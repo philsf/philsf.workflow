@@ -1,6 +1,7 @@
 # philsf.workflow (development version)
 
 * Simplify sync routine into a single script #186
+* R script workflow overhaul, modular and flexible #203 #204
 
 # philsf.workflow 0.15.3
 
