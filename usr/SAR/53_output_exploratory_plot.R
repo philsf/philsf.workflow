@@ -16,9 +16,11 @@
 # 1. Exploratory Outcome by exposure Figure (e.g., Figure 1) ------------------
 
 gg.exploratory.outcome <- data.master.ads %>%
-  gg.template +
-  geom_density(aes(outcome, fill = exposure), alpha = .8) +
+  gg.template() +
+  aes(outcome, fill = exposure) +
+  geom_density(alpha = .8) +
   # Apply themes/labels defined in 00_setup_global.R
+  # gg.template +
   labs(
     x = lab.exploratory.outcome
   )
@@ -36,7 +38,7 @@ if (exists("model.exploratory.adj")) {
 # 99. Age by Sex Figure (e.g., Figure A1) ---------------------------------
 
 gg.appendix.age <- data.master.ads %>%
-  gg.template +
+  gg.template() +
   aes(age, fill = sex) +
   geom_density(alpha = .9) +
   labs(

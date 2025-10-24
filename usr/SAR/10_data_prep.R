@@ -19,12 +19,12 @@
 # NOTE: This data frame must contain all variables used in ALL final tables (T1, T2, T3, etc.)
 # It primarily serves to provide the correct variable labels and types.
 
-data.mock.ads <- data.frame(
-  id = 1:10, # Always include ID if used in data.master.ads
-  outcome = rnorm(10), # Continuous outcome
-  exposure = factor(sample(c("Group A", "Group B"), 10, replace = TRUE)),
-  age = runif(10, 20, 60),
-  sex = factor(sample(c("Male", "Female"), 10, replace = TRUE))
+data.mock.ads <- tibble(
+  id = 1:50, # Increased N to 50 to prevent 'not enough observations' errors
+  outcome = rnorm(50), # Continuous outcome
+  exposure = factor(sample(c("Group A", "Group B"), 50, replace = TRUE)), # Categorical exposure
+  age = runif(50, 20, 60), # Continuous covariate
+  sex = factor(sample(c("Male", "Female"), 50, replace = TRUE)) # Categorical covariate
 )
 
 ## Load raw data file
