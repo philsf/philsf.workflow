@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SAR_LANG="pt"
+SAR_LANG="en"
 OPTIND=1
 
 while getopts "l:h" opt; do
