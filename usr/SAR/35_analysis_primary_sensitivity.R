@@ -13,6 +13,8 @@
 # ------------------------------------------------------------
 # ============================================================
 
+data.sens.ads <- data.master.ads # placeholder for template internal consistency
+
 # 1. Primary Model (Unadjusted) -------------------------------------------
 # Use the formula defined in 00_setup_global.R
 # This is typically the raw or unadjusted model
