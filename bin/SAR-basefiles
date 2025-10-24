@@ -25,13 +25,7 @@ while getopts "l:h" opt; do
 done
 
 RSCRIPTS="
-input.R
-describe.R
-inference.R
-modeling.R
-plots.R
-results.R
-plots-save.R
+*.R
 README-R.md
 "
 cp ~/usr/SAR/gitignore .gitignore
