@@ -13,6 +13,10 @@
 # ------------------------------------------------------------
 # ============================================================
 
+# Setup and Data Prep
+source("scripts/00_setup_global.R")
+source("scripts/10_data_prep.R")
+
 # 1. Check for results directory ------------------------------------------
 if (!file.exists("results/tab.primary.desc.rds")) {
   stop("File 'results/tab.primary.desc.rds' does not exist. Please run 99_full_analysis_run.R first.")
