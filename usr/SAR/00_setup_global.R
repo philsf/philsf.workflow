@@ -125,7 +125,7 @@ gg.template <- function(data, ...) {
 #   # scale_color_viridis_d(),
 #   theme_ff())
 
-# global variables --------------------------------------------------------
+# Global Variables --------------------------------------------------------
 
 # Set random seed
 set.seed(42)
@@ -142,7 +142,7 @@ fig.units <- "cm"
 fig.dpi    <- 300
 fig.device <- "png" # Use "pdf" or "tiff" for publication
 
-# helper functions --------------------------------------------------------
+# Helper Functions --------------------------------------------------------
 
 # Global Table Functions (tab, tab_adj)
 # Helper functions to consistently format model outputs (31-, 41-, 51-)
@@ -229,7 +229,7 @@ formula.secondary.adj   <- outcome ~ exposure + age + sex
 formula.exploratory.raw <- outcome ~ exposure
 formula.exploratory.adj <- outcome ~ exposure + age + sex
 
-# labels ------------------------------------------------------------------
+# Labels ------------------------------------------------------------------
 
 # General purpose template labels
 if (getOption("workflow.language") == "pt") {
