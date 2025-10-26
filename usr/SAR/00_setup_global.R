@@ -91,6 +91,8 @@ ff.pal <- "Paired"    # good for binary groups scale  fill/color brewer
 # ff.pal <- "Set1"    # good for discrete groups      fill/color brewer
 # other palettes: "Blues" for sequential and "Set1" or viridis_d() for discrete
 
+# A wrapper function to apply common theme elements to all plots
+# Global Plot Template (gg.template)
 gg.template <- function(data, ...) {
   # Initialize the plot with the data and the specific aesthetic mappings passed in '...'
   ggplot(data, ...) +
@@ -115,6 +117,8 @@ gg.template <- function(data, ...) {
 set.seed(42)
 
 # do we exponentiate results (OR/RR/HR)?
+# TRUE for logistic/Poisson/Cox regression (OR, IRR, HR)
+# FALSE for linear regression (mean difference)
 exponentiate <- FALSE
 
 # Define Plot Parameters
@@ -126,6 +130,10 @@ fig.device <- "png" # Use "pdf" or "tiff" for publication
 
 # helper functions --------------------------------------------------------
 
+# Global Table Functions (tab, tab_adj)
+# Helper functions to consistently format model outputs (31-, 41-, 51-)
+
+# Function to create a simple table from a single model
 tab <- function(model, include = everything(), exp=exponentiate, digits = 3, footnote=NA_character_, ...) {
   model %>%
     tbl_regression(
@@ -141,10 +149,12 @@ tab <- function(model, include = everything(), exp=exponentiate, digits = 3, foo
     modify_footnote_header(footnote = footnote, columns = estimate, replace = FALSE)
 }
 
+# Function to create a table with crude and adjusted models
 tab_adj <- function(crude, adjusted, include=everything(), exp=exponentiate, footnote=NA_character_, adjusted_for=NA_character_, digits = 3,...) {
   # "Adjusted by" footnote
   if(!is.na(adjusted_for)) adjusted_for <- paste0(lab.model.adj, ": ", adjusted_for)
 
+  # This uses the list of tables and the labels (lab.model.raw/adj)
   tbl_merge(
     list(
       tab(crude,    include=include, exp=exp, digits = digits, ...),
