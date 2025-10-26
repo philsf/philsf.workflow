@@ -70,6 +70,15 @@ library(ggeffects) # ggpredict
 # library(gghighlight)
 # library(ggpubr) # ggarrange
 
+# Output
+
+# library(officer)
+# library(flextable)
+# library(knitr)
+# library(patchwork)
+# library(openxlsx)
+# library(modelsummary)
+
 # Project language --------------------------------------------------------
 
 # Select one language to uncomment. All gtsummary default text will be translated.
