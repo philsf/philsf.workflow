@@ -26,7 +26,7 @@ tab.primary.inf.sens <- tab_adj(
 tab.primary.inf.full.sens <- tab_adj(
   crude    = model.primary.raw.sens,
   adjusted = model.primary.adj.sens,
-  include  = everything(), # Example: Full table for the Appendix
+  include  = NULL, # Example: Full table for the Appendix
 ) %>%
   # Apply final formatting (e.g., adding footnotes, headers)
   modify_footnote()

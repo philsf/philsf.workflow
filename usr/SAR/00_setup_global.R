@@ -13,7 +13,9 @@
 # ------------------------------------------------------------
 # ============================================================
 
-# input & data ------------------------------------------------------------
+# Libraries ---------------------------------------------------------------
+
+## Input & Data
 
 library(philsfmisc)
 # library(data.table)
@@ -27,7 +29,7 @@ library(naniar)
 library(labelled)
 library(writexl)
 
-# describe ----------------------------------------------------------------
+## Describe
 
 # library(Hmisc) # describe
 # library(skimr) # skim
@@ -35,10 +37,10 @@ library(writexl)
 library(gtsummary)
 library(gt)
 # library(gtreg)
-# library(effectsize)
+# library(effectsize) # For Cohens d
 # library(finalfit) # missing_compare
 
-# model -------------------------------------------------------------------
+## Model
 
 # library(moderndive) # geom_parallel_slopes
 library(broom)
@@ -50,21 +52,33 @@ library(emmeans)
 # library(AER)
 # library(simputation)
 # library(mice)
-library(ggfortify) # autoplot
-# library(ggeffects)
 # library(car)
 # library(MASS)
 # library(rms)
 library(performance)
 
-# inference ---------------------------------------------------------------
+## Inference
 
 # library(infer)
 
-# plot --------------------------------------------------------------------
+## Plot
 
+library(ggfortify) # autoplot
+library(ggeffects) # ggpredict
 # library(survminer)
 # library(gridExtra)
+# library(gghighlight)
+# library(ggpubr) # ggarrange
+
+# Output
+
+# library(officer)
+# library(flextable)
+# library(knitr)
+# library(patchwork)
+# library(openxlsx)
+# library(modelsummary)
+
 # Project language --------------------------------------------------------
 
 # Select one language to uncomment. All gtsummary default text will be translated.
@@ -111,7 +125,7 @@ gg.template <- function(data, ...) {
 #   # scale_color_viridis_d(),
 #   theme_ff())
 
-# global variables --------------------------------------------------------
+# Global Variables --------------------------------------------------------
 
 # Set random seed
 set.seed(42)
@@ -128,17 +142,28 @@ fig.units <- "cm"
 fig.dpi    <- 300
 fig.device <- "png" # Use "pdf" or "tiff" for publication
 
-# helper functions --------------------------------------------------------
+# Helper Functions --------------------------------------------------------
 
 # Global Table Functions (tab, tab_adj)
 # Helper functions to consistently format model outputs (31-, 41-, 51-)
 
 # Function to create a simple table from a single model
-tab <- function(model, include = everything(), exp=exponentiate, digits = 3, footnote=NA_character_, ...) {
+tab <- function(model, include = NULL, exp=exponentiate, digits = 3, footnote=NA_character_, ...) {
+  # 1. Determine the 'include' argument
+  if (is.null(include)) {
+    # If the default (NULL) is passed, force 'everything()' for the selection
+    include_selection <- rlang::expr(everything())
+  } else if (is.character(include)) {
+    # If a character vector is passed (e.g., c("age", "sex")), use any_of()
+    include_selection <- rlang::expr(any_of(!!include))
+  } else {
+    # If it is another NSE symbol (e.g., starts_with), use the passed expression
+    include_selection <- rlang::enquo(include)
+  }
   model %>%
     tbl_regression(
       exp = exp,
-      include = all_of(include),
+      include = !!include_selection, # Unquotes and injects the resolved selection
       # estimate_fun = purrr::partial(style_ratio,  digits = digits),
       # label = list(exposure = lab.exposure),
       ...,
@@ -150,7 +175,7 @@ tab <- function(model, include = everything(), exp=exponentiate, digits = 3, foo
 }
 
 # Function to create a table with crude and adjusted models
-tab_adj <- function(crude, adjusted, include=everything(), exp=exponentiate, footnote=NA_character_, adjusted_for=NA_character_, digits = 3,...) {
+tab_adj <- function(crude, adjusted, include=NULL, exp=exponentiate, footnote=NA_character_, adjusted_for=NA_character_, digits = 3,...) {
   # "Adjusted by" footnote
   if(!is.na(adjusted_for)) adjusted_for <- paste0(lab.model.adj, ": ", adjusted_for)
 
@@ -215,7 +240,7 @@ formula.secondary.adj   <- outcome ~ exposure + age + sex
 formula.exploratory.raw <- outcome ~ exposure
 formula.exploratory.adj <- outcome ~ exposure + age + sex
 
-# labels ------------------------------------------------------------------
+# Labels ------------------------------------------------------------------
 
 # General purpose template labels
 if (getOption("workflow.language") == "pt") {
@@ -228,7 +253,10 @@ if (getOption("workflow.language") == "pt") {
   lab.model.adj   <- "Adjusted"
 }
 
+# Project-specific labels
 lab.exposure            <- "Study exposure"
 lab.primary.outcome     <- "Study primary outcome"
 lab.secondary.outcome   <- "Study secondary outcome"
 lab.exploratory.outcome <- "Study exploratory outcome"
+lab.age                 <- "Age (years)"
+lab.sex                 <- "Sex"

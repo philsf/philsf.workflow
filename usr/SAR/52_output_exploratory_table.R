@@ -28,7 +28,7 @@ tab.exploratory.inf <- tab_adj(
 tab.exploratory.inf.full <- tab_adj(
   crude    = model.exploratory.raw,
   adjusted = model.exploratory.adj,
-  include  = everything(), # Include all variables
+  include  = NULL, # Include all variables
 ) %>%
   # Apply final formatting (e.g., adding footnotes, headers)
   modify_footnote()

@@ -13,6 +13,17 @@
 # ------------------------------------------------------------
 # ============================================================
 
+# 0. Source dependencies if running standalone ----------------------------
+
+# Check for a variable defined in 00_setup_global.R as a lightweight way
+# to check if the global environment is already loaded.
+if (!exists("formula.primary.raw")) {
+  source("scripts/00_setup_global.R")
+  source("scripts/10_data_prep.R")
+  # Source any required model scripts if plots depend on model objects
+  # source("scripts/31_model_primary_inf.R")
+}
+
 # 1. Check for results directory ------------------------------------------
 if (!file.exists("results/tab.primary.desc.rds")) {
   stop("File 'results/tab.primary.desc.rds' does not exist. Please run 99_full_analysis_run.R first.")

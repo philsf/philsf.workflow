@@ -67,6 +67,8 @@ data.raw <- data.raw %>%
     exposure = lab.exposure,
     outcome = lab.primary.outcome,
     # Add all key variables here
+    age = lab.age,
+    sex = lab.sex,
   )
 
 # Master Analytical Dataset (ADS) -----------------------------------------

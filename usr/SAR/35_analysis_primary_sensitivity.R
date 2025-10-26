@@ -20,7 +20,7 @@ data.sens.ads <- data.master.ads # placeholder for template internal consistency
 # This is typically the raw or unadjusted model
 
 model.primary.raw.sens <- glm(
-  formula = outcome ~ exposure,
+  formula = formula.primary.raw,
   data = data.sens.ads,
   family = gaussian(link = "identity") # Customize family/link as needed
 )
@@ -29,7 +29,7 @@ model.primary.raw.sens <- glm(
 # If an adjusted model is pre-specified in the SAP
 
 model.primary.adj.sens <- glm(
-  formula = model.primary.formula,
+  formula = formula.primary.adj,
   data = data.sens.ads,
   family = gaussian(link = "identity")
 )
