@@ -144,7 +144,7 @@ tab_adj <- function(crude, adjusted, include=everything(), exp=exponentiate, dig
     list(
       tab(crude,    include=include, exp=exp, digits = digits, ...),
       tab(adjusted, include=include, exp=exp, digits = digits, ...)
-    ), c("Unadjusted", "Adjusted")
+    ), c(lab.model.raw, lab.model.adj),
   )
 }
 
