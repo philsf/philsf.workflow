@@ -4,6 +4,7 @@
 * new shell script to open setup github repo #206
 * R script workflow overhaul, modular and flexible #203 #204
 * Switch default language in repos to English #218
+* infrastructure for multilingual workflow #223
 
 # philsf.workflow 0.15.3
 
