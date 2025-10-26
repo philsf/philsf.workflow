@@ -126,7 +126,7 @@ fig.device <- "png" # Use "pdf" or "tiff" for publication
 
 # helper functions --------------------------------------------------------
 
-tab <- function(model, include = everything(), exp=exponentiate, digits = 3, ...) {
+tab <- function(model, include = everything(), exp=exponentiate, digits = 3, footnote=NA_character_, ...) {
   model %>%
     tbl_regression(
       exp = exp,
@@ -135,17 +135,24 @@ tab <- function(model, include = everything(), exp=exponentiate, digits = 3, ...
       # label = list(exposure = lab.exposure),
       ...,
     ) %>%
-    add_n()
-  # bold_p()
+    # Bolding makes for poor outputs when exporting to Excel - use only within Rmarkdown
+    # bold_p() %>%
+    # add_n() %>%
+    modify_footnote_header(footnote = footnote, columns = estimate, replace = FALSE)
 }
 
-tab_adj <- function(crude, adjusted, include=everything(), exp=exponentiate, digits = 3, ...) {
+tab_adj <- function(crude, adjusted, include=everything(), exp=exponentiate, footnote=NA_character_, adjusted_for=NA_character_, digits = 3,...) {
+  # "Adjusted by" footnote
+  if(!is.na(adjusted_for)) adjusted_for <- paste0(lab.model.adj, ": ", adjusted_for)
+
   tbl_merge(
     list(
       tab(crude,    include=include, exp=exp, digits = digits, ...),
       tab(adjusted, include=include, exp=exp, digits = digits, ...)
     ), c(lab.model.raw, lab.model.adj),
-  )
+  ) %>%
+    modify_footnote_header(footnote, columns = contains("estimate"), replace = FALSE) %>%
+    modify_footnote_header(adjusted_for, columns = estimate_2, replace = FALSE)
 }
 
 effect_plot <- function(model) {
