@@ -65,13 +65,22 @@ library(performance)
 
 # library(survminer)
 # library(gridExtra)
+# Project language --------------------------------------------------------
 
-# setup themes ------------------------------------------------------------
+# Select one language to uncomment. All gtsummary default text will be translated.
+# NOTE: This does NOT translate custom column headers or captions.
+
+# Set the global workflow language using an R option.
+# UNCOMMENT ONLY ONE language option:
+options(workflow.language = "en") # Default (English)
+# options(workflow.language = "pt") # Portuguese
+
+# Themes and Options ------------------------------------------------------
 
 # setup gtsummary theme
 theme_ff_gtsummary()
 theme_gtsummary_compact()
-# theme_gtsummary_language(language = "pt") # traduzir
+# theme_gtsummary_language(language = "pt") # moved to section labels
 
 # setup ggplot theme
 theme_set(theme_ff())
@@ -191,8 +200,16 @@ formula.exploratory.adj <- outcome ~ exposure + age + sex
 
 # labels ------------------------------------------------------------------
 
-# Naming convention for the Master ADS
-master.ads.name <- "data.master.ads"
+# General purpose template labels
+if (getOption("workflow.language") == "pt") {
+  theme_gtsummary_language(language = "pt")
+  lab.model.raw   <- "Não-Ajustado"
+  lab.model.adj   <- "Ajustado"
+} else {
+  theme_gtsummary_language(language = "en") # default
+  lab.model.raw   <- "Unadjusted"
+  lab.model.adj   <- "Adjusted"
+}
 
 lab.exposure            <- "Study exposure"
 lab.primary.outcome     <- "Study primary outcome"
