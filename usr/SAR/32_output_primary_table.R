@@ -35,7 +35,7 @@ tab.primary.inf <- tab_adj(
 tab.primary.inf.full <- tab_adj(
   crude    = model.primary.raw,
   adjusted = model.primary.adj,
-  include  = everything(), # Example: Full table for the Appendix
+  include  = NULL, # Example: Full table for the Appendix
   # exp = FALSE, # Use the global 'exponentiate' variable defined in 00-
 ) %>%
   # Apply final formatting (e.g., adding footnotes, headers)
