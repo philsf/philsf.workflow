@@ -65,13 +65,22 @@ library(performance)
 
 # library(survminer)
 # library(gridExtra)
+# Project language --------------------------------------------------------
 
-# setup themes ------------------------------------------------------------
+# Select one language to uncomment. All gtsummary default text will be translated.
+# NOTE: This does NOT translate custom column headers or captions.
+
+# Set the global workflow language using an R option.
+# UNCOMMENT ONLY ONE language option:
+options(workflow.language = "en") # Default (English)
+# options(workflow.language = "pt") # Portuguese
+
+# Themes and Options ------------------------------------------------------
 
 # setup gtsummary theme
 theme_ff_gtsummary()
 theme_gtsummary_compact()
-# theme_gtsummary_language(language = "pt") # traduzir
+# theme_gtsummary_language(language = "pt") # moved to section labels
 
 # setup ggplot theme
 theme_set(theme_ff())
@@ -82,6 +91,8 @@ ff.pal <- "Paired"    # good for binary groups scale  fill/color brewer
 # ff.pal <- "Set1"    # good for discrete groups      fill/color brewer
 # other palettes: "Blues" for sequential and "Set1" or viridis_d() for discrete
 
+# A wrapper function to apply common theme elements to all plots
+# Global Plot Template (gg.template)
 gg.template <- function(data, ...) {
   # Initialize the plot with the data and the specific aesthetic mappings passed in '...'
   ggplot(data, ...) +
@@ -106,6 +117,8 @@ gg.template <- function(data, ...) {
 set.seed(42)
 
 # do we exponentiate results (OR/RR/HR)?
+# TRUE for logistic/Poisson/Cox regression (OR, IRR, HR)
+# FALSE for linear regression (mean difference)
 exponentiate <- FALSE
 
 # Define Plot Parameters
@@ -117,7 +130,11 @@ fig.device <- "png" # Use "pdf" or "tiff" for publication
 
 # helper functions --------------------------------------------------------
 
-tab <- function(model, include = everything(), exp=exponentiate, digits = 3, ...) {
+# Global Table Functions (tab, tab_adj)
+# Helper functions to consistently format model outputs (31-, 41-, 51-)
+
+# Function to create a simple table from a single model
+tab <- function(model, include = everything(), exp=exponentiate, digits = 3, footnote=NA_character_, ...) {
   model %>%
     tbl_regression(
       exp = exp,
@@ -126,17 +143,26 @@ tab <- function(model, include = everything(), exp=exponentiate, digits = 3, ...
       # label = list(exposure = lab.exposure),
       ...,
     ) %>%
-    add_n()
-  # bold_p()
+    # Bolding makes for poor outputs when exporting to Excel - use only within Rmarkdown
+    # bold_p() %>%
+    # add_n() %>%
+    modify_footnote_header(footnote = footnote, columns = estimate, replace = FALSE)
 }
 
-tab_adj <- function(crude, adjusted, include=everything(), exp=exponentiate, digits = 3, ...) {
+# Function to create a table with crude and adjusted models
+tab_adj <- function(crude, adjusted, include=everything(), exp=exponentiate, footnote=NA_character_, adjusted_for=NA_character_, digits = 3,...) {
+  # "Adjusted by" footnote
+  if(!is.na(adjusted_for)) adjusted_for <- paste0(lab.model.adj, ": ", adjusted_for)
+
+  # This uses the list of tables and the labels (lab.model.raw/adj)
   tbl_merge(
     list(
       tab(crude,    include=include, exp=exp, digits = digits, ...),
       tab(adjusted, include=include, exp=exp, digits = digits, ...)
-    ), c("Unadjusted", "Adjusted")
-  )
+    ), c(lab.model.raw, lab.model.adj),
+  ) %>%
+    modify_footnote_header(footnote, columns = contains("estimate"), replace = FALSE) %>%
+    modify_footnote_header(adjusted_for, columns = estimate_2, replace = FALSE)
 }
 
 effect_plot <- function(model) {
@@ -191,8 +217,16 @@ formula.exploratory.adj <- outcome ~ exposure + age + sex
 
 # labels ------------------------------------------------------------------
 
-# Naming convention for the Master ADS
-master.ads.name <- "data.master.ads"
+# General purpose template labels
+if (getOption("workflow.language") == "pt") {
+  theme_gtsummary_language(language = "pt")
+  lab.model.raw   <- "Não-Ajustado"
+  lab.model.adj   <- "Ajustado"
+} else {
+  theme_gtsummary_language(language = "en") # default
+  lab.model.raw   <- "Unadjusted"
+  lab.model.adj   <- "Adjusted"
+}
 
 lab.exposure            <- "Study exposure"
 lab.primary.outcome     <- "Study primary outcome"
