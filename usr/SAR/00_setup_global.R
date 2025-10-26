@@ -13,7 +13,9 @@
 # ------------------------------------------------------------
 # ============================================================
 
-# input & data ------------------------------------------------------------
+# Libraries ---------------------------------------------------------------
+
+## Input & Data
 
 library(philsfmisc)
 # library(data.table)
@@ -27,7 +29,7 @@ library(naniar)
 library(labelled)
 library(writexl)
 
-# describe ----------------------------------------------------------------
+## Describe
 
 # library(Hmisc) # describe
 # library(skimr) # skim
@@ -35,10 +37,10 @@ library(writexl)
 library(gtsummary)
 library(gt)
 # library(gtreg)
-# library(effectsize)
+# library(effectsize) # For Cohens d
 # library(finalfit) # missing_compare
 
-# model -------------------------------------------------------------------
+## Model
 
 # library(moderndive) # geom_parallel_slopes
 library(broom)
@@ -50,21 +52,24 @@ library(emmeans)
 # library(AER)
 # library(simputation)
 # library(mice)
-library(ggfortify) # autoplot
-# library(ggeffects)
 # library(car)
 # library(MASS)
 # library(rms)
 library(performance)
 
-# inference ---------------------------------------------------------------
+## Inference
 
 # library(infer)
 
-# plot --------------------------------------------------------------------
+## Plot
 
+library(ggfortify) # autoplot
+library(ggeffects) # ggpredict
 # library(survminer)
 # library(gridExtra)
+# library(gghighlight)
+# library(ggpubr) # ggarrange
+
 # Project language --------------------------------------------------------
 
 # Select one language to uncomment. All gtsummary default text will be translated.
