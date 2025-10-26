@@ -242,7 +242,10 @@ if (getOption("workflow.language") == "pt") {
   lab.model.adj   <- "Adjusted"
 }
 
+# Project-specific labels
 lab.exposure            <- "Study exposure"
 lab.primary.outcome     <- "Study primary outcome"
 lab.secondary.outcome   <- "Study secondary outcome"
 lab.exploratory.outcome <- "Study exploratory outcome"
+lab.age                 <- "Age (years)"
+lab.sex                 <- "Sex"
