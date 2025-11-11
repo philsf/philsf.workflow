@@ -1,17 +1,39 @@
 #!/bin/bash
 
+# Extracts the current directory name (e.g., 'SAR-2024-042-MM')
 SAR=${PWD##*/} # local dir
+# Extracts the project code (e.g., '2024-042-MM')
 SAR_CODE=${SAR/SAR-/""}
 
-echo $SAR
-echo $SAR_CODE
+# Ensure the terminal uses the English locale for consistent Git/gh output.
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
 
+echo "Project Directory: $SAR"
+echo "Project Code: $SAR_CODE"
+
+# Use gh CLI to create the remote repo, set origin, and push current branch.
 gh repo create philsf-biostat/$SAR --private --push --source=. --remote=origin
 
-gh issue create --title "repo setup" --body ""
-gh issue create --title "SAP" --body ""
-gh issue create --title "describe" --body ""
-gh issue create --title "model" --body ""
-gh issue create --title "inference" --body ""
-gh issue create --title "report checklist" --body ""
+# Create the standard set of issues that mirror the R script workflow.
 
+# Initial Setup Check
+gh issue create --title "Initial Setup Check (00- to 10-)" --body "Confirm libraries (00-), directory structure (01-), and master Analysis Data Set loading/labeling (10-)."
+
+# SAP development
+gh issue create --title "SAP development" --body "Develop SAP. Finalize the SAP Table Shells (06-). Ensure all outputs are generated (90-, 91-)."
+
+# SAP QC and deliverables
+# gh issue create
+
+# Consolidated Analysis Pipeline Issue
+gh issue create --title "Pipeline: Data, Models, & QC" --body "Implement and run the full analysis pipeline: Data Prep (10-), Descriptive analysis (21-), Analyses (31-/34-/41-/51-), and Output Generation (32-/42-/52-)."
+
+# Analysis QC
+# gh issue create
+
+# Report & Documentation
+gh issue create --title "Report and Presentation Checklist" --body "Draft the Statistical Analysis Report, check figures (90-) and tables (91-)."
+
+# SAR QC
+# gh issue create
