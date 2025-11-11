@@ -1,3 +1,18 @@
 #!/bin/bash
 
+# ============================================================
+# Script:   SAR-basedirs
+# Purpose:
+#
+# Note:
+#
+# Version:  0.xx.x
+# Author:   Felipe Figueiredo
+# Created:  YYYY-MM-DD
+#
+# ------------------------------------------------------------
+# QC Date:  YYYY-MM-DD
+# ------------------------------------------------------------
+# ============================================================
+
 mkdir -p dataset figures report/{misc,tables} scripts results

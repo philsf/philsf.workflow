@@ -1,5 +1,20 @@
 #!/bin/bash
 
+# ============================================================
+# Script:   philsf.workflow-release.sh
+# Purpose:
+#
+# Note:
+#
+# Version:  0.xx.x
+# Author:   Felipe Figueiredo
+# Created:  YYYY-MM-DD
+#
+# ------------------------------------------------------------
+# QC Date:  YYYY-MM-DD
+# ------------------------------------------------------------
+# ============================================================
+
 echo "Updating templates that will be installed on next release."
 /bin/cp -a inst/rmarkdown/templates/SAP_pt/skeleton/skeleton.Rmd usr/SAR/SAP_pt.Rmd
 /bin/cp -a inst/rmarkdown/templates/SAP_pt/skeleton/misc/style_SAP_pt.docx usr/SAR/misc/

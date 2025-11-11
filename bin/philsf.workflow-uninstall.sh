@@ -1,5 +1,20 @@
 #!/bin/bash
 
+# ============================================================
+# Script:   philsf.workflow-uninstall.sh
+# Purpose:
+#
+# Note:
+#
+# Version:  0.xx.x
+# Author:   Felipe Figueiredo
+# Created:  YYYY-MM-DD
+#
+# ------------------------------------------------------------
+# QC Date:  YYYY-MM-DD
+# ------------------------------------------------------------
+# ============================================================
+
 if [ `uname -s` != "Linux" ];
 then
     HOME="$USERPROFILE"

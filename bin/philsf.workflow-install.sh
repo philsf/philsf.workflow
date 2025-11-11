@@ -1,5 +1,20 @@
 #!/bin/bash
 
+# ============================================================
+# Script:   philsf.workflow-install.sh
+# Purpose:
+#
+# Note:
+#
+# Version:  0.xx.x
+# Author:   Felipe Figueiredo
+# Created:  YYYY-MM-DD
+#
+# ------------------------------------------------------------
+# QC Date:  YYYY-MM-DD
+# ------------------------------------------------------------
+# ============================================================
+
 if [[ `uname -s` =~ MINGW ]];
 then
     HOME="$USERPROFILE"
