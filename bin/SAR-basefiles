@@ -2,13 +2,14 @@
 
 # ============================================================
 # Script:   SAR-basefiles
-# Purpose:
+# Purpose:  Copy core R scripts, templates, and setup files
+#           from the master SAR repository template to the local directory.
 #
-# Note:
+# Note:     N/A
 #
 # Version:  0.xx.x
 # Author:   Felipe Figueiredo
-# Created:  YYYY-MM-DD
+# Created:  2025-11-11
 #
 # ------------------------------------------------------------
 # QC Date:  YYYY-MM-DD
