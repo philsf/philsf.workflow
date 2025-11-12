@@ -2,13 +2,14 @@
 
 # ============================================================
 # Script:   SAR-init
-# Purpose:
+# Purpose:  Initialize the Git repository for the new SAR project
+#           and create the initial commit with core files and structure.
 #
-# Note:
+# Note:     Initializes the 'dataset' directory as a separate, local Git repo
 #
 # Version:  0.xx.x
 # Author:   Felipe Figueiredo
-# Created:  YYYY-MM-DD
+# Created:  2025-11-11
 #
 # ------------------------------------------------------------
 # QC Date:  YYYY-MM-DD
