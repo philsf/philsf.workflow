@@ -2,13 +2,14 @@
 
 # ============================================================
 # Script:   SAR-rename
-# Purpose:
+# Purpose:  Rename the local project repository directory and all associated
+#           files (RStudio project, RMarkdown report files) to a new name.
 #
-# Note:
+# Note:     N/A
 #
 # Version:  0.xx.x
 # Author:   Felipe Figueiredo
-# Created:  YYYY-MM-DD
+# Created:  2025-11-11
 #
 # ------------------------------------------------------------
 # QC Date:  YYYY-MM-DD
