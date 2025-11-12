@@ -2,13 +2,14 @@
 
 # ============================================================
 # Script:   SAR-sync
-# Purpose:
+# Purpose:  Perform a full Git synchronization (pull, push, and tags)
+#           against remotes for the current directory or a list of projects.
 #
-# Note:
+# Note:     N/A
 #
 # Version:  0.xx.x
 # Author:   Felipe Figueiredo
-# Created:  YYYY-MM-DD
+# Created:  2025-11-11
 #
 # ------------------------------------------------------------
 # QC Date:  YYYY-MM-DD
