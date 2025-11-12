@@ -2,13 +2,14 @@
 
 # ============================================================
 # Script:   SAR-basedirs
-# Purpose:
+# Purpose:  Create the standard base directory structure for the SAR workflow.
 #
-# Note:
+#
+# Note:     N/A
 #
 # Version:  0.xx.x
 # Author:   Felipe Figueiredo
-# Created:  YYYY-MM-DD
+# Created:  2025-11-11
 #
 # ------------------------------------------------------------
 # QC Date:  YYYY-MM-DD
