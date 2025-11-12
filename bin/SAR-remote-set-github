@@ -2,9 +2,10 @@
 
 # ============================================================
 # Script:   SAR-remote-set-github
-# Purpose: Create a new private GitHub repository, push local contents, 
-# and initialize standard issue tracking boilerplate for the project.
-# Note:
+# Purpose:  Create a new private GitHub repository, push local contents,
+#           and initialize standard issue tracking boilerplate for the project.
+#
+# Note:     N/A
 #
 # Version:  0.xx.x
 # Author:   Felipe Figueiredo
