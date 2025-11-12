@@ -1,5 +1,21 @@
 #!/bin/bash
 
+# ============================================================
+# Script:   SAR-links
+# Purpose:  Update project ID placeholders (`yyyy-NNN-XX`)
+#           to the actual project code in all relevant files.
+#
+# Note:     N/A
+#
+# Version:  0.xx.x
+# Author:   Felipe Figueiredo
+# Created:  2025-11-11
+#
+# ------------------------------------------------------------
+# QC Date:  YYYY-MM-DD
+# ------------------------------------------------------------
+# ============================================================
+
 orig="yyyy-NNN-XX"
 dest=${1/SAR-/""} # drop SAR prefix, if received
 

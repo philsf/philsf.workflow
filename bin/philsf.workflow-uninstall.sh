@@ -1,5 +1,21 @@
 #!/bin/bash
 
+# ============================================================
+# Script:   philsf.workflow-uninstall.sh
+# Purpose:  Remove all deployed files, including shell utilities, 
+#           configuration files, and R workflow templates.
+#
+# Note:     N/A
+#
+# Version:  0.xx.x
+# Author:   Felipe Figueiredo
+# Created:  2025-11-11
+#
+# ------------------------------------------------------------
+# QC Date:  YYYY-MM-DD
+# ------------------------------------------------------------
+# ============================================================
+
 if [ `uname -s` != "Linux" ];
 then
     HOME="$USERPROFILE"

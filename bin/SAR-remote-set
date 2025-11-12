@@ -1,5 +1,21 @@
 #!/bin/bash
 
+# ============================================================
+# Script:   SAR-remote-set
+# Purpose:  Initialize a new bare Git repository at a specified
+#           path and set it as a remote for the local project.
+#
+# Note:     N/A
+#
+# Version:  0.xx.x
+# Author:   Felipe Figueiredo
+# Created:  2025-11-11
+#
+# ------------------------------------------------------------
+# QC Date:  YYYY-MM-DD
+# ------------------------------------------------------------
+# ============================================================
+
 if [[ "$1" == "" ]]
 then
     echo "Usage: SAR-remote-set REMOTE REMOTE_DIR"

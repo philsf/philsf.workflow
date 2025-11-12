@@ -1,5 +1,21 @@
 #!/bin/bash
 
+# ============================================================
+# Script:   philsf.workflow-install.sh
+# Purpose:  Main installer script to copy all shell utilities
+#           and R template files into the user's local environment.
+#
+# Note:     N/A
+#
+# Version:  0.xx.x
+# Author:   Felipe Figueiredo
+# Created:  2025-11-11
+#
+# ------------------------------------------------------------
+# QC Date:  YYYY-MM-DD
+# ------------------------------------------------------------
+# ============================================================
+
 if [[ `uname -s` =~ MINGW ]];
 then
     HOME="$USERPROFILE"

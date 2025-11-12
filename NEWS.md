@@ -6,6 +6,7 @@
 * Switch default language in repos to English #218
 * infrastructure for multilingual workflow #223
 * update remote setup script to new workflow #235
+* Set current version number in all versioned files #18
 
 # philsf.workflow 0.15.3
 

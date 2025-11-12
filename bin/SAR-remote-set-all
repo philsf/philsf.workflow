@@ -1,5 +1,21 @@
 #!/bin/bash
 
+# ============================================================
+# Script:   SAR-remote-set-all
+# Purpose:  Run SAR-remote-set in batch for a list of SAR project 
+#           directories to create bare repositories and set up remotes.
+#
+# Note:     N/A
+#
+# Version:  0.xx.x
+# Author:   Felipe Figueiredo
+# Created:  2025-11-11
+#
+# ------------------------------------------------------------
+# QC Date:  YYYY-MM-DD
+# ------------------------------------------------------------
+# ============================================================
+
 if [[ "$2" == "" ]]
 then
     echo "Usage: SAR-remote-set-all REMOTE REMOTES_DIR [SAR_LIST]"

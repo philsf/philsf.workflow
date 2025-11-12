@@ -1,5 +1,21 @@
 #!/bin/bash
 
+# ============================================================
+# Script:   SAR-new
+# Purpose:  Main command-line interface script to create and
+#           initialize one or more new SAR projects (repositories).
+#
+# Note:     N/A
+#
+# Version:  0.xx.x
+# Author:   Felipe Figueiredo
+# Created:  2025-11-11
+#
+# ------------------------------------------------------------
+# QC Date:  YYYY-MM-DD
+# ------------------------------------------------------------
+# ============================================================
+
 SAR_LANG="en"
 OPTIND=1
 

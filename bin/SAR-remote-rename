@@ -1,5 +1,21 @@
 #!/bin/bash
 
+# ============================================================
+# Script:   SAR-remote-rename
+# Purpose:  Rename the remote bare Git repository directory
+#           and update the local Git configuration URL.
+#
+# Note:     N/A
+#
+# Version:  0.xx.x
+# Author:   Felipe Figueiredo
+# Created:  2025-11-11
+#
+# ------------------------------------------------------------
+# QC Date:  YYYY-MM-DD
+# ------------------------------------------------------------
+# ============================================================
+
 if [[ "$1" == "" ]]
 then
     echo "Usage: SAR-remote-rename REMOTE"

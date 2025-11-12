@@ -1,5 +1,21 @@
 #!/bin/bash
 
+# ============================================================
+# Script:   SAR-sync
+# Purpose:  Perform a full Git synchronization (pull, push, and tags)
+#           against remotes for the current directory or a list of projects.
+#
+# Note:     N/A
+#
+# Version:  0.xx.x
+# Author:   Felipe Figueiredo
+# Created:  2025-11-11
+#
+# ------------------------------------------------------------
+# QC Date:  YYYY-MM-DD
+# ------------------------------------------------------------
+# ============================================================
+
 while getopts "hgr:" opt; do
     case $opt in
 	h) #display help syntax

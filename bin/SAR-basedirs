@@ -1,3 +1,19 @@
 #!/bin/bash
 
+# ============================================================
+# Script:   SAR-basedirs
+# Purpose:  Create the standard base directory structure for the SAR workflow.
+#
+#
+# Note:     N/A
+#
+# Version:  0.xx.x
+# Author:   Felipe Figueiredo
+# Created:  2025-11-11
+#
+# ------------------------------------------------------------
+# QC Date:  YYYY-MM-DD
+# ------------------------------------------------------------
+# ============================================================
+
 mkdir -p dataset figures report/{misc,tables} scripts results
