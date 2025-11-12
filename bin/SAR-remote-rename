@@ -2,13 +2,14 @@
 
 # ============================================================
 # Script:   SAR-remote-rename
-# Purpose:
+# Purpose:  Rename the remote bare Git repository directory
+#           and update the local Git configuration URL.
 #
-# Note:
+# Note:     N/A
 #
 # Version:  0.xx.x
 # Author:   Felipe Figueiredo
-# Created:  YYYY-MM-DD
+# Created:  2025-11-11
 #
 # ------------------------------------------------------------
 # QC Date:  YYYY-MM-DD
