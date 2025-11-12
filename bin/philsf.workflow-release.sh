@@ -2,13 +2,14 @@
 
 # ============================================================
 # Script:   philsf.workflow-release.sh
-# Purpose:
+# Purpose:  Prepare the workflow for release by ensuring the most current
+#           R Markdown templates and style files are available
 #
-# Note:
+# Note:     N/A
 #
 # Version:  0.xx.x
 # Author:   Felipe Figueiredo
-# Created:  YYYY-MM-DD
+# Created:  2025-11-11
 #
 # ------------------------------------------------------------
 # QC Date:  YYYY-MM-DD
