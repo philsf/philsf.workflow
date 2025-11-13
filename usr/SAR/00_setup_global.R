@@ -231,6 +231,51 @@ effect_plot <- function(model) {
   return(predicted_plot)
 }
 
+# Automatically renders a gtsummary object as a kable (for Rmd/PDF)
+# or as a flextable (for DOCX), handling the caption appropriately.
+# The function constructs the bolded table label (e.g., "**Table 2**")
+# and ensures it is correctly bolded in DOCX output using flextable's
+# native formatting, avoiding the need for regex parsing.
+render_table <- function(table_object, table_index, caption) {
+
+  # 1. Construct the complete caption string parts
+  table_label <- paste0("Table ", table_index)
+
+  if (knitr::is_html_output() || knitr::is_latex_output()) {
+    # Render as kable for HTML, PDF, and general Markdown output
+
+    # Use the full Markdown string for kable/PDF output (where it works)
+    caption_text_md <- paste0("**", table_label, "** ", caption)
+
+    table_object %>%
+      gtsummary::as_kable(
+        caption = gt::md(caption_text_md)
+      )
+  } else {
+    # DOCX output (word_document) - Apply fixes for width, alignment, and formatting
+
+    # ARTIFACT FIX - Caption SOLUTION for flextable:
+    # Use simple plain text to prevent rich text object artifacts.
+    # NOTE: Bolding of the 'Table X' label must be done manually in the DOCX.
+    caption_text_plain <- paste0(table_label, " ", caption)
+
+    ft <- table_object %>%
+      gtsummary::as_flex_table() %>%
+
+      # (Caption): Use plain text with flextable to avoid rendering artifacts
+      flextable::set_caption(caption = caption_text_plain) %>%
+
+      # (Width): Use layout="autofit" and width=1.0 (100%) to force
+      # the table to span the full text width, overriding column calculations
+      flextable::set_table_properties(width = 1.0, layout = "autofit") %>%
+
+      # (Alignment): Ensure all cells are vertically centered
+      flextable::valign(valign = "center", part = "all")
+
+    return(ft)
+  }
+}
+
 # Modeling ----------------------------------------------------------------
 
 formula.primary.raw     <- outcome ~ exposure
