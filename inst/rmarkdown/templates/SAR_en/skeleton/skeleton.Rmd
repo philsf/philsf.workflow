@@ -18,6 +18,7 @@ output:
     fig_caption: yes
     fig_height: 6
     fig_width: 6
+    keep_md: yes
     reference_docx: misc/style_SAR_en.docx
     toc: yes
 # toc-title: "Sumário"
@@ -62,31 +63,25 @@ source("scripts/results.R", encoding = 'UTF-8')
 
 ## Objectives
 
-## Data reception and cleaning
-
 # Methods
 
-<!-- The data procedures, design and analysis methods used in this report are fully described in the annex document **SAP-yyyy-NNN-XX-v01**. -->
 
-## Study parameters
 
-### Study design
+The full details of the data procedures, study design, and statistical analysis methods used in this report are described in the annex document **SAP-yyyy-NNN-XX-v01**.
 
-### Inclusion and exclusion criteria
+## Study Design
 
-### Exposures
 
-### Outcomes
+## Exposures and Outcomes
 
-### Covariates
 
-## Statistical analyses
+## Statistical Analysis
 
 This analysis was performed using statistical software `R` version `r getRversion()`.
 
 # Results
 
-## Study population and follow up
+## Baseline characteristics
 
 ```{r tab_desc}
 tab_desc %>%
@@ -100,7 +95,7 @@ tab_desc %>%
 # knitr::include_graphics("../figures/outcome.png", error = FALSE)
 ```
 
-## Inferential analysis
+## Primary Analysis
 
 ```{r tab_inf}
 tab_inf %>%
@@ -108,6 +103,13 @@ tab_inf %>%
     caption = "**Table 2** caption"
   )
 ```
+
+## Secondary Analysis
+
+
+## Exploratory Analysis
+
+<!-- ## Sensitivity Analysis -->
 
 # Observations and Limitations
 
@@ -126,6 +128,23 @@ tab_inf %>%
 # knitr::include_graphics("../figures/distr_age.png", error = FALSE)
 ```
 
+## Modeling Strategy and Diagnostics
+
+### Model Validation and Diagnostics
+
+### Model Selection and Justification
+
+### Full Model Specification
+
+
+## Associated analyses
+
+This analysis is part of a larger project and is supported by other analyses, linked below.
+
+**[assoc_title]**
+
+<[assoc_link]>
+
 ## Availability
 
 All documents from this consultation were included in the consultant's Portfolio.
@@ -140,14 +159,3 @@ All documents from this consultation were included in the consultant's Portfolio
 The portfolio is available at:
 
 <https://philsf-biostat.github.io/SAR-yyyy-NNN-XX/>
-
-## Analytical dataset
-
-Table A1 shows the structure of the analytical dataset.
-
-```{r data}
-analytical_mockup %>%
-  pander(caption = "**Table A1** Analytical dataset structure")
-```
-
-Due to confidentiality the data-set used in this analysis cannot be shared online in the public version of this report.
