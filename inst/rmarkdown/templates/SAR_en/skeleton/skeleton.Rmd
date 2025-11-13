@@ -65,15 +65,22 @@ source("scripts/results.R", encoding = 'UTF-8')
 
 # Methods
 
+[Analyst Note: This methods section provides a minimal description for the convenience of the reader (design, outcomes, exposures, and a concise statistical methods paragraph). It is compatible with the SAP snippet, and covers that deliverable for BASIC packages. Higher packages will include a SAP as a separate document]
 
+[Analyst Note: DOCUMENTATION TIER ALIGNMENT REQUIRED]
+
+- BASIC/STANDARD: delete the mention to a SAP (not scoped)
+- PREMIUM: keep the reference to the Full SAP
 
 The full details of the data procedures, study design, and statistical analysis methods used in this report are described in the annex document **SAP-yyyy-NNN-XX-v01**.
 
 ## Study Design
 
+[Analyst Note: High-level summary of the study design (e.g., RCT, Observational Cohort, Case-Control).]
 
 ## Exposures and Outcomes
 
+[Analyst Note: High-level summary of the primary exposure(s) and the primary/secondary outcomes analyzed.]
 
 ## Statistical Analysis
 
@@ -97,6 +104,8 @@ tab_desc %>%
 
 ## Primary Analysis
 
+This section presents the results for the primary objective.
+
 ```{r tab_inf}
 tab_inf %>%
   as_kable(
@@ -106,10 +115,20 @@ tab_inf %>%
 
 ## Secondary Analysis
 
+[Analyst Note: remove this section if not scoped]
+
+This section presents the results for the secondary objectives.
+
 
 ## Exploratory Analysis
 
+[Analyst Note: remove this section if not scoped]
+
+This section presents the results for any post-hoc or exploratory findings.
+
 <!-- ## Sensitivity Analysis -->
+
+<!-- Sensitivity analysis was performed to verify the robustness of the primary findings. -->
 
 # Observations and Limitations
 
@@ -117,27 +136,54 @@ tab_inf %>%
 
 # References
 
+[Analyst Note: DOCUMENTATION TIER ALIGNMENT REQUIRED]
+
+- BASIC/STANDARD: delete the reference to the Full SAP (not scoped)
+- PREMIUM: keep the reference to the Full SAP
+
 - **SAP-yyyy-NNN-XX-v01** -- Analytical Plan for [title]
 
 # Appendix
 
 ## Exploratory data analysis
 
+[Analyst Note: Use this section to discuss initial exploratory data analysis (EDA) that informed the primary model selection (e.g., initial variable distributions, correlation checks). Include Figure A1 below.]
+
 ```{r A1, fig.cap="**Figure A1** Distribution of age in the study population."}
 # ![Age](../figures/distr_age.png)
 # knitr::include_graphics("../figures/distr_age.png", error = FALSE)
+```{r fig_appendix_eda, fig.cap="**Figure A1** Additional figure (e.g., secondary outcome distribution plot)."}
+# Figure A1: Example of an Exploratory Data Analysis Plot (created by 91_outputs_plots.R)
+# knitr::include_graphics("../figures/Figure_A1_Age_by_Sex.png", error = FALSE)
 ```
 
 ## Modeling Strategy and Diagnostics
 
 ### Model Validation and Diagnostics
 
+[Analyst Note: Use this subsection to detail the model's appropriateness and assumption checks based on the stock diagnostic routine (e.g., collinearity (VIF), influence/Leverage, and goodness-of-fit). ]
+
+[Analyst Note: DOCUMENTATION TIER ALIGNMENT REQUIRED]
+
+- BASIC: Summarize the minimal checks (R2, Outliers, Critical VIF > 10).
+- STANDARD/PREMIUM: Document model-specific assumption tests (e.g., Normality, Homoscedasticity, Goodness-of-Fit) and specialized checks (e.g., Cox PH) if applicable.
+Describe the findings of the diagnostic plots (if generated internally via functions like autoplot() for residual analysis).
+
 ### Model Selection and Justification
+
+[Analyst Note: If multiple models were tested (e.g., adjusted vs. raw, nested), use this subsection to provide the justification (e.g., based on R-squared, AIC, ANOVA, or clinical relevance) for the primary model presented in the Results section.]
+
+[Analyst Note: DOCUMENTATION TIER ALIGNMENT REQUIRED]
+
+- STANDARD: Provide the Draft SAP justification for model selection (e.g., based on ANOVA/R-squared or clinical relevance).
+- PREMIUM (Diagnostic Audit): Document the decision-making process for assumption violations (e.g., choice of robust standard errors, outcome transformation) and any complex collinearity interpretations.
 
 ### Full Model Specification
 
 
 ## Associated analyses
+
+[Analyst Note: This section should be removed from the template for first projects. Uncomment and fill out if the project is part of a larger series.]
 
 This analysis is part of a larger project and is supported by other analyses, linked below.
 
