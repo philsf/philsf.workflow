@@ -24,6 +24,16 @@ output:
 ---
 
 ```{r setup, include=FALSE}
+# ************************************************************
+# Template: SAR_en.Rmd
+# Version:  0.xx.x
+# Author:   Felipe Figueiredo
+# Created:  2025-11-14
+#
+# ************************************************************
+# QC Date:  YYYY-MM-DD
+# ************************************************************
+
 knitr::opts_chunk$set(echo = FALSE)
 knitr::opts_knit$set(root.dir = normalizePath(".."))
 options(scipen = 999)
