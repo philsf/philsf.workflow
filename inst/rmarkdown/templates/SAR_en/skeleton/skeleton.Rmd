@@ -331,7 +331,7 @@ if (exists("tab.primary.inf.sens")) {
 - BASIC/STANDARD: delete the reference to the Full SAP (not scoped)
 - PREMIUM: keep the reference to the Full SAP
 
-- **SAP-yyyy-NNN-XX-v01** -- Analytical Plan for [title]
+- **SAP-yyyy-NNN-XX-v01** -- Statistical Analysis Plan: [title]
 
 # Appendix
 

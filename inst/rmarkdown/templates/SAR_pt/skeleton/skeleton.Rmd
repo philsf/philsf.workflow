@@ -115,7 +115,7 @@ tab_inf %>%
 
 # Referências
 
-- **SAP-yyyy-NNN-XX-v01** -- Plano Analítico para [title]
+- **SAP-yyyy-NNN-XX-v01** -- Plano de Análise Estatística: [title]
 
 # Apêndice
 
@@ -146,7 +146,7 @@ O portfólio pode ser visto em:
 A tabela A1 mostra a estrutura  da tabela de dados analíticos.
 
 ```{r data}
-analytical_mockup %>%
+analytic_mockup %>%
   pander(caption = "**Tabela A1** Estrutura da tabela de dados analíticos")
 ```
 

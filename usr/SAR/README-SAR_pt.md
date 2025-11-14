@@ -15,7 +15,7 @@ Análise Estatística para PESSOA (LOCAL, yyyy)
 
 ## Documentos
 
-### Plano Analítico (SAP)
+### Plano de Análise Estatística (SAP)
 
 <!-- - [Visualização online][sapviz-v02] -->
 <!-- - [PDF][sappdf-v02] -->

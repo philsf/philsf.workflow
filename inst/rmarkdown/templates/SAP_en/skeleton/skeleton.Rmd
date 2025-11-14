@@ -1,5 +1,5 @@
 ---
-title: "Analytical Plan for [title]"
+title: "Statistical Analysis Plan: [title]"
 subtitle: 'DOCUMENT: SAP-yyyy-NNN-XX-v01'
 author: '**From:** Felipe Figueiredo **To:** ___'
 date: "`r Sys.Date()`"
@@ -37,7 +37,7 @@ panderOptions('table.split.table', 160)
 
 \newpage
 
-**Analytical Plan for [title]**
+**Statistical Analysis Plan: [title]**
 
 **Document version**
 
@@ -95,8 +95,8 @@ observations.
 <!-- This dataset will include the dates of entry and exit of the cohort, or the date of hospital admission and the date where the endpoint was reached (either an event, or hospital discharge). -->
 <!-- Table 1 shows the structure of the raw dataset. -->
 
-<!-- ```{r analytical data} -->
-<!-- analytical_mockup %>% -->
+<!-- ```{r analytic data} -->
+<!-- analytic_mockup %>% -->
 <!--   pander(caption = "**Table 1** Raw dataset structure.") -->
 <!-- ``` -->
 
@@ -122,7 +122,7 @@ observations.
 <!-- It is recommended that the number of classes (types of surgery) be as small as possible, to avoid loss of precision in the analysis estimates, without the need to increase the sample size. -->
 <!-- Broader categories of surgeries should be preferred, whenever possible. -->
 
-## Analytical dataset
+## Analytic dataset
 
 <!-- After the cleaning process -->
 <!-- `r Nvar_final` -->
@@ -134,14 +134,14 @@ After the cleaning process
 `r Nvar_final`
 variables were included in the analysis.
 The total number of observations excluded due to incompleteness and exclusion criteria will be reported in the analysis.
-Table 1 shows the structure of the analytical dataset.
+Table 1 shows the structure of the analytic dataset.
 
-```{r analytical data}
-analytical_mockup %>%
-  pander(caption = "**Table 1** Analytical dataset structure after variable selection and cleaning.")
+```{r analytic data}
+analytic_mockup %>%
+  pander(caption = "**Table 1** Analytic dataset structure after variable selection and cleaning.")
 ```
 
-All variables in the analytical set were labeled according to the raw data provided and values were labeled according to the data dictionary for the preparation of production-quality results tables and figures.
+All variables in the analytic set were labeled according to the raw data provided and values were labeled according to the data dictionary for the preparation of production-quality results tables and figures.
 
 # Study parameters
 
@@ -215,7 +215,7 @@ two-tailed.
 ## Study size and Power
 
 ```{r}
-n <- analytical %>%
+n <- analytic %>%
   count(exposure) %>%
   pull(n)
 n1 <- n[1]

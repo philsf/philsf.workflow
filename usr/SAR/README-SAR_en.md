@@ -2,7 +2,7 @@
 
 Objective
 
-Statistical Analysis for PERSON (PLACE, yyyy)
+Statistical Analysis Report for PERSON (PLACE, yyyy)
 <!-- Technical Report for PERSON (PLACE, yyyy) -->
 
 ## Analyses performed
@@ -15,7 +15,7 @@ Statistical Analysis for PERSON (PLACE, yyyy)
 
 ## Documents
 
-### Analytical Plan (SAP)
+### Statistical Analysis Plan (SAP)
 
 <!-- - [Online visualization][sapviz-v02] -->
 <!-- - [PDF][sappdf-v02] -->

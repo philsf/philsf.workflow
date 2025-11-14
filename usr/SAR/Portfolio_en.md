@@ -37,7 +37,7 @@ tags:
 
 Objective
 
-Statistical Analysis for PERSON (PLACE, yyyy)
+Statistical Analysis Report for PERSON (PLACE, yyyy)
 <!-- Technical Report for PERSON (PLACE, yyyy) -->
 
 ## Analyses performed
@@ -57,7 +57,7 @@ Statistical Analysis for PERSON (PLACE, yyyy)
 <!-- The client has requested that this analysis be kept confidential. -->
 <!-- All documents from this consultation are therefore not published online and only the title and year of the analysis will be included in the consultant's Portfolio. -->
 
-### Analytical Plan (SAP)
+### Statistical Analysis Plan (SAP)
 
 - [PDF][sap]
 
