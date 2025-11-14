@@ -21,7 +21,6 @@ output:
     keep_md: yes
     reference_docx: misc/style_SAR_en.docx
     toc: yes
-# toc-title: "Sumário"
 ---
 
 ```{r setup, include=FALSE}
@@ -30,6 +29,8 @@ knitr::opts_knit$set(root.dir = normalizePath(".."))
 options(scipen = 999)
 library(pander)
 library(knitr)
+library(flextable)
+library(officer)
 panderOptions('table.style', 'rmarkdown')
 panderOptions('table.split.table', 160)
 
@@ -170,14 +171,14 @@ analysis.
 
 ## Secondary Analysis
 
+[Analyst Note: remove this section if not scoped]
+
 ```{r ind_secondary}
 if (exists("tab.secondary.inf")) {
   ind.table.body <- ind.table.body + 1
   tab.secondary.inf.ind <- ind.table.body
 }
 ```
-
-[Analyst Note: remove this section if not scoped]
 
 This section presents the results for the secondary objectives.
 
@@ -222,14 +223,14 @@ analysis.
 
 ## Exploratory Analysis
 
+[Analyst Note: remove this section if not scoped]
+
 ```{r ind_exploratory}
 if (exists("tab.exploratory.inf")) {
   ind.table.body <- ind.table.body + 1
   tab.exploratory.inf.ind <- ind.table.body
 }
 ```
-
-[Analyst Note: remove this section if not scoped]
 
 This section presents the results for any post-hoc or exploratory findings.
 
@@ -273,6 +274,8 @@ analysis.
 ```
 
 <!-- ## Sensitivity Analysis -->
+
+<!-- [Analyst Note: remove this section if not scoped] -->
 
 <!-- ```{r ind_sensitivity} -->
 <!-- if (exists("tab.primary.inf.sens")) { -->
@@ -378,6 +381,8 @@ if (exists("tab.primary.inf.full")) {
 
 <!-- ### Full Secondary Model Specification -->
 
+<!-- [Analyst Note: remove this section if not scoped] -->
+
 <!-- ```{r ind_app_full_secondary_model} -->
 <!-- # Pre-calculation chunk: ONLY increment if the table object exists. -->
 <!-- if (exists("tab.secondary.inf.full")) { -->
@@ -407,6 +412,8 @@ if (exists("tab.primary.inf.full")) {
 <!-- ``` -->
 
 <!-- ### Full Exploratory Model Specification -->
+
+<!-- [Analyst Note: remove this section if not scoped] -->
 
 <!-- ```{r ind_app_full_exploratory_model} -->
 <!-- # Pre-calculation chunk: ONLY increment if the table object exists. -->
@@ -461,4 +468,3 @@ The portfolio is available at:
 
 <https://philsf-biostat.github.io/SAR-yyyy-NNN-XX/>
 
-[https://philsf-biostat.github.io/SAR-yyyy-NNN-XX/](https://philsf-biostat.github.io/SAR-yyyy-NNN-XX/)
