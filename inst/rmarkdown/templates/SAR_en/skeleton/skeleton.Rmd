@@ -319,9 +319,9 @@ analysis.
 
 # Appendix
 
-## Exploratory data analysis
+## Supplementary Descriptive Material
 
-[Analyst Note: Use this section to discuss initial exploratory data analysis (EDA) that informed the primary model selection (e.g., initial variable distributions, correlation checks). Include Figure A1 below.]
+[Analyst Note: Use this section for descriptive figures and tables (e.g., initial variable distributions, correlation checks, baseline tables for subgroups) that support the report but are not essential to the main Results narrative.]
 
 ```{r fig_appendix_eda, fig.cap="**Figure A1** Additional figure (e.g., secondary outcome distribution plot)."}
 # Figure A1: Example of an Exploratory Data Analysis Plot (created by 91_outputs_plots.R)
