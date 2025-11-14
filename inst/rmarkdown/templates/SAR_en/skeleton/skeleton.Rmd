@@ -468,3 +468,10 @@ The portfolio is available at:
 
 <https://philsf-biostat.github.io/SAR-yyyy-NNN-XX/>
 
+## R Environment and Reproducibility
+
+To ensure the reproducibility of these results, the following R packages and system environment details were used for the analysis and report generation.
+
+```{r session_info}
+sessionInfo()
+```
