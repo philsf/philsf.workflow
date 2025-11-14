@@ -120,11 +120,6 @@ if (exists("tab.primary.desc")) {
 }
 ```
 
-```{r fig_primary_outcome_dist, fig.cap="**Figure 1** Distribution of the primary outcome in the study population."}
-# Figure 1: Primary Outcome Density Plot (created by 91_outputs_plots.R)
-# knitr::include_graphics("../figures/Figure_1_Primary_Outcome.png", error = FALSE)
-```
-
 ## Primary Analysis
 
 ```{r ind_primary}
@@ -135,6 +130,15 @@ if (exists("tab.primary.inf")) {
 ```
 
 This section presents the results for the primary objective.
+
+Figure 1 shows the distribution of
+the primary outcome
+in the study population.
+
+```{r fig_primary_outcome_dist, fig.cap="**Figure 1** Distribution of the primary outcome in the study population."}
+# Figure 1: Primary Outcome Descriptive Plot (created by 91_outputs_plots.R)
+# knitr::include_graphics("../figures/Figure_1_Primary_Outcome.png", error = FALSE)
+```
 
 Table
 `r tab.primary.inf.ind`
@@ -154,6 +158,11 @@ if (exists("tab.primary.inf")) {
 }
 ```
 
+Figure 2 shows the
+adjusted estimates for the effect of
+the primary outcome
+analysis.
+
 ```{r fig_primary_model_predict, fig.cap="**Figure 2** Primary outcome effect plot."}
 # Figure 2: Primary model prediction plot (created by 91_outputs_plots.R)
 # knitr::include_graphics("../figures/Figure_2_Primary_Predict.png", error = FALSE)
@@ -171,6 +180,15 @@ if (exists("tab.secondary.inf")) {
 [Analyst Note: remove this section if not scoped]
 
 This section presents the results for the secondary objectives.
+
+Figure 3 shows the distribution of
+the secondary outcome
+in the study population.
+
+```{r fig_secondary_outcome_dist, fig.cap="**Figure 3** Distribution of the secondary outcome in the study population."}
+# Figure 3: Secondary Outcome Descriptive Plot (created by 91_outputs_plots.R)
+# knitr::include_graphics("../figures/Figure_3_Secondary_Outcome.png", error = FALSE)
+```
 
 Table
 `r tab.secondary.inf.ind`
@@ -192,13 +210,13 @@ if (exists("tab.secondary.inf")) {
 }
 ```
 
-```{r fig_secondary_outcome_dist, fig.cap="**Figure 3** Distribution of the secondary outcome in the study population."}
-# Figure 1: Primary Outcome Density Plot (created by 91_outputs_plots.R)
-# knitr::include_graphics("../figures/Figure_3_Secondary_Outcome.png", error = FALSE)
-```
+Figure 4 shows the
+adjusted estimates for the effect of
+the secondary outcome
+analysis.
 
 ```{r fig_secondary_model_predict, fig.cap="**Figure 4** Secondary outcome effect plot."}
-# Figure 2: Primary model prediction plot (created by 91_outputs_plots.R)
+# Figure 4: Primary model prediction plot (created by 91_outputs_plots.R)
 # knitr::include_graphics("../figures/Figure_4_Secondary_Predict.png", error = FALSE)
 ```
 
@@ -214,6 +232,15 @@ if (exists("tab.exploratory.inf")) {
 [Analyst Note: remove this section if not scoped]
 
 This section presents the results for any post-hoc or exploratory findings.
+
+Figure 5 shows the distribution of
+the exploratory outcome
+in the study population.
+
+```{r fig_exploratory_outcome_dist, fig.cap="**Figure 5** Distribution of the exploratory outcome in the study population."}
+# Figure 5: Exploratory Outcome Descriptive Plot (created by 91_outputs_plots.R)
+# knitr::include_graphics("../figures/Figure_5_Exploratory_Outcome.png", error = FALSE)
+```
 
 Table
 `r tab.exploratory.inf.ind`
@@ -235,10 +262,10 @@ if (exists("tab.exploratory.inf")) {
 }
 ```
 
-```{r fig_exploratory_outcome_dist, fig.cap="**Figure 5** Distribution of the exploratory outcome in the study population."}
-# Figure 5: Exploratory Outcome Density Plot (created by 91_outputs_plots.R)
-# knitr::include_graphics("../figures/Figure_5_Exploratory_Outcome.png", error = FALSE)
-```
+Figure 6 shows the
+adjusted estimates for the effect of
+the exploratory outcome
+analysis.
 
 ```{r fig_exploratory_model_predict, fig.cap="**Figure 6** Exploratory outcome effect plot."}
 # Figure 6: Exploratory model prediction plot (created by 91_outputs_plots.R)
