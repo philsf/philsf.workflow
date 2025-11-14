@@ -32,6 +32,10 @@ library(pander)
 library(knitr)
 panderOptions('table.style', 'rmarkdown')
 panderOptions('table.split.table', 160)
+
+# Initialize counters for Table indices
+ind.table.body <- 0
+ind.table.app <- 0
 ```
 
 ---
@@ -93,14 +97,25 @@ This analysis was performed using statistical software `R` version `r getRversio
 
 ## Baseline characteristics
 
+```{r ind_baseline}
+if (exists("tab.primary.desc")) {
+  ind.table.body <- ind.table.body + 1
+  tab.primary.desc.ind <- ind.table.body
+}
+```
+
+Table
+`r tab.primary.desc.ind`
+shows the baseline characteristics of the study population.
+
 ```{r tab_baseline}
-tab.primary.desc.cap <- "Baseline characteristics of the study population"
+tab.primary.desc.cap <- "Baseline characteristics of the study population."
 # Table 1: Descriptive table (created by 21_output_descriptive_table.R)
 if (exists("tab.primary.desc")) {
   tab.primary.desc %>%
     render_table(
-      table_index = "1",
-      caption = tab.primary.desc.cap
+      table_index = tab.primary.desc.ind,
+      caption     = tab.primary.desc.cap
       )
 }
 ```
@@ -112,7 +127,20 @@ if (exists("tab.primary.desc")) {
 
 ## Primary Analysis
 
+```{r ind_primary}
+if (exists("tab.primary.inf")) {
+  ind.table.body <- ind.table.body + 1
+  tab.primary.inf.ind <- ind.table.body
+}
+```
+
 This section presents the results for the primary objective.
+
+Table
+`r tab.primary.inf.ind`
+shows the unadjusted and adjusted estimates for the
+primary
+outcome.
 
 ```{r tab_primary, results='asis'}
 tab.primary.inf.cap <- "Primary outcome analysis."
@@ -120,8 +148,8 @@ tab.primary.inf.cap <- "Primary outcome analysis."
 if (exists("tab.primary.inf")) {
     tab.primary.inf %>%
     render_table(
-      table_index = "2",
-      caption = tab.primary.inf.cap
+      table_index = tab.primary.inf.ind,
+      caption     = tab.primary.inf.cap
       )
 }
 ```
@@ -133,18 +161,31 @@ if (exists("tab.primary.inf")) {
 
 ## Secondary Analysis
 
+```{r ind_secondary}
+if (exists("tab.secondary.inf")) {
+  ind.table.body <- ind.table.body + 1
+  tab.secondary.inf.ind <- ind.table.body
+}
+```
+
 [Analyst Note: remove this section if not scoped]
 
 This section presents the results for the secondary objectives.
 
+Table
+`r tab.secondary.inf.ind`
+shows the unadjusted and adjusted estimates for the
+secondary
+outcome.
+
 ```{r tab_secondary, results='asis'}
 tab.secondary.inf.cap <- "Secondary outcome analysis."
-# Table 4: Secondary Inferential Table (created by 42_output_secondary_table.R)
+# Table 3: Secondary Inferential Table (created by 42_output_secondary_table.R)
 if (exists("tab.secondary.inf")) {
   tab.secondary.inf %>%
     render_table(
-      table_index = "3",
-      caption = tab.secondary.inf.cap
+      table_index = tab.secondary.inf.ind,
+      caption     = tab.secondary.inf.cap
       )
 } else {
   pander(data.frame(Note = "N/A - Secondary analysis not performed or not applicable to this project scope."))
@@ -163,18 +204,31 @@ if (exists("tab.secondary.inf")) {
 
 ## Exploratory Analysis
 
+```{r ind_exploratory}
+if (exists("tab.exploratory.inf")) {
+  ind.table.body <- ind.table.body + 1
+  tab.exploratory.inf.ind <- ind.table.body
+}
+```
+
 [Analyst Note: remove this section if not scoped]
 
 This section presents the results for any post-hoc or exploratory findings.
 
+Table
+`r tab.exploratory.inf.ind`
+shows the unadjusted and adjusted estimates for the
+exploratory
+outcome.
+
 ```{r tab_exploratory, results='asis'}
 tab.exploratory.inf.cap <- "Exploratory analysis results."
-# Table 5: Exploratory Inferential Table (created by 52_output_exploratory_table.R)
+# Table 4: Exploratory Inferential Table (created by 52_output_exploratory_table.R)
 if (exists("tab.exploratory.inf")) {
   tab.exploratory.inf %>%
     render_table(
-      table_index = "4",
-      caption = tab.exploratory.inf.cap
+      table_index = tab.exploratory.inf.ind,
+      caption     = tab.exploratory.inf.cap
       )
 } else {
   pander(data.frame(Note = "N/A - Exploratory analysis not performed or not applicable to this project scope."))
@@ -193,16 +247,27 @@ if (exists("tab.exploratory.inf")) {
 
 <!-- ## Sensitivity Analysis -->
 
+<!-- ```{r ind_sensitivity} -->
+<!-- if (exists("tab.primary.inf.sens")) { -->
+<!--   ind.table.body <- ind.table.body + 1 -->
+<!--   tab.primary.inf.sens.ind <- ind.table.body -->
+<!-- } -->
+<!-- ``` -->
+
 <!-- Sensitivity analysis was performed to verify the robustness of the primary findings. -->
+
+<!-- Table -->
+<!-- `r tab.primary.inf.sens.ind` -->
+<!-- shows the estimates from the sensitivity analysis. -->
 
 <!-- ```{r tab_sensitivity, results='asis'} -->
 <!-- tab.primary.inf.sens.cap <- "Sensitivity analysis for the primary outcome." -->
-<!-- # Table 3: Sensitivity Analysis (created by 36_output_primary_sens_table.R) -->
+<!-- # Table 5: Sensitivity Analysis (created by 36_output_primary_sens_table.R) -->
 <!-- if (exists("tab.primary.inf.sens")) { -->
 <!--   tab.primary.inf.sens %>% -->
 <!--     render_table( -->
-<!--       table_index = "5", -->
-<!--       caption = tab.primary.inf.sens.cap -->
+<!--       table_index = tab.primary.inf.sens.ind, -->
+<!--       caption     = tab.primary.inf.sens.cap -->
 <!--       ) -->
 <!-- } else { -->
 <!--   pander(data.frame(Note = "N/A - Sensitivity analysis not performed.")) -->
@@ -256,7 +321,19 @@ Describe the findings of the diagnostic plots (if generated internally via funct
 
 ### Full Model Specification
 
-Table A1 shows the coefficients for all variables included in the primary adjusted model.
+```{r ind_app_full_model}
+# Pre-calculation chunk: ONLY increment if the table object exists.
+if (exists("tab.primary.inf.full")) {
+    ind.table.app <- ind.table.app + 1
+    tab.primary.inf.full.ind <- paste0("A", ind.table.app)
+}
+```
+
+Table
+`r tab.primary.inf.full.ind`
+shows the coefficients for all variables included in the
+primary adjusted
+model.
 
 ```{r tab_app_full_model, results='asis'}
 tab.primary.inf.full.cap <- "Full model specification for the primary adjusted analysis."
@@ -264,15 +341,29 @@ tab.primary.inf.full.cap <- "Full model specification for the primary adjusted a
 if (exists("tab.primary.inf.full")) {
   tab.primary.inf.full %>%
     render_table(
-      table_index = "A1",
-      caption = tab.primary.inf.full.cap
+      table_index = tab.primary.inf.full.ind,
+      caption     = tab.primary.inf.full.cap
     )
 } else {
   pander(data.frame(Note = "N/A - Full model table not available."))
 }
 ```
 
-<!-- ## Optional: Full Secondary Model Specification (Table A2) -->
+<!-- ### Full Secondary Model Specification -->
+
+<!-- ```{r ind_app_full_secondary_model} -->
+<!-- # Pre-calculation chunk: ONLY increment if the table object exists. -->
+<!-- if (exists("tab.secondary.inf.full")) { -->
+<!--   ind.table.app <- ind.table.app + 1 -->
+<!--   tab.secondary.inf.full.ind <- paste0("A", ind.table.app) -->
+<!-- } -->
+<!-- ``` -->
+
+<!-- Table -->
+<!-- `r tab.secondary.inf.full.ind` -->
+<!-- shows the coefficients for all variables included in the -->
+<!-- secondary adjusted -->
+<!-- model. -->
 
 <!-- ```{r tab_app_full_secondary_model, results='asis'} -->
 <!-- tab.secondary.inf.full.cap <- "Full model specification for the secondary adjusted analysis." -->
@@ -280,15 +371,29 @@ if (exists("tab.primary.inf.full")) {
 <!-- if (exists("tab.secondary.inf.full")) { -->
 <!--   tab.secondary.inf.full %>% -->
 <!--     render_table( -->
-<!--       table_index = "A2", -->
-<!--       caption = tab.secondary.inf.full.cap -->
+<!--       table_index = tab.secondary.inf.full.ind, -->
+<!--       caption     = tab.secondary.inf.full.cap -->
 <!--       ) -->
 <!-- } else { -->
 <!--   pander(data.frame(Note = "N/A - Full model table for secondary analysis not available.")) -->
 <!-- } -->
 <!-- ``` -->
 
-<!-- ## Optional: Full Exploratory Model Specification (Table A3) -->
+<!-- ### Full Exploratory Model Specification -->
+
+<!-- ```{r ind_app_full_exploratory_model} -->
+<!-- # Pre-calculation chunk: ONLY increment if the table object exists. -->
+<!-- if (exists("tab.exploratory.inf.full")) { -->
+<!--   ind.table.app <- ind.table.app + 1 -->
+<!--   tab.exploratory.inf.full.ind <- paste0("A", ind.table.app) -->
+<!-- } -->
+<!-- ``` -->
+
+<!-- Table -->
+<!-- `r tab.exploratory.inf.full.ind` -->
+<!-- shows the coefficients for all variables included in the -->
+<!-- exploratory adjusted -->
+<!-- model. -->
 
 <!-- ```{r tab_app_full_exploratory_model, results='asis'} -->
 <!-- tab.exploratory.inf.full.cap <- "Full model specification for the exploratory adjusted analysis." -->
@@ -296,8 +401,8 @@ if (exists("tab.primary.inf.full")) {
 <!-- if (exists("tab.exploratory.inf.full")) { -->
 <!--   tab.exploratory.inf.full %>% -->
 <!--     render_table( -->
-<!--       table_index = "A3", -->
-<!--       caption = tab.exploratory.inf.full.cap -->
+<!--       table_index = tab.exploratory.inf.full.ind, -->
+<!--       caption     = tab.exploratory.inf.full.cap -->
 <!--     ) -->
 <!-- } else { -->
 <!--   pander(data.frame(Note = "N/A - Full model table for exploratory analysis not available.")) -->
