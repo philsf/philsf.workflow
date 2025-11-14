@@ -81,6 +81,12 @@ source("scripts/96_load_cached_results.R", encoding = 'UTF-8')
 
 ## Objectives
 
+[Analyst Note: Use the Primary/Secondary/Exploratory list format. The use of a table is common in the Statistical Analysis Plan (SAP) document, but the bullet list is preferred for clarity in the final report.]
+
+- **Primary:** To do analysis on outcome 1
+- **Secondary:** To do analysis on outcome 2
+- **Exploratory:** to do analysis on outcome 3
+
 # Methods
 
 [Analyst Note: This methods section provides a minimal description for the convenience of the reader (design, outcomes, exposures, and a concise statistical methods paragraph). It is compatible with the SAP snippet, and covers that deliverable for BASIC packages. Higher packages will include a SAP as a separate document]
