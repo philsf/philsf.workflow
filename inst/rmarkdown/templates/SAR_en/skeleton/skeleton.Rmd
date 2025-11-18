@@ -35,12 +35,14 @@ output:
 # ************************************************************
 
 knitr::opts_chunk$set(echo = FALSE)
-knitr::opts_knit$set(root.dir = normalizePath(".."))
 options(scipen = 999)
 library(pander)
 library(knitr)
 library(flextable)
 library(officer)
+library(here)
+
+knitr::opts_knit$set(root.dir = here())
 panderOptions('table.style', 'rmarkdown')
 panderOptions('table.split.table', 160)
 
@@ -70,7 +72,7 @@ kable(history)
 # Load cached results (Table 1, Table 2, Plots, etc.)
 # This ensures all analysis outputs are available when compiling the report.
 # Source 96- will safely check for and load all objects.
-source("scripts/96_load_cached_results.R", encoding = 'UTF-8')
+source(here("scripts", "96_load_cached_results.R"), encoding = 'UTF-8')
 ```
 
 ---
@@ -154,7 +156,7 @@ in the study population.
 
 ```{r fig_primary_outcome_dist, fig.cap="**Figure 1** Distribution of the primary outcome in the study population."}
 # Figure 1: Primary Outcome Descriptive Plot (created by 91_outputs_plots.R)
-knitr::include_graphics("../figures/Figure_1_Primary_Outcome.png", error = FALSE)
+knitr::include_graphics(here("figures", "Figure_1_Primary_Outcome.png"), error = FALSE)
 ```
 
 Table
@@ -182,7 +184,7 @@ analysis.
 
 ```{r fig_primary_model_predict, fig.cap="**Figure 2** Primary outcome effect plot."}
 # Figure 2: Primary model prediction plot (created by 91_outputs_plots.R)
-knitr::include_graphics("../figures/Figure_2_Primary_Predict.png", error = FALSE)
+knitr::include_graphics(here("figures", "Figure_2_Primary_Predict.png"), error = FALSE)
 ```
 
 ## Secondary Analysis
@@ -204,7 +206,7 @@ in the study population.
 
 ```{r fig_secondary_outcome_dist, fig.cap="**Figure 3** Distribution of the secondary outcome in the study population."}
 # Figure 3: Secondary Outcome Descriptive Plot (created by 91_outputs_plots.R)
-knitr::include_graphics("../figures/Figure_3_Secondary_Outcome.png", error = FALSE)
+knitr::include_graphics(here("figures", "Figure_3_Secondary_Outcome.png"), error = FALSE)
 ```
 
 Table
@@ -234,7 +236,7 @@ analysis.
 
 ```{r fig_secondary_model_predict, fig.cap="**Figure 4** Secondary outcome effect plot."}
 # Figure 4: Primary model prediction plot (created by 91_outputs_plots.R)
-knitr::include_graphics("../figures/Figure_4_Secondary_Predict.png", error = FALSE)
+knitr::include_graphics(here("figures", "Figure_4_Secondary_Predict.png"), error = FALSE)
 ```
 
 ## Exploratory Analysis
@@ -256,7 +258,7 @@ in the study population.
 
 ```{r fig_exploratory_outcome_dist, fig.cap="**Figure 5** Distribution of the exploratory outcome in the study population."}
 # Figure 5: Exploratory Outcome Descriptive Plot (created by 91_outputs_plots.R)
-knitr::include_graphics("../figures/Figure_5_Exploratory_Outcome.png", error = FALSE)
+knitr::include_graphics(here("figures", "Figure_5_Exploratory_Outcome.png"), error = FALSE)
 ```
 
 Table
@@ -286,7 +288,7 @@ analysis.
 
 ```{r fig_exploratory_model_predict, fig.cap="**Figure 6** Exploratory outcome effect plot."}
 # Figure 6: Exploratory model prediction plot (created by 91_outputs_plots.R)
-knitr::include_graphics("../figures/Figure_6_Exploratory_Predict.png", error = FALSE)
+knitr::include_graphics(here("figures", "Figure_6_Exploratory_Predict.png"), error = FALSE)
 ```
 
 ## Sensitivity Analysis
@@ -341,7 +343,7 @@ if (exists("tab.primary.inf.sens")) {
 
 ```{r fig_appendix_eda, fig.cap="**Figure A1** Additional figure (e.g., secondary outcome distribution plot)."}
 # Figure A1: Example of an Exploratory Data Analysis Plot (created by 91_outputs_plots.R)
-knitr::include_graphics("../figures/Figure_A1_Age_by_Sex.png", error = FALSE)
+knitr::include_graphics(here("figures", "Figure_A1_Age_by_Sex.png"), error = FALSE)
 ```
 
 ## Modeling Strategy and Diagnostics
