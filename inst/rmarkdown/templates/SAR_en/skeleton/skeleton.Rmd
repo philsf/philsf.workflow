@@ -114,6 +114,10 @@ This analysis was performed using statistical software `R` version `r getRversio
 
 # Results
 
+## Study Population Flowchart
+
+[Analyst Note: This section must contain the STROBE/CONSORT flow diagram illustrating the sequential application of inclusion/exclusion criteria defined in the Methods to reach the final analytic population.]
+
 ## Baseline characteristics
 
 ```{r ind_baseline}
