@@ -154,7 +154,9 @@ if (exists("tab.primary.inf")) {
 
 This section presents the results for the primary objective.
 
-Figure 1 shows the distribution of
+Figure
+1
+shows the distribution of
 the primary outcome
 in the study population.
 
@@ -167,7 +169,7 @@ Table
 `r tab.primary.inf.ind`
 shows the unadjusted and adjusted estimates for the
 primary
-outcome.
+analysis.
 
 ```{r tab_primary, results='asis'}
 tab.primary.inf.cap <- "Primary outcome analysis."
@@ -181,7 +183,9 @@ if (exists("tab.primary.inf")) {
 }
 ```
 
-Figure 2 shows the
+Figure
+2
+shows the
 adjusted estimates for the effect of
 the primary outcome
 analysis.
@@ -204,7 +208,9 @@ if (exists("tab.secondary.inf")) {
 
 This section presents the results for the secondary objectives.
 
-Figure 3 shows the distribution of
+Figure
+3
+shows the distribution of
 the secondary outcome
 in the study population.
 
@@ -217,7 +223,7 @@ Table
 `r tab.secondary.inf.ind`
 shows the unadjusted and adjusted estimates for the
 secondary
-outcome.
+analysis.
 
 ```{r tab_secondary, results='asis'}
 tab.secondary.inf.cap <- "Secondary outcome analysis."
@@ -233,7 +239,9 @@ if (exists("tab.secondary.inf")) {
 }
 ```
 
-Figure 4 shows the
+Figure
+4
+shows the
 adjusted estimates for the effect of
 the secondary outcome
 analysis.
@@ -256,7 +264,9 @@ if (exists("tab.exploratory.inf")) {
 
 This section presents the results for any post-hoc or exploratory findings.
 
-Figure 5 shows the distribution of
+Figure
+5
+shows the distribution of
 the exploratory outcome
 in the study population.
 
@@ -269,7 +279,7 @@ Table
 `r tab.exploratory.inf.ind`
 shows the unadjusted and adjusted estimates for the
 exploratory
-outcome.
+analysis.
 
 ```{r tab_exploratory, results='asis'}
 tab.exploratory.inf.cap <- "Exploratory analysis results."
@@ -285,7 +295,9 @@ if (exists("tab.exploratory.inf")) {
 }
 ```
 
-Figure 6 shows the
+Figure
+6
+shows the
 adjusted estimates for the effect of
 the exploratory outcome
 analysis.
@@ -310,7 +322,9 @@ Sensitivity analysis was performed to verify the robustness of the primary findi
 
 Table
 `r tab.primary.inf.sens.ind`
-shows the estimates from the sensitivity analysis.
+shows the estimates from the
+sensitivity
+analysis.
 
 ```{r tab_sensitivity, results='asis'}
 tab.primary.inf.sens.cap <- "Sensitivity analysis for the primary outcome."
@@ -345,7 +359,7 @@ if (exists("tab.primary.inf.sens")) {
 
 [Analyst Note: Use this section for descriptive figures and tables (e.g., initial variable distributions, correlation checks, baseline tables for subgroups) that support the report but are not essential to the main Results narrative.]
 
-```{r fig_appendix_eda, fig.cap="**Figure A1** Additional figure (e.g., secondary outcome distribution plot)."}
+```{r fig_appendix_eda, fig.cap="**Figure A1** Distribution of Age in the study population, by Sex."}
 # Figure A1: Example of an Exploratory Data Analysis Plot (created by 91_outputs_plots.R)
 knitr::include_graphics(here("figures", "Figure_A1_Age_by_Sex.png"), error = FALSE)
 ```
@@ -384,11 +398,11 @@ if (exists("tab.primary.inf.full")) {
 Table
 `r tab.primary.inf.full.ind`
 shows the coefficients for all variables included in the
-primary adjusted
+primary
 model.
 
 ```{r tab_app_full_model, results='asis'}
-tab.primary.inf.full.cap <- "Full model specification for the primary adjusted analysis."
+tab.primary.inf.full.cap <- "Full model specification for the primary analysis."
 # Table A1: Full Model Specification (created by 32_output_primary_table.R)
 if (exists("tab.primary.inf.full")) {
   tab.primary.inf.full %>%
@@ -416,11 +430,11 @@ if (exists("tab.secondary.inf.full")) {
 Table
 `r tab.secondary.inf.full.ind`
 shows the coefficients for all variables included in the
-secondary adjusted
+secondary
 model.
 
 ```{r tab_app_full_secondary_model, results='asis'}
-tab.secondary.inf.full.cap <- "Full model specification for the secondary adjusted analysis."
+tab.secondary.inf.full.cap <- "Full model specification for the secondary analysis."
 # Table A2: Full Secondary Model Specification (created by 42_output_secondary_table.R)
 if (exists("tab.secondary.inf.full")) {
   tab.secondary.inf.full %>%
@@ -448,11 +462,11 @@ if (exists("tab.exploratory.inf.full")) {
 Table
 `r tab.exploratory.inf.full.ind`
 shows the coefficients for all variables included in the
-exploratory adjusted
+exploratory
 model.
 
 ```{r tab_app_full_exploratory_model, results='asis'}
-tab.exploratory.inf.full.cap <- "Full model specification for the exploratory adjusted analysis."
+tab.exploratory.inf.full.cap <- "Full model specification for the exploratory analysis."
 # Table A3: Full Exploratory Model Specification (created by 52_output_exploratory_table.R)
 if (exists("tab.exploratory.inf.full")) {
   tab.exploratory.inf.full %>%
