@@ -71,7 +71,7 @@ data.raw <- data.raw %>%
     sex = lab.sex,
   )
 
-# Master Analytical Dataset (ADS) -----------------------------------------
+# Master Analytic Dataset (ADS) -------------------------------------------
 # Final assignment of 'data.master.ads' object for all subsequent scripts (20+, 30+, 40+, 50+).
 
 data.master.ads <- data.raw %>%

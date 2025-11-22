@@ -94,8 +94,8 @@ variáveis foram incluídas na análise com
 observações.
 A Tabela 1 mostra a estrutura dos dados analíticos.
 
-```{r analytical data}
-analytical_mockup %>%
+```{r analytic data}
+analytic_mockup %>%
   pander(caption = "**Tabela 1** Estrutura da tabela de dados analíticos após seleção e limpeza das variáveis.")
 ```
 
@@ -175,7 +175,7 @@ bicaudais.
 ## Tamanho da amostra e Poder
 
 ```{r}
-n <- analytical %>%
+n <- analytic %>%
   count(exposure) %>%
   pull(n)
 n1 <- n[1]
