@@ -18,19 +18,37 @@ output:
     fig_caption: yes
     fig_height: 6
     fig_width: 6
+    keep_md: yes
     reference_docx: misc/style_SAR_en.docx
     toc: yes
-# toc-title: "Sumário"
 ---
 
 ```{r setup, include=FALSE}
+# ************************************************************
+# Template: SAR_en.Rmd
+# Version:  0.xx.x
+# Author:   Felipe Figueiredo
+# Created:  2025-11-14
+#
+# ************************************************************
+# QC Date:  YYYY-MM-DD
+# ************************************************************
+
 knitr::opts_chunk$set(echo = FALSE)
-knitr::opts_knit$set(root.dir = normalizePath(".."))
 options(scipen = 999)
 library(pander)
 library(knitr)
+library(flextable)
+library(officer)
+library(here)
+
+knitr::opts_knit$set(root.dir = here())
 panderOptions('table.style', 'rmarkdown')
 panderOptions('table.split.table', 160)
+
+# Initialize counters for Table indices
+ind.table.body <- 0
+ind.table.app <- 0
 ```
 
 ---
@@ -51,7 +69,10 @@ kable(history)
 ```
 
 ```{r results, include=FALSE}
-source("scripts/results.R", encoding = 'UTF-8')
+# Load cached results (Table 1, Table 2, Plots, etc.)
+# This ensures all analysis outputs are available when compiling the report.
+# Source 96- will safely check for and load all objects.
+source(here("scripts", "96_load_cached_results.R"), encoding = 'UTF-8')
 ```
 
 ---
@@ -62,51 +83,261 @@ source("scripts/results.R", encoding = 'UTF-8')
 
 ## Objectives
 
-## Data reception and cleaning
+[Analyst Note: Use the Primary/Secondary/Exploratory list format. The use of a table is common in the Statistical Analysis Plan (SAP) document, but the bullet list is preferred for clarity in the final report.]
+
+- **Primary:** To do analysis on outcome 1
+- **Secondary:** To do analysis on outcome 2
+- **Exploratory:** to do analysis on outcome 3
 
 # Methods
 
-<!-- The data procedures, design and analysis methods used in this report are fully described in the annex document **SAP-yyyy-NNN-XX-v01**. -->
+[Analyst Note: This methods section provides a minimal description for the convenience of the reader (design, outcomes, exposures, and a concise statistical methods paragraph). It is compatible with the SAP snippet, and covers that deliverable for BASIC packages. Higher packages will include a SAP as a separate document]
 
-## Study parameters
+[Analyst Note: DOCUMENTATION TIER ALIGNMENT REQUIRED]
 
-### Study design
+- BASIC/STANDARD: delete the mention to a SAP (not scoped)
+- PREMIUM: keep the reference to the Full SAP
 
-### Inclusion and exclusion criteria
+The full details of the data procedures, study design, and statistical analysis methods used in this report are described in the annex document **SAP-yyyy-NNN-XX-v01**.
 
-### Exposures
+## Study Design
 
-### Outcomes
+[Analyst Note: High-level summary of the study design (e.g., RCT, Observational Cohort, Case-Control).]
 
-### Covariates
+## Exposures and Outcomes
 
-## Statistical analyses
+[Analyst Note: High-level summary of the primary exposure(s) and the primary/secondary outcomes analyzed.]
+
+## Statistical Analysis
 
 This analysis was performed using statistical software `R` version `r getRversion()`.
 
 # Results
 
-## Study population and follow up
+## Study Population Flowchart
 
-```{r tab_desc}
-tab_desc %>%
-  as_kable(
-    caption = "**Table 1** caption"
-  )
+[Analyst Note: This section must contain the STROBE/CONSORT flow diagram illustrating the sequential application of inclusion/exclusion criteria defined in the Methods to reach the final analytic population.]
+
+## Baseline characteristics
+
+```{r ind_baseline}
+if (exists("tab.primary.desc")) {
+  ind.table.body <- ind.table.body + 1
+  tab.primary.desc.ind <- ind.table.body
+}
 ```
 
-```{r fig1, fig.cap="**Figure 1** caption"}
-# ![Age](../figures/outcome.png)
-# knitr::include_graphics("../figures/outcome.png", error = FALSE)
+Table
+`r tab.primary.desc.ind`
+shows the baseline characteristics of the study population.
+
+```{r tab_baseline}
+tab.primary.desc.cap <- "Baseline characteristics of the study population."
+# Table 1: Descriptive table (created by 21_output_descriptive_table.R)
+if (exists("tab.primary.desc")) {
+  tab.primary.desc %>%
+    render_table(
+      table_index = tab.primary.desc.ind,
+      caption     = tab.primary.desc.cap
+      )
+}
 ```
 
-## Inferential analysis
+## Primary Analysis
 
-```{r tab_inf}
-tab_inf %>%
-  as_kable(
-    caption = "**Table 2** caption"
-  )
+```{r ind_primary}
+if (exists("tab.primary.inf")) {
+  ind.table.body <- ind.table.body + 1
+  tab.primary.inf.ind <- ind.table.body
+}
+```
+
+This section presents the results for the primary objective.
+
+Figure
+1
+shows the distribution of
+the primary outcome
+in the study population.
+
+```{r fig_primary_outcome_dist, fig.cap="**Figure 1** Distribution of the primary outcome in the study population."}
+# Figure 1: Primary Outcome Descriptive Plot (created by 91_outputs_plots.R)
+knitr::include_graphics(here("figures", "Figure_1_Primary_Outcome.png"), error = FALSE)
+```
+
+Table
+`r tab.primary.inf.ind`
+shows the unadjusted and adjusted estimates for the
+primary
+analysis.
+
+```{r tab_primary, results='asis'}
+tab.primary.inf.cap <- "Primary outcome analysis."
+# Table 2: Primary Inferential Table (created by 32_output_primary_table.R)
+if (exists("tab.primary.inf")) {
+    tab.primary.inf %>%
+    render_table(
+      table_index = tab.primary.inf.ind,
+      caption     = tab.primary.inf.cap
+      )
+}
+```
+
+Figure
+2
+shows the
+adjusted estimates for the effect of
+the primary outcome
+analysis.
+
+```{r fig_primary_model_predict, fig.cap="**Figure 2** Primary outcome effect plot."}
+# Figure 2: Primary model prediction plot (created by 91_outputs_plots.R)
+knitr::include_graphics(here("figures", "Figure_2_Primary_Predict.png"), error = FALSE)
+```
+
+## Secondary Analysis
+
+[Analyst Note: remove this section if not scoped]
+
+```{r ind_secondary}
+if (exists("tab.secondary.inf")) {
+  ind.table.body <- ind.table.body + 1
+  tab.secondary.inf.ind <- ind.table.body
+}
+```
+
+This section presents the results for the secondary objectives.
+
+Figure
+3
+shows the distribution of
+the secondary outcome
+in the study population.
+
+```{r fig_secondary_outcome_dist, fig.cap="**Figure 3** Distribution of the secondary outcome in the study population."}
+# Figure 3: Secondary Outcome Descriptive Plot (created by 91_outputs_plots.R)
+knitr::include_graphics(here("figures", "Figure_3_Secondary_Outcome.png"), error = FALSE)
+```
+
+Table
+`r tab.secondary.inf.ind`
+shows the unadjusted and adjusted estimates for the
+secondary
+analysis.
+
+```{r tab_secondary, results='asis'}
+tab.secondary.inf.cap <- "Secondary outcome analysis."
+# Table 3: Secondary Inferential Table (created by 42_output_secondary_table.R)
+if (exists("tab.secondary.inf")) {
+  tab.secondary.inf %>%
+    render_table(
+      table_index = tab.secondary.inf.ind,
+      caption     = tab.secondary.inf.cap
+      )
+} else {
+  pander(data.frame(Note = "N/A - Secondary analysis not performed or not applicable to this project scope."))
+}
+```
+
+Figure
+4
+shows the
+adjusted estimates for the effect of
+the secondary outcome
+analysis.
+
+```{r fig_secondary_model_predict, fig.cap="**Figure 4** Secondary outcome effect plot."}
+# Figure 4: Primary model prediction plot (created by 91_outputs_plots.R)
+knitr::include_graphics(here("figures", "Figure_4_Secondary_Predict.png"), error = FALSE)
+```
+
+## Exploratory Analysis
+
+[Analyst Note: remove this section if not scoped]
+
+```{r ind_exploratory}
+if (exists("tab.exploratory.inf")) {
+  ind.table.body <- ind.table.body + 1
+  tab.exploratory.inf.ind <- ind.table.body
+}
+```
+
+This section presents the results for any post-hoc or exploratory findings.
+
+Figure
+5
+shows the distribution of
+the exploratory outcome
+in the study population.
+
+```{r fig_exploratory_outcome_dist, fig.cap="**Figure 5** Distribution of the exploratory outcome in the study population."}
+# Figure 5: Exploratory Outcome Descriptive Plot (created by 91_outputs_plots.R)
+knitr::include_graphics(here("figures", "Figure_5_Exploratory_Outcome.png"), error = FALSE)
+```
+
+Table
+`r tab.exploratory.inf.ind`
+shows the unadjusted and adjusted estimates for the
+exploratory
+analysis.
+
+```{r tab_exploratory, results='asis'}
+tab.exploratory.inf.cap <- "Exploratory analysis results."
+# Table 4: Exploratory Inferential Table (created by 52_output_exploratory_table.R)
+if (exists("tab.exploratory.inf")) {
+  tab.exploratory.inf %>%
+    render_table(
+      table_index = tab.exploratory.inf.ind,
+      caption     = tab.exploratory.inf.cap
+      )
+} else {
+  pander(data.frame(Note = "N/A - Exploratory analysis not performed or not applicable to this project scope."))
+}
+```
+
+Figure
+6
+shows the
+adjusted estimates for the effect of
+the exploratory outcome
+analysis.
+
+```{r fig_exploratory_model_predict, fig.cap="**Figure 6** Exploratory outcome effect plot."}
+# Figure 6: Exploratory model prediction plot (created by 91_outputs_plots.R)
+knitr::include_graphics(here("figures", "Figure_6_Exploratory_Predict.png"), error = FALSE)
+```
+
+## Sensitivity Analysis
+
+[Analyst Note: remove this section if not scoped]
+
+```{r ind_sensitivity}
+if (exists("tab.primary.inf.sens")) {
+  ind.table.body <- ind.table.body + 1
+  tab.primary.inf.sens.ind <- ind.table.body
+}
+```
+
+Sensitivity analysis was performed to verify the robustness of the primary findings.
+
+Table
+`r tab.primary.inf.sens.ind`
+shows the estimates from the
+sensitivity
+analysis.
+
+```{r tab_sensitivity, results='asis'}
+tab.primary.inf.sens.cap <- "Sensitivity analysis for the primary outcome."
+# Table 5: Sensitivity Analysis (created by 36_output_primary_sens_table.R)
+if (exists("tab.primary.inf.sens")) {
+  tab.primary.inf.sens %>%
+    render_table(
+      table_index = tab.primary.inf.sens.ind,
+      caption     = tab.primary.inf.sens.cap
+      )
+} else {
+  pander(data.frame(Note = "N/A - Sensitivity analysis not performed."))
+}
 ```
 
 # Observations and Limitations
@@ -115,16 +346,148 @@ tab_inf %>%
 
 # References
 
-- **SAP-yyyy-NNN-XX-v01** -- Analytical Plan for [title]
+[Analyst Note: DOCUMENTATION TIER ALIGNMENT REQUIRED]
+
+- BASIC/STANDARD: delete the reference to the Full SAP (not scoped)
+- PREMIUM: keep the reference to the Full SAP
+
+- **SAP-yyyy-NNN-XX-v01** -- Statistical Analysis Plan: [title]
 
 # Appendix
 
-## Exploratory data analysis
+## Supplementary Descriptive Material
 
-```{r A1, fig.cap="**Figure A1** Distribution of age in the study population."}
-# ![Age](../figures/distr_age.png)
-# knitr::include_graphics("../figures/distr_age.png", error = FALSE)
+[Analyst Note: Use this section for descriptive figures and tables (e.g., initial variable distributions, correlation checks, baseline tables for subgroups) that support the report but are not essential to the main Results narrative.]
+
+```{r fig_appendix_eda, fig.cap="**Figure A1** Distribution of Age in the study population, by Sex."}
+# Figure A1: Example of an Exploratory Data Analysis Plot (created by 91_outputs_plots.R)
+knitr::include_graphics(here("figures", "Figure_A1_Age_by_Sex.png"), error = FALSE)
 ```
+
+## Modeling Strategy and Diagnostics
+
+### Model Validation and Diagnostics
+
+[Analyst Note: Use this subsection to detail the model's appropriateness and assumption checks based on the stock diagnostic routine (e.g., collinearity (VIF), influence/Leverage, and goodness-of-fit). ]
+
+[Analyst Note: DOCUMENTATION TIER ALIGNMENT REQUIRED]
+
+- BASIC: Summarize the minimal checks (R2, Outliers, Critical VIF > 10).
+- STANDARD/PREMIUM: Document model-specific assumption tests (e.g., Normality, Homoscedasticity, Goodness-of-Fit) and specialized checks (e.g., Cox PH) if applicable.
+Describe the findings of the diagnostic plots (if generated internally via functions like autoplot() for residual analysis).
+
+### Model Selection and Justification
+
+[Analyst Note: If multiple models were tested (e.g., adjusted vs. raw, nested), use this subsection to provide the justification (e.g., based on R-squared, AIC, ANOVA, or clinical relevance) for the primary model presented in the Results section.]
+
+[Analyst Note: DOCUMENTATION TIER ALIGNMENT REQUIRED]
+
+- STANDARD: Provide the Draft SAP justification for model selection (e.g., based on ANOVA/R-squared or clinical relevance).
+- PREMIUM (Diagnostic Audit): Document the decision-making process for assumption violations (e.g., choice of robust standard errors, outcome transformation) and any complex collinearity interpretations.
+
+### Full Model Specification
+
+```{r ind_app_full_model}
+# Pre-calculation chunk: ONLY increment if the table object exists.
+if (exists("tab.primary.inf.full")) {
+    ind.table.app <- ind.table.app + 1
+    tab.primary.inf.full.ind <- paste0("A", ind.table.app)
+}
+```
+
+Table
+`r tab.primary.inf.full.ind`
+shows the coefficients for all variables included in the
+primary
+model.
+
+```{r tab_app_full_model, results='asis'}
+tab.primary.inf.full.cap <- "Full model specification for the primary analysis."
+# Table A1: Full Model Specification (created by 32_output_primary_table.R)
+if (exists("tab.primary.inf.full")) {
+  tab.primary.inf.full %>%
+    render_table(
+      table_index = tab.primary.inf.full.ind,
+      caption     = tab.primary.inf.full.cap
+    )
+} else {
+  pander(data.frame(Note = "N/A - Full model table not available."))
+}
+```
+
+### Full Secondary Model Specification
+
+[Analyst Note: remove this section if not scoped]
+
+```{r ind_app_full_secondary_model}
+# Pre-calculation chunk: ONLY increment if the table object exists.
+if (exists("tab.secondary.inf.full")) {
+  ind.table.app <- ind.table.app + 1
+  tab.secondary.inf.full.ind <- paste0("A", ind.table.app)
+}
+```
+
+Table
+`r tab.secondary.inf.full.ind`
+shows the coefficients for all variables included in the
+secondary
+model.
+
+```{r tab_app_full_secondary_model, results='asis'}
+tab.secondary.inf.full.cap <- "Full model specification for the secondary analysis."
+# Table A2: Full Secondary Model Specification (created by 42_output_secondary_table.R)
+if (exists("tab.secondary.inf.full")) {
+  tab.secondary.inf.full %>%
+    render_table(
+      table_index = tab.secondary.inf.full.ind,
+      caption     = tab.secondary.inf.full.cap
+      )
+} else {
+  pander(data.frame(Note = "N/A - Full model table for secondary analysis not available."))
+}
+```
+
+### Full Exploratory Model Specification
+
+[Analyst Note: remove this section if not scoped]
+
+```{r ind_app_full_exploratory_model}
+# Pre-calculation chunk: ONLY increment if the table object exists.
+if (exists("tab.exploratory.inf.full")) {
+  ind.table.app <- ind.table.app + 1
+  tab.exploratory.inf.full.ind <- paste0("A", ind.table.app)
+}
+```
+
+Table
+`r tab.exploratory.inf.full.ind`
+shows the coefficients for all variables included in the
+exploratory
+model.
+
+```{r tab_app_full_exploratory_model, results='asis'}
+tab.exploratory.inf.full.cap <- "Full model specification for the exploratory analysis."
+# Table A3: Full Exploratory Model Specification (created by 52_output_exploratory_table.R)
+if (exists("tab.exploratory.inf.full")) {
+  tab.exploratory.inf.full %>%
+    render_table(
+      table_index = tab.exploratory.inf.full.ind,
+      caption     = tab.exploratory.inf.full.cap
+    )
+} else {
+  pander(data.frame(Note = "N/A - Full model table for exploratory analysis not available."))
+}
+```
+
+## Associated analyses
+
+[Analyst Note: This section should be removed from the template for first projects. Uncomment and fill out if the project is part of a larger series.]
+
+This analysis is part of a larger project and is supported by other analyses, linked below.
+
+**[assoc_title]**
+
+<[assoc_link]>
 
 ## Availability
 
@@ -141,13 +504,10 @@ The portfolio is available at:
 
 <https://philsf-biostat.github.io/SAR-yyyy-NNN-XX/>
 
-## Analytical dataset
+## R Environment and Reproducibility
 
-Table A1 shows the structure of the analytical dataset.
+To ensure the reproducibility of these results, the following R packages and system environment details were used for the analysis and report generation.
 
-```{r data}
-analytical_mockup %>%
-  pander(caption = "**Table A1** Analytical dataset structure")
+```{r session_info}
+sessionInfo()
 ```
-
-Due to confidentiality the data-set used in this analysis cannot be shared online in the public version of this report.
