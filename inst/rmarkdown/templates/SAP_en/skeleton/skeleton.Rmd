@@ -18,6 +18,7 @@ output:
     fig_caption: yes
     fig_height: 6
     fig_width: 6
+    keep_md: yes
     reference_docx: misc/style_SAP_en.docx
     toc: yes
 # toc-title: "Sumário"
@@ -51,7 +52,7 @@ kable(history)
 ```
 
 ```{r cleaning, include=FALSE}
-source("scripts/input.R", encoding = 'UTF-8')
+# source("scripts/input.R", encoding = 'UTF-8')
 ```
 
 ---
@@ -69,85 +70,40 @@ source("scripts/input.R", encoding = 'UTF-8')
 - RR: risks ratio
 - SD: standard deviation
 
-# Context
+# Introduction
 
-## Objectives
+## Context and Rationale
 
-## Hypotheses
 
-# Data
+## Research Questions and Objectives
 
-## Raw data
 
-The original data base had
-`r Nvar_orig`
-variables collected on
-`r Nobs_orig`
-observations.
+# Study Design and Population
 
-<!-- Upon study start the raw data will be collected in a raw table, that will be processed before analysis. -->
-<!-- The raw dataset to be collected will have -->
-<!-- `r Nvar_orig` -->
-<!-- variables collected on -->
-<!-- `r Nobs_orig` -->
-<!-- observations. -->
+## Study Design
 
-<!-- This dataset will include the dates of entry and exit of the cohort, or the date of hospital admission and the date where the endpoint was reached (either an event, or hospital discharge). -->
-<!-- Table 1 shows the structure of the raw dataset. -->
 
-<!-- ```{r analytic data} -->
-<!-- analytic_mockup %>% -->
-<!--   pander(caption = "**Table 1** Raw dataset structure.") -->
-<!-- ``` -->
+**Recommended reporting guideline**
 
-<!-- Each row represents all information collected from each study participant, and each participant included will require a unique study ID. -->
-<!-- The outcome should be recorded as a binary variable: either the study participant reached the endpoint -->
-<!-- ([outcome]) -->
-<!-- or reached the end of study period without experiencing the event. -->
-<!-- This information can be recorded in either text form (eg, yes/no), or an indicator -->
-<!-- ([outcome] = 1, -->
-<!-- end of observation time or discharge = 0). -->
-<!-- Exposure and all comorbidities should be recorded as binary variables, whenever possible. -->
-<!-- All comorbidities should be recorded as binary variables, whenever possible. -->
+The EQUATOR network reporting guidelines (<http://www.equator-network.org/>) have seen increasing adoption by scientific journals.
+All observational studies are recommended to be reported following the STROBE guideline (von Elm et al, 2014).
+<!-- All clinical trials are recommended to be reported following the CONSORT guideline (Schulz K F, Altman D G, Moher D., 2010). -->
+<!-- All systematic reviews are recommended to be reported following the PRISMA guideline (Page et al, 2021). -->
+<!-- All protocols for systematic reviews are recommended to be reported following the PRISMA-P guideline (Page et al, 2021). -->
 
-<!-- Surgery length should be recorded in -->
-<!-- minutes, -->
-<!-- hours, -->
-<!-- and ICU length in -->
-<!-- days. -->
-<!-- weeks. -->
-<!-- months. -->
+<!-- In particular when a retrospective study is conducted using hospital records, it is recommended that the RECORD extension of the STROBE guideline is considered (Benchimol et al, 2015). -->
 
-<!-- Surgery type will be recorded as a categorical variable. -->
-<!-- It is recommended that the number of classes (types of surgery) be as small as possible, to avoid loss of precision in the analysis estimates, without the need to increase the sample size. -->
-<!-- Broader categories of surgeries should be preferred, whenever possible. -->
+## Setting and Time period
 
-## Analytic dataset
 
-<!-- After the cleaning process -->
-<!-- `r Nvar_final` -->
-<!-- variables were included in the analysis -->
-<!-- with -->
-<!-- `r Nobs_final` -->
-<!-- observations. -->
-After the cleaning process
-`r Nvar_final`
-variables were included in the analysis.
-The total number of observations excluded due to incompleteness and exclusion criteria will be reported in the analysis.
-Table 1 shows the structure of the analytic dataset.
+## Censoring Rules
 
-```{r analytic data}
-analytic_mockup %>%
-  pander(caption = "**Table 1** Analytic dataset structure after variable selection and cleaning.")
-```
+## Study Population Definitions
 
-All variables in the analytic set were labeled according to the raw data provided and values were labeled according to the data dictionary for the preparation of production-quality results tables and figures.
+## Inclusion and Exclusion Criteria
 
-# Study parameters
 
-## Study design
-
-## Inclusion and exclusion criteria
+# Variable Definitions
 
 ## Exposures
 
@@ -164,15 +120,47 @@ All variables in the analytic set were labeled according to the raw data provide
 
 ## Covariates
 
+## Variable Derivation Rules
+
+# Data
+
+## Data Source
+
+## Data Management
+
+### Data Cleaning and Processing
+
+### Data Validation
+
+### Data Flow
+
 # Statistical methods
 
-## Statistical analyses
+## Analysis Sets
 
-### Descriptive analyses
+### Full Analysis Set (FAS)
+
+(e.g., all records meeting selection criteria).
+
+### Complete Case Set (CCS)
+
+(Records with non-missing values for specific variables).
+
+### Imputed Analysis Set (IAS)
+
+(Optional, as needed per project).
+
+### Sensitivity Analysis Set (SAS)
+
+(Optional, as needed per project).
+
+## Study Size and Power
+
+## General Principles
 
 The epidemiological profile of the study participants will be described.
 Demographic
-(sex, age and BMI)
+(sex and age)
 and clinical variables
 <!-- ( [vars] ) -->
 will be described as
@@ -181,7 +169,13 @@ mean (SD)
 or as counts and proportions (%), as appropriate.
 The distributions of participants' characteristics will be summarized in tables and visualized in exploratory plots.
 
-### Inferential analyses
+## Missing Data Handling
+
+No missing data imputation will be performed.
+All evaluations will be performed as complete case analyses.
+Missing data counts and proportions will be reported in tables.
+
+## Analysis of Primary Objective
 
 All comparisons between groups will be performed as univariate analyses.
 Continuous variables will be compared between groups with the
@@ -196,13 +190,14 @@ Fisher exact test.
 
 <!-- All inferential analyses will be performed in the statistical models (described in the next section). -->
 
-### Statistical modeling
+## Analysis of Secondary and Exploratory Objectives
 
-### Missing data
+### Analysis of Secondary Objective 1
 
-No missing data imputation will be performed.
-All evaluations will be performed as complete case analyses.
-Missing data counts and proportions will be reported in tables.
+### Analysis of Secondary Objective 2
+
+### Analysis of Exploratory Objective 1
+
 
 ## Significance and Confidence Intervals
 
@@ -212,51 +207,19 @@ two-tailed.
 <!-- left-tailed. -->
 <!-- right-tailed. -->
 
-## Study size and Power
+## Statistical Software and Reproducibility
 
-```{r}
-n <- analytic %>%
-  count(exposure) %>%
-  pull(n)
-n1 <- n[1]
-n2 <- n[2]
-total <- sum(n)
-d <- pwr::pwr.t2n.test(n1 = n1, n2 = n2, power = .8, sig.level = .05)$d %>%
-  format.float()
-d <- pwr::pwr.t.test(n = total/2, power = .8, sig.level = .05)$d %>%
-  format.float()
-```
+This analysis will be performed using the statistical software `R` (currently on version `r getRversion()`).
 
-<!-- Study groups were balanced and the total sample size was `r total` including all groups. -->
+# Limitations and Observations
 
-<!-- Study groups were not balanced with -->
-<!-- group1 with `r n1` participants -->
-<!-- and -->
-<!-- group2 with `r n2` participants -->
-<!-- with a total study size of `r total`. -->
-<!-- This power analysis adjusts for different group sizes. -->
+## Limitations of the Statistical Analysis
 
-<!-- With these group sizes a t test can detect an effect size as large as -->
-<!-- **d = `r d`** -->
-<!-- with 80% power and 5% significance level (Cohen, 1988). -->
+(Model constraints, sample size issues, possible assumption violations) 
 
-N/A
+## Data Quality Observations
 
-## Statistical packages
-
-This analysis will be performed using statistical software `R` version `r getRversion()`.
-
-# Observations and limitations
-
-**Recommended reporting guideline**
-
-The adoption of the EQUATOR network (<http://www.equator-network.org/>) reporting guidelines have seen increasing adoption by scientific journals.
-All observational studies are recommended to be reported following the STROBE guideline (von Elm et al, 2014).
-<!-- All clinical trials are recommended to be reported following the CONSORT guideline (Schulz K F, Altman D G, Moher D., 2010). -->
-<!-- All systematic reviews are recommended to be reported following the PRISMA guideline (Page et al, 2021). -->
-<!-- All protocols for systematic reviews are recommended to be reported following the PRISMA-P guideline (Page et al, 2021). -->
-
-<!-- In particular when a retrospective study is conducted using hospital records, it is recommended that the RECORD extension of the STROBE guideline is considered (Benchimol et al, 2015). -->
+(Anticipated source-specific limitations)
 
 # References
 
@@ -270,9 +233,19 @@ All observational studies are recommended to be reported following the STROBE gu
 <!-- - Page M J, McKenzie J E, Bossuyt P M, Boutron I, Hoffmann T C, Mulrow C D et al. The PRISMA 2020 statement: an updated guideline for reporting systematic reviews BMJ 2021; 372 :n71 (<https://doi.org/10.1136/bmj.n71>). -->
 <!-- - Moher D, Shamseer L, Clarke M, Ghersi D, Liberati A, Petticrew M, Shekelle P, Stewart LA. Preferred Reporting Items for Systematic Review and Meta-Analysis Protocols (PRISMA-P) 2015 statement. Syst Rev. 2015;4(1):1 (<https://doi.org/10.1186/2046-4053-4-1>). -->
 
+# Table Shells
+
 # Appendix
 
 This document was elaborated following recommendations on the structure for Statistical Analysis Plans (Gamble, 2017) for better transparency and clarity.
+
+<!-- ## Associated analyses -->
+
+<!-- This analysis is part of a larger project and is supported by other analyses, linked below. -->
+
+<!-- **[assoc_title]** -->
+
+<!-- <[assoc_link]> -->
 
 ## Availability
 
