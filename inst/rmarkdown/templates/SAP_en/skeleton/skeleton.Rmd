@@ -292,6 +292,11 @@ This analysis will be performed using the statistical software `R` (currently on
 <!-- - Schulz K F, Altman D G, Moher D. CONSORT 2010 Statement: updated guidelines for reporting parallel group randomised trials BMJ 2010; 340 :c332 (<https://doi.org/10.1136/bmj.c332>). -->
 <!-- - Page M J, McKenzie J E, Bossuyt P M, Boutron I, Hoffmann T C, Mulrow C D et al. The PRISMA 2020 statement: an updated guideline for reporting systematic reviews BMJ 2021; 372 :n71 (<https://doi.org/10.1136/bmj.n71>). -->
 <!-- - Moher D, Shamseer L, Clarke M, Ghersi D, Liberati A, Petticrew M, Shekelle P, Stewart LA. Preferred Reporting Items for Systematic Review and Meta-Analysis Protocols (PRISMA-P) 2015 statement. Syst Rev. 2015;4(1):1 (<https://doi.org/10.1186/2046-4053-4-1>). -->
+<!-- - RMS, 2e; Harrel -->
+<!-- - CAR, 3e; Fox -->
+<!-- - MASS. 4e; Venables, Ripley -->
+<!-- - Baby Rothman, 2e; Rothman -->
+<!-- - Modern Epidemiology, 4e; Lash, ..., Rothman -->
 
 # Table Shells
 
