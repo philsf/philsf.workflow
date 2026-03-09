@@ -74,14 +74,17 @@ kable(history)
 
 ## Context and Rationale
 
+[Analyst Note: Briefly describe the clinical rationale and the motivation behind the research. This section provides the "Why" that guides the "How."]
 
 ## Research Questions and Objectives
 
+[Analyst Note: Explicitly state the Primary and Secondary objectives. Ensure they are framed as testable statistical hypotheses.]
 
 # Study Design and Population
 
 ## Study Design
 
+[Analyst Note: Define the study architecture (e.g., Cross-sectional, Retrospective Cohort, Case-Control). Reference compliance with relevant guidelines (e.g., STROBE).]
 
 **Recommended reporting guideline**
 
@@ -95,19 +98,29 @@ All observational studies are recommended to be reported following the STROBE gu
 
 ## Setting and Time period
 
+[Analyst Note: ]
 
 ## Censoring Rules
 
+[Analyst Note: ]
+
 ## Study Population Definitions
+
+[Analyst Note: Source vs. Target population, Unit of Observation]
 
 ## Inclusion and Exclusion Criteria
 
+[Analyst Note: List the specific clinical and demographic filters. This defines the boundaries of the source population.]
 
 # Variable Definitions
 
 ## Exposures
 
+[Analyst Note: ]
+
 ## Outcomes
+
+[Analyst Note: ]
 
 **Specification of outcome measures** (Zarin, 2011):
 
@@ -120,19 +133,31 @@ All observational studies are recommended to be reported following the STROBE gu
 
 ## Covariates
 
+[Analyst Note: ]
+
 ## Variable Derivation Rules
+
+[Analyst Note: ]
 
 # Data
 
 ## Data Source
 
+[Analyst Note: File names, years, versioning, and acquisition method]
+
 ## Data Management
 
 ### Data Cleaning and Processing
 
+[Analyst Note: Recoding, class coercions, standardized naming]
+
 ### Data Validation
 
+[Analyst Note: Range/logic checks, auditing for "impossible" values]
+
 ### Data Flow
+
+[Analyst Note: The journey from raw N to analytic N by applying Section 3.4 Study Population Definitions]
 
 # Statistical methods
 
@@ -140,23 +165,27 @@ All observational studies are recommended to be reported following the STROBE gu
 
 ### Full Analysis Set (FAS)
 
-(e.g., all records meeting selection criteria).
+[Analyst Note: e.g., all records meeting selection criteria]
 
 ### Complete Case Set (CCS)
 
-(Records with non-missing values for specific variables).
+[Analyst Note: Records with non-missing values for specific variables).
 
 ### Imputed Analysis Set (IAS)
 
-(Optional, as needed per project).
+[Analyst Note: Optional, as needed per project).
 
 ### Sensitivity Analysis Set (SAS)
 
-(Optional, as needed per project).
+[Analyst Note: Optional, as needed per project).
 
 ## Study Size and Power
 
+[Analyst Note: Justification of available N or power check]
+
 ## General Principles
+
+[Analyst Note: Descriptive methods, digit precision, Complex Survey Design logic, time-to-event methods, and reporting of missingness]
 
 The epidemiological profile of the study participants will be described.
 Demographic
@@ -169,7 +198,9 @@ mean (SD)
 or as counts and proportions (%), as appropriate.
 The distributions of participants' characteristics will be summarized in tables and visualized in exploratory plots.
 
-## Missing Data Handling
+## Handling of Missing Data
+
+[Analyst Note: Imputation vs. Exclusion rules—the "How-to"]
 
 No missing data imputation will be performed.
 All evaluations will be performed as complete case analyses.
@@ -194,12 +225,19 @@ Fisher exact test.
 
 ### Analysis of Secondary Objective 1
 
+[Analyst Note: ]
+
 ### Analysis of Secondary Objective 2
+
+[Analyst Note: ]
 
 ### Analysis of Exploratory Objective 1
 
+[Analyst Note: ]
 
 ## Significance and Confidence Intervals
+
+[Analyst Note: Alpha levels, tails]
 
 All analyses will be performed using the significance level of 5%.
 All significance hypothesis tests and confidence intervals computed will be
@@ -209,17 +247,19 @@ two-tailed.
 
 ## Statistical Software and Reproducibility
 
+[Analyst Note: R version, package management, `here()` framework]
+
 This analysis will be performed using the statistical software `R` (currently on version `r getRversion()`).
 
 # Limitations and Observations
 
 ## Limitations of the Statistical Analysis
 
-(Model constraints, sample size issues, possible assumption violations) 
+[Analyst Note: Model constraints, sample size issues, possible assumption violations]
 
 ## Data Quality Observations
 
-(Anticipated source-specific limitations)
+[Analyst Note: Anticipated source-specific limitations]
 
 # References
 
@@ -234,6 +274,8 @@ This analysis will be performed using the statistical software `R` (currently on
 <!-- - Moher D, Shamseer L, Clarke M, Ghersi D, Liberati A, Petticrew M, Shekelle P, Stewart LA. Preferred Reporting Items for Systematic Review and Meta-Analysis Protocols (PRISMA-P) 2015 statement. Syst Rev. 2015;4(1):1 (<https://doi.org/10.1186/2046-4053-4-1>). -->
 
 # Table Shells
+
+[Analyst Note: ]
 
 # Appendix
 
