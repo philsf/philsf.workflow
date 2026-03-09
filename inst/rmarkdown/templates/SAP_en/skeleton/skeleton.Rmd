@@ -25,13 +25,31 @@ output:
 ---
 
 ```{r setup, include=FALSE}
+# ************************************************************
+# Template: SAP_OBS_FULL_en.Rmd
+# Version:  0.xx.x
+# Author:   Felipe Figueiredo
+# Created:  2026-03-09
+#
+# ************************************************************
+# QC Date:  YYYY-MM-DD
+# ************************************************************
+
 knitr::opts_chunk$set(echo = FALSE)
-knitr::opts_knit$set(root.dir = normalizePath(".."))
 options(scipen = 999)
 library(pander)
 library(knitr)
+library(flextable)
+library(officer)
+library(here)
+
+knitr::opts_knit$set(root.dir = here())
 panderOptions('table.style', 'rmarkdown')
 panderOptions('table.split.table', 160)
+
+# Initialize counters for Table indices
+ind.table.body <- 0
+ind.table.app <- 0
 ```
 
 ---
@@ -52,14 +70,16 @@ kable(history)
 ```
 
 ```{r cleaning, include=FALSE}
-# source("scripts/input.R", encoding = 'UTF-8')
+# Load cached results (Data prep, data mockup, sample size calculation, etc.)
+# This ensures all analysis outputs are available when compiling the report.
+# Source 96- will safely check for and load all objects.
+source(here("scripts", "96_load_cached_results.R"), encoding = 'UTF-8')
 ```
 
 ---
 
 # Abbreviations
 
-- BMI: body mass index
 - CI: confidence interval
 - CV: coefficient of variation
 - d: Cohen's D effect size
