@@ -121,45 +121,72 @@ source(here("scripts", "96_load_cached_results.R"), encoding = 'UTF-8')
 
 ## Research Questions and Objectives
 
-[Analyst Note: Explicitly state the Primary and Secondary objectives. Ensure they are framed as testable statistical hypotheses.]
+[Analyst Note: Explicitly state the Primary, Secondary, and Exploratory objectives using the list format below. Each objective should be framed as a testable statistical hypothesis (e.g., "To compare the odds of [Outcome] between [Group A] and [Group B]").]
+
+- **Primary:** To do analysis on outcome P1
+- **Secondary:** To do analysis on outcomes S1, S2, S3
+    1. Objective S1
+    2. Objective S2
+    3. Objective S3
+- **Exploratory:** to do analysis on outcomes E1, E2, ...
+    1. Objective E1
+    2. Objective E2
+    3. Objective E3
 
 # Study Design and Population
 
 ## Study Design
 
-[Analyst Note: Define the study architecture (e.g., Cross-sectional, Retrospective Cohort, Case-Control). Reference compliance with relevant guidelines (e.g., STROBE).]
+[Analyst Note: Define the study architecture (e.g., Cross-sectional, Retrospective Cohort, Case-Control). Explicitly state the observational framework and the direction of data collection. Reference compliance with relevant guidelines (e.g., STROBE, RECORD, ...). Define the Primary Effect Measure here.]
 
 **Recommended reporting guideline**
 
 The EQUATOR network reporting guidelines (<http://www.equator-network.org/>) have seen increasing adoption by scientific journals.
 All observational studies are recommended to be reported following the STROBE guideline (von Elm et al, 2014).
+<!-- In particular when a retrospective study is conducted using hospital records, it is recommended that the RECORD extension of the STROBE guideline is considered (Benchimol et al, 2015). -->
 <!-- All clinical trials are recommended to be reported following the CONSORT guideline (Schulz K F, Altman D G, Moher D., 2010). -->
 <!-- All systematic reviews are recommended to be reported following the PRISMA guideline (Page et al, 2021). -->
 <!-- All protocols for systematic reviews are recommended to be reported following the PRISMA-P guideline (Page et al, 2021). -->
 
-<!-- In particular when a retrospective study is conducted using hospital records, it is recommended that the RECORD extension of the STROBE guideline is considered (Benchimol et al, 2015). -->
-
-## Setting and Time period
-
-[Analyst Note: ]
-
-## Censoring Rules
-
-[Analyst Note: ]
-
 ## Study Population Definitions
 
-[Analyst Note: Source vs. Target population, Unit of Observation]
+[Analyst Note: Describe the "person" of the study. Distinguish between the Target Population (who the results apply to), the Source Population (the database/registry), and the Analytic Unit (e.g., "The individual patient," "The hospital admission," "The surgical procedure").]
 
-## Inclusion and Exclusion Criteria
+## Setting and Time Period
 
-[Analyst Note: List the specific clinical and demographic filters. This defines the boundaries of the source population.]
+[Analyst Note: Describe the "place and time" of the study. Define the physical or virtual location of the study (e.g., "Multicenter database," "Single-unit surgical clinic"). Define the period covered in the study: start/end dates of data collection and the follow-up duration if applicable.]
+
+## Index Date
+
+[Analyst Note: Define the 'T=0' for the analysis unit (e.g., 'Date of first ER visit'). For cross-sectional studies without a longitudinal component, mark as 'N/A: Single-point assessment.']
+
+## Follow-up Period and Censoring Rules
+
+[Analyst Note: For Cross-sectional studies: Mark as "N/A." For Longitudinal/Survival studies: Define the rules for administrative censoring (end of study), loss to follow-up, and competing risks.]
+
+## Participant Selection
+
+[Analyst Note: Use a bulleted list to define the "Theoretical Bouncer." These are clinical and demographic filters (e.g., "Age > 18," "Confirmed diagnosis of X"). This section defines the ideal cohort before accounting for data missingness.]
+
+### Inclusion Criteria
+
+Participants will be included if they fulfill all of these criteria:
+
+- crit 1
+- crit 2
+
+### Exclusion Criteria
+
+Participants will be excluded if they fulfill any of these criteria:
+
+- exc 1
+- exc 2
 
 # Variable Definitions
 
 ## Exposures
 
-[Analyst Note: ]
+[Analyst Note: Define the independent variables. Specify the Primary Exposure and any secondary exposures. Note the scale of measurement (e.g., Binary, Continuous, Multilevel Categorical).]
 
 ## Outcomes
 
@@ -227,11 +254,11 @@ knitr::kable(
 
 ## Covariates
 
-[Analyst Note: ]
+[Analyst Note: List potential confounders and adjustors. Distinguish between "Known Confounders" (based on literature/DAGs) and "Candidate Variables" for automated selection if applicable. Criteria for selection should be described in the Statistical Methods section.]
 
 ## Variable Derivation Rules
 
-[Analyst Note: ]
+[Analyst Note: Describe how raw data becomes analytic variables. Do not write R code here; use plain English or pseudocode (e.g., "BMI = Weight(kg) / Height(m)^2" or "Smoking Status = 'Ever' if 'Current' or 'Former'"). Document Regex logic for text-mining here.]
 
 # Data
 
@@ -253,7 +280,7 @@ knitr::kable(
 
 [Analyst Note: The journey from raw N to analytic N by applying Section 3.4 Study Population Definitions]
 
-# Statistical methods
+# Statistical Analyses Methods
 
 ## Analysis Sets
 
@@ -302,32 +329,38 @@ Missing data counts and proportions will be reported in tables.
 
 ## Analysis of Primary Objective
 
-All comparisons between groups will be performed as univariate analyses.
-Continuous variables will be compared between groups with the
-independent t test with Welch correction.
-<!-- paired t test. -->
-<!-- Mann-Whitney test. -->
-<!-- signed rank Wilcoxon test. -->
-Differences in distribution of categorical variables will be assessed with the
-Fisher exact test.
-<!-- chi-square test. -->
-<!-- McNemar test. -->
-
-<!-- All inferential analyses will be performed in the statistical models (described in the next section). -->
+[Analyst Note: ]
 
 ## Analysis of Secondary and Exploratory Objectives
 
+[Analyst Note: If not applicable, set to N/A.]
+
 ### Analysis of Secondary Objective 1
 
-[Analyst Note: ]
+[Analyst Note: Remove subsection if not scoped]
 
 ### Analysis of Secondary Objective 2
 
-[Analyst Note: ]
+[Analyst Note: Remove subsection if not scoped]
+
+### Analysis of Secondary Objective 3
+
+[Analyst Note: Remove subsection if not scoped]
 
 ### Analysis of Exploratory Objective 1
 
-[Analyst Note: ]
+[Analyst Note: Remove subsection if not scoped]
+
+<!-- All comparisons between groups will be performed as univariate analyses. -->
+<!-- Continuous variables will be compared between groups with the -->
+<!-- independent t test with Welch correction. -->
+<!-- paired t test. -->
+<!-- Mann-Whitney test. -->
+<!-- signed rank Wilcoxon test. -->
+<!-- Differences in distribution of categorical variables will be assessed with the -->
+<!-- Fisher exact test. -->
+<!-- chi-square test. -->
+<!-- McNemar test. -->
 
 ## Significance and Confidence Intervals
 
@@ -384,9 +417,13 @@ This analysis will be performed using the statistical software `R` (currently on
 
 This document was elaborated following recommendations on the structure for Statistical Analysis Plans (Gamble, 2017) for better transparency and clarity.
 
-<!-- ## Associated analyses -->
+## Associated analyses
 
-<!-- This analysis is part of a larger project and is supported by other analyses, linked below. -->
+This analysis is part of a larger project and is supported by other analyses, linked below.
+
+**[assoc_title]**
+
+<[assoc_link]>
 
 <!-- **[assoc_title]** -->
 
