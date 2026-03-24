@@ -26,10 +26,10 @@ output:
 
 ```{r setup, include=FALSE}
 # ************************************************************
-# Template: SAP_OBS_FULL_en.Rmd
+# Template: SAP_OBS_full_en.Rmd
 # Version:  0.xx.x
 # Author:   Felipe Figueiredo
-# Created:  2026-03-09
+# Created:  2026-03-22
 #
 # ************************************************************
 # QC Date:  YYYY-MM-DD
@@ -61,19 +61,28 @@ ind.table.app <- 0
 **Document version**
 
 ```{r history}
-Version <- c("01")
-Changes <- c("Initial version")
-history <- cbind(Version, Changes)
-colnames(history) <- c("Version", "Alterations")
-# pander(history, split.cells = 70)
-kable(history)
+# Define each version as an atomic row
+v1 <- c("01", "YYYY-MM-DD", "Initial version.")
+
+# Bind rows together
+# Using naming in rbind automatically sets the row labels if needed, 
+# but here we just want a clean table.
+# Convert to data frame and set names
+history <- tibble::as_tibble(rbind(v1), .name_repair = "minimal")
+colnames(history) <- c("Version", "Date", "Alterations")
+
+# Render
+knitr::kable(
+  history,
+  align = "ccl",
+)
 ```
 
 ```{r cleaning, include=FALSE}
 # Load cached results (Data prep, data mockup, sample size calculation, etc.)
 # This ensures all analysis outputs are available when compiling the report.
 # Source 96- will safely check for and load all objects.
-source(here("scripts", "96_load_cached_results.R"), encoding = 'UTF-8')
+source(here("02 scripts", "96_load_cached_results.R"), encoding = 'UTF-8')
 ```
 
 ---
@@ -111,6 +120,7 @@ source(here("scripts", "96_load_cached_results.R"), encoding = 'UTF-8')
 - SAS: Sensitivity Analysis Set
 - SD: Standard Deviation
 - SE: Standard Error
+- STROBE: Strengthening the Reporting of Observational Studies in Epidemiology
 - VIF: Variance Inflation Factor
 
 # Introduction
@@ -288,15 +298,15 @@ knitr::kable(
 
 ### Complete Case Set (CCS)
 
-[Analyst Note: Records with non-missing values for specific variables).
+[Analyst Note: Records with non-missing values for specific variables.]
 
 ### Imputed Analysis Set (IAS)
 
-[Analyst Note: Optional, as needed per project).
+[Analyst Note: Optional, as needed per project.]
 
 ### Sensitivity Analysis Set (SAS)
 
-[Analyst Note: Optional, as needed per project).
+[Analyst Note: Optional, as needed per project.]
 
 ## Study Size and Power
 
@@ -306,7 +316,10 @@ knitr::kable(
 
 [Analyst Note: Descriptive methods, digit precision, Complex Survey Design logic, time-to-event methods, and reporting of missingness]
 
-The epidemiological profile of the study participants will be described.
+The participant
+<!-- baseline -->
+characteristics will be described overall and by
+exposure.
 Demographic
 (sex and age)
 and clinical variables
@@ -402,6 +415,7 @@ This analysis will be performed using the statistical software `R` (currently on
 - Hosmer, D. W., Lemeshow, S., & Sturdivant, R. X. (2013). *Applied Logistic Regression (3rd Ed.).* Wiley.
 - Fitzmaurice, G. M., Laird, N. M., & Ware, J. H. (2011). *Applied Longitudinal Analysis (2nd Ed.).* Wiley.
 - van Buuren, S. (2018). *Flexible Imputation of Missing Data (2nd Ed.).* CRC Press.
+- White IR, Royston P, Wood AM., (2011). *Multiple imputation using chained equations: Issues and guidance for practice.* Stat Med. (<https://doi.org/10.1002/sim.4067>)
 - Lumley, T. (2010). *Complex Surveys: A Guide to Analysis Using R.* Wiley.
 - Venables, W. N., & Ripley, B. D. (2002). *Modern Applied Statistics with S (4th Ed.).* Springer.
 - Rothman, K. J. (2012). *Epidemiology: An Introduction (2nd Ed.).* Oxford University Press.
@@ -409,7 +423,9 @@ This analysis will be performed using the statistical software `R` (currently on
 
 # Table Shells
 
-[Analyst Note: ]
+[Analyst Note: Develop a mock representation]
+
+Table shells showing the structure of the analysis outputs will be delivered as an annex file.
 
 # Appendix
 
