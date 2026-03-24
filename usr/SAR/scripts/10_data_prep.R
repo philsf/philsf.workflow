@@ -14,22 +14,13 @@
 
 # Data Loading ------------------------------------------------------------
 
-## Create Mock Data for Structural Integrity ------------------------------
-# NOTE: This data frame must contain all variables used in ALL final tables (T1, T2, T3, etc.)
-# It primarily serves to provide the correct variable labels and types.
-
-data.mock.ads <- tibble(
-  id = 1:50, # Increased N to 50 to prevent 'not enough observations' errors
-  outcome = rnorm(50), # Continuous outcome
-  exposure = factor(sample(c("Group A", "Group B"), 50, replace = TRUE)), # Categorical exposure
-  age = runif(50, 20, 60), # Continuous covariate
-  sex = factor(sample(c("Male", "Female"), 50, replace = TRUE)) # Categorical covariate
-)
-
 ## Load raw data file
 
+# Mock data: replace these commands with RW data
+source(here("02 scripts", "01_data_mock.R"))
 data.raw <- data.mock.ads
-# data.raw <- read_excel("dataset/file.xlsx") %>%
+
+# data.raw <- read_excel("01 dataset/file.xlsx") %>%
 #   janitor::clean_names()
 
 Nvar_orig <- data.raw %>% ncol
@@ -54,17 +45,52 @@ data.raw <- data.raw %>%
 # Data Wrangling (e.g., ID formatting)
 data.raw <- data.raw %>%
   mutate(
-    id = factor(id), # or as.character
+    # id = factor(id), # or as.character
     # Other wrangling, e.g., pivot_longer for common wide-to-long structures
   )
+
+# Eligibility Criteria ----------------------------------------------------
+
+# Inclusion criterion 1
+data.raw <- data.raw %>%
+  mutate(
+    inc_crit1 = TRUE,
+  )
+Nobs_inc.crit1 <- data.raw %>% pull(inc_crit1) %>% sum()
+
+# Inclusion criterion 2
+data.raw <- data.raw %>%
+  mutate(
+    inc_crit2 = TRUE,
+  )
+Nobs_inc.crit2 <- data.raw %>% pull(inc_crit2) %>% sum()
+
+# Inclusion criterion 3
+data.raw <- data.raw %>%
+  mutate(
+    inc_crit3 = TRUE,
+  )
+Nobs_inc.crit3 <- data.raw %>% pull(inc_crit3) %>% sum()
+
+# Exclusion criterion 1
+data.raw <- data.raw %>%
+  mutate(
+    exc_crit1 = FALSE,
+  )
+
+Nobs_exc.crit1 <- data.raw %>% pull(exc_crit1) %>% sum()
 
 # Variable Labels and Metadata --------------------------------------------
 # This section is critical for quality gtsummary and SAR output.
 
 data.raw <- data.raw %>%
   set_variable_labels(
-    exposure = lab.exposure,
-    outcome = lab.primary.outcome,
+    exposure   = lab.exposure,
+    outcome.P1 = lab.outcome.P1,
+    outcome.S1 = lab.outcome.S1,
+    outcome.S2 = lab.outcome.S2,
+    outcome.S3 = lab.outcome.S3,
+    outcome.E1 = lab.outcome.E1,
     # Add all key variables here
     age = lab.age,
     sex = lab.sex,
@@ -74,12 +100,21 @@ data.raw <- data.raw %>%
 # Final assignment of 'data.master.ads' object for all subsequent scripts (20+, 30+, 40+, 50+).
 
 data.master.ads <- data.raw %>%
+  # Apply eligibility criteria
+  filter(inc_crit1, inc_crit2, inc_crit3, !exc_crit1) %>%
   # Select analytic variables only
   select(
     id,
     exposure,
-    outcome,
-    everything(),
+    outcome.P1,
+    outcome.S1,
+    outcome.S2,
+    outcome.S3,
+    outcome.E1,
+    age,
+    sex,
+    time.E1,
+    # everything(),
   )
 
 Nvar_final <- data.master.ads %>% ncol

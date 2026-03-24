@@ -14,22 +14,33 @@
 
 # 1. Load Cached Results --------------------------------------------------
 
-# ONLY load the cache if a key analysis object (like the descriptive table)
-# is NOT found in the current environment. This prevents redundant re-loading
-# when sourced by the full analysis script (99_full_analysis_run.R).
-if (!exists("tab.primary.desc")) {
-  source("scripts/96_load_cached_results.R")
-}
-# NOTE: If we run in Manual Mode, 96- will load tab.primary.desc,
-# and the rest of the script will proceed normally.
+# # ONLY load the cache if a key analysis object (like the descriptive table)
+# # is NOT found in the current environment. This prevents redundant re-loading
+# # when sourced by the full analysis script (99_full_analysis_run.R).
+# if (!exists("tab.baseline")) {
+#   source("02 scripts/96_load_cached_results.R")
+# }
+# # NOTE: If we run in Manual Mode, 96- will load tab.baseline,
+# # and the rest of the script will proceed normally.
 
 # 2. Save Primary Figure(s) -----------------------------------------------
 
-# Figure 1: Primary Outcome Density Plot (Always safe)
-if (exists("gg.primary.outcome")) {
+# Flowchart
+if (exists("gg.cohort_flow")) {
+  gg.cohort_flow %>%
+    DiagrammeRsvg::export_svg() %>%
+    charToRaw() %>%
+    rsvg::rsvg_png(
+      file = "04 outputs/Flowchart.png",
+      height = 1200,
+    )
+}
+
+# Primary Outcome Distribution Plot (Always safe)
+if (exists("gg.primary.P1.outcome")) {
   ggsave(
-    filename = "figures/Figure_1_Primary_Outcome.png",
-    plot   = gg.primary.outcome,
+    filename = "04 outputs/Primary1_Outcome.png",
+    plot   = gg.primary.P1.outcome,
     height = fig.height,
     width  = fig.width,
     units  = fig.units,
@@ -38,11 +49,37 @@ if (exists("gg.primary.outcome")) {
   )
 }
 
-# Figure 2: Primary Model Prediction Plot (Only in Multivariate Gig)
-if (exists("gg.primary.predict")) {
+# Primary Model Prediction Plot (Only in Multivariate Service)
+if (exists("gg.primary.P1.predict")) {
   ggsave(
-    filename = "figures/Figure_2_Primary_Predict.png",
-    plot   = gg.primary.predict,
+    filename = "04 outputs/Primary1_Predict.png",
+    plot   = gg.primary.P1.predict,
+    height = fig.height,
+    width  = fig.width,
+    units  = fig.units,
+    dpi    = fig.dpi,
+    device = fig.device
+  )
+}
+
+# Primary Outcome Distribution Plot (Always safe)
+if (exists("gg.primary.P1.outcome.sens")) {
+  ggsave(
+    filename = "04 outputs/Primary1_Outcome_Sens.png",
+    plot   = gg.primary.P1.outcome.sens,
+    height = fig.height,
+    width  = fig.width,
+    units  = fig.units,
+    dpi    = fig.dpi,
+    device = fig.device
+  )
+}
+
+# Primary Model Prediction Plot (Only in Multivariate Service)
+if (exists("gg.primary.P1.predict.sens")) {
+  ggsave(
+    filename = "04 outputs/Primary1_Predict_Sens.png",
+    plot   = gg.primary.P1.predict.sens,
     height = fig.height,
     width  = fig.width,
     units  = fig.units,
@@ -53,10 +90,10 @@ if (exists("gg.primary.predict")) {
 
 # 3. Save Secondary Figure(s) ---------------------------------------------
 
-if (exists("gg.secondary.outcome")) {
+if (exists("gg.secondary.S1.outcome")) {
   ggsave(
-    filename = "figures/Figure_3_Secondary_Outcome.png",
-    plot   = gg.secondary.outcome,
+    filename = "04 outputs/Secondary1_Outcome.png",
+    plot   = gg.secondary.S1.outcome,
     height = fig.height,
     width  = fig.width,
     units  = fig.units,
@@ -65,10 +102,58 @@ if (exists("gg.secondary.outcome")) {
   )
 }
 
-if (exists("gg.secondary.predict")) {
+if (exists("gg.secondary.S1.predict")) {
   ggsave(
-    filename = "figures/Figure_4_Secondary_Predict.png",
-    plot   = gg.secondary.predict,
+    filename = "04 outputs/Secondary1_Predict.png",
+    plot   = gg.secondary.S1.predict,
+    height = fig.height,
+    width  = fig.width,
+    units  = fig.units,
+    dpi    = fig.dpi,
+    device = fig.device
+  )
+}
+
+if (exists("gg.secondary.S2.outcome")) {
+  ggsave(
+    filename = "04 outputs/Secondary2_Outcome.png",
+    plot   = gg.secondary.S2.outcome,
+    height = fig.height,
+    width  = fig.width,
+    units  = fig.units,
+    dpi    = fig.dpi,
+    device = fig.device
+  )
+}
+
+if (exists("gg.secondary.S2.predict")) {
+  ggsave(
+    filename = "04 outputs/Secondary2_Predict.png",
+    plot   = gg.secondary.S2.predict,
+    height = fig.height,
+    width  = fig.width,
+    units  = fig.units,
+    dpi    = fig.dpi,
+    device = fig.device
+  )
+}
+
+if (exists("gg.secondary.S3.outcome")) {
+  ggsave(
+    filename = "04 outputs/Secondary3_Outcome.png",
+    plot   = gg.secondary.S3.outcome,
+    height = fig.height,
+    width  = fig.width,
+    units  = fig.units,
+    dpi    = fig.dpi,
+    device = fig.device
+  )
+}
+
+if (exists("gg.secondary.S3.predict")) {
+  ggsave(
+    filename = "04 outputs/Secondary3_Predict.png",
+    plot   = gg.secondary.S3.predict,
     height = fig.height,
     width  = fig.width,
     units  = fig.units,
@@ -79,10 +164,10 @@ if (exists("gg.secondary.predict")) {
 
 # 4. Save Exploratory Figure(s) -------------------------------------------
 
-if (exists("gg.exploratory.outcome")) {
+if (exists("gg.exploratory.E1.outcome")) {
   ggsave(
-    filename = "figures/Figure_5_Exploratory_Outcome.png",
-    plot   = gg.exploratory.outcome,
+    filename = "04 outputs/Exploratory1_Outcome.png",
+    plot   = gg.exploratory.E1.outcome,
     height = fig.height,
     width  = fig.width,
     units  = fig.units,
@@ -91,10 +176,10 @@ if (exists("gg.exploratory.outcome")) {
   )
 }
 
-if (exists("gg.exploratory.predict")) {
+if (exists("gg.exploratory.E1.predict")) {
   ggsave(
-    filename = "figures/Figure_6_Exploratory_Predict.png",
-    plot   = gg.exploratory.predict,
+    filename = "04 outputs/Exploratory1_Predict.png",
+    plot   = gg.exploratory.E1.predict,
     height = fig.height,
     width  = fig.width,
     units  = fig.units,
@@ -108,7 +193,7 @@ if (exists("gg.exploratory.predict")) {
 # Figure A1: Age by Sex (Always created in 23_output_primary_plot.R)
 if (exists("gg.appendix.age")) {
   ggsave(
-    filename = "figures/Figure_A1_Age_by_Sex.png",
+    filename = "04 outputs/Age_by_Sex.png",
     plot   = gg.appendix.age,
     height = fig.height,
     width  = fig.width,

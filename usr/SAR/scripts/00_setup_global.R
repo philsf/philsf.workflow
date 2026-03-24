@@ -17,44 +17,54 @@
 ## Input & Data
 
 library(philsfmisc)
-# library(data.table)
 library(tidyverse)
+library(labelled)
 library(readxl)
 # library(haven)
 # library(foreign)
-# library(lubridate)
-library(naniar)
-# library(survey)
-library(labelled)
-library(writexl)
+# library(RSQLite)
+# library(data.table)
+library(here)
 
 ## Describe
 
-# library(Hmisc) # describe
-# library(skimr) # skim
-# library(gmodels) # CrossTable
 library(gtsummary)
 library(gt)
 # library(gtreg)
+# library(Hmisc) # describe
+# library(skimr) # skim
+# library(gmodels) # CrossTable
 # library(effectsize) # For Cohens d
 # library(finalfit) # missing_compare
 
 ## Model
 
-# library(moderndive) # geom_parallel_slopes
 library(broom)
 library(emmeans)
-# library(lmerTest)
-# library(lme4)
-# library(broom.mixed)
-# library(mlogit)
-# library(AER)
-# library(simputation)
-# library(mice)
+library(performance)
 # library(car)
 # library(MASS)
 # library(rms)
-library(performance)
+# library(survival)
+# library(tidycmprsk)
+# library(srvyr)
+# library(survey)
+# library(lmerTest)
+# library(lme4)
+# library(broom.mixed)
+# library(VGAM)
+# library(mgcv)
+# library(mlogit)
+# library(sandwich)
+# library(AER)
+# library(moderndive) # geom_parallel_slopes
+# library(meta)
+# library(metafor)
+
+### Missing data
+# library(naniar)
+# library(simputation)
+# library(mice)
 
 ## Inference
 
@@ -62,21 +72,58 @@ library(performance)
 
 ## Plot
 
-library(ggfortify) # autoplot
+# library(ggfortify) # autoplot
 library(ggeffects) # ggpredict
+library(DiagrammeR)
+# library(vcd)
 # library(survminer)
 # library(gridExtra)
 # library(gghighlight)
 # library(ggpubr) # ggarrange
 
-# Output
+## Output
 
+library(writexl)
 # library(officer)
 # library(flextable)
 # library(knitr)
 # library(patchwork)
 # library(openxlsx)
 # library(modelsummary)
+
+## Power
+
+## basic tests
+# library(pwr)
+
+## basic Epi
+# library(pwrss)          # OR: pwrss.z.logreg()
+# library(epiR)           # RR: epi.sscohortc(), IRR: epi.sscohortt()
+
+## precision/margin of error
+# library(presize)        # prec_prop(), prec_rate(), prec_riskdiff()
+
+## survival
+# library(gsDesign)       # headache 1
+# library(powerSurvEpi)
+
+## diagnostic tests
+# library(pROC)           # power.roc.test()
+# library(epiR)           # epi.ssdxsesp()
+# library(MKpower)        # ssize.sens.ci()
+
+## complex designs
+# library(WebPower)       # cluster random: wp.crt2arm(), longitud/repeated wp.mmrm()
+# library(TrialSize)      # Crossover, Non Inferiority
+# library(simr)           # headache 2
+# library(pwr2)           # factorial anova
+
+## soft dependencies - required by some loaded packages
+# library(see)    # performance
+# library(DHARMa) # performance
+# library(rlang)  # tab()
+# library(DiagrammeRsvg)
+# library(rsvg)
 
 # Project language --------------------------------------------------------
 
@@ -129,11 +176,6 @@ gg.template <- function(data, ...) {
 # Set random seed
 set.seed(42)
 
-# do we exponentiate results (OR/RR/HR)?
-# TRUE for logistic/Poisson/Cox regression (OR, IRR, HR)
-# FALSE for linear regression (mean difference)
-exponentiate <- FALSE
-
 # Define Plot Parameters
 fig.height <- 12
 fig.width <- 12
@@ -147,7 +189,7 @@ fig.device <- "png" # Use "pdf" or "tiff" for publication
 # Helper functions to consistently format model outputs (31-, 41-, 51-)
 
 # Function to create a simple table from a single model
-tab <- function(model, include = NULL, exp=exponentiate, digits = 3, footnote=NA_character_, ...) {
+tab <- function(model, include = NULL, exponentiate=FALSE, digits = 3, footnote=NA_character_, ...) {
   # 1. Determine the 'include' argument
   if (is.null(include)) {
     # If the default (NULL) is passed, force 'everything()' for the selection
@@ -161,7 +203,7 @@ tab <- function(model, include = NULL, exp=exponentiate, digits = 3, footnote=NA
   }
   model %>%
     tbl_regression(
-      exp = exp,
+      exponentiate = exponentiate,
       include = !!include_selection, # Unquotes and injects the resolved selection
       # estimate_fun = purrr::partial(style_ratio,  digits = digits),
       # label = list(exposure = lab.exposure),
@@ -174,29 +216,30 @@ tab <- function(model, include = NULL, exp=exponentiate, digits = 3, footnote=NA
 }
 
 # Function to create a table with crude and adjusted models
-tab_adj <- function(crude, adjusted, include=NULL, exp=exponentiate, footnote=NA_character_, adjusted_for=NA_character_, digits = 3,...) {
+tab_adj <- function(crude, adjusted, include=NULL, exponentiate=FALSE, footnote=NA_character_, adjusted_for=NA_character_, digits = 3,...) {
   # "Adjusted by" footnote
   if(!is.na(adjusted_for)) adjusted_for <- paste0(lab.model.adj, ": ", adjusted_for)
 
   # This uses the list of tables and the labels (lab.model.raw/adj)
   tbl_merge(
     list(
-      tab(crude,    include=include, exp=exp, digits = digits, ...),
-      tab(adjusted, include=include, exp=exp, digits = digits, ...)
+      tab(crude,    include=include, exponentiate=exponentiate, digits = digits, ...),
+      tab(adjusted, include=include, exponentiate=exponentiate, digits = digits, ...)
     ), c(lab.model.raw, lab.model.adj),
+    quiet = TRUE,
   ) %>%
     modify_footnote_header(footnote, columns = contains("estimate"), replace = FALSE) %>%
     modify_footnote_header(adjusted_for, columns = estimate_2, replace = FALSE)
 }
 
-effect_plot <- function(model) {
+effect_plot <- function(model, outcome = "outcome", exposure = "exposure", ...) {
 
   # 1. Obtain Estimated marginal Means (EMMs) conditional to the Exposure
-  predicted_values <- ggeffects::ggpredict(model, terms = c("exposure"))
+  predicted_values <- ggeffects::ggpredict(model, terms = c(exposure), ...)
 
   # 2. Obtain the outcome label from the model
-  lab.outcome  <- model %>% augment() %>% pull(outcome)  %>% var_label()
-  lab.exposure <- model %>% augment() %>% pull(exposure) %>% var_label()
+  lab.outcome  <- labelled::var_label(model$model[[outcome]])
+  lab.exposure <- labelled::var_label(model$model[[exposure]])
 
   # 3. Create plot with points and errors
   predicted_plot <- predicted_values %>%
@@ -204,7 +247,7 @@ effect_plot <- function(model) {
     aes(x = x, y = predicted, color = x) +
 
     # Add estimated means (position adjusted to avoid overlap)
-    geom_point(size = 3, position = position_dodge(width = 0.5)) +
+    geom_point(size = 5, position = position_dodge(width = 0.5)) +
 
     # Add error bars (95% CI)
     geom_errorbar(aes(ymin = conf.low, ymax = conf.high, group = group),
@@ -213,7 +256,9 @@ effect_plot <- function(model) {
     # Plot labels
     labs(
       x = lab.exposure,
-      y = paste("Predicted value of", lab.outcome),
+      y = paste("Predicted values of", lab.outcome),
+      color = "",
+      caption = paste0("N = ", style_number(nobs(model))),
     ) +
 
     # Theme and color configuration
@@ -223,7 +268,7 @@ effect_plot <- function(model) {
     # theme_ff() + # use gg.template() from now on
     theme(
       plot.title = element_text(face = "bold", size = 14),
-      legend.position = "top",
+      legend.position = "none",
       axis.title.x = element_text(size = 11, margin = margin(t = 10))
     )
 
@@ -277,12 +322,25 @@ render_table <- function(table_object, table_index, caption) {
 
 # Modeling ----------------------------------------------------------------
 
-formula.primary.raw     <- outcome ~ exposure
-formula.primary.adj     <- outcome ~ exposure + age + sex
-formula.secondary.raw   <- outcome ~ exposure
-formula.secondary.adj   <- outcome ~ exposure + age + sex
-formula.exploratory.raw <- outcome ~ exposure
-formula.exploratory.adj <- outcome ~ exposure + age + sex
+formula.primary.P1.raw     <- outcome.P1 ~ exposure
+formula.primary.P1.adj     <- outcome.P1 ~ exposure + age + sex
+formula.secondary.S1.raw   <- outcome.S1 ~ exposure
+formula.secondary.S1.adj   <- outcome.S1 ~ exposure + age + sex
+formula.secondary.S2.raw   <- outcome.S2 ~ exposure
+formula.secondary.S2.adj   <- outcome.S2 ~ exposure + age + sex
+formula.secondary.S3.raw   <- outcome.S3 ~ exposure
+formula.secondary.S3.adj   <- outcome.S3 ~ exposure + age + sex
+formula.exploratory.E1.raw <- outcome.E1 ~ exposure
+formula.exploratory.E1.adj <- outcome.E1 ~ exposure + age + sex
+# formula.exploratory.E1.raw <- Surv(time.E1, outcome.E1) ~ exposure
+# formula.exploratory.E1.adj <- Surv(time.E1, outcome.E1) ~ exposure + age + sex
+
+exp.outcome.P1 <- TRUE
+exp.outcome.S1 <- TRUE
+exp.outcome.S2 <- FALSE
+exp.outcome.S3 <- TRUE
+exp.outcome.E1 <- TRUE
+
 
 # Labels ------------------------------------------------------------------
 
@@ -298,9 +356,12 @@ if (getOption("workflow.language") == "pt") {
 }
 
 # Project-specific labels
-lab.exposure            <- "Study exposure"
-lab.primary.outcome     <- "Study primary outcome"
-lab.secondary.outcome   <- "Study secondary outcome"
-lab.exploratory.outcome <- "Study exploratory outcome"
+lab.exposure   <- "Study exposure"
+lab.outcome.P1 <- "Study primary outcome 1"
+lab.outcome.S1 <- "Study secondary outcome 1"
+lab.outcome.S2 <- "Study secondary outcome 2"
+lab.outcome.S3 <- "Study secondary outcome 3"
+lab.outcome.E1 <- "Study exploratory outcome 1"
+lab.time.E1    <- "Follow-up time for exploratory outcome 1 (years)"
 lab.age                 <- "Age (years)"
 lab.sex                 <- "Sex"

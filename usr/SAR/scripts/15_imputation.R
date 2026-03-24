@@ -2,7 +2,7 @@
 # Script:   15_data_imputation.R
 # Purpose:  Create the Imputed Analysis Dataset (IAS) imputed datasets using MICE (or other methods).
 #
-# Note:     Only scoped and pre-specified in the SAP.
+# Note:     N/A
 #
 # Version:  0.xx.x
 # Author:   Felipe Figueiredo
@@ -35,7 +35,7 @@ data.master.imp <- data.master.ads %>%
   mice::mice(
     m = 5,                    # Number of imputed datasets
     method = "pmm",           # Predictive mean matching (safe default)
-    maxit = 20,               # Iterations
+    maxit = 40,               # Iterations
     printFlag = FALSE
   )
 

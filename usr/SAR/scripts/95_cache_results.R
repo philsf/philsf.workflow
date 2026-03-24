@@ -15,108 +15,151 @@
 # 1. Save Model Objects (Raw output) --------------------------------------
 
 # Primary Models (from 31-)
-if (exists("model.primary.raw")) {
-  write_rds(model.primary.raw, file = "results/model.primary.raw.rds")
-  if (exists("model.primary.adj")) {
-    write_rds(model.primary.adj, file = "results/model.primary.adj.rds")
+if (exists("model.primary.P1.raw")) {
+  write_rds(model.primary.P1.raw, file = "03 results/model.primary.P1.raw.rds")
+  if (exists("model.primary.P1.adj")) {
+    write_rds(model.primary.P1.adj, file = "03 results/model.primary.P1.adj.rds")
   }
 }
 
 # Sensitivity Models (from 35-)
-if (exists("model.primary.raw.sens")) {
-  write_rds(model.primary.raw.sens, file = "results/model.primary.raw.sens.rds")
-  if (exists("model.primary.adj.sens")) {
-    write_rds(model.primary.adj.sens, file = "results/model.primary.adj.sens.rds")
+if (exists("model.primary.P1.raw.sens")) {
+  write_rds(model.primary.P1.raw.sens, file = "03 results/model.primary.P1.raw.sens.rds")
+  if (exists("model.primary.P1.adj.sens")) {
+    write_rds(model.primary.P1.adj.sens, file = "03 results/model.primary.P1.adj.sens.rds")
   }
 }
 
 # Secondary Models (from 41-)
-if (exists("model.secondary.raw")) {
-  write_rds(model.secondary.raw, file = "results/model.secondary.raw.rds")
-  if (exists("model.secondary.adj")) {
-    write_rds(model.secondary.adj, file = "results/model.secondary.adj.rds")
+if (exists("model.secondary.S1.raw")) {
+  write_rds(model.secondary.S1.raw, file = "03 results/model.secondary.S1.raw.rds")
+  if (exists("model.secondary.S1.adj")) {
+    write_rds(model.secondary.S1.adj, file = "03 results/model.secondary.S1.adj.rds")
+  }
+}
+if (exists("model.secondary.S2.raw")) {
+  write_rds(model.secondary.S2.raw, file = "03 results/model.secondary.S2.raw.rds")
+  if (exists("model.secondary.S2.adj")) {
+    write_rds(model.secondary.S2.adj, file = "03 results/model.secondary.S2.adj.rds")
+  }
+}
+if (exists("model.secondary.S3.raw")) {
+  write_rds(model.secondary.S3.raw, file = "03 results/model.secondary.S3.raw.rds")
+  if (exists("model.secondary.S3.adj")) {
+    write_rds(model.secondary.S3.adj, file = "03 results/model.secondary.S3.adj.rds")
   }
 }
 
-# Exploratory Models (from 51-)
-if (exists("model.exploratory.raw")) {
-  write_rds(model.exploratory.raw, file = "results/model.exploratory.raw.rds")
-  if (exists("model.exploratory.adj")) {
-    write_rds(model.exploratory.adj, file = "results/model.exploratory.adj.rds")
+# Exploratory Models (from 71-)
+if (exists("model.exploratory.E1.raw")) {
+  write_rds(model.exploratory.E1.raw, file = "03 results/model.exploratory.E1.raw.rds")
+  if (exists("model.exploratory.E1.adj")) {
+    write_rds(model.exploratory.E1.adj, file = "03 results/model.exploratory.E1.adj.rds")
   }
 }
 
 # 2. Save Final Table Objects (gtsummary tables) --------------------------
 
 # Primary Tables (from 21-, 32-, 34-)
-write_rds(tab.primary.desc, file = "results/tab.primary.desc.rds") # Always created
-
-if (exists("tab.primary.inf")) {
-  write_rds(tab.primary.inf, file = "results/tab.primary.inf.rds")
+if(exists("tab.baseline")) {
+  write_rds(tab.baseline, file = "03 results/tab.baseline.rds")
 }
-if (exists("tab.primary.inf.full")) {
-  write_rds(tab.primary.inf.full, file = "results/tab.primary.inf.full.rds")
+
+if (exists("tab.primary.P1")) {
+  write_rds(tab.primary.P1, file = "03 results/tab.primary.P1.rds")
+}
+if (exists("tab.primary.P1.full")) {
+  write_rds(tab.primary.P1.full, file = "03 results/tab.primary.P1.full.rds")
 }
 
 # Sensitivity Tables (from 36-)
-if (exists("tab.primary.inf.sens")) {
-  write_rds(tab.primary.inf.sens, file = "results/tab.primary.inf.sens.rds")
+if (exists("tab.primary.P1.sens")) {
+  write_rds(tab.primary.P1.sens, file = "03 results/tab.primary.P1.sens.rds")
 }
-if (exists("tab.primary.inf.full.sens")) {
-  write_rds(tab.primary.inf.full.sens, file = "results/tab.primary.inf.full.sens.rds")
+if (exists("tab.primary.P1.full.sens")) {
+  write_rds(tab.primary.P1.full.sens, file = "03 results/tab.primary.P1.full.sens.rds")
 }
 
 # Secondary Tables (from 42-)
-if (exists("tab.secondary.inf")) {
-  write_rds(tab.secondary.inf, file = "results/tab.secondary.inf.rds")
+if (exists("tab.secondary.S1")) {
+  write_rds(tab.secondary.S1, file = "03 results/tab.secondary.S1.rds")
 }
-if (exists("tab.secondary.inf.full")) {
-  write_rds(tab.secondary.inf.full, file = "results/tab.secondary.inf.full.rds")
+if (exists("tab.secondary.S1.full")) {
+  write_rds(tab.secondary.S1.full, file = "03 results/tab.secondary.S1.full.rds")
+}
+if (exists("tab.secondary.S2")) {
+  write_rds(tab.secondary.S2, file = "03 results/tab.secondary.S2.rds")
+}
+if (exists("tab.secondary.S2.full")) {
+  write_rds(tab.secondary.S2.full, file = "03 results/tab.secondary.S2.full.rds")
+}
+if (exists("tab.secondary.S3")) {
+  write_rds(tab.secondary.S3, file = "03 results/tab.secondary.S3.rds")
+}
+if (exists("tab.secondary.S3.full")) {
+  write_rds(tab.secondary.S3.full, file = "03 results/tab.secondary.S3.full.rds")
 }
 
 # Exploratory Tables (from 52-)
-if (exists("tab.exploratory.inf")) {
-  write_rds(tab.exploratory.inf, file = "results/tab.exploratory.inf.rds")
+if (exists("tab.exploratory.E1")) {
+  write_rds(tab.exploratory.E1, file = "03 results/tab.exploratory.E1.rds")
 }
-if (exists("tab.exploratory.inf.full")) {
-  write_rds(tab.exploratory.inf.full, file = "results/tab.exploratory.inf.full.rds")
+if (exists("tab.exploratory.E1.full")) {
+  write_rds(tab.exploratory.E1.full, file = "03 results/tab.exploratory.E1.full.rds")
 }
 
 # 3. Save Final Plot Objects (ggplot objects) -----------------------------
 
-# Primary Plots (from 33-)
-if (exists("gg.primary.outcome")) {
-  write_rds(gg.primary.outcome, file = "results/gg.primary.outcome.rds")
+# Population Flow (from 22-)
+if (exists("gg.cohort_flow")) {
+  write_rds(gg.cohort_flow, file = "03 results/gg.cohort_flow.rds")
 }
-if (exists("gg.primary.predict")) {
-  write_rds(gg.primary.predict, file = "results/gg.primary.predict.rds")
+
+# Primary Plots (from 33-)
+if (exists("gg.primary.P1.outcome")) {
+  write_rds(gg.primary.P1.outcome, file = "03 results/gg.primary.P1.outcome.rds")
+}
+if (exists("gg.primary.P1.predict")) {
+  write_rds(gg.primary.P1.predict, file = "03 results/gg.primary.P1.predict.rds")
 }
 if (exists("gg.appendix.age")) {
-  write_rds(gg.appendix.age, file = "results/gg.appendix.age.rds")
+  write_rds(gg.appendix.age, file = "03 results/gg.appendix.age.rds")
 }
 
 # Secondary Plots (from 43-)
-if (exists("gg.secondary.outcome")) {
-  write_rds(gg.secondary.outcome, file = "results/gg.secondary.outcome.rds")
+if (exists("gg.secondary.S1.outcome")) {
+  write_rds(gg.secondary.S1.outcome, file = "03 results/gg.secondary.S1.outcome.rds")
 }
-if (exists("gg.secondary.predict")) {
-  write_rds(gg.secondary.predict, file = "results/gg.secondary.predict.rds")
+if (exists("gg.secondary.S1.predict")) {
+  write_rds(gg.secondary.S1.predict, file = "03 results/gg.secondary.S1.predict.rds")
+}
+if (exists("gg.secondary.S2.outcome")) {
+  write_rds(gg.secondary.S2.outcome, file = "03 results/gg.secondary.S2.outcome.rds")
+}
+if (exists("gg.secondary.S2.predict")) {
+  write_rds(gg.secondary.S2.predict, file = "03 results/gg.secondary.S2.predict.rds")
+}
+if (exists("gg.secondary.S3.outcome")) {
+  write_rds(gg.secondary.S3.outcome, file = "03 results/gg.secondary.S3.outcome.rds")
+}
+if (exists("gg.secondary.S3.predict")) {
+  write_rds(gg.secondary.S3.predict, file = "03 results/gg.secondary.S3.predict.rds")
 }
 
-# Exploratory Plots (from 53-)
-if (exists("gg.exploratory.outcome")) {
-  write_rds(gg.exploratory.outcome, file = "results/gg.exploratory.outcome.rds")
+# Exploratory Plots (from 73-)
+if (exists("gg.exploratory.E1.outcome")) {
+  write_rds(gg.exploratory.E1.outcome, file = "03 results/gg.exploratory.E1.outcome.rds")
 }
-if (exists("gg.exploratory.predict")) {
-  write_rds(gg.exploratory.predict, file = "results/gg.exploratory.predict.rds")
+if (exists("gg.exploratory.E1.predict")) {
+  write_rds(gg.exploratory.E1.predict, file = "03 results/gg.exploratory.E1.predict.rds")
 }
 
 # 4. Final list of tables -------------------------------------------------
 
-# We must save the complete object built by the pipeline, not overwrite it.
-if (exists("final.tables.list")) {
-  write_rds(final.tables.list, file = "results/final.tables.list.rds")
-  message(paste("Saved final.tables.list containing", length(final.tables.list), "tables."))
-} else {
-  warning("final.tables.list object was not found. Tables may not be correctly referenced in reports.")
-}
+# # We must save the complete object built by the pipeline, not overwrite it.
+# if (exists("final.tables.list")) {
+#   write_rds(final.tables.list, file = "03 results/final.tables.list.rds")
+#   message(paste("Saved final.tables.list containing", length(final.tables.list), "tables."))
+# } else {
+#   warning("final.tables.list object was not found. Tables may not be correctly referenced in reports.")
+# }

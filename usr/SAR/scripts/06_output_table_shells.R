@@ -17,7 +17,7 @@
 tab.baseline.shell <- data.master.ads %>%
   tbl_summary(
     include = -id,
-    by = exposure
+    by = exposure,
   ) %>%
   add_p() %>%
   # Global placeholder to remove real p-values and statistics
@@ -27,7 +27,7 @@ tab.baseline.shell <- data.master.ads %>%
         # Replace descriptive statistics with placeholders
         across(starts_with("stat_"), ~ "x.xx (x.xx)"),
         # Replace p-values
-        p.value = "x.xxx"
+        # p.value = "x.xxx",
       )
     }
   ) %>%
