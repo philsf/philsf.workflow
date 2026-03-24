@@ -140,16 +140,67 @@ All observational studies are recommended to be reported following the STROBE gu
 
 ## Outcomes
 
-[Analyst Note: ]
+[Analyst Note: Define the dependent variables. Use the Zarin (2011) framework below to ensure each outcome is precise enough to be programmed without ambiguity.]
 
-**Specification of outcome measures** (Zarin, 2011):
+```{r outcomes}
+# --- Define Levels for clarity ---
+# Level 1: Domain
+# Level 2: Specific Measurement
+# Level 3: Specific Metric (End value, Change from baseline, Time-to-event)
+# Level 4: Method of Aggregation (Mean, Proportion, Odds, Hazard, Incidence Rate)
 
-1. (Domain)
-2. (Specific measurement)
-3. (Specific metric)
-4. (Method of aggregation)
+# --- Internal Registry (Scaffold) ---
+# Format: c(Domain, Measurement, Metric, Method of Aggregation)
+
+# Examples
+Ex.RR <- c("Example RR", "Mortality", "Hospital Discharge Status", "End value", "Proportion")
+Ex.OR <- c("Example OR", "Mortality", "ICD-10 Code", "End value", "Odds")
+Ex.HR <- c("Example HR", "Mortality", "ICD-10 Code", "Time-to-event", "Hazard")
+Ex.IR <- c("Example IR", "Mortality", "ICD-10 + Duration", "End value", "Incidence Rate")
+
+# Project Outcomes (Fill these in)
+P1    <- c("Outcome P1", "Domain", "Measurement", "End value", "Method of Aggregation")
+S1    <- c("Outcome S1", "Domain", "Measurement", "End value", "Method of Aggregation")
+S2    <- c("Outcome S2", "Domain", "Measurement", "End value", "Method of Aggregation")
+S3    <- c("Outcome S3", "Domain", "Measurement", "End value", "Method of Aggregation")
+E1    <- c("Outcome E1", "Domain", "Measurement", "End value", "Method of Aggregation")
+
+# --- Combine and Format ---
+# Using as.data.frame + t() to ensure row-wise binding with labels
+outcomes <- rbind(
+  Ex.RR,
+  Ex.OR,
+  Ex.HR,
+  Ex.IR,
+  P1,
+  S1,
+  S2,
+  S3,
+  E1
+) %>% as_tibble(.name_repair = "minimal")
+
+colnames(outcomes) <- c("Outcome", "Domain (L1)", "Measurement (L2)", "Metric (L3)", "Method of Aggregation (L4)")
+
+# --- Render Table ---
+# Toggle this block to 'eval: false' or comment out for client delivery
+knitr::kable(
+  outcomes,
+  caption = "Zarin (2011) Outcome Specification Scaffold (Internal Use Only)",
+  align = "cllll",
+)
+```
 
 **Primary outcome**
+
+**Secondary outcomes**
+
+- "Outcome S1"
+- "Outcome S2"
+- "Outcome S3
+
+**Exploratory outcomes**
+
+- "Outcome E1"
 
 ## Covariates
 
