@@ -9,6 +9,9 @@
 * Set current version number in all versioned files #18
 * Refactor SAR template #207
 * Refactor SAP template for Observational Studies #205
+* Template outcome specifications #178
+* final touches/fixes before release v1.0.0 #241
+* QC checklists #237
 
 # philsf.workflow 0.15.3
 
