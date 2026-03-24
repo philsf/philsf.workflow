@@ -1,5 +1,5 @@
-# ============================================================
-# Script:   35_analysis_primary_sensitivity.R
+# ************************************************************
+# Script:   35_analysis_primary1_sensitivity.R
 # Purpose:  Fit the primary statistical model(s) and save the raw model object.
 #
 # Note:     To be uncommented when used.
@@ -8,10 +8,9 @@
 # Author:   Felipe Figueiredo
 # Created:  2025-10-20
 #
-# ------------------------------------------------------------
+# ************************************************************
 # QC Date:  YYYY-MM-DD
-# ------------------------------------------------------------
-# ============================================================
+# ************************************************************
 
 data.sens.ads <- data.master.ads # placeholder for template internal consistency
 

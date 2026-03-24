@@ -1,17 +1,16 @@
-# ============================================================
-# Script:   21_output_descriptive_table.R
-# Purpose:  Create the primary descriptive table (e.g., Table 1).
+# ************************************************************
+# Script:   21_output_baseline_table.R
+# Purpose:  Create the Participant Characteristics table (e.g., Table 1).
 #
-# Note:     Uses the master ADS (data.master.ads) created in 10_data_prep.R, optionally data.descriptive.ads from 20_data_descriptive_ads.R
+# Note:     N/A
 #
 # Version:  0.xx.x
 # Author:   Felipe Figueiredo
 # Created:  YYYY-MM-DD
 #
-# ------------------------------------------------------------
+# ************************************************************
 # QC Date:  YYYY-MM-DD
-# ------------------------------------------------------------
-# ============================================================
+# ************************************************************
 
 # 1. Primary Descriptive Table (Table 1) ----------------------------------
 

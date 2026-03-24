@@ -1,6 +1,6 @@
-# ============================================================
-# Script:   42_output_secondary_table.R
-# Purpose:  Create the secondary Inferential Table (Table 4) by formatting
+# ************************************************************
+# Script:   42_output_secondary1_table.R
+# Purpose:  Create the Secondary Analysys 1 Table by formatting
 #           raw model objects from 41_analysis_secondary_model.R
 # Note:     N/A
 #
@@ -8,10 +8,9 @@
 # Author:   Felipe Figueiredo
 # Created:  2025-10-20
 #
-# ------------------------------------------------------------
+# ************************************************************
 # QC Date:  YYYY-MM-DD
-# ------------------------------------------------------------
-# ============================================================
+# ************************************************************
 
 # 1. Secondary Inferential Table (e.g., Table 4 - Reduced) -----------------
 # Uses the helper functions (tab, tab_adj) defined in 00_setup_global.R

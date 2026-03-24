@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# ============================================================
+# ************************************************************
 # Script:   SAR-remote-set-github
 # Purpose:  Create a new private GitHub repository, push local contents,
 #           and initialize standard issue tracking boilerplate for the project.
@@ -11,10 +11,9 @@
 # Author:   Felipe Figueiredo
 # Created:  2025-11-11
 #
-# ------------------------------------------------------------
+# ************************************************************
 # QC Date:  YYYY-MM-DD
-# ------------------------------------------------------------
-# ============================================================
+# ************************************************************
 
 # Extracts the current directory name (e.g., 'SAR-2024-042-MM')
 SAR=${PWD##*/} # local dir

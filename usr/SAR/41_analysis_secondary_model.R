@@ -1,5 +1,5 @@
-# ============================================================
-# Script:   41_analysis_secondary_model.R
+# ************************************************************
+# Script:   41_analysis_secondary1_model.R
 # Purpose:  Fit the secondary statistical model(s) and save the raw model object.
 #
 # Note:     May be used to include subgroup analyses.
@@ -8,10 +8,9 @@
 # Author:   Felipe Figueiredo
 # Created:  2025-10-20
 #
-# ------------------------------------------------------------
+# ************************************************************
 # QC Date:  YYYY-MM-DD
-# ------------------------------------------------------------
-# ============================================================
+# ************************************************************
 
 # 1. secondary Model (Unadjusted) -------------------------------------------
 # Use the formula defined in 00_setup_global.R
