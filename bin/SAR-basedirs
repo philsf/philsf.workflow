@@ -15,4 +15,4 @@
 # QC Date:  YYYY-MM-DD
 # ************************************************************
 
-mkdir -p dataset figures report/{misc,tables} scripts results
+mkdir -p "01 dataset" "02 scripts" "03 results" "04 outputs" "05 documents/misc"

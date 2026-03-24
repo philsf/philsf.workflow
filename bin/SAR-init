@@ -20,11 +20,11 @@ SAR_CODE=${SAR/SAR-/""}
 
 #echo "Initializing repository: $SAR"
 git init #>/dev/null
-git add .gitignore README.md "$SAR.Rproj" scripts Portfolio.md report
+git add .gitignore README.md "$SAR.Rproj" "02 scripts" Portfolio.md "05 documents"
 git commit -m "Initial commit" >/dev/null
 
 # initialize data repo
-git init dataset/
+git init "01 dataset"/
 
 # protect data by default
 echo "Client dataset made private by default (revert to open data)"
