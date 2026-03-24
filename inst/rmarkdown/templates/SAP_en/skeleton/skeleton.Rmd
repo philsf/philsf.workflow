@@ -260,25 +260,23 @@ knitr::kable(
 
 [Analyst Note: Describe how raw data becomes analytic variables. Do not write R code here; use plain English or pseudocode (e.g., "BMI = Weight(kg) / Height(m)^2" or "Smoking Status = 'Ever' if 'Current' or 'Former'"). Document Regex logic for text-mining here.]
 
-# Data
+# Data Management
 
-## Data Source
+## Data Sources
 
-[Analyst Note: File names, years, versioning, and acquisition method]
+[Analyst Note: Dataset(s)/Database(s) name(s) and origin]
 
-## Data Management
-
-### Data Cleaning and Processing
+## Data Cleaning and Processing
 
 [Analyst Note: Recoding, class coercions, standardized naming]
 
-### Data Validation
+## Data Validation
 
 [Analyst Note: Range/logic checks, auditing for "impossible" values]
 
-### Data Flow
+## Linkage Methods
 
-[Analyst Note: The journey from raw N to analytic N by applying Section 3.4 Study Population Definitions]
+[Analyst Note: The procedures used to join multiple databases, if applicable. Use N/A if the study uses a single dataset.]
 
 # Statistical Analyses Methods
 
