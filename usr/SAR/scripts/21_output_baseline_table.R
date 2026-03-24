@@ -6,33 +6,37 @@
 #
 # Version:  0.xx.x
 # Author:   Felipe Figueiredo
-# Created:  YYYY-MM-DD
+# Created:  2025-11-14
 #
 # ************************************************************
 # QC Date:  YYYY-MM-DD
 # ************************************************************
 
-# 1. Primary Descriptive Table (Table 1) ----------------------------------
+# Participant Characteristics Table ---------------------------------------
 
-# Ensure you use the new object name: data.master.ads
-tab.primary.desc <- data.master.ads %>%
+foot.baseline <- NA_character_
+
+tab.baseline <- data.baseline.ads %>%
   # Start with your existing table logic from describe.R
   tbl_summary(
     include = -id,
-    # by = exposure, # Uncomment if you want stratification
+    by = exposure, # Comment for single-arm study, and remove add_overall()
+    missing_text = "Missing",
+    missing_stat = "{N_miss} ({p_miss}%)",
   ) %>%
   # Apply final formatting (e.g., adding footnotes, headers)
   # modify_table_styling(columns = "label", align = "center") %>%
   # bold_labels() %>% # bolding is preferably done in the document template
   # modify_header(label ~ "...") %>%
-  modify_footnote()
-
-# NOTE: The resulting object is named tab.primary.desc
-# It is now ready to be saved by 95_cache_results.R
+  add_overall() %>%
+  modify_footnote_header(
+    footnote = foot.baseline,
+    replace = FALSE,
+  )
 
 # 2. Final Tables List ----------------------------------------------------
 
 # Create a list of all tables for easy reference later
-final.tables.list <- list(
-  "Table 1: Baseline"           = tab.primary.desc
-)
+# final.tables.list <- list(
+#   "Table 1: Baseline"           = tab.primary.desc
+# )

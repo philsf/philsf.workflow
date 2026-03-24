@@ -1,5 +1,5 @@
 # ************************************************************
-# Script:   40_data_secondary_ads.R
+# Script:   50_data_secondary2_ads.R
 # Purpose:  Create the Secondary Analysis Dataset (ADS).
 #
 # Note:     N/A
@@ -12,14 +12,14 @@
 # QC Date:  YYYY-MM-DD
 # ************************************************************
 
-data.secondary1.ads <- data.master.ads %>%
+data.secondary2.ads <- data.master.ads %>%
   mutate(
-    outcome.S1 = as_factor(outcome.S1),
+    # outcome.S2 = as_factor(outcome.S2),
   ) %>%
   select(
     id,
     exposure,
-    outcome.S1,
+    outcome.S2,
     age,
     sex,
     everything(),
@@ -27,5 +27,5 @@ data.secondary1.ads <- data.master.ads %>%
   ## Complete Case Set
   drop_na(
     exposure,
-    outcome.S1,
+    outcome.S2,
   )

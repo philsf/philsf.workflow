@@ -12,7 +12,7 @@
 # QC Date:  YYYY-MM-DD
 # ************************************************************
 
-tab.primary.inf <- data.master.ads %>%
+tab.primary.P1 <- data.master.ads %>%
   tbl_summary(
     include = -id,
     by = exposure,
@@ -28,7 +28,7 @@ add_p(
   test = all_categorical() ~ "fisher.test",
   # use 3 digits in pvalue
   pvalue_fun = function(x) style_pvalue(x, digits = 3),
-) %>%
+  ) %>%
 
 # OPTION 2: Effect Size or Mean Difference (add_difference) ---------------
 
@@ -48,13 +48,16 @@ add_p(
   # modify_table_styling(columns = "label", align = "center") %>%
   # bold_labels() %>% # bolding is preferably done in the document template
   # modify_header(label ~ "...") %>%
-  modify_footnote()
+  modify_footnote_header(
+    footnote = NA_character_,
+    replace = FALSE,
+  )
 
 # 2. Final Tables List ----------------------------------------------------
 
 # Update the list of all tables for easy reference later
 # final.tables.list <- list(
 #   "Table 1: Baseline" = tab.primary.desc,
-#   "Table 2: Primary Inference" = tab.primary.inf
+#   "Table 2: Primary Inference" = tab.primary.P1
 # )
-final.tables.list[["Table 2: Primary Inference"]] <- tab.primary.inf
+# final.tables.list[["Table 2: Primary Inference"]] <- tab.primary.P1

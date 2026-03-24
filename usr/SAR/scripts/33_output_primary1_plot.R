@@ -1,8 +1,8 @@
 # ************************************************************
 # Script:   33_output_primary1_plot.R
-# Purpose:  Create the figures for the Primary Objective
+# Purpose:  Create the figures for the Primary Objective 1
 #
-# Note:     Use the gg.template base plot defined in 00-
+# Note:     N/A
 #
 # Version:  0.xx.x
 # Author:   Felipe Figueiredo
@@ -12,48 +12,38 @@
 # QC Date:  YYYY-MM-DD
 # ************************************************************
 
-# 1. Primary Outcome by exposure Figure (e.g., Figure 1) ------------------
+# Outcome by Exposure --------------------------------------------------
 
-gg.primary.outcome <- data.master.ads %>%
+gg.primary.P1.outcome <- data.primary1.ads %>%
+  mutate(outcome.P1 = factor(outcome.P1)) %>%
+  mutate(exposure = factor(exposure)) %>%
   gg.template() +
-  aes(outcome, fill = exposure) +
-  geom_density(alpha = .8) +
-  # Apply themes/labels defined in 00_setup_global.R
-  # gg.template +
+
+  # # continuous
+  # aes(outcome.P1, fill = exposure) + xlab(lab.outcome.P1) + labs(fill = lab.exposure) +
+  # geom_density(alpha = .8) + ylab("Distribution density") +
+
+  # categorical
+  aes(exposure, fill = outcome.P1) + xlab(lab.exposure) + labs(fill = lab.outcome.P1) +
+  geom_bar(position = "fill") + ylab("Participants") +
+  scale_y_continuous(labels = scales::label_percent()) +
+
   labs(
-    x = lab.primary.outcome
+    caption = paste0("N = ", style_number(nrow(data.primary1.ads))),
   )
 
-gg.primary.outcome
+gg.primary.P1.outcome
 
-# 2. Model effects plot ---------------------------------------------------
+# Model effects plot ------------------------------------------------------
 
 # Only create this model-based plot if the model object exists
-if (exists("model.primary.adj")) {
+if (exists("model.primary.P1.adj")) {
   # This block will run in the Multivariate Gig but be skipped in the Univariate Gig
-  gg.primary.predict <- model.primary.adj %>% effect_plot()
+  gg.primary.P1.predict <- model.primary.P1.adj %>%
+    effect_plot(
+      outcome = "outcome.P1",
+      exposure = "exposure",
+    )
+  gg.primary.P1.predict
 }
 
-gg.primary.predict
-
-# 99. Age by Sex Figure (e.g., Figure A1) ---------------------------------
-
-gg.appendix.age <- data.master.ads %>%
-  gg.template() +
-  aes(age, fill = sex) +
-  geom_density(alpha = .9) +
-  labs(
-    x = attr(data.master.ads$age, "label"),
-    y = "Distribution density",
-    fill = attr(data.master.ads$sex, "label"),
-  )
-
-gg.appendix.age
-
-# cool facet trick from https://stackoverflow.com/questions/3695497 by JWilliman
-# gg +
-#   geom_histogram(bins = 5, aes(outcome, y = ..count../tapply(..count.., ..PANEL.., sum)[..PANEL..]), fill = ff.col) +
-#   scale_y_continuous(labels = scales::label_percent(accuracy = 1)) +
-#   xlab(attr(data.master.ads$outcome, "label")) +
-#   ylab("") +
-#   facet_wrap(~ exposure, ncol = 2)

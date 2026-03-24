@@ -2,7 +2,7 @@
 # Script:   37_output_primary1_sens_plot.R
 # Purpose:  Create the figures for the Sensitivity Analysis
 #
-# Note:     Use the gg.template base plot defined in 00-
+# Note:     N/A
 #
 # Version:  0.xx.x
 # Author:   Felipe Figueiredo
@@ -19,7 +19,7 @@ if (exists("model.primary.P1.adj.sens")) {
   # This block will run in the Multivariate Gig but be skipped in the Univariate Gig
   gg.primary.P1.sens.predict <- model.primary.P1.adj.sens %>%
     effect_plot(
-      outcome = "outcome",
+      outcome = "outcome.P1",
       exposure = "exposure"
     )
   gg.primary.P1.sens.predict

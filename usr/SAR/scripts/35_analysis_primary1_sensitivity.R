@@ -1,8 +1,8 @@
 # ************************************************************
 # Script:   35_analysis_primary1_sensitivity.R
-# Purpose:  Fit the primary statistical model(s) and save the raw model object.
+# Purpose:  Fit the Sensitivity 1 statistical model(s)
 #
-# Note:     To be uncommented when used.
+# Note:     N/A
 #
 # Version:  0.xx.x
 # Author:   Felipe Figueiredo
@@ -12,25 +12,25 @@
 # QC Date:  YYYY-MM-DD
 # ************************************************************
 
-data.sens.ads <- data.master.ads # placeholder for template internal consistency
+data.primary1.sens.ads <- data.master.ads[-c(21, 41), ] # model.primary.P1.adj %>% performance::check_outliers(threshold = list(cook=.1))
 
 # 1. Primary Model (Unadjusted) -------------------------------------------
 # Use the formula defined in 00_setup_global.R
 # This is typically the raw or unadjusted model
 
-model.primary.raw.sens <- glm(
-  formula = formula.primary.raw,
-  data = data.sens.ads,
-  family = gaussian(link = "identity") # Customize family/link as needed
+model.primary.P1.raw.sens <- glm(
+  formula = formula.primary.P1.raw,
+  family = binomial(link = "logit"),
+  data = data.primary1.sens.ads,
 )
 
 # 2. Primary Model (Adjusted) ---------------------------------------------
 # If an adjusted model is pre-specified in the SAP
 
-model.primary.adj.sens <- glm(
-  formula = formula.primary.adj,
-  data = data.sens.ads,
-  family = gaussian(link = "identity")
+model.primary.P1.adj.sens <- glm(
+  formula = formula.primary.P1.adj,
+  family = binomial(link = "logit"),
+  data = data.primary1.sens.ads,
 )
 
 # NOTE: No gtsummary or plotting functions should be used here.

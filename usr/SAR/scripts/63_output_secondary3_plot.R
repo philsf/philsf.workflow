@@ -1,6 +1,6 @@
 # ************************************************************
-# Script:   43_output_secondary_plot.R
-# Purpose:  Create the figures for the Secondary Objective 1
+# Script:   63_output_secondary3_plot.R
+# Purpose:  Create the figures for the Secondary Objective 3
 #
 # Note:     N/A
 #
@@ -14,34 +14,34 @@
 
 # 1. Outcome by Exposure --------------------------------------------------
 
-gg.secondary.S1.outcome <- data.secondary1.ads %>%
+gg.secondary.S3.outcome <- data.secondary3.ads %>%
   gg.template +
 
   # # continuous
-  # aes(outcome.S1, fill = exposure) + xlab(lab.outcome.S1) + labs(fill = lab.exposure) +
+  # aes(outcome.S3, fill = exposure) + xlab(lab.outcome.S3) + labs(fill = lab.exposure) +
   # geom_density(alpha = .8) + ylab("Distribution density") +
 
   # categorical
-  aes(exposure, fill = outcome.S1) + xlab(lab.exposure) + labs(fill = lab.outcome.S1) +
+  aes(exposure, fill = outcome.S3) + xlab(lab.exposure) + labs(fill = lab.outcome.S3) +
   geom_bar(position = "fill") + ylab("Participants") +
   scale_y_continuous(labels = scales::label_percent()) +
 
   labs(
-    caption = paste0("N = ", style_number(nrow(data.secondary1.ads))),
+    caption = paste0("N = ", style_number(nrow(data.secondary3.ads))),
   )
 
-gg.secondary.S1.outcome
+gg.secondary.S3.outcome
 
 # 2. Model effects plot ---------------------------------------------------
 
 # Only create this model-based plot if the model object exists
-if (exists("model.secondary.S1.adj")) {
+if (exists("model.secondary.S3.adj")) {
   # This block will run in the Multivariate Gig but be skipped in the Univariate Gig
-  gg.secondary.S1.predict <- model.secondary.S1.adj %>%
+  gg.secondary.S3.predict <- model.secondary.S3.adj %>%
     effect_plot(
-      outcome = "outcome.S1",
+      outcome = "outcome.S3",
       exposure = "exposure"
     )
-  gg.secondary.S1.predict
+  gg.secondary.S3.predict
 }
 

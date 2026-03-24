@@ -1,6 +1,6 @@
 # ************************************************************
 # Script:   31_analysis_primary1_model.R
-# Purpose:  Fit the primary statistical model(s) and save the raw model object.
+# Purpose:  Fit the primary 1 statistical model(s)
 #
 # Note:     N/A
 #
@@ -16,23 +16,24 @@
 # Use the formula defined in 00_setup_global.R
 # This is typically the raw or unadjusted model
 
-model.primary.raw <- glm(
-  formula = formula.primary.raw,
-  data = data.master.ads,
-  family = gaussian(link = "identity") # Customize family/link as needed
+model.primary.P1.raw <- glm(
+  formula = formula.primary.P1.raw,
+  # family = gaussian(link = "identity"), # Customize family/link as needed
+  family = binomial(link = "logit"), # Customize family/link as needed
+  data = data.primary1.ads,
 )
 
 # 2. Primary Model (Adjusted) ---------------------------------------------
 # If an adjusted model is pre-specified in the SAP
 
-model.primary.adj <- glm(
-  formula = formula.primary.adj,
-  data = data.master.ads,
-  family = gaussian(link = "identity")
+model.primary.P1.adj <- glm(
+  formula = formula.primary.P1.adj,
+  family = binomial(link = "logit"), # Customize family/link as needed
+  data = data.primary1.ads,
 )
 
 # NOTE: No gtsummary or plotting functions should be used here.
-# These raw objects (model.primary.raw, model.primary.adj)
+# These raw objects (model.primary.P1.raw, model.primary.P1.adj)
 # will be formatted into final tables/figures in 32- and 33- scripts.
 
 # 3. Model diagnostics ----------------------------------------------------
@@ -42,39 +43,39 @@ model.primary.adj <- glm(
 # 1. Global Diagnostic Report (Requires library(performance) in 00-):
 #    - For GLMs (logistic, Poisson), this uses appropriate residuals (e.g., Dunn-Smyth).
 #    - For LMs (gaussian), this provides standard assumption checks.
-model.primary.adj %>% performance::check_model()
-model.primary.adj %>% performance::r2()
+model.primary.P1.adj %>% performance::check_model()
+model.primary.P1.adj %>% performance::r2()
 
 # # 2. Linear models
 # # Normality of Residuals
-# model.primary.adj %>% performance::check_normality()
-# model.primary.adj %>% car::qqPlot()
+# model.primary.P1.adj %>% performance::check_normality()
+# model.primary.P1.adj %>% car::qqPlot()
 # # Homoscedasticity (Variance Homogeneity)
-# model.primary.adj %>% car::ncvTest()
+# model.primary.P1.adj %>% car::ncvTest()
 
 # # 2'. Logistic GLMs
 # # Goodness-of-Fit (Calibration)
-# model.primary.adj%>% performance::check_hosmerlemeshow()
+# model.primary.P1.adj%>% performance::check_hosmerlemeshow()
 # # Discrimination / C-statistic/ ROC-AUC
-# model.primary.adj%>% performance::performance_auc()
+# model.primary.P1.adj%>% performance::performance_auc()
 
 # # 2''. Poisson vs Negative Binomial models
-# model.primary.raw %>% AER::dispersiontest()
-# model.primary.adj %>% AER::dispersiontest()
+# model.primary.P1.raw %>% AER::dispersiontest()
+# model.primary.P1.adj %>% AER::dispersiontest()
 
 # 3. Collinearity Check
-model.primary.adj %>% car::vif()
+model.primary.P1.adj %>% car::vif()
 
 # 4. Influence/Leverage/Outliers
-model.primary.adj %>% car::outlierTest()
-model.primary.adj %>% broom::augment() %>% slice_max(.cooksd, n = 5) # Highest influence / extreme response
-model.primary.adj %>% broom::augment() %>% slice_max(.hat,    n = 5) # Highest leverage  / extreme predictor
+model.primary.P1.adj %>% car::outlierTest()
+model.primary.P1.adj %>% broom::augment() %>% slice_max(.cooksd, n = 5) # Highest influence / extreme response
+model.primary.P1.adj %>% broom::augment() %>% slice_max(.hat,    n = 5) # Highest leverage  / extreme predictor
 
 # 5. Model Comparison
-anova(model.primary.raw, model.primary.adj)
+anova(model.primary.P1.raw, model.primary.P1.adj)
 
 # APPENDIX CHECKS: Full Diagnostics Plots (ggfortify)
 
 # Full Diagnostic Plots (Good for Appendix/Internal QC)
-model.primary.raw %>% autoplot()
-model.primary.adj %>% autoplot()
+# model.primary.P1.raw %>% autoplot()
+# model.primary.P1.adj %>% autoplot()

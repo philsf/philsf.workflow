@@ -1,8 +1,8 @@
 # ************************************************************
-# Script:   53_output_exploratory_plot.R
-# Purpose:  Create the figures for the exploratory Objective
+# Script:   73_output_exploratory1_plot.R
+# Purpose:  Create the figures for the Exploratory Analysis 1
 #
-# Note:     Use the gg.template base plot defined in 00-
+# Note:     N/A
 #
 # Version:  0.xx.x
 # Author:   Felipe Figueiredo
@@ -12,46 +12,39 @@
 # QC Date:  YYYY-MM-DD
 # ************************************************************
 
-# 1. Exploratory Outcome by exposure Figure (e.g., Figure 1) ------------------
+# 1. Outcome by Exposure --------------------------------------------------
 
-gg.exploratory.outcome <- data.master.ads %>%
+# survival::survfit(Surv(time.E1, outcome.E1)~1, data.mock.ads) %>% ggsurvfit::ggsurvfit(theme = theme_ff(), col = ff.col)
+# survival::survfit(Surv(time.E1, outcome.E1)~strata(sex), data.mock.ads) %>% ggsurvfit::ggsurvfit(theme = theme_ff(), col = ff.col)
+
+gg.exploratory.E1.outcome <- data.exploratory1.ads %>%
+  mutate(outcome.E1 = factor(outcome.E1)) %>%
   gg.template() +
-  aes(outcome, fill = exposure) +
-  geom_density(alpha = .8) +
-  # Apply themes/labels defined in 00_setup_global.R
-  # gg.template +
+
+  # # continuous
+  # aes(outcome.E1, fill = exposure) + xlab(lab.outcome.E1) + labs(fill = lab.exposure) +
+  # geom_density(alpha = .8) + ylab("Distribution density") +
+
+  # categorical
+  aes(exposure, fill = outcome.E1) + xlab(lab.exposure) + labs(fill = lab.outcome.E1) +
+  geom_bar(position = "fill") + ylab("Participants") +
+  scale_y_continuous(labels = scales::label_percent()) +
+
   labs(
-    x = lab.exploratory.outcome
+    caption = paste0("N = ", style_number(nrow(data.exploratory1.ads))),
   )
 
-gg.exploratory.outcome
+gg.exploratory.E1.outcome
 
 # 2. Model effects plot ---------------------------------------------------
 
 # Only create this model-based plot if the model object exists
-if (exists("model.exploratory.adj")) {
+if (exists("model.exploratory.E1.adj")) {
   # This block will run in the Multivariate Gig but be skipped in the Univariate Gig
-  gg.exploratory.predict <- model.exploratory.adj %>% effect_plot()
+  gg.exploratory.E1.predict <- model.exploratory.E1.adj %>%
+    effect_plot(
+      outcome = "outcome.E1",
+      exposure = "exposure",
+    )
+  gg.exploratory.E1.predict
 }
-
-# 99. Age by Sex Figure (e.g., Figure A1) ---------------------------------
-
-gg.appendix.age <- data.master.ads %>%
-  gg.template() +
-  aes(age, fill = sex) +
-  geom_density(alpha = .9) +
-  labs(
-    x = attr(data.master.ads$age, "label"),
-    y = "Distribution density",
-    fill = attr(data.master.ads$sex, "label"),
-  )
-
-gg.appendix.age
-
-# cool facet trick from https://stackoverflow.com/questions/3695497 by JWilliman
-# gg +
-#   geom_histogram(bins = 5, aes(outcome, y = ..count../tapply(..count.., ..PANEL.., sum)[..PANEL..]), fill = ff.col) +
-#   scale_y_continuous(labels = scales::label_percent(accuracy = 1)) +
-#   xlab(attr(analytical$outcome, "label")) +
-#   ylab("") +
-#   facet_wrap(~ exposure, ncol = 2)
