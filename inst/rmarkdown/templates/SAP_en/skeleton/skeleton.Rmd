@@ -111,6 +111,7 @@ source(here("02 scripts", "96_load_cached_results.R"), encoding = 'UTF-8')
 - LogMM: Logistic Mixed Model
 - MCAR: Missing Completely at Random
 - MAR: Missing at Random
+- MICE: Multiple Imputation by Chained Equations
 - MNAR: Missing Not at Random
 - OR: Odds Ratio
 - ROC: Receiver Operating Curve
@@ -329,14 +330,21 @@ mean (SD)
 <!-- median (IQR) -->
 or as counts and proportions (%), as appropriate.
 The distributions of participants' characteristics will be summarized in tables and visualized in exploratory plots.
+Missing data will be reported in tables as counts and proportions (%).
 
-## Handling of Missing Data
+## Missing Data Handling
 
-[Analyst Note: Imputation vs. Exclusion rules—the "How-to"]
+[Analyst Note: Follow a tiered approach (Van Buuren, 2018). <5%: CCA. 5-20%: MI. 20-40%: MI + Sensitivity. >40%: Drop.]
 
 No missing data imputation will be performed.
 All evaluations will be performed as complete case analyses.
-Missing data counts and proportions will be reported in tables.
+
+<!-- Variables with missingness exceeding 40% will be excluded from multivariable adjustment due to high informational noise and potential model instability. -->
+<!-- If all remaining variables have at most 5% missing data, no missing data imputation will be performed and all evaluations will be performed as complete case analyses (Van Buuren, 2018). -->
+<!-- If there are variables with 5% to 40% missingness, Multiple Imputation by Chained Equations (MICE) with 40 iterations will be employed to preserve statistical power and minimize selection bias (White et al., 2011). -->
+<!-- The mechanism of missingness will be assumed to be Missing At Random (MAR). -->
+
+<!-- A sensitivity analysis comparing CCA and MI results will be mandatory only if there are variables where missingness exceeds 20%, or for the primary outcome regardless of the missingness level. -->
 
 ## Analysis of Primary Objective
 
