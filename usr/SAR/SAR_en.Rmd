@@ -21,6 +21,7 @@ output:
     keep_md: yes
     reference_docx: misc/style_SAR_en.docx
     toc: yes
+toc-title: "Table of Contents"
 ---
 
 ```{r setup, include=FALSE}
@@ -60,19 +61,28 @@ ind.table.app <- 0
 **Document version**
 
 ```{r history}
-Version <- c("01")
-Changes <- c("Initial version")
-history <- cbind(Version, Changes)
-colnames(history) <- c("Version", "Alterations")
-# pander(history, split.cells = 70)
-kable(history)
+# Define each version as an atomic row
+v1 <- c("01", "YYYY-MM-DD", "Initial version.")
+
+# Bind rows together
+# Using naming in rbind automatically sets the row labels if needed, 
+# but here we just want a clean table.
+# Convert to data frame and set names
+history <- tibble::as_tibble(rbind(v1), .name_repair = "minimal")
+colnames(history) <- c("Version", "Date", "Alterations")
+
+# Render
+knitr::kable(
+  history,
+  align = "ccl",
+)
 ```
 
 ```{r results, include=FALSE}
 # Load cached results (Table 1, Table 2, Plots, etc.)
 # This ensures all analysis outputs are available when compiling the report.
 # Source 96- will safely check for and load all objects.
-source(here("scripts", "96_load_cached_results.R"), encoding = 'UTF-8')
+source(here("02 scripts", "96_load_cached_results.R"), encoding = 'UTF-8')
 ```
 
 ---
@@ -118,177 +128,286 @@ This analysis was performed using statistical software `R` version `r getRversio
 
 [Analyst Note: This section must contain the STROBE/CONSORT flow diagram illustrating the sequential application of inclusion/exclusion criteria defined in the Methods to reach the final analytic population.]
 
+Figure
+1
+shows the application of all eligibility criteria to the study population.
+
+```{r flow, fig.cap="**Figure 1** Flowchart of eligibility criteria."}
+# Figure 1: Primary Outcome Descriptive Plot
+knitr::include_graphics(here("04 outputs", "Flowchart.png"), error = FALSE)
+```
+
 ## Baseline characteristics
 
 ```{r ind_baseline}
-if (exists("tab.primary.desc")) {
-  ind.table.body <- ind.table.body + 1
-  tab.primary.desc.ind <- ind.table.body
-}
+ind.table.body <- ind.table.body + 1
+tab.baseline.ind <- ind.table.body
 ```
 
 Table
-`r tab.primary.desc.ind`
+`r tab.baseline.ind`
 shows the baseline characteristics of the study population.
 
-```{r tab_baseline}
-tab.primary.desc.cap <- "Baseline characteristics of the study population."
+```{r tab.baseline}
+tab.baseline.cap <- "Baseline characteristics of the study population."
 # Table 1: Descriptive table (created by 21_output_descriptive_table.R)
-if (exists("tab.primary.desc")) {
-  tab.primary.desc %>%
+# if (exists("tab.baseline")) {
+  tab.baseline %>%
     render_table(
-      table_index = tab.primary.desc.ind,
-      caption     = tab.primary.desc.cap
+      table_index = tab.baseline.ind,
+      caption     = tab.baseline.cap
       )
-}
+# }
 ```
 
 ## Primary Analysis
 
-```{r ind_primary}
-if (exists("tab.primary.inf")) {
-  ind.table.body <- ind.table.body + 1
-  tab.primary.inf.ind <- ind.table.body
-}
+```{r ind.primary}
+ind.table.body <- ind.table.body + 1
+tab.primary.P1.ind <- ind.table.body
 ```
 
 This section presents the results for the primary objective.
 
 Figure
-1
+2
 shows the distribution of
 the primary outcome
 in the study population.
 
-```{r fig_primary_outcome_dist, fig.cap="**Figure 1** Distribution of the primary outcome in the study population."}
-# Figure 1: Primary Outcome Descriptive Plot (created by 91_outputs_plots.R)
-knitr::include_graphics(here("figures", "Figure_1_Primary_Outcome.png"), error = FALSE)
+```{r fig_primary_outcome_dist, fig.cap="**Figure 2** Distribution of the primary outcome in the study population."}
+# Figure: Primary Outcome Descriptive Plot
+knitr::include_graphics(here("04 outputs", "Primary1_Outcome.png"), error = FALSE)
 ```
 
 Table
-`r tab.primary.inf.ind`
+`r tab.primary.P1.ind`
 shows the unadjusted and adjusted estimates for the
 primary
 analysis.
 
 ```{r tab_primary, results='asis'}
-tab.primary.inf.cap <- "Primary outcome analysis."
-# Table 2: Primary Inferential Table (created by 32_output_primary_table.R)
-if (exists("tab.primary.inf")) {
-    tab.primary.inf %>%
+tab.primary.P1.cap <- "Primary outcome analysis."
+# Table 2: Primary Analysis Table (created by 32_output_primary_table.R)
+if (exists("tab.primary.P1")) {
+    tab.primary.P1 %>%
     render_table(
-      table_index = tab.primary.inf.ind,
-      caption     = tab.primary.inf.cap
+      table_index = tab.primary.P1.ind,
+      caption     = tab.primary.P1.cap
       )
 }
 ```
 
 Figure
-2
+3
 shows the
 adjusted estimates for the effect of
 the primary outcome
 analysis.
 
-```{r fig_primary_model_predict, fig.cap="**Figure 2** Primary outcome effect plot."}
-# Figure 2: Primary model prediction plot (created by 91_outputs_plots.R)
-knitr::include_graphics(here("figures", "Figure_2_Primary_Predict.png"), error = FALSE)
+```{r fig_primary_model_predict, fig.cap="**Figure 3** Primary outcome effect plot."}
+# Figure: Primary model prediction plot
+knitr::include_graphics(here("04 outputs", "Primary1_Predict.png"), error = FALSE)
 ```
 
-## Secondary Analysis
+## Secondary Analysis 1
 
 [Analyst Note: remove this section if not scoped]
 
-```{r ind_secondary}
-if (exists("tab.secondary.inf")) {
-  ind.table.body <- ind.table.body + 1
-  tab.secondary.inf.ind <- ind.table.body
-}
+```{r ind_secondary1}
+ind.table.body <- ind.table.body + 1
+tab.secondary.S1.ind <- ind.table.body
 ```
 
 This section presents the results for the secondary objectives.
 
 Figure
-3
+4
 shows the distribution of
 the secondary outcome
 in the study population.
 
-```{r fig_secondary_outcome_dist, fig.cap="**Figure 3** Distribution of the secondary outcome in the study population."}
-# Figure 3: Secondary Outcome Descriptive Plot (created by 91_outputs_plots.R)
-knitr::include_graphics(here("figures", "Figure_3_Secondary_Outcome.png"), error = FALSE)
+```{r fig_secondary1_outcome, fig.cap="**Figure 4** Distribution of the secondary outcome 1 in the study population."}
+# Figure: Secondary Outcome 1 Descriptive Plot
+knitr::include_graphics(here("04 outputs", "Secondary1_Outcome.png"), error = FALSE)
 ```
 
 Table
-`r tab.secondary.inf.ind`
+`r tab.secondary.S1.ind`
 shows the unadjusted and adjusted estimates for the
 secondary
 analysis.
 
-```{r tab_secondary, results='asis'}
-tab.secondary.inf.cap <- "Secondary outcome analysis."
-# Table 3: Secondary Inferential Table (created by 42_output_secondary_table.R)
-if (exists("tab.secondary.inf")) {
-  tab.secondary.inf %>%
+```{r tab_secondary1, results='asis'}
+tab.secondary.S1.cap <- "Secondary outcome 1 analysis."
+# Table: Secondary Analysis 1 Table (created by 42_output_secondary_table.R)
+if (exists("tab.secondary.S1")) {
+  tab.secondary.S1 %>%
     render_table(
-      table_index = tab.secondary.inf.ind,
-      caption     = tab.secondary.inf.cap
+      table_index = tab.secondary.S1.ind,
+      caption     = tab.secondary.S1.cap
       )
 } else {
-  pander(data.frame(Note = "N/A - Secondary analysis not performed or not applicable to this project scope."))
+  pander(data.frame(Note = "N/A - Secondary analysis 1 not performed or not applicable to this project scope."))
 }
 ```
 
 Figure
-4
+5
 shows the
 adjusted estimates for the effect of
 the secondary outcome
 analysis.
 
-```{r fig_secondary_model_predict, fig.cap="**Figure 4** Secondary outcome effect plot."}
-# Figure 4: Primary model prediction plot (created by 91_outputs_plots.R)
-knitr::include_graphics(here("figures", "Figure_4_Secondary_Predict.png"), error = FALSE)
+```{r fig_secondary1_predict, fig.cap="**Figure 5** Secondary outcome 1 effect plot."}
+# Figure: Secondary model 1 prediction plot
+knitr::include_graphics(here("04 outputs", "Secondary1_Predict.png"), error = FALSE)
 ```
 
-## Exploratory Analysis
+## Secondary Analysis 2
 
 [Analyst Note: remove this section if not scoped]
 
-```{r ind_exploratory}
-if (exists("tab.exploratory.inf")) {
-  ind.table.body <- ind.table.body + 1
-  tab.exploratory.inf.ind <- ind.table.body
+```{r ind_secondary2}
+ind.table.body <- ind.table.body + 1
+tab.secondary.S2.ind <- ind.table.body
+```
+
+This section presents the results for the secondary objectives.
+
+Figure
+6
+shows the distribution of
+the secondary outcome
+in the study population.
+
+```{r fig_secondary2_outcome, fig.cap="**Figure x** Distribution of the secondary outcome 2 in the study population."}
+# Figure: Secondary Outcome 2 Descriptive Plot
+knitr::include_graphics(here("04 outputs", "Secondary2_Outcome.png"), error = FALSE)
+```
+
+Table
+`r tab.secondary.S2.ind`
+shows the unadjusted and adjusted estimates for the
+secondary
+analysis.
+
+```{r tab_secondary2, results='asis'}
+tab.secondary.S2.cap <- "Secondary outcome 2 analysis."
+# Table: Secondary Analysis 2 Table (created by 42_output_secondary_table.R)
+if (exists("tab.secondary.S2")) {
+  tab.secondary.S2 %>%
+    render_table(
+      table_index = tab.secondary.S2.ind,
+      caption     = tab.secondary.S2.cap
+      )
+} else {
+  pander(data.frame(Note = "N/A - Secondary analysis 2 not performed or not applicable to this project scope."))
 }
+```
+
+Figure
+7
+shows the
+adjusted estimates for the effect of
+the secondary outcome
+analysis.
+
+```{r fig_secondary2_predict, fig.cap="**Figure x** Secondary outcome 2 effect plot."}
+# Figure: Secondary model 2 prediction plot
+knitr::include_graphics(here("04 outputs", "Secondary2_Predict.png"), error = FALSE)
+```
+
+## Secondary Analysis 3
+
+[Analyst Note: remove this section if not scoped]
+
+```{r ind_secondary3}
+ind.table.body <- ind.table.body + 1
+tab.secondary.S3.ind <- ind.table.body
+```
+
+This section presents the results for the secondary objectives.
+
+Figure
+8
+shows the distribution of
+the secondary outcome
+in the study population.
+
+```{r fig_secondary3_outcome, fig.cap="**Figure x** Distribution of the secondary outcome 3 in the study population."}
+# Figure: Secondary Outcome 3 Descriptive Plot
+knitr::include_graphics(here("04 outputs", "Secondary3_Outcome.png"), error = FALSE)
+```
+
+Table
+`r tab.secondary.S3.ind`
+shows the unadjusted and adjusted estimates for the
+secondary
+analysis.
+
+```{r tab_secondary3, results='asis'}
+tab.secondary.S3.cap <- "Secondary outcome 3 analysis."
+# Table: Secondary Analysis 3 Table (created by 42_output_secondary_table.R)
+if (exists("tab.secondary.S3")) {
+  tab.secondary.S3 %>%
+    render_table(
+      table_index = tab.secondary.S3.ind,
+      caption     = tab.secondary.S3.cap
+      )
+} else {
+  pander(data.frame(Note = "N/A - Secondary analysis 3 not performed or not applicable to this project scope."))
+}
+```
+
+Figure
+x
+shows the
+adjusted estimates for the effect of
+the secondary outcome
+analysis.
+
+```{r fig_secondary3_predict, fig.cap="**Figure x** Secondary outcome 3 effect plot."}
+# Figure: Secondary model 3 prediction plot
+knitr::include_graphics(here("04 outputs", "Secondary3_Predict.png"), error = FALSE)
+```
+
+## Exploratory Analysis 1
+
+[Analyst Note: remove this section if not scoped]
+
+```{r ind.exploratory}
+ind.table.body <- ind.table.body + 1
+tab.exploratory.E1.ind <- ind.table.body
 ```
 
 This section presents the results for any post-hoc or exploratory findings.
 
 Figure
-5
+x
 shows the distribution of
 the exploratory outcome
 in the study population.
 
-```{r fig_exploratory_outcome_dist, fig.cap="**Figure 5** Distribution of the exploratory outcome in the study population."}
-# Figure 5: Exploratory Outcome Descriptive Plot (created by 91_outputs_plots.R)
-knitr::include_graphics(here("figures", "Figure_5_Exploratory_Outcome.png"), error = FALSE)
+```{r fig_exploratory_outcome_dist, fig.cap="**Figure x** Distribution of the exploratory outcome in the study population."}
+# Figure x: Exploratory Outcome Descriptive Plot
+knitr::include_graphics(here("04 outputs", "Exploratory1_Outcome.png"), error = FALSE)
 ```
 
 Table
-`r tab.exploratory.inf.ind`
+`r tab.exploratory.E1.ind`
 shows the unadjusted and adjusted estimates for the
 exploratory
 analysis.
 
 ```{r tab_exploratory, results='asis'}
-tab.exploratory.inf.cap <- "Exploratory analysis results."
-# Table 4: Exploratory Inferential Table (created by 52_output_exploratory_table.R)
-if (exists("tab.exploratory.inf")) {
-  tab.exploratory.inf %>%
+tab.exploratory.E1.cap <- "Exploratory analysis results."
+# Table 4: Exploratory Analysis Table (created by 52_output_exploratory_table.R)
+if (exists("tab.exploratory.E1")) {
+  tab.exploratory.E1 %>%
     render_table(
-      table_index = tab.exploratory.inf.ind,
-      caption     = tab.exploratory.inf.cap
+      table_index = tab.exploratory.E1.ind,
+      caption     = tab.exploratory.E1.cap
       )
 } else {
   pander(data.frame(Note = "N/A - Exploratory analysis not performed or not applicable to this project scope."))
@@ -303,8 +422,8 @@ the exploratory outcome
 analysis.
 
 ```{r fig_exploratory_model_predict, fig.cap="**Figure 6** Exploratory outcome effect plot."}
-# Figure 6: Exploratory model prediction plot (created by 91_outputs_plots.R)
-knitr::include_graphics(here("figures", "Figure_6_Exploratory_Predict.png"), error = FALSE)
+# Figure 6: Exploratory model prediction plot
+knitr::include_graphics(here("04 outputs", "Exploratory1_Predict.png"), error = FALSE)
 ```
 
 ## Sensitivity Analysis
@@ -312,28 +431,26 @@ knitr::include_graphics(here("figures", "Figure_6_Exploratory_Predict.png"), err
 [Analyst Note: remove this section if not scoped]
 
 ```{r ind_sensitivity}
-if (exists("tab.primary.inf.sens")) {
-  ind.table.body <- ind.table.body + 1
-  tab.primary.inf.sens.ind <- ind.table.body
-}
+ind.table.body <- ind.table.body + 1
+tab.primary.P1.sens.ind <- ind.table.body
 ```
 
 Sensitivity analysis was performed to verify the robustness of the primary findings.
 
 Table
-`r tab.primary.inf.sens.ind`
+`r tab.primary.P1.sens.ind`
 shows the estimates from the
 sensitivity
 analysis.
 
 ```{r tab_sensitivity, results='asis'}
-tab.primary.inf.sens.cap <- "Sensitivity analysis for the primary outcome."
+tab.primary.P1.sens.cap <- "Sensitivity analysis for the primary outcome."
 # Table 5: Sensitivity Analysis (created by 36_output_primary_sens_table.R)
-if (exists("tab.primary.inf.sens")) {
-  tab.primary.inf.sens %>%
+if (exists("tab.primary.P1.sens")) {
+  tab.primary.P1.sens %>%
     render_table(
-      table_index = tab.primary.inf.sens.ind,
-      caption     = tab.primary.inf.sens.cap
+      table_index = tab.primary.P1.sens.ind,
+      caption     = tab.primary.P1.sens.cap
       )
 } else {
   pander(data.frame(Note = "N/A - Sensitivity analysis not performed."))
@@ -360,8 +477,8 @@ if (exists("tab.primary.inf.sens")) {
 [Analyst Note: Use this section for descriptive figures and tables (e.g., initial variable distributions, correlation checks, baseline tables for subgroups) that support the report but are not essential to the main Results narrative.]
 
 ```{r fig_appendix_eda, fig.cap="**Figure A1** Distribution of Age in the study population, by Sex."}
-# Figure A1: Example of an Exploratory Data Analysis Plot (created by 91_outputs_plots.R)
-knitr::include_graphics(here("figures", "Figure_A1_Age_by_Sex.png"), error = FALSE)
+# Figure A1: Example of an Exploratory Data Analysis Plot
+knitr::include_graphics(here("04 outputs", "Age_by_Sex.png"), error = FALSE)
 ```
 
 ## Modeling Strategy and Diagnostics
@@ -388,27 +505,24 @@ Describe the findings of the diagnostic plots (if generated internally via funct
 ### Full Model Specification
 
 ```{r ind_app_full_model}
-# Pre-calculation chunk: ONLY increment if the table object exists.
-if (exists("tab.primary.inf.full")) {
-    ind.table.app <- ind.table.app + 1
-    tab.primary.inf.full.ind <- paste0("A", ind.table.app)
-}
+ind.table.app <- ind.table.app + 1
+tab.primary.P1.full.ind <- paste0("A", ind.table.app)
 ```
 
 Table
-`r tab.primary.inf.full.ind`
+`r tab.primary.P1.full.ind`
 shows the coefficients for all variables included in the
 primary
 model.
 
 ```{r tab_app_full_model, results='asis'}
-tab.primary.inf.full.cap <- "Full model specification for the primary analysis."
+tab.primary.P1.full.cap <- "Full model specification for the primary analysis."
 # Table A1: Full Model Specification (created by 32_output_primary_table.R)
-if (exists("tab.primary.inf.full")) {
-  tab.primary.inf.full %>%
+if (exists("tab.primary.P1.full")) {
+  tab.primary.P1.full %>%
     render_table(
-      table_index = tab.primary.inf.full.ind,
-      caption     = tab.primary.inf.full.cap
+      table_index = tab.primary.P1.full.ind,
+      caption     = tab.primary.P1.full.cap
     )
 } else {
   pander(data.frame(Note = "N/A - Full model table not available."))
@@ -420,27 +534,24 @@ if (exists("tab.primary.inf.full")) {
 [Analyst Note: remove this section if not scoped]
 
 ```{r ind_app_full_secondary_model}
-# Pre-calculation chunk: ONLY increment if the table object exists.
-if (exists("tab.secondary.inf.full")) {
-  ind.table.app <- ind.table.app + 1
-  tab.secondary.inf.full.ind <- paste0("A", ind.table.app)
-}
+ind.table.app <- ind.table.app + 1
+tab.secondary.S1.full.ind <- paste0("A", ind.table.app)
 ```
 
 Table
-`r tab.secondary.inf.full.ind`
+`r tab.secondary.S1.full.ind`
 shows the coefficients for all variables included in the
 secondary
 model.
 
 ```{r tab_app_full_secondary_model, results='asis'}
-tab.secondary.inf.full.cap <- "Full model specification for the secondary analysis."
+tab.secondary.S1.full.cap <- "Full model specification for the secondary analysis."
 # Table A2: Full Secondary Model Specification (created by 42_output_secondary_table.R)
-if (exists("tab.secondary.inf.full")) {
-  tab.secondary.inf.full %>%
+if (exists("tab.secondary.S1.full")) {
+  tab.secondary.S1.full %>%
     render_table(
-      table_index = tab.secondary.inf.full.ind,
-      caption     = tab.secondary.inf.full.cap
+      table_index = tab.secondary.S1.full.ind,
+      caption     = tab.secondary.S1.full.cap
       )
 } else {
   pander(data.frame(Note = "N/A - Full model table for secondary analysis not available."))
@@ -452,27 +563,24 @@ if (exists("tab.secondary.inf.full")) {
 [Analyst Note: remove this section if not scoped]
 
 ```{r ind_app_full_exploratory_model}
-# Pre-calculation chunk: ONLY increment if the table object exists.
-if (exists("tab.exploratory.inf.full")) {
-  ind.table.app <- ind.table.app + 1
-  tab.exploratory.inf.full.ind <- paste0("A", ind.table.app)
-}
+ind.table.app <- ind.table.app + 1
+tab.exploratory.E1.full.ind <- paste0("A", ind.table.app)
 ```
 
 Table
-`r tab.exploratory.inf.full.ind`
+`r tab.exploratory.E1.full.ind`
 shows the coefficients for all variables included in the
 exploratory
 model.
 
 ```{r tab_app_full_exploratory_model, results='asis'}
-tab.exploratory.inf.full.cap <- "Full model specification for the exploratory analysis."
+tab.exploratory.E1.full.cap <- "Full model specification for the exploratory analysis."
 # Table A3: Full Exploratory Model Specification (created by 52_output_exploratory_table.R)
-if (exists("tab.exploratory.inf.full")) {
-  tab.exploratory.inf.full %>%
+if (exists("tab.exploratory.E1.full")) {
+  tab.exploratory.E1.full %>%
     render_table(
-      table_index = tab.exploratory.inf.full.ind,
-      caption     = tab.exploratory.inf.full.cap
+      table_index = tab.exploratory.E1.full.ind,
+      caption     = tab.exploratory.E1.full.cap
     )
 } else {
   pander(data.frame(Note = "N/A - Full model table for exploratory analysis not available."))

@@ -18,6 +18,7 @@ output:
     fig_caption: yes
     fig_height: 6
     fig_width: 6
+    keep_md: yes
     reference_docx: misc/style_SAP_pt.docx
     toc: yes
 toc-title: "Sumário"
@@ -94,8 +95,8 @@ variáveis foram incluídas na análise com
 observações.
 A Tabela 1 mostra a estrutura dos dados analíticos.
 
-```{r analytical data}
-analytical_mockup %>%
+```{r analytic data}
+analytic_mockup %>%
   pander(caption = "**Tabela 1** Estrutura da tabela de dados analíticos após seleção e limpeza das variáveis.")
 ```
 
@@ -175,7 +176,7 @@ bicaudais.
 ## Tamanho da amostra e Poder
 
 ```{r}
-n <- analytical %>%
+n <- analytic %>%
   count(exposure) %>%
   pull(n)
 n1 <- n[1]
@@ -204,7 +205,7 @@ N/A
 
 ## Softwares utilizados
 
-Esta análise será realizada utilizando-se o software `R` versão `r getRversion()`.
+Esta análise será realizada utilizando-se o software `R` (atualmente na versão `r getRversion()`).
 
 # Observações e limitações
 
@@ -233,6 +234,14 @@ Recomenda-se que todos os estudos observacionais sigam o guideline STROBE (von E
 # Apêndice
 
 Este documento foi elaborado seguindo recomendações de estrutura para Planos de Análise Estatística (Gamble, 2017) para maior transparência e clareza.
+
+<!-- ## Análises associadas -->
+
+<!-- Esta análise é parte de um projeto maior e é suportada por outras análises, disponíveis abaixo. -->
+
+<!-- **[assoc_title]** -->
+
+<!-- <[assoc_link]> -->
 
 ## Disponibilidade
 
