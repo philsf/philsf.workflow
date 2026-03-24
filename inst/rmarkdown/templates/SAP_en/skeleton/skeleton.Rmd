@@ -80,15 +80,38 @@ source(here("scripts", "96_load_cached_results.R"), encoding = 'UTF-8')
 
 # Abbreviations
 
-- CI: confidence interval
-- CV: coefficient of variation
-- d: Cohen's D effect size
-- HR: hazards ratio
-- IQR: interquartile range
-- IRR: incidence rate ratio
-- OR: odds ratio
-- RR: risks ratio
-- SD: standard deviation
+- AIC: Akaike Information Criterion
+- AUC: Area Under the Curve
+- BMI: Body Mass Index
+- CCS: Complete Case Set
+- CI: Confidence Interval
+- CV: Coefficient of Variation
+- d: Cohen's d Effect Size
+- DAG: Directed Acyclic Graph
+- EDC: Electronic Data Capture
+- FAS: Full Analysis Set
+- GLM: Generalized Linear Model
+- h: Cohen's h Effect Size
+- HR: Hazard Ratio
+- IAS: Imputed Analysis Set
+- ICD: International Classification of Diseases
+- IPTW: Inverse Probability of Treatment Weighting
+- IQR: Interquartile Range
+- IRR: Incidence Rate Ratio
+- LMM: Linear Mixed Model
+- LogMM: Logistic Mixed Model
+- MCAR: Missing Completely at Random
+- MAR: Missing at Random
+- MNAR: Missing Not at Random
+- OR: Odds Ratio
+- ROC: Receiver Operating Curve
+- RR: Risk Ratio
+- SAP: Statistical Analysis Plan
+- SAR: Statistical Analytic Report
+- SAS: Sensitivity Analysis Set
+- SD: Standard Deviation
+- SE: Standard Error
+- VIF: Variance Inflation Factor
 
 # Introduction
 
