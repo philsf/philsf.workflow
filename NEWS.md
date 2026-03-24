@@ -8,6 +8,7 @@
 * update remote setup script to new workflow #235
 * Set current version number in all versioned files #18
 * Refactor SAR template #207
+* Refactor SAP template for Observational Studies #205
 
 # philsf.workflow 0.15.3
 
