@@ -123,10 +123,8 @@ Esta análise foi realizada utilizando o software estatístico R versão `r getR
 ## Características basais
 
 ```{r ind_baseline}
-if (exists("tab.primary.desc")) {
-  ind.table.body <- ind.table.body + 1
-  tab.primary.desc.ind <- ind.table.body
-}
+ind.table.body <- ind.table.body + 1
+tab.primary.desc.ind <- ind.table.body
 ```
 
 A Tabela
@@ -148,10 +146,8 @@ if (exists("tab.primary.desc")) {
 ## Análise Primária
 
 ```{r ind_primary}
-if (exists("tab.primary.inf")) {
-  ind.table.body <- ind.table.body + 1
-  tab.primary.inf.ind <- ind.table.body
-}
+ind.table.body <- ind.table.body + 1
+tab.primary.inf.ind <- ind.table.body
 ```
 
 Esta seção apresenta os resultados para o objetivo primário.
@@ -199,10 +195,8 @@ knitr::include_graphics(here("figures", "Figure_2_Primary_Predict.png"), error =
 [Analyst Note: remove this section if not scoped]
 
 ```{r ind_secondary}
-if (exists("tab.secondary.inf")) {
-  ind.table.body <- ind.table.body + 1
-  tab.secondary.inf.ind <- ind.table.body
-}
+ind.table.body <- ind.table.body + 1
+tab.secondary.inf.ind <- ind.table.body
 ```
 
 Esta seção apresenta os resultados para os objetivos secundários.
@@ -252,10 +246,8 @@ knitr::include_graphics(here("figures", "Figure_4_Secondary_Predict.png"), error
 [Analyst Note: remove this section if not scoped]
 
 ```{r ind_exploratory}
-if (exists("tab.exploratory.inf")) {
-  ind.table.body <- ind.table.body + 1
-  tab.exploratory.inf.ind <- ind.table.body
-}
+ind.table.body <- ind.table.body + 1
+tab.exploratory.inf.ind <- ind.table.body
 ```
 
 Esta seção apresenta os resultados para quaisquer achados post-hoc ou exploratórios.
@@ -305,10 +297,8 @@ knitr::include_graphics(here("figures", "Figure_6_Exploratory_Predict.png"), err
 [Analyst Note: remove this section if not scoped]
 
 ```{r ind_sensitivity}
-if (exists("tab.primary.inf.sens")) {
-  ind.table.body <- ind.table.body + 1
-  tab.primary.inf.sens.ind <- ind.table.body
-}
+ind.table.body <- ind.table.body + 1
+tab.primary.inf.sens.ind <- ind.table.body
 ```
 
 Análise de sensibilidade foi realizada para verificar a robustez dos achados primários.
@@ -380,11 +370,8 @@ Describe the findings of the diagnostic plots (if generated internally via funct
 ### Especificação Completa do Modelo
 
 ```{r ind_app_full_model}
-# Pre-calculation chunk: ONLY increment if the table object exists.
-if (exists("tab.primary.inf.full")) {
-    ind.table.app <- ind.table.app + 1
-    tab.primary.inf.full.ind <- paste0("A", ind.table.app)
-}
+ind.table.app <- ind.table.app + 1
+tab.primary.inf.full.ind <- paste0("A", ind.table.app)
 ```
 
 A Tabela
@@ -412,11 +399,8 @@ if (exists("tab.primary.inf.full")) {
 [Analyst Note: remove this section if not scoped]
 
 ```{r ind_app_full_secondary_model}
-# Pre-calculation chunk: ONLY increment if the table object exists.
-if (exists("tab.secondary.inf.full")) {
-  ind.table.app <- ind.table.app + 1
-  tab.secondary.inf.full.ind <- paste0("A", ind.table.app)
-}
+ind.table.app <- ind.table.app + 1
+tab.secondary.inf.full.ind <- paste0("A", ind.table.app)
 ```
 
 A Tabela
@@ -443,11 +427,8 @@ if (exists("tab.secondary.inf.full")) {
 [Analyst Note: remove this section if not scoped]
 
 ```{r ind_app_full_exploratory_model}
-# Pre-calculation chunk: ONLY increment if the table object exists.
-if (exists("tab.exploratory.inf.full")) {
-  ind.table.app <- ind.table.app + 1
-  tab.exploratory.inf.full.ind <- paste0("A", ind.table.app)
-}
+ind.table.app <- ind.table.app + 1
+tab.exploratory.inf.full.ind <- paste0("A", ind.table.app)
 ```
 
 A Tabela

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# ============================================================
+# ************************************************************
 # Script:   SAR-init
 # Purpose:  Initialize the Git repository for the new SAR project
 #           and create the initial commit with core files and structure.
@@ -11,21 +11,20 @@
 # Author:   Felipe Figueiredo
 # Created:  2025-11-11
 #
-# ------------------------------------------------------------
+# ************************************************************
 # QC Date:  YYYY-MM-DD
-# ------------------------------------------------------------
-# ============================================================
+# ************************************************************
 
 SAR=${PWD##*/} # local dir
 SAR_CODE=${SAR/SAR-/""}
 
 #echo "Initializing repository: $SAR"
 git init #>/dev/null
-git add .gitignore README.md "$SAR.Rproj" scripts Portfolio.md report
+git add .gitignore README.md "$SAR.Rproj" "02 scripts" Portfolio.md "05 documents"
 git commit -m "Initial commit" >/dev/null
 
 # initialize data repo
-git init dataset/
+git init "01 dataset"/
 
 # protect data by default
 echo "Client dataset made private by default (revert to open data)"
