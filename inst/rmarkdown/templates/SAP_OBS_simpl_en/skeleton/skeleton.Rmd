@@ -134,12 +134,12 @@ source(here("02 scripts", "96_load_cached_results.R"), encoding = 'UTF-8')
 
 [Analyst Note: Explicitly state the Primary, Secondary, and Exploratory objectives using the list format below. Each objective should be framed as a testable statistical hypothesis (e.g., "To compare the odds of [Outcome] between [Group A] and [Group B]").]
 
-- **Primary:** To do analysis on outcome P1
-- **Secondary:** To do analysis on outcomes S1, S2, S3
+- **Primary:** To compare the [odds/risk] of [Outcome] in [Group B] participants, when compared to [Group A].
+- **Secondary:**
     1. Objective S1
     2. Objective S2
     3. Objective S3
-- **Exploratory:** to do analysis on outcomes E1, E2, ...
+- **Exploratory:**
     1. Objective E1
     2. Objective E2
     3. Objective E3
@@ -165,28 +165,20 @@ All observational studies are recommended to be reported following the STROBE gu
 
 ## Setting and Time Period
 
-[Analyst Note: Describe the "place and time" of the study. Define the physical or virtual location of the study (e.g., "Multicenter database," "Single-unit surgical clinic"). Define the period covered in the study: start/end dates of data collection and the follow-up duration if applicable.]
+[Analyst Note: Describe the "place and time" of the study. Define the physical or virtual location of the study (e.g., "Multicenter database," "Single-unit surgical clinic"). Define the period covered in the study: start/end dates of data collection and the follow-up duration if applicable. Include Index date and Censoring if applicable.]
 
-## Index Date
-
-[Analyst Note: Define the 'T=0' for the analysis unit (e.g., 'Date of first ER visit'). For cross-sectional studies without a longitudinal component, mark as 'N/A: Single-point assessment.']
-
-## Follow-up Period and Censoring Rules
-
-[Analyst Note: For Cross-sectional studies: Mark as "N/A." For Longitudinal/Survival studies: Define the rules for administrative censoring (end of study), loss to follow-up, and competing risks.]
-
-## Participant Selection
+## Inclusion and Exclusion Criteria
 
 [Analyst Note: Use a bulleted list to define the "Theoretical Bouncer." These are clinical and demographic filters (e.g., "Age > 18," "Confirmed diagnosis of X"). This section defines the ideal cohort before accounting for data missingness.]
 
-### Inclusion Criteria
+**Inclusion Criteria**
 
 Participants will be included if they fulfill all of these criteria:
 
 - crit 1
 - crit 2
 
-### Exclusion Criteria
+**Exclusion Criteria**
 
 Participants will be excluded if they fulfill any of these criteria:
 
@@ -275,19 +267,11 @@ knitr::kable(
 
 ## Data Sources
 
-[Analyst Note: Dataset(s)/Database(s) name(s) and origin]
+[Analyst Note: Dataset(s)/Database(s) name(s) and origin and linkage methods]
 
 ## Data Cleaning and Processing
 
 [Analyst Note: Recoding, class coercions, standardized naming]
-
-## Data Validation
-
-[Analyst Note: Range/logic checks, auditing for "impossible" values]
-
-## Linkage Methods
-
-[Analyst Note: The procedures used to join multiple databases, if applicable. Use N/A if the study uses a single dataset.]
 
 # Statistical Analyses Methods
 
@@ -391,21 +375,15 @@ two-tailed.
 <!-- left-tailed. -->
 <!-- right-tailed. -->
 
-## Statistical Software and Reproducibility
+## Statistical Software
 
-[Analyst Note: R version, package management, `here()` framework]
+[Analyst Note: R version, package management]
 
 This analysis will be performed using the statistical software `R` (currently on version `r getRversion()`).
 
 # Limitations and Observations
 
-## Limitations of the Statistical Analysis
-
-[Analyst Note: Model constraints, sample size issues, possible assumption violations]
-
-## Data Quality Observations
-
-[Analyst Note: Anticipated source-specific limitations]
+[Analyst Note: Model constraints, sample size issues, possible assumption violations and data source-specific limitations]
 
 # References
 
@@ -428,12 +406,6 @@ This analysis will be performed using the statistical software `R` (currently on
 - Venables, W. N., & Ripley, B. D. (2002). *Modern Applied Statistics with S (4th Ed.).* Springer.
 - Rothman, K. J. (2012). *Epidemiology: An Introduction (2nd Ed.).* Oxford University Press.
 - Lash, T. L., VanderWeele, T. J., Haneuse, S., & Rothman, K. J. (2020). *Modern Epidemiology (4th Ed.).* Lippincott Williams & Wilkins.
-
-# Table Shells
-
-[Analyst Note: Develop a mock representation]
-
-Table shells showing the structure of the analysis outputs will be delivered as an annex file.
 
 # Appendix
 

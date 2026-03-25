@@ -134,12 +134,12 @@ source(here("02 scripts", "96_load_cached_results.R"), encoding = 'UTF-8')
 
 [Analyst Note: Explicitly state the Primary, Secondary, and Exploratory objectives using the list format below. Each objective should be framed as a testable statistical hypothesis (e.g., "To compare the odds of [Outcome] between [Group A] and [Group B]").]
 
-- **Primary:** To do analysis on outcome P1
-- **Secondary:** To do analysis on outcomes S1, S2, S3
+- **Primary:** To compare the [odds/risk] of [Outcome] in [Group B] participants, when compared to [Group A].
+- **Secondary:**
     1. Objective S1
     2. Objective S2
     3. Objective S3
-- **Exploratory:** to do analysis on outcomes E1, E2, ...
+- **Exploratory:**
     1. Objective E1
     2. Objective E2
     3. Objective E3
@@ -391,9 +391,9 @@ two-tailed.
 <!-- left-tailed. -->
 <!-- right-tailed. -->
 
-## Statistical Software and Reproducibility
+## Statistical Software
 
-[Analyst Note: R version, package management, `here()` framework]
+[Analyst Note: R version, package management]
 
 This analysis will be performed using the statistical software `R` (currently on version `r getRversion()`).
 
