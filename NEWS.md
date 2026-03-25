@@ -12,6 +12,7 @@
 * Template outcome specifications #178
 * final touches/fixes before release v1.0.0 #241
 * QC checklists #237
+* Create Simplified SAP template for Obs studies #232
 
 # philsf.workflow 0.15.3
 
