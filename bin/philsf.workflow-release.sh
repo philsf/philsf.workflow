@@ -16,7 +16,7 @@
 # ************************************************************
 
 echo "Updating templates that will be installed on next release."
-/bin/cp -a inst/rmarkdown/templates/SAP_OBS_full_pt/skeleton/skeleton.Rmd usr/SAR/SAP_pt.Rmd
+/bin/cp -a inst/rmarkdown/templates/SAP_OBS_full_pt/skeleton/skeleton.Rmd usr/SAR/SAP_OBS_full_pt.Rmd
 # /bin/cp -a inst/rmarkdown/templates/SAP_OBS_full_pt/skeleton/misc/style_SAP_pt.docx usr/SAR/misc/
 
 /bin/cp -a inst/rmarkdown/templates/SAP_OBS_full_en/skeleton/skeleton.Rmd usr/SAR/SAP_OBS_full_en.Rmd
