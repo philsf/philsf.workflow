@@ -26,10 +26,10 @@ toc-title: "Table of Contents"
 
 ```{r setup, include=FALSE}
 # ************************************************************
-# Template: SAP_OBS_full_en.Rmd
+# Template: SAP_OBS_simp_en.Rmd
 # Version:  0.xx.x
 # Author:   Felipe Figueiredo
-# Created:  2026-03-22
+# Created:  2026-03-24
 #
 # ************************************************************
 # QC Date:  YYYY-MM-DD

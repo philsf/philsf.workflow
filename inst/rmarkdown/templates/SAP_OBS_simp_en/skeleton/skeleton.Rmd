@@ -26,10 +26,10 @@ toc-title: "Table of Contents"
 
 ```{r setup, include=FALSE}
 # ************************************************************
-# Template: SAP_OBS_full_en.Rmd
+# Template: SAP_OBS_simp_en.Rmd
 # Version:  0.xx.x
 # Author:   Felipe Figueiredo
-# Created:  2026-03-22
+# Created:  2026-03-24
 #
 # ************************************************************
 # QC Date:  YYYY-MM-DD
@@ -165,35 +165,27 @@ All observational studies are recommended to be reported following the STROBE gu
 
 ## Setting and Time Period
 
-[Analyst Note: Describe the "place and time" of the study. Define the physical or virtual location of the study (e.g., "Multicenter database," "Single-unit surgical clinic"). Define the period covered in the study: start/end dates of data collection and the follow-up duration if applicable.]
+[Analyst Note: Describe the "place and time" of the study. Define the physical or virtual location of the study (e.g., "Multicenter database," "Single-unit surgical clinic"). Define the period covered in the study: start/end dates of data collection and the follow-up duration if applicable. Include Index date and Censoring if applicable.]
 
-## Index Date
-
-[Analyst Note: Define the 'T=0' for the analysis unit (e.g., 'Date of first ER visit'). For cross-sectional studies without a longitudinal component, mark as 'N/A: Single-point assessment.']
-
-## Follow-up Period and Censoring Rules
-
-[Analyst Note: For Cross-sectional studies: Mark as "N/A." For Longitudinal/Survival studies: Define the rules for administrative censoring (end of study), loss to follow-up, and competing risks.]
-
-## Participant Selection
+## Inclusion and Exclusion Criteria
 
 [Analyst Note: Use a bulleted list to define the "Theoretical Bouncer." These are clinical and demographic filters (e.g., "Age > 18," "Confirmed diagnosis of X"). This section defines the ideal cohort before accounting for data missingness.]
 
-### Inclusion Criteria
+**Inclusion Criteria**
 
 Participants will be included if they fulfill all of these criteria:
 
 - crit 1
 - crit 2
 
-### Exclusion Criteria
+**Exclusion Criteria**
 
 Participants will be excluded if they fulfill any of these criteria:
 
 - exc 1
 - exc 2
 
-# Variable Definitions
+# Variables
 
 ## Exposures
 
@@ -263,49 +255,33 @@ knitr::kable(
 
 - "Outcome E1"
 
-## Covariates
+## Other Variables and Covariates
 
-[Analyst Note: List potential confounders and adjustors. Distinguish between "Known Confounders" (based on literature/DAGs) and "Candidate Variables" for automated selection if applicable. Criteria for selection should be described in the Statistical Methods section.]
+[Analyst Note: List potential confounders. Distinguish between "Known Confounders" (based on literature/DAGs) and "Candidate Variables" for automated selection if applicable. Criteria for selection should be described in the Statistical Methods section. Describe derived variables.]
 
-## Variable Derivation Rules
+## Data Management
 
-[Analyst Note: Describe how raw data becomes analytic variables. Do not write R code here; use plain English or pseudocode (e.g., "BMI = Weight(kg) / Height(m)^2" or "Smoking Status = 'Ever' if 'Current' or 'Former'"). Document Regex logic for text-mining here.]
+[Analyst Note: Dataset(s)/Database(s) name(s) and origin, linkage methods, Recoding, class coercions, standardized naming, as applicable.]
 
-# Data Management
-
-## Data Sources
-
-[Analyst Note: Dataset(s)/Database(s) name(s) and origin]
-
-## Data Cleaning and Processing
-
-[Analyst Note: Recoding, class coercions, standardized naming]
-
-## Data Validation
-
-[Analyst Note: Range/logic checks, auditing for "impossible" values]
-
-## Linkage Methods
-
-[Analyst Note: The procedures used to join multiple databases, if applicable. Use N/A if the study uses a single dataset.]
+Data will be sourced from [X], cleaned via [standardized naming/coercion], and validated for range/logic consistency.
 
 # Statistical Analyses Methods
 
 ## Analysis Sets
 
-### Full Analysis Set (FAS)
+- Full Analysis Set (FAS)
 
 [Analyst Note: e.g., all records meeting selection criteria]
 
-### Complete Case Set (CCS)
+- Complete Case Set (CCS)
 
 [Analyst Note: Records with non-missing values for specific variables.]
 
-### Imputed Analysis Set (IAS)
+- Imputed Analysis Set (IAS)
 
 [Analyst Note: Optional, as needed per project.]
 
-### Sensitivity Analysis Set (SAS)
+- Sensitivity Analysis Set (SAS)
 
 [Analyst Note: Optional, as needed per project.]
 
@@ -354,19 +330,19 @@ All evaluations will be performed as complete case analyses.
 
 [Analyst Note: If not applicable, set to N/A.]
 
-### Analysis of Secondary Objective 1
+- Analysis of Secondary Objective 1
 
 [Analyst Note: Remove subsection if not scoped]
 
-### Analysis of Secondary Objective 2
+- Analysis of Secondary Objective 2
 
 [Analyst Note: Remove subsection if not scoped]
 
-### Analysis of Secondary Objective 3
+- Analysis of Secondary Objective 3
 
 [Analyst Note: Remove subsection if not scoped]
 
-### Analysis of Exploratory Objective 1
+- Analysis of Exploratory Objective 1
 
 [Analyst Note: Remove subsection if not scoped]
 
@@ -399,13 +375,7 @@ This analysis will be performed using the statistical software `R` (currently on
 
 # Limitations and Observations
 
-## Limitations of the Statistical Analysis
-
-[Analyst Note: Model constraints, sample size issues, possible assumption violations]
-
-## Data Quality Observations
-
-[Analyst Note: Anticipated source-specific limitations]
+[Analyst Note: Model constraints, sample size issues, possible assumption violations and data source-specific limitations]
 
 # References
 
@@ -428,12 +398,6 @@ This analysis will be performed using the statistical software `R` (currently on
 - Venables, W. N., & Ripley, B. D. (2002). *Modern Applied Statistics with S (4th Ed.).* Springer.
 - Rothman, K. J. (2012). *Epidemiology: An Introduction (2nd Ed.).* Oxford University Press.
 - Lash, T. L., VanderWeele, T. J., Haneuse, S., & Rothman, K. J. (2020). *Modern Epidemiology (4th Ed.).* Lippincott Williams & Wilkins.
-
-# Table Shells
-
-[Analyst Note: Develop a mock representation]
-
-Table shells showing the structure of the analysis outputs will be delivered as an annex file.
 
 # Appendix
 

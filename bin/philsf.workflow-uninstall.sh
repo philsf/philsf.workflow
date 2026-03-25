@@ -59,7 +59,8 @@ README-SAR_pt.md
 Portfolio_en.md
 Portfolio_pt.md
 SAP_OBS_full_en.Rmd
-SAP_pt.Rmd
+SAP_OBS_full_pt.Rmd
+SAP_OBS_simp_en.Rmd
 SAR_en.Rmd
 SAR_pt.Rmd
 misc/
