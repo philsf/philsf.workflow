@@ -12,19 +12,13 @@
 # QC Date:  YYYY-MM-DD
 # ************************************************************
 
-# 0. Source dependencies if running standalone ----------------------------
+# Global environment ------------------------------------------------------
 
-# Reload global environment
 source("02 scripts/00_setup_global.R")
 # source("02 scripts/01_data_mock.R")
 source("02 scripts/10_data_prep.R")
 
-# 1. Check for results directory ------------------------------------------
-# if (!file.exists("03 results/tab.baseline.rds")) {
-#   stop("File '03 results/tab.baseline.rds' does not exist. Please run 99_full_analysis_run.R first.")
-# }
-
-# 2. Load Model Objects ----------------------------------------------------
+# Model Objects -----------------------------------------------------------
 
 # Primary Models
 if (file.exists("03 results/model.primary.P1.raw.rds")) {
@@ -72,7 +66,7 @@ if (file.exists("03 results/model.exploratory.E1.adj.rds")) {
   model.exploratory.E1.adj <- read_rds("03 results/model.exploratory.E1.adj.rds")
 }
 
-# 3. Load Final Table Objects ----------------------------------------------
+# Table Objects -----------------------------------------------------------
 
 # Baseline Table
 source("02 scripts/20_data_baseline_ads.R")
@@ -131,7 +125,7 @@ if (file.exists("03 results/tab.exploratory.E1.full.rds")) {
   tab.exploratory.E1.full <- read_rds("03 results/tab.exploratory.E1.full.rds")
 }
 
-# 4. Load Final Plot Objects ------------------------------------------------
+# Plot Objects ------------------------------------------------------------
 
 # Population Flow
 if (file.exists("03 results/gg.cohort_flow.rds")) {
@@ -163,9 +157,4 @@ if (file.exists("03 results/gg.exploratory.E1.outcome.rds")) {
 }
 if (file.exists("03 results/gg.exploratory.E1.predict.rds")) {
   gg.exploratory.E1.predict <- read_rds("03 results/gg.exploratory.E1.predict.rds")
-}
-
-# 5. Load the final list of tables -----------------------------------------
-if (file.exists("03 results/final.tables.list.rds")) {
-  final.tables.list <- read_rds("03 results/final.tables.list.rds")
 }

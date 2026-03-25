@@ -12,18 +12,7 @@
 # QC Date:  YYYY-MM-DD
 # ************************************************************
 
-# 1. Load Cached Results --------------------------------------------------
-
-# # ONLY load the cache if a key analysis object (like the descriptive table)
-# # is NOT found in the current environment. This prevents redundant re-loading
-# # when sourced by the full analysis script (99_full_analysis_run.R).
-# if (!exists("tab.baseline")) {
-#   source("02 scripts/96_load_cached_results.R")
-# }
-# # NOTE: If we run in Manual Mode, 96- will load tab.baseline,
-# # and the rest of the script will proceed normally.
-
-# 2. Save Primary Figure(s) -----------------------------------------------
+# Primary Figures ---------------------------------------------------------
 
 # Flowchart
 if (exists("gg.cohort_flow")) {
@@ -36,7 +25,7 @@ if (exists("gg.cohort_flow")) {
     )
 }
 
-# Primary Outcome Distribution Plot (Always safe)
+# Primary Outcome Distribution Plot
 if (exists("gg.primary.P1.outcome")) {
   ggsave(
     filename = "04 outputs/Primary1_Outcome.png",
@@ -49,7 +38,7 @@ if (exists("gg.primary.P1.outcome")) {
   )
 }
 
-# Primary Model Prediction Plot (Only in Multivariate Service)
+# Primary Model Prediction Plot
 if (exists("gg.primary.P1.predict")) {
   ggsave(
     filename = "04 outputs/Primary1_Predict.png",
@@ -62,7 +51,7 @@ if (exists("gg.primary.P1.predict")) {
   )
 }
 
-# Primary Outcome Distribution Plot (Always safe)
+# Sensitivity Outcome Distribution Plot
 if (exists("gg.primary.P1.outcome.sens")) {
   ggsave(
     filename = "04 outputs/Primary1_Outcome_Sens.png",
@@ -75,7 +64,7 @@ if (exists("gg.primary.P1.outcome.sens")) {
   )
 }
 
-# Primary Model Prediction Plot (Only in Multivariate Service)
+# Sensitivity Model Prediction Plot
 if (exists("gg.primary.P1.predict.sens")) {
   ggsave(
     filename = "04 outputs/Primary1_Predict_Sens.png",
@@ -88,7 +77,7 @@ if (exists("gg.primary.P1.predict.sens")) {
   )
 }
 
-# 3. Save Secondary Figure(s) ---------------------------------------------
+# Secondary Figures -------------------------------------------------------
 
 if (exists("gg.secondary.S1.outcome")) {
   ggsave(
@@ -162,7 +151,7 @@ if (exists("gg.secondary.S3.predict")) {
   )
 }
 
-# 4. Save Exploratory Figure(s) -------------------------------------------
+# Exploratory Figures -----------------------------------------------------
 
 if (exists("gg.exploratory.E1.outcome")) {
   ggsave(
@@ -188,9 +177,9 @@ if (exists("gg.exploratory.E1.predict")) {
   )
 }
 
-# 9. Save Appendix Figure(s) ----------------------------------------------
+# Appendix Figures --------------------------------------------------------
 
-# Figure A1: Age by Sex (Always created in 23_output_primary_plot.R)
+# Figure A1: Age by Sex (Always created in 23-)
 if (exists("gg.appendix.age")) {
   ggsave(
     filename = "04 outputs/Age_by_Sex.png",

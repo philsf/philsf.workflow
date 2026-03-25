@@ -12,9 +12,9 @@
 # QC Date:  YYYY-MM-DD
 # ************************************************************
 
-# Participant Characteristics Table ---------------------------------------
-
 foot.baseline <- NA_character_
+
+# Main Table (Body) -------------------------------------------------------
 
 tab.baseline <- data.baseline.ads %>%
   # Start with your existing table logic from describe.R
@@ -34,9 +34,7 @@ tab.baseline <- data.baseline.ads %>%
     replace = FALSE,
   )
 
-# 2. Final Tables List ----------------------------------------------------
+# Full Table (Annex) ------------------------------------------------------
 
-# Create a list of all tables for easy reference later
-# final.tables.list <- list(
-#   "Table 1: Baseline"           = tab.primary.desc
-# )
+# Full EDA table to be sent to the client
+# gtsummary::theme_gtsummary_eda()

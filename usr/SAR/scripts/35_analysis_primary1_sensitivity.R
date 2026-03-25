@@ -14,9 +14,7 @@
 
 data.primary1.sens.ads <- data.master.ads[-c(21, 41), ] # model.primary.P1.adj %>% performance::check_outliers(threshold = list(cook=.1))
 
-# 1. Primary Model (Unadjusted) -------------------------------------------
-# Use the formula defined in 00_setup_global.R
-# This is typically the raw or unadjusted model
+# Unadjusted Model --------------------------------------------------------
 
 model.primary.P1.raw.sens <- glm(
   formula = formula.primary.P1.raw,
@@ -24,8 +22,7 @@ model.primary.P1.raw.sens <- glm(
   data = data.primary1.sens.ads,
 )
 
-# 2. Primary Model (Adjusted) ---------------------------------------------
-# If an adjusted model is pre-specified in the SAP
+# Adjusted Model ----------------------------------------------------------
 
 model.primary.P1.adj.sens <- glm(
   formula = formula.primary.P1.adj,
@@ -34,5 +31,5 @@ model.primary.P1.adj.sens <- glm(
 )
 
 # NOTE: No gtsummary or plotting functions should be used here.
-# These raw objects (model.primary.raw, model.primary.adj)
+# These raw objects (model.primary.P1.raw.sens, model.primary.P1.adj.sens)
 # will be formatted into final tables/figures in 36- script.

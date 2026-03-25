@@ -15,9 +15,9 @@
 foot.secondary.S2      <- NA_character_
 foot.secondary.S2.full <- NA_character_
 
-# Secondary Analysis 1 Table ----------------------------------------------
+# Main Table (Body) -------------------------------------------------------
 
-# Uses the helper functions (tab, tab_adj) defined in 00_setup_global.R
+# Create the focused table for the Body, showing only the exposure
 tab.secondary.S2 <- tab_adj(
   crude    = model.secondary.S2.raw,
   adjusted = model.secondary.S2.adj,
@@ -31,7 +31,7 @@ tab.secondary.S2 <- tab_adj(
 
 tab.secondary.S2
 
-# 2. Full Secondary Table (Appendix - Table A3) ---------------------------
+# Full Table (Appendix) ---------------------------------------------------
 
 # Create the full table for the Appendix, including all variables
 tab.secondary.S2.full <- tab_adj(
@@ -45,9 +45,3 @@ tab.secondary.S2.full <- tab_adj(
   modify_footnote()
 
 tab.secondary.S2.full
-
-# 3. Final Tables List ----------------------------------------------------
-
-# # Update the list of all tables for easy reference later
-# final.tables.list[["Table 4: Secondary Inf"]] <- tab.secondary.inf
-# final.tables.list[["Table A3: Full Secondary Inf"]] <- tab.secondary.inf.full

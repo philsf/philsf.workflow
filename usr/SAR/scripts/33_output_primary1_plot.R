@@ -12,7 +12,7 @@
 # QC Date:  YYYY-MM-DD
 # ************************************************************
 
-# Outcome by Exposure --------------------------------------------------
+# Outcome by Exposure -----------------------------------------------------
 
 gg.primary.P1.outcome <- data.primary1.ads %>%
   mutate(outcome.P1 = factor(outcome.P1)) %>%
@@ -34,7 +34,7 @@ gg.primary.P1.outcome <- data.primary1.ads %>%
 
 gg.primary.P1.outcome
 
-# Model effects plot ------------------------------------------------------
+# Model Predictions -------------------------------------------------------
 
 # Only create this model-based plot if the model object exists
 if (exists("model.primary.P1.adj")) {

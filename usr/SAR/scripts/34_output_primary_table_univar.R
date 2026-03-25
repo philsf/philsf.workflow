@@ -12,6 +12,9 @@
 # QC Date:  YYYY-MM-DD
 # ************************************************************
 
+foot.primary.P1      <- NA_character_
+foot.primary.P1.full <- NA_character_
+
 tab.primary.P1 <- data.master.ads %>%
   tbl_summary(
     include = -id,
@@ -49,15 +52,6 @@ add_p(
   # bold_labels() %>% # bolding is preferably done in the document template
   # modify_header(label ~ "...") %>%
   modify_footnote_header(
-    footnote = NA_character_,
+    footnote = foot.primary.P1,
     replace = FALSE,
   )
-
-# 2. Final Tables List ----------------------------------------------------
-
-# Update the list of all tables for easy reference later
-# final.tables.list <- list(
-#   "Table 1: Baseline" = tab.primary.desc,
-#   "Table 2: Primary Inference" = tab.primary.P1
-# )
-# final.tables.list[["Table 2: Primary Inference"]] <- tab.primary.P1

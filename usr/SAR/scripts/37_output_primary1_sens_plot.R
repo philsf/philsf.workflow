@@ -12,7 +12,9 @@
 # QC Date:  YYYY-MM-DD
 # ************************************************************
 
-# Model effects plot ------------------------------------------------------
+# Outcome by Exposure -----------------------------------------------------
+
+# Model Predictions -------------------------------------------------------
 
 # Only create this model-based plot if the model object exists
 if (exists("model.primary.P1.adj.sens")) {

@@ -12,7 +12,7 @@
 # QC Date:  YYYY-MM-DD
 # ************************************************************
 
-# Population Flowchart ----------------------------------------------------
+# Eligibility Flowchart (Body) --------------------------------------------
 
 gg.cohort_flow <- grViz(paste0("
 digraph CONSORT {
@@ -53,7 +53,7 @@ digraph CONSORT {
 
 gg.cohort_flow
 
-# Age by Sex Figure (e.g., Figure A1) -------------------------------------
+# Age by Sex (Appendix) ---------------------------------------------------
 
 gg.appendix.age <- data.master.ads %>%
   gg.template() +
@@ -67,6 +67,8 @@ gg.appendix.age <- data.master.ads %>%
   )
 
 gg.appendix.age
+
+# Obsolete code -----------------------------------------------------------
 
 # cool facet trick from https://stackoverflow.com/questions/3695497 by JWilliman
 # gg +

@@ -12,7 +12,7 @@
 # QC Date:  YYYY-MM-DD
 # ************************************************************
 
-# 1. Save Model Objects (Raw output) --------------------------------------
+# Model Objects -----------------------------------------------------------
 
 # Primary Models (from 31-)
 if (exists("model.primary.P1.raw")) {
@@ -58,7 +58,7 @@ if (exists("model.exploratory.E1.raw")) {
   }
 }
 
-# 2. Save Final Table Objects (gtsummary tables) --------------------------
+# Table Objects -----------------------------------------------------------
 
 # Primary Tables (from 21-, 32-, 34-)
 if(exists("tab.baseline")) {
@@ -108,7 +108,7 @@ if (exists("tab.exploratory.E1.full")) {
   write_rds(tab.exploratory.E1.full, file = "03 results/tab.exploratory.E1.full.rds")
 }
 
-# 3. Save Final Plot Objects (ggplot objects) -----------------------------
+# Plot Objects ------------------------------------------------------------
 
 # Population Flow (from 22-)
 if (exists("gg.cohort_flow")) {
@@ -153,13 +153,3 @@ if (exists("gg.exploratory.E1.outcome")) {
 if (exists("gg.exploratory.E1.predict")) {
   write_rds(gg.exploratory.E1.predict, file = "03 results/gg.exploratory.E1.predict.rds")
 }
-
-# 4. Final list of tables -------------------------------------------------
-
-# # We must save the complete object built by the pipeline, not overwrite it.
-# if (exists("final.tables.list")) {
-#   write_rds(final.tables.list, file = "03 results/final.tables.list.rds")
-#   message(paste("Saved final.tables.list containing", length(final.tables.list), "tables."))
-# } else {
-#   warning("final.tables.list object was not found. Tables may not be correctly referenced in reports.")
-# }

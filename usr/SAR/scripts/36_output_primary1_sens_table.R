@@ -15,7 +15,9 @@
 foot.primary.P1.sens      <- NA_character_
 foot.primary.P1.full.sens <- NA_character_
 
-# 1. Primary Inferential Table (e.g., Table 3) ----------------------------
+# Main Table (Body) -------------------------------------------------------
+
+# Create the focused table for the Body, showing only the exposure
 tab.primary.P1.sens <- tab_adj(
   crude    = model.primary.P1.raw.sens,
   adjusted = model.primary.P1.adj.sens,
@@ -27,7 +29,10 @@ tab.primary.P1.sens <- tab_adj(
   # Apply final formatting (e.g., adding footnotes, headers)
   modify_footnote()
 
-# 2. Full Table (Appendix) ------------------------------------------------
+
+# Full Table (Appendix) ---------------------------------------------------
+
+# Create the full table for the Appendix, including all variables
 tab.primary.P1.full.sens <- tab_adj(
   crude    = model.primary.P1.raw.sens,
   adjusted = model.primary.P1.adj.sens,
@@ -37,9 +42,3 @@ tab.primary.P1.full.sens <- tab_adj(
 ) %>%
   # Apply final formatting (e.g., adding footnotes, headers)
   modify_footnote()
-
-# 3. Final Tables List ----------------------------------------------------
-
-# Update the list of all tables for easy reference later
-# final.tables.list[["Table 3: Sensitivity"]] <- tab.primary.P1.sens
-# final.tables.list[["Table A2: Full Sensitivity"]] <- tab.primary.P1.full.sens

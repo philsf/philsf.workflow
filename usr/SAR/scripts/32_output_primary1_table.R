@@ -15,9 +15,9 @@
 foot.primary.P1      <- NA_character_
 foot.primary.P1.full <- NA_character_
 
-# 1. Primary Analysis Table (e.g., Table 2) ----------------------------
+# Main Table (Body) -------------------------------------------------------
 
-# Uses the helper functions (tab, tab_adj) defined in 00_setup_global.R
+# Create the focused table for the Body, showing only the exposure
 tab.primary.P1 <- tab_adj(
   crude    = model.primary.P1.raw,
   adjusted = model.primary.P1.adj,
@@ -35,9 +35,9 @@ tab.primary.P1 <- tab_adj(
     replace = FALSE,
   )
 
-# 2. Full Table (Appendix) ------------------------------------------------
+# Full Table (Appendix) ---------------------------------------------------
 
-# Uses the helper functions (tab, tab_adj) defined in 00_setup_global.R
+# Create the full table for the Appendix, including all variables
 tab.primary.P1.full <- tab_adj(
   crude    = model.primary.P1.raw,
   adjusted = model.primary.P1.adj,
@@ -53,14 +53,3 @@ tab.primary.P1.full <- tab_adj(
     footnote = foot.primary.P1.full,
     replace = FALSE,
   )
-
-# 3. Final Tables List ----------------------------------------------------
-
-# Update the list of all tables for easy reference later
-# final.tables.list <- list(
-#   "Table 1: Baseline"           = tab.primary.P1.desc,
-#   "Table 2: Primary Inference"  = tab.primary.P1.inf,
-#   "Table A1: Primary Inference" = tab.primary.P1.inf.full
-# )
-# final.tables.list[["Table 2: Primary Inference"]] <- tab.primary.P1.inf
-# final.tables.list[["Table A1: Primary Inference"]] <- tab.primary.P1.inf.full

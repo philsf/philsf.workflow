@@ -12,7 +12,7 @@
 # QC Date:  YYYY-MM-DD
 # ************************************************************
 
-# 1. Outcome by Exposure --------------------------------------------------
+# Outcome by Exposure -----------------------------------------------------
 
 gg.secondary.S3.outcome <- data.secondary3.ads %>%
   gg.template +
@@ -32,7 +32,7 @@ gg.secondary.S3.outcome <- data.secondary3.ads %>%
 
 gg.secondary.S3.outcome
 
-# 2. Model effects plot ---------------------------------------------------
+# Model Predictions -------------------------------------------------------
 
 # Only create this model-based plot if the model object exists
 if (exists("model.secondary.S3.adj")) {
