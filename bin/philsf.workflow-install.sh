@@ -44,6 +44,12 @@ README-SAR_en.md
 README-SAR_pt.md
 Portfolio_en.md
 Portfolio_pt.md
+QC-Checklist-1-Project-Setup.md
+QC-Checklist-2-Scripts-Setup.md
+QC-Checklist-3-SAP.md
+QC-Checklist-4-Analysis.md
+QC-Checklist-5-SAR.md
+QC-Checklist-6-Project-Close-out.md
 SAP_OBS_full_en.Rmd
 SAP_OBS_full_pt.Rmd
 SAP_OBS_simp_en.Rmd
