@@ -16,7 +16,7 @@
 
 source("02 scripts/00_setup_global.R")
 # source("02 scripts/01_data_mock.R")
-source("02 scripts/10_data_prep.R")
+source("02 scripts/10_data_prep.R") # data.master.ads
 
 # Model Objects -----------------------------------------------------------
 
@@ -69,13 +69,13 @@ if (file.exists("03 results/model.exploratory.E1.adj.rds")) {
 # Table Objects -----------------------------------------------------------
 
 # Baseline Table
-source("02 scripts/20_data_baseline_ads.R")
+source("02 scripts/20_data_baseline_ads.R") # data.baseline.ads
 if (file.exists("03 results/tab.baseline.rds")) {
   tab.baseline <- read_rds("03 results/tab.baseline.rds")
 }
 
 # Primary Tables
-source("02 scripts/30_data_primary1_ads.R")
+source("02 scripts/30_data_primary1_ads.R") # data.primary1.ads
 if (file.exists("03 results/tab.primary.P1.rds")) {
   tab.primary.P1 <- read_rds("03 results/tab.primary.P1.rds")
 }
@@ -92,7 +92,7 @@ if (file.exists("03 results/tab.primary.P1.full.sens.rds")) {
 }
 
 # Secondary Tables
-source("02 scripts/40_data_secondary1_ads.R")
+source("02 scripts/40_data_secondary1_ads.R") # data.secondary1.ads
 if (file.exists("03 results/tab.secondary.S1.rds")) {
   tab.secondary.S1 <- read_rds("03 results/tab.secondary.S1.rds")
 }
@@ -100,7 +100,7 @@ if (file.exists("03 results/tab.secondary.S1.full.rds")) {
   tab.secondary.S1.full <- read_rds("03 results/tab.secondary.S1.full.rds")
 }
 
-source("02 scripts/50_data_secondary2_ads.R")
+source("02 scripts/50_data_secondary2_ads.R") # data.secondary2.ads
 if (file.exists("03 results/tab.secondary.S2.rds")) {
   tab.secondary.S2 <- read_rds("03 results/tab.secondary.S2.rds")
 }
@@ -108,7 +108,7 @@ if (file.exists("03 results/tab.secondary.S2.full.rds")) {
   tab.secondary.S2.full <- read_rds("03 results/tab.secondary.S2.full.rds")
 }
 
-source("02 scripts/60_data_secondary3_ads.R")
+source("02 scripts/60_data_secondary3_ads.R") # data.secondary3.ads
 if (file.exists("03 results/tab.secondary.S3.rds")) {
   tab.secondary.S3 <- read_rds("03 results/tab.secondary.S3.rds")
 }
@@ -117,7 +117,7 @@ if (file.exists("03 results/tab.secondary.S3.full.rds")) {
 }
 
 # Exploratory Tables
-source("02 scripts/70_data_exploratory1_ads.R")
+source("02 scripts/70_data_exploratory1_ads.R") # data.exploratory1.ads
 if (file.exists("03 results/tab.exploratory.E1.rds")) {
   tab.exploratory.E1 <- read_rds("03 results/tab.exploratory.E1.rds")
 }
@@ -157,4 +157,34 @@ if (file.exists("03 results/gg.exploratory.E1.outcome.rds")) {
 }
 if (file.exists("03 results/gg.exploratory.E1.predict.rds")) {
   gg.exploratory.E1.predict <- read_rds("03 results/gg.exploratory.E1.predict.rds")
+}
+
+# Diagnostic Objects ------------------------------------------------------
+
+# load individual objects
+
+if (file.exists("03 results/diag.primary.P1.rds")) {
+  diag.primary.P1 <- read_rds("03 results/diag.primary.P1.rds")
+}
+if (file.exists("03 results/diag.secondary.S1.rds")) {
+  diag.secondary.S1 <- read_rds("03 results/diag.secondary.S1.rds")
+}
+if (file.exists("03 results/diag.secondary.S2.rds")) {
+  diag.secondary.S2 <- read_rds("03 results/diag.secondary.S2.rds")
+}
+if (file.exists("03 results/diag.secondary.S3.rds")) {
+  diag.secondary.S3 <- read_rds("03 results/diag.secondary.S3.rds")
+}
+if (file.exists("03 results/diag.exploratory.E1.rds")) {
+  diag.exploratory.E1 <- read_rds("03 results/diag.exploratory.E1.rds")
+}
+
+# load master objects
+
+if (exists("03 results/diag.metrics.rds")) {
+  diag.metrics <- read_rds("03 results/diag.metrics.rds")
+}
+
+if (exists("03 results/diag.vif.rds")) {
+  diag.vif <- read_rds("03 results/diag.vif.rds")
 }

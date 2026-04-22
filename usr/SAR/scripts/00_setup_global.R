@@ -45,6 +45,8 @@ library(performance)
 # library(car)
 # library(MASS)
 # library(rms)
+# library(logbin)
+# library(risks)
 # library(survival)
 # library(tidycmprsk)
 # library(srvyr)
@@ -57,6 +59,8 @@ library(performance)
 # library(mlogit)
 # library(sandwich)
 # library(AER)
+# library(WeightIt)
+# library(MatchIt)
 # library(moderndive) # geom_parallel_slopes
 # library(meta)
 # library(metafor)
@@ -86,7 +90,7 @@ library(DiagrammeR)
 library(writexl)
 # library(officer)
 # library(flextable)
-# library(knitr)
+library(knitr, include.only = "kable")
 # library(patchwork)
 # library(openxlsx)
 # library(modelsummary)
@@ -119,6 +123,7 @@ library(writexl)
 # library(pwr2)           # factorial anova
 
 ## soft dependencies - required by some loaded packages
+# library(webshot2) # save gtsummary/gt as images
 # library(see)    # performance
 # library(DHARMa) # performance
 # library(rlang)  # tab()
@@ -134,42 +139,6 @@ library(writexl)
 # UNCOMMENT ONLY ONE language option:
 options(workflow.language = "en") # Default (English)
 # options(workflow.language = "pt") # Portuguese
-
-# Themes and Options ------------------------------------------------------
-
-# setup gtsummary theme
-theme_ff_gtsummary()
-theme_gtsummary_compact()
-# theme_gtsummary_language(language = "pt") # moved to section labels
-
-# setup ggplot theme
-theme_set(theme_ff())
-
-ff.col <- "steelblue" # good for single groups scale  fill/color brewer
-ff.pal <- "Paired"    # good for binary groups scale  fill/color brewer
-# ff.pal <- "Blues"   # good for sequential groups    fill/color brewer
-# ff.pal <- "Set1"    # good for discrete groups      fill/color brewer
-# other palettes: "Blues" for sequential and "Set1" or viridis_d() for discrete
-
-# A wrapper function to apply common theme elements to all plots
-# Global Plot Template (gg.template)
-gg.template <- function(data, ...) {
-  # Initialize the plot with the data and the specific aesthetic mappings passed in '...'
-  ggplot(data, ...) +
-    # Add all global components (Scales and Theme)
-    scale_color_brewer(palette = ff.pal) +
-    scale_fill_brewer(palette = ff.pal) +
-    # scale_fill_viridis_d() +                # discrete palette
-    # scale_color_viridis_d() +               # discrete palette
-    theme_ff()
-}
-
-# gg.template <- list(
-#   scale_color_brewer(palette = ff.pal),
-#   scale_fill_brewer(palette = ff.pal),
-#   # scale_fill_viridis_d(),
-#   # scale_color_viridis_d(),
-#   theme_ff())
 
 # Global Variables --------------------------------------------------------
 
@@ -217,8 +186,8 @@ tab <- function(model, include = NULL, exponentiate=FALSE, digits = 3, footnote=
 
 # Function to create a table with crude and adjusted models
 tab_adj <- function(crude, adjusted, include=NULL, exponentiate=FALSE, footnote=NA_character_, adjusted_for=NA_character_, digits = 3,...) {
-  # "Adjusted by" footnote
-  if(!is.na(adjusted_for)) adjusted_for <- paste0(lab.model.adj, ": ", adjusted_for)
+  # "Adjusted for" footnote
+  if(!is.na(adjusted_for)) adjusted_for <- paste(lab.adjusted_for, adjusted_for)
 
   # This uses the list of tables and the labels (lab.model.raw/adj)
   tbl_merge(
@@ -238,8 +207,13 @@ effect_plot <- function(model, outcome = "outcome", exposure = "exposure", ...) 
   predicted_values <- ggeffects::ggpredict(model, terms = c(exposure), ...)
 
   # 2. Obtain the outcome label from the model
-  lab.outcome  <- labelled::var_label(model$model[[outcome]])
-  lab.exposure <- labelled::var_label(model$model[[exposure]])
+  if (class(model) %in% c("lmerModLmerTest", "lmerMod", "glmerMod")) {
+    lab.outcome  <- model %>% augment() %>% pull(outcome ) %>% var_label()
+    lab.exposure <- model %>% augment() %>% pull(exposure) %>% var_label()
+  } else {
+    lab.outcome  <- labelled::var_label(model$model[[outcome]])
+    lab.exposure <- labelled::var_label(model$model[[exposure]])
+  }
 
   # 3. Create plot with points and errors
   predicted_plot <- predicted_values %>%
@@ -320,6 +294,28 @@ render_table <- function(table_object, table_index, caption) {
   }
 }
 
+get_diagnostics <- function(model, label) {
+  # capture model diagnostics that need to be available for the report
+  bind_cols(
+    model = label,
+    model %>% r2() %>% as_tibble(),
+    # model %>% icc() %>% as_tibble() %>% select(-optional),
+    # model %>% check_normality() %>% as_tibble() %>% transmute(p.value=as.numeric(value)),
+  )
+}
+
+get_vif <- function(model) {
+  model %>%
+    check_collinearity() %>%
+    as_tibble() %>%
+    select(Term:VIF)
+}
+
+# Override defaults from gtsummary
+style_percent <- function(x, digits = 1, suffix = "%", ...) {
+  gtsummary::style_percent(x, digits = digits, suffix = suffix, ...)
+}
+
 # Modeling ----------------------------------------------------------------
 
 formula.primary.P1.raw     <- outcome.P1 ~ exposure
@@ -335,33 +331,79 @@ formula.exploratory.E1.adj <- outcome.E1 ~ exposure + age + sex
 # formula.exploratory.E1.raw <- Surv(time.E1, outcome.E1) ~ exposure
 # formula.exploratory.E1.adj <- Surv(time.E1, outcome.E1) ~ exposure + age + sex
 
+# Exponentiate
 exp.outcome.P1 <- TRUE
 exp.outcome.S1 <- TRUE
 exp.outcome.S2 <- FALSE
 exp.outcome.S3 <- TRUE
 exp.outcome.E1 <- TRUE
 
-
 # Labels ------------------------------------------------------------------
 
 # General purpose template labels
 if (getOption("workflow.language") == "pt") {
   theme_gtsummary_language(language = "pt")
-  lab.model.raw   <- "Não-Ajustado"
-  lab.model.adj   <- "Ajustado"
+  lab.model.raw    <- "Não-Ajustado"
+  lab.model.adj    <- "Ajustado"
+  lab.adjusted_for <- "Ajustado por"
+  ci.sep           <- " até "
 } else {
   theme_gtsummary_language(language = "en") # default
-  lab.model.raw   <- "Unadjusted"
-  lab.model.adj   <- "Adjusted"
+  lab.model.raw    <- "Unadjusted"
+  lab.model.adj    <- "Adjusted"
+  lab.adjusted_for <- "Adjusted for"
+  ci.sep           <- " to "
 }
 
-# Project-specific labels
+# Exposure
 lab.exposure   <- "Study exposure"
+lab.time.E1    <- "Follow-up time for exploratory outcome 1 (years)"
+
+# Primary Outcomes
 lab.outcome.P1 <- "Study primary outcome 1"
+
+# Secondary Outcomes
 lab.outcome.S1 <- "Study secondary outcome 1"
 lab.outcome.S2 <- "Study secondary outcome 2"
 lab.outcome.S3 <- "Study secondary outcome 3"
+
+# Exploratory Outcomes
 lab.outcome.E1 <- "Study exploratory outcome 1"
-lab.time.E1    <- "Follow-up time for exploratory outcome 1 (years)"
-lab.age                 <- "Age (years)"
-lab.sex                 <- "Sex"
+
+# Covariates & Time
+lab.age        <- "Age (years)"
+lab.sex        <- "Sex"
+lab.time       <- "Follow-up time (weeks)"
+
+# Adjusted for
+lab.rhs.adj     <- paste0(lab.sex, " and ", lab.age)
+
+# Abbreviations
+abbr.bmi   <- "BMI = Body Mass Index"
+
+# Themes and Options ------------------------------------------------------
+
+# setup gtsummary theme
+theme_ff_gtsummary()
+
+# setup ggplot theme
+theme_set(theme_ff())
+
+ff.col <- "steelblue" # good for single groups scale  fill/color brewer
+ff.pal <- "Paired"    # good for binary groups scale  fill/color brewer
+# ff.pal <- "Blues"   # good for sequential groups    fill/color brewer
+# ff.pal <- "Set1"    # good for discrete groups      fill/color brewer
+# other palettes: "Blues" for sequential and "Set1" or viridis_d() for discrete
+
+# A wrapper function to apply common theme elements to all plots
+# Global Plot Template (gg.template)
+gg.template <- function(data, ...) {
+  # Initialize the plot with the data and the specific aesthetic mappings passed in '...'
+  ggplot(data, ...) +
+    # Add all global components (Scales and Theme)
+    scale_color_brewer(palette = ff.pal) +
+    scale_fill_brewer(palette = ff.pal) +
+    # scale_fill_viridis_d() +                # discrete palette
+    # scale_color_viridis_d() +               # discrete palette
+    theme_ff()
+}

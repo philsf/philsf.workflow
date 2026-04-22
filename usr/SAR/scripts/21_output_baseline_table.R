@@ -21,6 +21,7 @@ tab.baseline <- data.baseline.ads %>%
   tbl_summary(
     include = -id,
     by = exposure, # Comment for single-arm study, and remove add_overall()
+    digits = all_categorical() ~ c(0, 1), # 1 digit for percentages
     missing_text = "Missing",
     missing_stat = "{N_miss} ({p_miss}%)",
   ) %>%

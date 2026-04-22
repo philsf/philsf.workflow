@@ -76,6 +76,16 @@ if (exists("tab.primary.P1.full.sens")) {
   final.excel.list[["TA.P1.sens Full Sensitivity P1"]] <- tab.primary.P1.full.sens %>% as.data.frame()
 }
 
+# Diagnostic Tables -------------------------------------------------------
+
+if (exists("diag.metrics")) {
+  final.excel.list[["Diagnostics: Model Metrics"]] <- diag.metrics %>% as.data.frame()
+}
+
+if (exists("diag.vif")) {
+  final.excel.list[["Diagnostics: VIF"]] <- diag.vif %>% as.data.frame()
+}
+
 # Render XLSX file --------------------------------------------------------
 
 # Save the master list if at least one table (Table 1) was found.

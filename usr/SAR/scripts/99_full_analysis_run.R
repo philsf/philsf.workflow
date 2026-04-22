@@ -35,9 +35,9 @@ source("02 scripts/32_output_primary1_table.R")   # Tables from the models
 source("02 scripts/33_output_primary1_plot.R")    # Plots from the models
 
 # # Sensitivity Analysis
-# source("02 scripts/35_analysis_primary1_sensitivity.R")
-# source("02 scripts/36_output_primary1_sens_table.R")
-# source("02 scripts/37_output_primary1_sens_plot.R")
+source("02 scripts/35_analysis_primary1_sensitivity.R")
+source("02 scripts/36_output_primary1_sens_table.R")
+source("02 scripts/37_output_primary1_sens_plot.R")
 
 # UNIVARIATE ANALYSIS GIG (Group Comparisons) - COMMENTED (Choose one gig)
 # source("02 scripts/34_output_primary_table_univar.R")
@@ -46,27 +46,27 @@ source("02 scripts/33_output_primary1_plot.R")    # Plots from the models
 
 # Secondaries - Optional: if contracted
 
-# source("02 scripts/40_data_secondary1_ads.R")
-# source("02 scripts/41_analysis_secondary1_model.R")
-# source("02 scripts/42_output_secondary1_table.R")
-# source("02 scripts/43_output_secondary1_plot.R")
+source("02 scripts/40_data_secondary1_ads.R")
+source("02 scripts/41_analysis_secondary1_model.R")
+source("02 scripts/42_output_secondary1_table.R")
+source("02 scripts/43_output_secondary1_plot.R")
 
-# source("02 scripts/50_data_secondary2_ads.R")
-# source("02 scripts/51_analysis_secondary2_model.R")
-# source("02 scripts/52_output_secondary2_table.R")
-# source("02 scripts/53_output_secondary2_plot.R")
+source("02 scripts/50_data_secondary2_ads.R")
+source("02 scripts/51_analysis_secondary2_model.R")
+source("02 scripts/52_output_secondary2_table.R")
+source("02 scripts/53_output_secondary2_plot.R")
 
-# source("02 scripts/60_data_secondary3_ads.R")
-# source("02 scripts/61_analysis_secondary3_model.R")
-# source("02 scripts/62_output_secondary3_table.R")
-# source("02 scripts/63_output_secondary3_plot.R")
+source("02 scripts/60_data_secondary3_ads.R")
+source("02 scripts/61_analysis_secondary3_model.R")
+source("02 scripts/62_output_secondary3_table.R")
+source("02 scripts/63_output_secondary3_plot.R")
 
 # Exploratory Analyses (7x- Series) ---------------------------------------
 
-# source("02 scripts/70_data_exploratory1_ads.R")
-# source("02 scripts/71_analysis_exploratory1_model.R")
-# source("02 scripts/72_output_exploratory1_table.R")
-# source("02 scripts/73_output_exploratory1_plot.R")
+source("02 scripts/70_data_exploratory1_ads.R")
+source("02 scripts/71_analysis_exploratory1_model.R")
+source("02 scripts/72_output_exploratory1_table.R")
+source("02 scripts/73_output_exploratory1_plot.R")
 
 # Pipeline (9x- Series) ---------------------------------------------------
 
@@ -74,7 +74,7 @@ source("02 scripts/33_output_primary1_plot.R")    # Plots from the models
 source("02 scripts/95_cache_results.R") # Run last to save all objects
 
 # Output Rendering
-source("02 scripts/90_outputs_tables.R") # Renders final tables to Excel
+# source("02 scripts/90_outputs_tables.R") # Renders final tables to Excel (only manual!)
 source("02 scripts/91_outputs_plots.R")  # Renders final plots to PNGs
 
 message("Full pipeline executed. All results cached and final outputs saved.")

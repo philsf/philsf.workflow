@@ -31,7 +31,7 @@ tab.primary.P1 <- tab_adj(
   # bold_labels() %>% # bolding is preferably done in the document template
   # modify_header(label ~ "...") %>%
   modify_footnote_header(
-    footnote = foot.primary.P1,
+    footnote = NA_character_, # additional global footnote
     replace = FALSE,
   )
 
@@ -50,6 +50,6 @@ tab.primary.P1.full <- tab_adj(
   # bold_labels() %>% # bolding is preferably done in the document template
   # modify_header(label ~ "...") %>%
   modify_footnote_header(
-    footnote = foot.primary.P1.full,
+    footnote = NA_character_, # additional global footnote
     replace = FALSE,
   )

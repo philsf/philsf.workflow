@@ -40,7 +40,7 @@ model.secondary.S2.adj <- lm(
 # #    - For GLMs (logistic, Poisson), this uses appropriate residuals (e.g., Dunn-Smyth).
 # #    - For LMs (gaussian), this provides standard assumption checks.
 # model.secondary.S2.adj %>% performance::check_model()
-model.secondary.S2.adj %>% performance::r2()
+# model.secondary.S2.adj %>% performance::r2()
 
 # # 2. Linear models
 # # Normality of Residuals
@@ -60,18 +60,25 @@ model.secondary.S2.adj %>% performance::r2()
 # model.secondary.S2.adj %>% AER::dispersiontest()
 
 # # 3. Collinearity Check
-model.secondary.S2.adj %>% car::vif()
+# model.secondary.S2.adj %>% car::vif()
 
 # # 4. Influence/Leverage/Outliers
 # model.secondary.S2.adj %>% car::outlierTest()
-model.secondary.S2.adj %>% broom::augment() %>% slice_max(.cooksd, n = 5) # Highest influence / extreme response
-model.secondary.S2.adj %>% broom::augment() %>% slice_max(.hat,    n = 5) # Highest leverage  / extreme predictor
+# model.secondary.S2.adj %>% broom::augment() %>% slice_max(.cooksd, n = 5) # Highest influence / extreme response
+# model.secondary.S2.adj %>% broom::augment() %>% slice_max(.hat,    n = 5) # Highest leverage  / extreme predictor
 
-# 5. Model Comparison
-anova(model.secondary.S2.raw, model.secondary.S2.adj)
+# # 5. Model Comparison
+# anova(model.secondary.S2.raw, model.secondary.S2.adj)
 
 # APPENDIX CHECKS: Full Diagnostics Plots (ggfortify)
 
 # Full Diagnostic Plots (Good for Appendix/Internal QC)
 # model.secondary.S2.raw %>% autoplot()
 # model.secondary.S2.adj %>% autoplot()
+
+# capture model diagnostics to expose it to the report
+diag.secondary.S2 <- bind_rows(
+  model.secondary.S2.adj %>% get_diagnostics("Secondary S2"),
+)
+
+diag.secondary.S2

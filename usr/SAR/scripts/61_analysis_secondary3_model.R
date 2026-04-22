@@ -40,7 +40,7 @@ model.secondary.S3.adj <- glm(
 # #    - For GLMs (logistic, Poisson), this uses appropriate residuals (e.g., Dunn-Smyth).
 # #    - For LMs (gaussian), this provides standard assumption checks.
 # model.secondary.S3.adj %>% performance::check_model()
-model.secondary.S3.adj %>% performance::r2()
+# model.secondary.S3.adj %>% performance::r2()
 
 # # 2. Linear models
 # # Normality of Residuals
@@ -59,19 +59,26 @@ model.secondary.S3.adj %>% performance::r2()
 # model.secondary.S3.raw %>% AER::dispersiontest()
 # model.secondary.S3.adj %>% AER::dispersiontest()
 
-# # 3. Collinearity Check
-model.secondary.S3.adj %>% car::vif()
+# # # 3. Collinearity Check
+# model.secondary.S3.adj %>% car::vif()
 
 # # 4. Influence/Leverage/Outliers
 # model.secondary.S3.adj %>% car::outlierTest()
-model.secondary.S3.adj %>% broom::augment() %>% slice_max(.cooksd, n = 5) # Highest influence / extreme response
-model.secondary.S3.adj %>% broom::augment() %>% slice_max(.hat,    n = 5) # Highest leverage  / extreme predictor
+# model.secondary.S3.adj %>% broom::augment() %>% slice_max(.cooksd, n = 5) # Highest influence / extreme response
+# model.secondary.S3.adj %>% broom::augment() %>% slice_max(.hat,    n = 5) # Highest leverage  / extreme predictor
 
-# 5. Model Comparison
-anova(model.secondary.S3.raw, model.secondary.S3.adj)
+# # 5. Model Comparison
+# anova(model.secondary.S3.raw, model.secondary.S3.adj)
 
 # APPENDIX CHECKS: Full Diagnostics Plots (ggfortify)
 
 # Full Diagnostic Plots (Good for Appendix/Internal QC)
 # model.secondary.S3.raw %>% autoplot()
 # model.secondary.S3.adj %>% autoplot()
+
+# capture model diagnostics to expose it to the report
+diag.secondary.S3 <- bind_rows(
+  model.secondary.S3.adj %>% get_diagnostics("Secondary S3"),
+)
+
+diag.secondary.S3

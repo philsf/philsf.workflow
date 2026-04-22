@@ -41,7 +41,7 @@ model.primary.P1.adj <- glm(
 # #    - For GLMs (logistic, Poisson), this uses appropriate residuals (e.g., Dunn-Smyth).
 # #    - For LMs (gaussian), this provides standard assumption checks.
 # model.primary.P1.adj %>% performance::check_model()
-model.primary.P1.adj %>% performance::r2()
+# model.primary.P1.adj %>% performance::r2()
 
 # # 2. Linear models
 # # Normality of Residuals
@@ -61,18 +61,26 @@ model.primary.P1.adj %>% performance::r2()
 # model.primary.P1.adj %>% AER::dispersiontest()
 
 # # 3. Collinearity Check
-model.primary.P1.adj %>% car::vif()
+# model.primary.P1.adj %>% car::vif()
 
 # # 4. Influence/Leverage/Outliers
-# model.primary.P1.adj %>% car::outlierTest()
-model.primary.P1.adj %>% broom::augment() %>% slice_max(.cooksd, n = 5) # Highest influence / extreme response
-model.primary.P1.adj %>% broom::augment() %>% slice_max(.hat,    n = 5) # Highest leverage  / extreme predictor
+# # model.primary.P1.adj %>% car::outlierTest()
+# model.primary.P1.adj %>% check_outliers() %>% as_tibble() %>% filter(Outlier==1)
+# model.primary.P1.adj %>% broom::augment() %>% slice_max(.cooksd, n = 5) # Highest influence / extreme response
+# model.primary.P1.adj %>% broom::augment() %>% slice_max(.hat,    n = 5) # Highest leverage  / extreme predictor
 
-# 5. Model Comparison
-anova(model.primary.P1.raw, model.primary.P1.adj)
+# # 5. Model Comparison
+# anova(model.primary.P1.raw, model.primary.P1.adj)
 
 # APPENDIX CHECKS: Full Diagnostics Plots (ggfortify)
 
 # Full Diagnostic Plots (Good for Appendix/Internal QC)
 # model.primary.P1.raw %>% autoplot()
 # model.primary.P1.adj %>% autoplot()
+
+# capture model diagnostics to expose it to the report
+diag.primary.P1 <- bind_rows(
+  model.primary.P1.adj %>% get_diagnostics("Primary P1"),
+)
+
+diag.primary.P1
