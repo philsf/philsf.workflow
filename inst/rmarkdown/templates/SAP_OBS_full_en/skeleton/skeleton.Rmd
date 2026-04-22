@@ -302,19 +302,40 @@ knitr::kable(
 
 ## Analysis Sets
 
-### Full Analysis Set (FAS)
+[Analyst Note: FAS: all records meeting selection criteria. mFAS: all records provided by the client/no protocol or eligibility criteria (black-box scenario). PPS: participants without protocol deviations. CCS: records with non-missing values.]
+
+<!-- ### Full Analysis Set (FAS) -->
+### Modified Full Analysis Set (mFAS)
 
 [Analyst Note: e.g., all records meeting selection criteria]
 
+<!-- The Full Analysis Set (FAS) is defined as the set with all records in the database who fulfill the eligibility criteria defined in Section 3.4. -->
+<!-- This represents the population for all descriptive analyses and analyses for primary objectives, and fulfills the Intention-to-treat Principle (ICH E9). -->
+
+The Modified Full Analysis Set (mFAS) is defined here as the set with all records included in the database provided for analysis.
+This represents the population for all descriptive and analyses for primary objectives, and is the best proxy available to fulfill the practical intent of the Intention-to-treat Principle (ICH E9).
+
+<!-- ### Per Protocol Set (PPS) -->
 ### Complete Case Set (CCS)
 
 [Analyst Note: Records with non-missing values for specific variables.]
+
+<!-- The Per Protocol Set (PPS) is the subset of the FAS that includes evaluable records with no major protocol deviations (ICH E9). -->
+<!-- Following ICH E9 principles, this set is used to evaluate the robustness of the primary model's estimates. -->
+
+The Complete Case Set (CCS) is defined here as a subset of the mFAS that includes records with complete data for critical analytic variables, like the primary exposure and outcome.
+Following ICH E9 principles, this set is used to evaluate the robustness of the primary model's estimates.
 
 ### Imputed Analysis Set (IAS)
 
 [Analyst Note: Optional, as needed per project.]
 
-### Sensitivity Analysis Set (SAS)
+The Imputed Analysis Set (IAS) is defined as the set with all records from the
+[FAS/mFAS]
+population after addressing missing values in key analytic variables via Multiple Imputation (see Section 5.4).
+This set is used to evaluate the robustness of results when accounting for missing data mechanisms.
+
+### Sensitivity Set
 
 [Analyst Note: Optional, as needed per project.]
 
@@ -326,34 +347,41 @@ knitr::kable(
 
 [Analyst Note: Descriptive methods, digit precision, Complex Survey Design logic, time-to-event methods, and reporting of missingness]
 
-The participant
-<!-- baseline -->
-characteristics will be described overall and by
-exposure.
-Demographic
-(sex and age)
-and clinical variables
-<!-- ( [vars] ) -->
-will be described as
-mean (SD)
-<!-- median (IQR) -->
-or as counts and proportions (%), as appropriate.
+Baseline demographic and clinical characteristics will be summarized overall using the methods below.
+Continuous variables will be presented as means and standard deviations (SD).
+<!-- Continuous variables will be presented as means, standard deviations (SD), median, Q1 and Q3 quartiles, minimum and maximum. -->
+Categorical variables will be presented as counts and proportions (%).
 The distributions of participants' characteristics will be summarized in tables and visualized in exploratory plots.
+
+Estimates will be reported with 2 decimal places (including CIs), percentages with 1 decimal place and p-values with 3 decimal places.
+Any p-values that are too close to either 0 or 1 will be reported as "<0.001" or ">0.999", respectively.
+
 Missing data will be reported in tables as counts and proportions (%).
+No new "Missing" category will be created for these values, and the handling of missing values is described in Section 5.4.
 
 ## Missing Data Handling
 
-[Analyst Note: Follow a tiered approach (Van Buuren, 2018). <5%: CCA. 5-20%: MI. 20-40%: MI + Sensitivity. >40%: Drop.]
+[Analyst Note: Follow a tiered approach. <5%: CCA. 5-20%: MI. 20-40%: MI + Sensitivity. >40%: Drop.]
 
-No missing data imputation will be performed.
-All evaluations will be performed as complete case analyses.
+The frequency and distribution of missing data will be described following the methods in Section 5.3 to evaluate potential selection bias.
+By default, no missing data imputation will be performed.
+Statistical models will use an "Available Case Analysis" approach.
+However, if missingness exceeds 5% in critical analytic variables (see Section 4.1 for Exposures, Section 4.2 for Outcomes, and Section 4.3 for Covariates), a tiered approach will be triggered as follows:
 
-<!-- Variables with missingness exceeding 40% will be excluded from multivariable adjustment due to high informational noise and potential model instability. -->
-<!-- If all remaining variables have at most 5% missing data, no missing data imputation will be performed and all evaluations will be performed as complete case analyses (Van Buuren, 2018). -->
-<!-- If there are variables with 5% to 40% missingness, Multiple Imputation by Chained Equations (MICE) with 40 iterations will be employed to preserve statistical power and minimize selection bias (White et al., 2011). -->
-<!-- The mechanism of missingness will be assumed to be Missing At Random (MAR). -->
+- If all analytic variables show <5% missingness, no imputation will be performed.
+- [LM/GLM] Fixed-effects models will use complete case analysis with the CCS (Section 5.1).
+Records with missing values in any variable required for a specific model will be excluded from that estimation.
+- [LMM/GLMM] Under the MAR assumption, all available longitudinal observations will be included.
+Records with missing data at specific time points will still contribute to the model with their available measurements.
 
-<!-- A sensitivity analysis comparing CCA and MI results will be mandatory only if there are variables where missingness exceeds 20%, or for the primary outcome regardless of the missingness level. -->
+If missingness occurs in the 5-40% range for variables included in the analysis specification, Multiple Imputation (MI) is recommended to preserve power and minimize bias (White et al., 2011).
+If contracted, MI will be conducted with 40 iterations, and results will be reported as the IAS (Section 5.1).
+If MI is not performed, the limitations of the resulting CCA will be discussed.
+
+If MI is performed under 20% or more missingness, a sensitivity analysis between the CCS and the IAS is recommended to show robustness of the results.
+If contracted, a sensitivity analysis will be performed for the Primary Outcome (Section 5.4).
+
+Variables with missingness exceeding 40% will be excluded from multivariate adjustment due to high informational noise and potential model instability.
 
 ## Analysis of Primary Objective
 
