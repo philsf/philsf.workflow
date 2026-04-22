@@ -45,6 +45,8 @@ library(performance)
 # library(car)
 # library(MASS)
 # library(rms)
+# library(logbin)
+# library(risks)
 # library(survival)
 # library(tidycmprsk)
 # library(srvyr)
@@ -57,6 +59,8 @@ library(performance)
 # library(mlogit)
 # library(sandwich)
 # library(AER)
+# library(WeightIt)
+# library(MatchIt)
 # library(moderndive) # geom_parallel_slopes
 # library(meta)
 # library(metafor)
@@ -86,7 +90,7 @@ library(DiagrammeR)
 library(writexl)
 # library(officer)
 # library(flextable)
-# library(knitr)
+library(knitr, include.only = "kable")
 # library(patchwork)
 # library(openxlsx)
 # library(modelsummary)
@@ -119,6 +123,7 @@ library(writexl)
 # library(pwr2)           # factorial anova
 
 ## soft dependencies - required by some loaded packages
+# library(webshot2) # save gtsummary/gt as images
 # library(see)    # performance
 # library(DHARMa) # performance
 # library(rlang)  # tab()
