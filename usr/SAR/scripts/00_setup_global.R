@@ -202,8 +202,13 @@ effect_plot <- function(model, outcome = "outcome", exposure = "exposure", ...) 
   predicted_values <- ggeffects::ggpredict(model, terms = c(exposure), ...)
 
   # 2. Obtain the outcome label from the model
-  lab.outcome  <- labelled::var_label(model$model[[outcome]])
-  lab.exposure <- labelled::var_label(model$model[[exposure]])
+  if (class(model) %in% c("lmerModLmerTest", "lmerMod", "glmerMod")) {
+    lab.outcome  <- model %>% augment() %>% pull(outcome ) %>% var_label()
+    lab.exposure <- model %>% augment() %>% pull(exposure) %>% var_label()
+  } else {
+    lab.outcome  <- labelled::var_label(model$model[[outcome]])
+    lab.exposure <- labelled::var_label(model$model[[exposure]])
+  }
 
   # 3. Create plot with points and errors
   predicted_plot <- predicted_values %>%
