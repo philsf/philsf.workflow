@@ -217,8 +217,8 @@ tab <- function(model, include = NULL, exponentiate=FALSE, digits = 3, footnote=
 
 # Function to create a table with crude and adjusted models
 tab_adj <- function(crude, adjusted, include=NULL, exponentiate=FALSE, footnote=NA_character_, adjusted_for=NA_character_, digits = 3,...) {
-  # "Adjusted by" footnote
-  if(!is.na(adjusted_for)) adjusted_for <- paste0(lab.model.adj, ": ", adjusted_for)
+  # "Adjusted for" footnote
+  if(!is.na(adjusted_for)) adjusted_for <- paste(lab.adjusted_for, adjusted_for)
 
   # This uses the list of tables and the labels (lab.model.raw/adj)
   tbl_merge(
@@ -366,10 +366,12 @@ if (getOption("workflow.language") == "pt") {
   theme_gtsummary_language(language = "pt")
   lab.model.raw   <- "Não-Ajustado"
   lab.model.adj   <- "Ajustado"
+  lab.adjusted_for <- "Ajustado por"
 } else {
   theme_gtsummary_language(language = "en") # default
   lab.model.raw   <- "Unadjusted"
   lab.model.adj   <- "Adjusted"
+  lab.adjusted_for <- "Adjusted for"
 }
 
 # Project-specific labels
