@@ -90,6 +90,8 @@ source(here("02 scripts", "96_load_cached_results.R"), encoding = 'UTF-8')
 # Abbreviations
 
 - AIC: Akaike Information Criterion
+- ANCOVA: Analysis of Covariance
+- ANOVA: Analysis of Variance
 - AUC: Area Under the Curve
 - BMI: Body Mass Index
 - CCS: Complete Case Set
@@ -103,22 +105,29 @@ source(here("02 scripts", "96_load_cached_results.R"), encoding = 'UTF-8')
 - h: Cohen's h Effect Size
 - HR: Hazard Ratio
 - IAS: Imputed Analysis Set
+- ICC: Intra-class Correlation Coefficient
 - ICD: International Classification of Diseases
 - IPTW: Inverse Probability of Treatment Weighting
 - IQR: Interquartile Range
+- IR: Incidence Rate
 - IRR: Incidence Rate Ratio
 - LMM: Linear Mixed Model
 - LogMM: Logistic Mixed Model
-- MCAR: Missing Completely at Random
 - MAR: Missing at Random
+- MCAR: Missing Completely at Random
+- MCID: Minimal Clinically Important Difference
+- mFAS: Modified Full Analysis Set
+- MI: Multiple Imputation
 - MICE: Multiple Imputation by Chained Equations
 - MNAR: Missing Not at Random
 - OR: Odds Ratio
+- PPS: Per Protocol Set
+- Q1: First Quartile
+- Q3: Third Quartile
 - ROC: Receiver Operating Curve
 - RR: Risk Ratio
 - SAP: Statistical Analysis Plan
 - SAR: Statistical Analytic Report
-- SAS: Sensitivity Analysis Set
 - SD: Standard Deviation
 - SE: Standard Error
 - STROBE: Strengthening the Reporting of Observational Studies in Epidemiology
@@ -269,21 +278,24 @@ Data will be sourced from [X], cleaned via [standardized naming/coercion], and v
 
 ## Analysis Sets
 
-- Full Analysis Set (FAS)
+[Analyst Note: FAS: all records meeting selection criteria. mFAS: all records provided by the client/no protocol or eligibility criteria (black-box scenario). PPS: participants without protocol deviations. CCS: records with non-missing values.]
 
-[Analyst Note: e.g., all records meeting selection criteria]
+- **Full Analysis Set (FAS):** All records in the database who fulfill the eligibility criteria defined in Section 3.4.
+This represents the population for all descriptive analyses and analyses for primary objectives, and fulfills the Intention-to-treat Principle (ICH E9).
+- **Per Protocol Set (PPS):** A subset of the FAS that includes evaluable participants with no major protocol deviations (ICH E9).
+Following ICH E9 principles, this set will be used to evaluate the robustness of the primary model's estimates.
 
-- Complete Case Set (CCS)
+- **Modified Full Analysis Set (mFAS):** All records included in the database provided for analysis.
+This represents the population for all descriptive analyses and analyses for primary objectives, and is the best proxy available to fulfill the practical intent of the Intention-to-treat Principle (ICH E9).
+- **Complete Case Set (CCS):** A subset of the mFAS that includes participants with complete data for critical analytic variables, like the primary exposure and outcome.
+Following ICH E9 principles, this set will be used to evaluate the robustness of the primary model's estimates.
 
-[Analyst Note: Records with non-missing values for specific variables.]
+- **Imputed Analysis Set (IAS):** All records from the
+[FAS/mFAS]
+population after addressing missing values in key analytic variables via Multiple Imputation (see Section 5.4).
+This set is used to evaluate the robustness of results when accounting for missing data mechanisms.
 
-- Imputed Analysis Set (IAS)
-
-[Analyst Note: Optional, as needed per project.]
-
-- Sensitivity Analysis Set (SAS)
-
-[Analyst Note: Optional, as needed per project.]
+<!-- - **Sensitivity Set:** [Analyst Note: Optional, as needed per project.] -->
 
 ## Study Size and Power
 
@@ -293,34 +305,40 @@ Data will be sourced from [X], cleaned via [standardized naming/coercion], and v
 
 [Analyst Note: Descriptive methods, digit precision, Complex Survey Design logic, time-to-event methods, and reporting of missingness]
 
-The participant
-<!-- baseline -->
-characteristics will be described overall and by
-exposure.
-Demographic
-(sex and age)
-and clinical variables
-<!-- ( [vars] ) -->
-will be described as
-mean (SD)
-<!-- median (IQR) -->
-or as counts and proportions (%), as appropriate.
+Baseline demographic and clinical characteristics will be summarized overall using the methods below.
+Continuous variables will be presented as means and standard deviations (SD).
+Categorical variables will be presented as counts and proportions (%).
 The distributions of participants' characteristics will be summarized in tables and visualized in exploratory plots.
+
+Estimates will be reported with 2 decimal places (including CIs), percentages with 1 decimal place and p-values with 3 decimal places.
+Any p-values that are too close to either 0 or 1 will be reported as "<0.001" or ">0.999", respectively.
+
 Missing data will be reported in tables as counts and proportions (%).
+No new "Missing" category will be created for these values, and the handling of missing values is described in Section 5.4.
 
 ## Missing Data Handling
 
-[Analyst Note: Follow a tiered approach (Van Buuren, 2018). <5%: CCA. 5-20%: MI. 20-40%: MI + Sensitivity. >40%: Drop.]
+[Analyst Note: Follow a tiered approach. <5%: CCA. 5-20%: MI. 20-40%: MI + Sensitivity. >40%: Drop.]
 
-No missing data imputation will be performed.
-All evaluations will be performed as complete case analyses.
+The frequency and distribution of missing data will be described following the methods in Section 5.3 to evaluate potential selection bias.
+By default, no missing data imputation will be performed.
+Statistical models will use an "Available Case Analysis" approach.
+However, if missingness exceeds 5% in critical analytic variables (see Section 4.1 for Exposures, Section 4.2 for Outcomes, and Section 4.3 for Covariates), a tiered approach will be triggered as follows:
 
-<!-- Variables with missingness exceeding 40% will be excluded from multivariable adjustment due to high informational noise and potential model instability. -->
-<!-- If all remaining variables have at most 5% missing data, no missing data imputation will be performed and all evaluations will be performed as complete case analyses (Van Buuren, 2018). -->
-<!-- If there are variables with 5% to 40% missingness, Multiple Imputation by Chained Equations (MICE) with 40 iterations will be employed to preserve statistical power and minimize selection bias (White et al., 2011). -->
-<!-- The mechanism of missingness will be assumed to be Missing At Random (MAR). -->
+- If all analytic variables show <5% missingness, no imputation will be performed.
+- [LM/GLM] Fixed-effects models will use complete case analysis with the CCS (Section 5.1).
+Records with missing values in any variable required for a specific model will be excluded from that estimation.
+- [LMM/GLMM] Under the MAR assumption, all available longitudinal observations will be included.
+Records with missing data at specific time points will still contribute to the model with their available measurements.
 
-<!-- A sensitivity analysis comparing CCA and MI results will be mandatory only if there are variables where missingness exceeds 20%, or for the primary outcome regardless of the missingness level. -->
+If missingness occurs in the 5-40% range for variables included in the analysis specification, Multiple Imputation (MI) is recommended to preserve power and minimize bias (White et al., 2011).
+If contracted, MI will be conducted with 40 iterations, and results will be reported as the IAS (Section 5.1).
+If MI is not performed, the limitations of the resulting CCA will be discussed.
+
+If MI is performed under 20% or more missingness, a sensitivity analysis between the CCS and the IAS is recommended to show robustness of the results.
+If contracted, a sensitivity analysis will be performed for the Primary Outcome (Section 5.4).
+
+Variables with missingness exceeding 40% will be excluded from multivariate adjustment due to high informational noise and potential model instability.
 
 ## Analysis of Primary Objective
 
@@ -381,23 +399,26 @@ This analysis will be performed using the statistical software `R` (currently on
 
 - **SAR-yyyy-NNN-XX-v01** -- [title]
 - Zarin DA, et al. (2011). *The ClinicalTrials.gov results database -- update and key issues.* NEJM. (<https://doi.org/10.1056/NEJMsa1012065>).
-- Gamble, C., et al. (2017). *Guidelines for the Content of Statistical Analysis Plans in Clinical Trials.* JAMA. (<https://doi.org/10.1001/jama.2017.18556>)
-- von Elm, E., et al. (2014). *The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: guidelines for reporting observational studies.* Int J Surg. (<https://doi.org/10.1016/j.ijsu.2014.07.013>)
-- Benchimol, E. I., et al. (2015). *The REporting of studies Conducted using Observational Routinely-collected health Data (RECORD) statement.* PLoS Med. (<https://doi.org/10.1371/journal.pmed.1001885>).
-- Schulz, K. F., Altman, D. G., & Moher, D. (2010). *CONSORT 2010 Statement: updated guidelines for reporting parallel group randomised trials.* BMJ. (<https://doi.org/10.1136/bmj.c332>).
-- Page, M. J., et al. (2021). *The PRISMA 2020 statement: an updated guideline for reporting systematic reviews.* BMJ. (<https://doi.org/10.1136/bmj.n71>).
-- Moher, D., et al. (2015). *Preferred Reporting Items for Systematic Review and Meta-Analysis Protocols (PRISMA-P) 2015 statement.* Syst Rev. (<https://doi.org/10.1186/2046-4053-4-1>).
-- Cohen, J. (1988). *Statistical Power Analysis for the Behavioral Sciences (2nd Ed.).* Routledge.
-- Harrell, F. E. (2015). *Regression Modeling Strategies: With Applications to Linear Models, Logistic and Ordinal Regression, and Survival Analysis (2nd Ed.).* Springer.
-- Fox, J., & Weisberg, S. (2019). *An R Companion to Applied Regression (3rd Ed.).* SAGE Publications.
-- Hosmer, D. W., Lemeshow, S., & Sturdivant, R. X. (2013). *Applied Logistic Regression (3rd Ed.).* Wiley.
-- Fitzmaurice, G. M., Laird, N. M., & Ware, J. H. (2011). *Applied Longitudinal Analysis (2nd Ed.).* Wiley.
-- van Buuren, S. (2018). *Flexible Imputation of Missing Data (2nd Ed.).* CRC Press.
+- Gamble C, et al. (2017). *Guidelines for the Content of Statistical Analysis Plans in Clinical Trials.* JAMA. (<https://doi.org/10.1001/jama.2017.18556>)
+- ICH E9 (1998), *Statistical Principles for Clinical Trials*, International Conference on Harmonization of Technical Requirements for Registration of Pharmaceuticals for Human Use.
+- von Elm E, Altman DG, Egger M, Pocock SJ, Gøtzsche PC, Vandenbroucke JP. *The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: Guidelines for Reporting Observational Studies.* PLoS Med (<https://doi.org/10.1371/journal.pmed.0040296>)
+- Benchimol EI, et al. (2015). *The REporting of studies Conducted using Observational Routinely-collected health Data (RECORD) statement.* PLoS Med. (<https://doi.org/10.1371/journal.pmed.1001885>).
+- Schulz KF, Altman DG, Moher D. (2010). *CONSORT 2010 Statement: updated guidelines for reporting parallel group randomised trials.* BMJ. (<https://doi.org/10.1136/bmj.c332>).
+- Page MJ, et al. (2021). *The PRISMA 2020 statement: an updated guideline for reporting systematic reviews.* BMJ. (<https://doi.org/10.1136/bmj.n71>).
+- Moher D, et al. (2015). *Preferred Reporting Items for Systematic Review and Meta-Analysis Protocols (PRISMA-P) 2015 statement.* Syst Rev. (<https://doi.org/10.1186/2046-4053-4-1>).
+- Cohen J. (1988). *Statistical Power Analysis for the Behavioral Sciences (2nd Ed.).* Routledge.
+- Harrell FE. (2015). *Regression Modeling Strategies: With Applications to Linear Models, Logistic and Ordinal Regression, and Survival Analysis (2nd Ed.).* Springer.
+- Fox J, Weisberg S. (2019). *An R Companion to Applied Regression (3rd Ed.).* SAGE Publications.
+- Hosmer DW, Lemeshow S, Sturdivant RX. (2013). *Applied Logistic Regression (3rd Ed.).* Wiley.
+- Fitzmaurice GM, Laird NM, Ware JH. (2011). *Applied Longitudinal Analysis (2nd Ed.).* Wiley.
+- van Buuren S. (2018). *Flexible Imputation of Missing Data (2nd Ed.).* CRC Press.
 - White IR, Royston P, Wood AM., (2011). *Multiple imputation using chained equations: Issues and guidance for practice.* Stat Med. (<https://doi.org/10.1002/sim.4067>)
-- Lumley, T. (2010). *Complex Surveys: A Guide to Analysis Using R.* Wiley.
-- Venables, W. N., & Ripley, B. D. (2002). *Modern Applied Statistics with S (4th Ed.).* Springer.
-- Rothman, K. J. (2012). *Epidemiology: An Introduction (2nd Ed.).* Oxford University Press.
-- Lash, T. L., VanderWeele, T. J., Haneuse, S., & Rothman, K. J. (2020). *Modern Epidemiology (4th Ed.).* Lippincott Williams & Wilkins.
+- Nakagawa S, Johnson PCD, Schielzeth H. (2017) *The coefficient of determination R² and intra-class correlation coefficient from generalized linear mixed-effects models revisited and expanded.* J. R. Soc. Interface
+(<http://dx.doi.org/10.1098/rsif.2017.0213>)
+- Lumley T. (2010). *Complex Surveys: A Guide to Analysis Using R.* Wiley.
+- Venables WN, Ripley BD. (2002). *Modern Applied Statistics with S (4th Ed.).* Springer.
+- Rothman, KJ (2012). *Epidemiology: An Introduction (2nd Ed.).* Oxford University Press.
+- Lash TL, VanderWeele TJ, Haneuse S, Rothman KJ. (2020). *Modern Epidemiology (4th Ed.).* Lippincott Williams & Wilkins.
 
 # Appendix
 
