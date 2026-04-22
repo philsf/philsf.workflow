@@ -330,6 +330,13 @@ get_diagnostics <- function(model, label) {
   )
 }
 
+get_vif <- function(model) {
+  model %>%
+    check_collinearity() %>%
+    as_tibble() %>%
+    select(Term:VIF)
+}
+
 # Modeling ----------------------------------------------------------------
 
 formula.primary.P1.raw     <- outcome.P1 ~ exposure

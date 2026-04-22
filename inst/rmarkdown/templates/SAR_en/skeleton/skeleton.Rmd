@@ -489,6 +489,10 @@ knitr::include_graphics(here("04 outputs", "Age_by_Sex.png"), error = FALSE)
 tab.app.ind <- tab.app.ind + 1
 tab.diag.ind <- paste0("A", tab.app.ind)
 tab.diag.cap <- "Model diagnostic metrics. P-values reflect the Shapiro-Wilk test."
+
+tab.app.ind <- tab.app.ind + 1
+tab.VIF.ind <- paste0("A", tab.app.ind)
+tab.VIF.cap <- "Variance Inflation Factors."
 ```
 
 [Analyst Note: Use this subsection to detail the model's appropriateness and assumption checks based on the stock diagnostic routine (e.g., collinearity (VIF), influence/Leverage, and goodness-of-fit). ]
@@ -511,6 +515,21 @@ bind_rows(
   kable(
     digits = 2,
     caption = paste0("**Table ", tab.diag.ind, "** ", tab.diag.cap)
+  )
+```
+
+```{r tab.VIF}
+bind_rows(
+    .id = "model",
+    P1 = model.primary.P1.adj     %>% get_vif(),
+    S1 = model.secondary.S1.adj   %>% get_vif(),
+    S2 = model.secondary.S2.adj   %>% get_vif(),
+    S3 = model.secondary.S3.adj   %>% get_vif(),
+    E1 = model.exploratory.E1.adj %>% get_vif(),
+    ) %>% pivot_wider(names_from = model, values_from = VIF) %>%
+  kable(
+    digits = 2,
+    caption = paste0("**Table ", tab.VIF.ind, "** ", tab.VIF.cap)
   )
 ```
 
