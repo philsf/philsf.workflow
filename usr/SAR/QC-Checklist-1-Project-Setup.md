@@ -10,8 +10,8 @@
 
 Focus: Repository initialization and the "Contract" with the client.
 
-- [ ] Person, place, year
-- [ ] Scope
+- [ ] Client: Person, place, year
+- [ ] Scope: analysis types
 - [ ] Title (provisional)
 - [ ] Objective (provisional)
 - [ ] Objectives match the Proposal scope

@@ -10,32 +10,18 @@
 
 Focus: Client-facing quality and presentation readiness.
 
-Report Close-out
-
-- [ ] Conclusions answer the specific Objective listed in the SAP.
 - [ ] Title (final)
 - [ ] Objective (from SAP)
 - [ ] Context (from SAP)
 - [ ] Data & Methods (from SAP)
-- [ ] Observations (from SAP + from analysis)
-- [ ] Fix header date
-- [ ] Spelling and grammar check or Administrative QC.
-- [ ] Watermark removed.
-- [ ] Check Document version in DOCX style
-- [ ] TOC updated and internal links functional.
-- [ ] Rendered PDF/MD matches the latest versioning.
-- [ ] Portfolio item (date, title, tags, SAP/SAR version ...)
-- [ ] Backup to Google Drive
-
-Github project README
-
-- [ ] Title (final)
-- [ ] Objective (final)
-
-Github Portfolio.md
-
-- [ ] Person, place, year
-- [ ] Scope (study type and primary technique)
-- [ ] Title (final)
-- [ ] Objective (final)
-- [ ] If confidential: All public links/files suppressed
+- [ ] Observations (from SAP + analysis deviations)
+- [ ] All objectives have matching analysis results
+- [ ] Conclusions answer the specific Objective listed in the SAP.
+- [ ] Scientific QC: Results/Conclusions sections pass Internal QC
+- [ ] Scientific QC: Results/Conclusions sections pass External QC
+- [ ] Administrative QC: Spelling and grammar, labels, cross-references, Text-matches-Data harmony, etc.
+- [ ] Date: Date fixated in Header and Document History
+- [ ] DOCX: Check Document version in DOCX style (for version 2+)
+- [ ] DOCX: DRAFT Watermark removed.
+- [ ] DOCX: TOC updated and internal links functional.
+- [ ] DOCX: Rendered PDF matches the correct version.
