@@ -301,6 +301,11 @@ get_vif <- function(model) {
     select(Term:VIF)
 }
 
+# Override defaults from gtsummary
+style_percent <- function(x, digits = 1, suffix = "%", ...) {
+  gtsummary::style_percent(x, digits = digits, suffix = suffix, ...)
+}
+
 # Modeling ----------------------------------------------------------------
 
 formula.primary.P1.raw     <- outcome.P1 ~ exposure
