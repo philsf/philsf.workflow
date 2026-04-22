@@ -96,7 +96,7 @@ cp ~/usr/SAR/README-SAR_${SAR_LANG}.md README.md
 cp ~/usr/SAR/Portfolio_${SAR_LANG}.md Portfolio.md
 
 # apply default SAP/SAR templates
-cp ~/usr/SAR/SAP_${SAR_LANG}.Rmd "05 documents"/SAP-$SAR_CODE-v01.Rmd
+cp ~/usr/SAR/SAP_OBS_full_${SAR_LANG}.Rmd "05 documents"/SAP-$SAR_CODE-v01.Rmd
 cp ~/usr/SAR/SAR_${SAR_LANG}.Rmd "05 documents"/SAR-$SAR_CODE-v01.Rmd
 cp -a ~/usr/SAR/misc/*${SAR_LANG}.docx "05 documents"/misc/
 

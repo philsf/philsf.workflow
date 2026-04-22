@@ -29,6 +29,6 @@ git init "01 dataset"/
 # protect data by default
 echo "Client dataset made private by default (revert to open data)"
 echo "# dataset is private and cannot be publicly versioned
-dataset/" >> .gitignore
+01 dataset/" >> .gitignore
 git add .gitignore
 git commit -m "dataset is private and cannot be publicly versioned" > /dev/null
