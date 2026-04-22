@@ -32,26 +32,20 @@ gh repo create philsf-biostat/$SAR --private --push --source=. --remote=origin
 
 # Create the standard set of issues that mirror the R script workflow.
 
-# repo setup
-gh issue create --title "Repository Setup Check" --body "Setup repo, provisional title and objective(s), client name and year, scope."
+# Repository Setup
+gh issue create --title "Repository Setup Check" --body-file ~/usr/SAR/QC-Checklist-1-Project-Setup.md
 
-# Initial Setup Check
-gh issue create --title "Initial Scripts Setup Check (00- to 10-)" --body "Confirm libraries and global variables (00-), and master Analysis Data Set loading/labeling (10-)."
+# Initial Pipeline Setup
+gh issue create --title "Initial Pipeline Setup Check" --body-file ~/usr/SAR/QC-Checklist-2-Scripts-Setup.md
 
 # SAP development
-gh issue create --title "SAP development" --body "Develop SAP. Finalize the SAP Table Shells (06-). Ensure all outputs are generated (90-, 91-)."
+gh issue create --title "SAP development Checklist" --body-file ~/usr/SAR/QC-Checklist-3-SAP.md
 
-# SAP QC and deliverables
-# gh issue create
+# Analysis development: Data, Models, Tables and Figures
+gh issue create --title "Analysis: Data, Models, Tables and Figures Check" --body-file ~/usr/SAR/QC-Checklist-4-Analysis.md
 
-# Consolidated Analysis Pipeline Issue
-gh issue create --title "Pipeline: Data, Models, & QC" --body "Implement and run the full analysis pipeline: Data Prep (10-), Descriptive analysis (21-), Analyses (31-/34-/41-/51-), and Output Generation (32-/42-/52-)."
+# Report development
+gh issue create --title "Report development Checklist" --body-file ~/usr/SAR/QC-Checklist-5-SAR.md
 
-# Analysis QC
-# gh issue create
-
-# Report & Documentation
-gh issue create --title "Report and Presentation Checklist" --body "Draft the Statistical Analysis Report, check figures (90-) and tables (91-)."
-
-# SAR QC
-# gh issue create
+# Project Close-out
+gh issue create --title "Project Close-out Check" --body-file ~/usr/SAR/QC-Checklist-6-Project-Close-out.md
