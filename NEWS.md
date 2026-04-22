@@ -1,4 +1,4 @@
-# philsf.workflow (development version)
+# philsf.workflow 1.0.0
 
 * Simplify sync routine into a single script #186
 * new shell script to open setup github repo #206
