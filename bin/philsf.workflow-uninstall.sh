@@ -122,6 +122,8 @@ modeling.R
 plots.R
 results.R
 plots-save.R
+SAP_en.Rmd
+SAP_pt.Rmd
 "
 
 echo "Removing files from $SCRIPTDIR"
