@@ -320,6 +320,16 @@ render_table <- function(table_object, table_index, caption) {
   }
 }
 
+get_diagnostics <- function(model, label) {
+  # capture model diagnostics that need to be available for the report
+  bind_cols(
+    model = label,
+    model %>% r2() %>% as_tibble(),
+    # model %>% icc() %>% as_tibble() %>% select(-optional),
+    # model %>% check_normality() %>% as_tibble() %>% transmute(p.value=as.numeric(value)),
+  )
+}
+
 # Modeling ----------------------------------------------------------------
 
 formula.primary.P1.raw     <- outcome.P1 ~ exposure

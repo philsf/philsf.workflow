@@ -41,7 +41,7 @@ model.exploratory.E1.adj <- glm(
 # #    - For GLMs (logistic, Poisson), this uses appropriate residuals (e.g., Dunn-Smyth).
 # #    - For LMs (gaussian), this provides standard assumption checks.
 # model.exploratory.E1.adj %>% performance::check_model()
-model.exploratory.E1.adj %>% performance::r2()
+# model.exploratory.E1.adj %>% performance::r2()
 
 # # 2. Linear models
 # # Normality of Residuals
@@ -56,12 +56,12 @@ model.exploratory.E1.adj %>% performance::r2()
 # # Discrimination / C-statistic/ ROC-AUC
 # model.exploratory.E1.adj%>% performance::performance_roc()
 
-# 2''. Poisson vs Negative Binomial models
-model.exploratory.E1.raw %>% AER::dispersiontest()
-model.exploratory.E1.adj %>% AER::dispersiontest()
+# # 2''. Poisson vs Negative Binomial models
+# model.exploratory.E1.raw %>% AER::dispersiontest()
+# model.exploratory.E1.adj %>% AER::dispersiontest()
 
 # # 3. Collinearity Check
-model.exploratory.E1.adj %>% car::vif()
+# model.exploratory.E1.adj %>% car::vif()
 
 # # 4. Influence/Leverage/Outliers
 # model.exploratory.E1.adj %>% car::outlierTest()
@@ -76,3 +76,10 @@ model.exploratory.E1.adj %>% car::vif()
 # # Full Diagnostic Plots (Good for Appendix/Internal QC)
 # model.exploratory.E1.raw %>% autoplot()
 # model.exploratory.E1.adj %>% autoplot()
+
+# capture model diagnostics to expose it to the report
+diag.secondary.E1 <- bind_rows(
+  model.secondary.E1.adj %>% get_diagnostics("Exploratory E1"),
+)
+
+diag.secondary.E1
