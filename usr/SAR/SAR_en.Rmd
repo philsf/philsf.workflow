@@ -481,9 +481,19 @@ if (exists("tab.primary.P1.sens")) {
 knitr::include_graphics(here("04 outputs", "Age_by_Sex.png"), error = FALSE)
 ```
 
-## Modeling Strategy and Diagnostics
+## Modeling Strategy
 
-### Model Validation and Diagnostics
+### Model Diagnostics and Validity
+
+```{r ind.diag}
+tab.app.ind <- tab.app.ind + 1
+tab.diag.ind <- paste0("A", tab.app.ind)
+tab.diag.cap <- "Model diagnostic metrics. P-values reflect the Shapiro-Wilk test."
+
+tab.app.ind <- tab.app.ind + 1
+tab.VIF.ind <- paste0("A", tab.app.ind)
+tab.VIF.cap <- "Variance Inflation Factors."
+```
 
 [Analyst Note: Use this subsection to detail the model's appropriateness and assumption checks based on the stock diagnostic routine (e.g., collinearity (VIF), influence/Leverage, and goodness-of-fit). ]
 
@@ -493,7 +503,24 @@ knitr::include_graphics(here("04 outputs", "Age_by_Sex.png"), error = FALSE)
 - STANDARD/PREMIUM: Document model-specific assumption tests (e.g., Normality, Homoscedasticity, Goodness-of-Fit) and specialized checks (e.g., Cox PH) if applicable.
 Describe the findings of the diagnostic plots (if generated internally via functions like autoplot() for residual analysis).
 
-### Model Selection and Justification
+```{r tab.diag}
+diag.metrics %>%
+  mutate(p.value = style_pvalue(p.value, digits = 3)) %>%
+  kable(
+    digits = 2,
+    caption = paste0("**Table ", tab.diag.ind, "** ", tab.diag.cap)
+  )
+```
+
+```{r tab.VIF}
+diag.vif %>%
+  kable(
+    digits = 2,
+    caption = paste0("**Table ", tab.VIF.ind, "** ", tab.VIF.cap)
+  )
+```
+
+### Model Specification and Selection
 
 [Analyst Note: If multiple models were tested (e.g., adjusted vs. raw, nested), use this subsection to provide the justification (e.g., based on R-squared, AIC, ANOVA, or clinical relevance) for the primary model presented in the Results section.]
 
@@ -502,7 +529,7 @@ Describe the findings of the diagnostic plots (if generated internally via funct
 - STANDARD: Provide the Draft SAP justification for model selection (e.g., based on ANOVA/R-squared or clinical relevance).
 - PREMIUM (Diagnostic Audit): Document the decision-making process for assumption violations (e.g., choice of robust standard errors, outcome transformation) and any complex collinearity interpretations.
 
-### Full Model Specification
+### Full Primary Model Specification
 
 ```{r ind_app_full_model}
 ind.table.app <- ind.table.app + 1
@@ -529,7 +556,7 @@ if (exists("tab.primary.P1.full")) {
 }
 ```
 
-### Full Secondary Model Specification
+### Full Secondary Models Specification
 
 [Analyst Note: remove this section if not scoped]
 
@@ -558,7 +585,7 @@ if (exists("tab.secondary.S1.full")) {
 }
 ```
 
-### Full Exploratory Model Specification
+### Full Exploratory Models Specification
 
 [Analyst Note: remove this section if not scoped]
 
