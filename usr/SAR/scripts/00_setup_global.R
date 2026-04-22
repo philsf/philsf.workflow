@@ -135,42 +135,6 @@ library(writexl)
 options(workflow.language = "en") # Default (English)
 # options(workflow.language = "pt") # Portuguese
 
-# Themes and Options ------------------------------------------------------
-
-# setup gtsummary theme
-theme_ff_gtsummary()
-theme_gtsummary_compact()
-# theme_gtsummary_language(language = "pt") # moved to section labels
-
-# setup ggplot theme
-theme_set(theme_ff())
-
-ff.col <- "steelblue" # good for single groups scale  fill/color brewer
-ff.pal <- "Paired"    # good for binary groups scale  fill/color brewer
-# ff.pal <- "Blues"   # good for sequential groups    fill/color brewer
-# ff.pal <- "Set1"    # good for discrete groups      fill/color brewer
-# other palettes: "Blues" for sequential and "Set1" or viridis_d() for discrete
-
-# A wrapper function to apply common theme elements to all plots
-# Global Plot Template (gg.template)
-gg.template <- function(data, ...) {
-  # Initialize the plot with the data and the specific aesthetic mappings passed in '...'
-  ggplot(data, ...) +
-    # Add all global components (Scales and Theme)
-    scale_color_brewer(palette = ff.pal) +
-    scale_fill_brewer(palette = ff.pal) +
-    # scale_fill_viridis_d() +                # discrete palette
-    # scale_color_viridis_d() +               # discrete palette
-    theme_ff()
-}
-
-# gg.template <- list(
-#   scale_color_brewer(palette = ff.pal),
-#   scale_fill_brewer(palette = ff.pal),
-#   # scale_fill_viridis_d(),
-#   # scale_color_viridis_d(),
-#   theme_ff())
-
 # Global Variables --------------------------------------------------------
 
 # Set random seed
@@ -352,35 +316,79 @@ formula.exploratory.E1.adj <- outcome.E1 ~ exposure + age + sex
 # formula.exploratory.E1.raw <- Surv(time.E1, outcome.E1) ~ exposure
 # formula.exploratory.E1.adj <- Surv(time.E1, outcome.E1) ~ exposure + age + sex
 
+# Exponentiate
 exp.outcome.P1 <- TRUE
 exp.outcome.S1 <- TRUE
 exp.outcome.S2 <- FALSE
 exp.outcome.S3 <- TRUE
 exp.outcome.E1 <- TRUE
 
-
 # Labels ------------------------------------------------------------------
 
 # General purpose template labels
 if (getOption("workflow.language") == "pt") {
   theme_gtsummary_language(language = "pt")
-  lab.model.raw   <- "Não-Ajustado"
-  lab.model.adj   <- "Ajustado"
+  lab.model.raw    <- "Não-Ajustado"
+  lab.model.adj    <- "Ajustado"
   lab.adjusted_for <- "Ajustado por"
+  ci.sep           <- " até "
 } else {
   theme_gtsummary_language(language = "en") # default
-  lab.model.raw   <- "Unadjusted"
-  lab.model.adj   <- "Adjusted"
+  lab.model.raw    <- "Unadjusted"
+  lab.model.adj    <- "Adjusted"
   lab.adjusted_for <- "Adjusted for"
+  ci.sep           <- " to "
 }
 
-# Project-specific labels
+# Exposure
 lab.exposure   <- "Study exposure"
+lab.time.E1    <- "Follow-up time for exploratory outcome 1 (years)"
+
+# Primary Outcomes
 lab.outcome.P1 <- "Study primary outcome 1"
+
+# Secondary Outcomes
 lab.outcome.S1 <- "Study secondary outcome 1"
 lab.outcome.S2 <- "Study secondary outcome 2"
 lab.outcome.S3 <- "Study secondary outcome 3"
+
+# Exploratory Outcomes
 lab.outcome.E1 <- "Study exploratory outcome 1"
-lab.time.E1    <- "Follow-up time for exploratory outcome 1 (years)"
-lab.age                 <- "Age (years)"
-lab.sex                 <- "Sex"
+
+# Covariates & Time
+lab.age        <- "Age (years)"
+lab.sex        <- "Sex"
+lab.time       <- "Follow-up time (weeks)"
+
+# Adjusted for
+lab.rhs.adj     <- paste0(lab.sex, " and ", lab.age)
+
+# Abbreviations
+abbr.bmi   <- "BMI = Body Mass Index"
+
+# Themes and Options ------------------------------------------------------
+
+# setup gtsummary theme
+theme_ff_gtsummary()
+
+# setup ggplot theme
+theme_set(theme_ff())
+
+ff.col <- "steelblue" # good for single groups scale  fill/color brewer
+ff.pal <- "Paired"    # good for binary groups scale  fill/color brewer
+# ff.pal <- "Blues"   # good for sequential groups    fill/color brewer
+# ff.pal <- "Set1"    # good for discrete groups      fill/color brewer
+# other palettes: "Blues" for sequential and "Set1" or viridis_d() for discrete
+
+# A wrapper function to apply common theme elements to all plots
+# Global Plot Template (gg.template)
+gg.template <- function(data, ...) {
+  # Initialize the plot with the data and the specific aesthetic mappings passed in '...'
+  ggplot(data, ...) +
+    # Add all global components (Scales and Theme)
+    scale_color_brewer(palette = ff.pal) +
+    scale_fill_brewer(palette = ff.pal) +
+    # scale_fill_viridis_d() +                # discrete palette
+    # scale_color_viridis_d() +               # discrete palette
+    theme_ff()
+}
