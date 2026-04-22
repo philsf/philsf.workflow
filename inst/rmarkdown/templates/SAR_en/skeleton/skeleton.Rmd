@@ -504,13 +504,7 @@ tab.VIF.cap <- "Variance Inflation Factors."
 Describe the findings of the diagnostic plots (if generated internally via functions like autoplot() for residual analysis).
 
 ```{r tab.diag}
-bind_rows(
-  diag.primary.P1,
-  diag.secondary.S1,
-  diag.secondary.S2,
-  diag.secondary.S3,
-  diag.exploratory.E1,
-) %>%
+diag.metrics %>%
   mutate(p.value = style_pvalue(p.value, digits = 3)) %>%
   kable(
     digits = 2,
@@ -519,14 +513,7 @@ bind_rows(
 ```
 
 ```{r tab.VIF}
-bind_rows(
-    .id = "model",
-    P1 = model.primary.P1.adj     %>% get_vif(),
-    S1 = model.secondary.S1.adj   %>% get_vif(),
-    S2 = model.secondary.S2.adj   %>% get_vif(),
-    S3 = model.secondary.S3.adj   %>% get_vif(),
-    E1 = model.exploratory.E1.adj %>% get_vif(),
-    ) %>% pivot_wider(names_from = model, values_from = VIF) %>%
+diag.vif %>%
   kable(
     digits = 2,
     caption = paste0("**Table ", tab.VIF.ind, "** ", tab.VIF.cap)

@@ -153,3 +153,48 @@ if (exists("gg.exploratory.E1.outcome")) {
 if (exists("gg.exploratory.E1.predict")) {
   write_rds(gg.exploratory.E1.predict, file = "03 results/gg.exploratory.E1.predict.rds")
 }
+
+# Diagnostic Objects ------------------------------------------------------
+
+# cache individual objects
+
+if (exists("diag.primary.P1")) {
+  write_rds(diag.primary.P1, file = "03 results/diag.primary.P1.rds")
+}
+if (exists("diag.secondary.S1")) {
+  write_rds(diag.secondary.S1, file = "03 results/diag.secondary.S1.rds")
+}
+if (exists("diag.secondary.S2")) {
+  write_rds(diag.secondary.S2, file = "03 results/diag.secondary.S2.rds")
+}
+if (exists("diag.secondary.S3")) {
+  write_rds(diag.secondary.S3, file = "03 results/diag.secondary.S3.rds")
+}
+if (exists("diag.exploratory.E1")) {
+  write_rds(diag.exploratory.E1, file = "03 results/diag.exploratory.E1.rds")
+}
+
+# cache master objects
+
+if (exists("diag.primary.P1")) {
+  diag.metrics <- bind_rows(
+    if(exists("diag.primary.P1"    )) diag.primary.P1,
+    if(exists("diag.secondary.S1"  )) diag.secondary.S1,
+    if(exists("diag.secondary.S2"  )) diag.secondary.S2,
+    if(exists("diag.secondary.S3"  )) diag.secondary.S3,
+    if(exists("diag.exploratory.E1")) diag.exploratory.E1,
+  )
+  write_rds(diag.metrics, file = "03 results/diag.metrics.rds")
+}
+
+if (exists("model.primary.P1.adj")) {
+  diag.vif <- bind_rows(
+    .id = "model",
+    P1 = if(exists("model.primary.P1.adj"))     model.primary.P1.adj     %>% get_vif(),
+    S1 = if(exists("model.secondary.S1.adj"))   model.secondary.S1.adj   %>% get_vif(),
+    S2 = if(exists("model.secondary.S2.adj"))   model.secondary.S2.adj   %>% get_vif(),
+    S3 = if(exists("model.secondary.S3.adj"))   model.secondary.S3.adj   %>% get_vif(),
+    E1 = if(exists("model.exploratory.E1.adj")) model.exploratory.E1.adj %>% get_vif(),
+  ) %>% pivot_wider(names_from = model, values_from = VIF)
+  write_rds(diag.vif, file = "03 results/diag.vif.rds")
+}

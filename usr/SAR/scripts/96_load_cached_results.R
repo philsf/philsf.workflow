@@ -158,3 +158,33 @@ if (file.exists("03 results/gg.exploratory.E1.outcome.rds")) {
 if (file.exists("03 results/gg.exploratory.E1.predict.rds")) {
   gg.exploratory.E1.predict <- read_rds("03 results/gg.exploratory.E1.predict.rds")
 }
+
+# Diagnostic Objects ------------------------------------------------------
+
+# load individual objects
+
+if (file.exists("03 results/diag.primary.P1.rds")) {
+  diag.primary.P1 <- read_rds("03 results/diag.primary.P1.rds")
+}
+if (file.exists("03 results/diag.secondary.S1.rds")) {
+  diag.secondary.S1 <- read_rds("03 results/diag.secondary.S1.rds")
+}
+if (file.exists("03 results/diag.secondary.S2.rds")) {
+  diag.secondary.S2 <- read_rds("03 results/diag.secondary.S2.rds")
+}
+if (file.exists("03 results/diag.secondary.S3.rds")) {
+  diag.secondary.S3 <- read_rds("03 results/diag.secondary.S3.rds")
+}
+if (file.exists("03 results/diag.exploratory.E1.rds")) {
+  diag.exploratory.E1 <- read_rds("03 results/diag.exploratory.E1.rds")
+}
+
+# load master objects
+
+if (exists("03 results/diag.metrics.rds")) {
+  diag.metrics <- read_rds("03 results/diag.metrics.rds")
+}
+
+if (exists("03 results/diag.vif.rds")) {
+  diag.vif <- read_rds("03 results/diag.vif.rds")
+}
