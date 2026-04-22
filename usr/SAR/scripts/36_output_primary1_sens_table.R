@@ -27,8 +27,10 @@ tab.primary.P1.sens <- tab_adj(
   exponentiate = exp.outcome.P1,
 ) %>%
   # Apply final formatting (e.g., adding footnotes, headers)
-  modify_footnote()
-
+  modify_footnote_header(
+    footnote = NA_character_, # additional global footnote
+    replace = FALSE,
+  )
 
 # Full Table (Appendix) ---------------------------------------------------
 
@@ -41,4 +43,7 @@ tab.primary.P1.full.sens <- tab_adj(
   exponentiate = exp.outcome.P1,
 ) %>%
   # Apply final formatting (e.g., adding footnotes, headers)
-  modify_footnote()
+  modify_footnote_header(
+    footnote = NA_character_, # additional global footnote
+    replace = FALSE,
+  )

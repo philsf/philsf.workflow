@@ -27,7 +27,10 @@ tab.secondary.S3 <- tab_adj(
   exponentiate = exp.outcome.S3,
 ) %>%
   # Apply final formatting (e.g., adding footnotes, headers)
-  modify_footnote()
+  modify_footnote_header(
+    footnote = NA_character_, # additional global footnote
+    replace = FALSE,
+  )
 
 tab.secondary.S3
 
@@ -42,6 +45,9 @@ tab.secondary.S3.full <- tab_adj(
   exponentiate = exp.outcome.S3,
 ) %>%
   # Apply final formatting (e.g., adding footnotes, headers)
-  modify_footnote()
+  modify_footnote_header(
+    footnote = NA_character_, # additional global footnote
+    replace = FALSE,
+  )
 
 tab.secondary.S3.full
